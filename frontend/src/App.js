@@ -17,6 +17,7 @@ function App() {
         >
           Learn React
         </a>
+        <h2>Elif burada.</h2>
       </header>
     </div>
   );
