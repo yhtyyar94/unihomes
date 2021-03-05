@@ -19,6 +19,7 @@ function App() {
         </a>
 
         <h2>Elif burada.</h2>
+        <h2>Elif burada.</h2>
 
         <h2>Mursel is here</h2>
 
