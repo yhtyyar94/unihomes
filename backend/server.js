@@ -9,6 +9,9 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+//db connection
+require('./config/db.config')();
+
 //cors policy
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
