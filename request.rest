@@ -1,0 +1,7 @@
+POST http://localhost:5000/create
+Content-Type: application/json
+
+{
+    "name":"Surrey",
+    "image":"https://www.whcoxremovals.co.uk/wp-content/uploads/2017/11/Buyers-in-Surrey.jpg"
+}
