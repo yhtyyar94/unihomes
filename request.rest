@@ -14,8 +14,18 @@ POST http://localhost:5000/createagent
 Content-Type: application/json
 
 {
-    "email":"black@gmail.com",
-    "password":"1234"
+    "email":"black1@gmail.com",
+    "password":"123asd"
+}
+
+###
+
+POST http://localhost:5000/user/authenticate
+Content-Type: application/json
+
+{
+    "email":"black1@gmail.com",
+    "password":"123asd"
 }
 
 ###

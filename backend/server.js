@@ -24,6 +24,9 @@ const citiesRouter = require('./routes/cities.routes')
 const agentsRouter = require('./routes/agents.routes')
 const propertiesRouter = require('./routes/properties.routes')
 
+//middlewares
+const userAuth = require('./middlewares/userAuth')
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -34,11 +37,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/', citiesRouter)
-app.use('/', agentsRouter)
-app.use('/', propertiesRouter)
+//config keys
+const config = require('./config')
+app.set('api_secret_key', config.api_secret_key)
+
+// app.use('/user', indexRouter)
+// app.use('/api', userAuth)
+app.use('/api', citiesRouter)
+app.use('/api', agentsRouter)
+app.use('/api', propertiesRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
