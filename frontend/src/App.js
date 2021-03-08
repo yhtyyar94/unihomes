@@ -19,6 +19,7 @@ function App() {
         </a>
       </header>
       <h2>Cagri is here</h2>
+      <h2>test</h2>
     </div>
   );
 }
