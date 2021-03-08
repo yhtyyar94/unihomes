@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="App">
     <ul>
+      <h4>talha test</h4>
     {cities && cities.map(city => <div key={city._id} className="cities">
     <img src={city.image} alt={city.name}/>
     <p>{city.name}</p>
