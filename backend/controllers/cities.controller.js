@@ -23,9 +23,24 @@ exports.createCity = async (req, res) => {
 }
 
 exports.getSingleCity = async (req, res) => {
-    let cityID = req.params.id
+    let cityName = req.params.name
 
-    await CitiesModel.findById({_id: cityID}, (err, data) => {
+    await CitiesModel.findOne({name: cityName}, (err, data) => {
+        if(err) {
+            res.status(500).json({message: err})
+        } else {
+            res.status(200).json({
+                message: 'City found',
+                data
+            })
+        }
+    })
+}
+
+exports.getSingleCity = async (req, res) => {
+    let cityId = req.params.id
+
+    await CitiesModel.findOne({name: cityId}, (err, data) => {
         if(err) {
             res.status(500).json({message: err})
         } else {
