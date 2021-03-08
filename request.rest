@@ -1,0 +1,51 @@
+//to run this file install REST Client extension
+###
+POST http://localhost:5000/createcity
+Content-Type: application/json
+
+{
+    "name":"Surrey",
+    "image":"https://www.whcoxremovals.co.uk/wp-content/uploads/2017/11/Buyers-in-Surrey.jpg"
+}
+
+###
+
+POST http://localhost:5000/createagent
+Content-Type: application/json
+
+{
+    "email":"black1@gmail.com",
+    "password":"123asd"
+}
+
+###
+
+POST http://localhost:5000/user/authenticate
+Content-Type: application/json
+
+{
+    "email":"black1@gmail.com",
+    "password":"123asd"
+}
+
+###
+POST http://localhost:5000/createproperty
+Content-Type: application/json
+
+{
+"name":"Hyde Park Road, Hyde Park, Leeds, LS6 1AH",
+"city":"604536542e1b74357c4279e9",
+"user":"6046459eeb43bf37ecf5147a",
+"keyFeatures":["360° VIRTUAL TOUR AVAILABLE","ENSUITE BEDROOMS","FULLY KITTED OUT KITHCHEN","FREE STREET PARKING","BRAND NEW REFURBISHED PROPERTY","STYLISHLY FURNISHED","SPACIOUS LIVING AREA WITH A TV","DOUBLE GLAZED THROUGHOUT"],
+"location":"Hyde Park Road, Hyde Park, Leeds, LS6 1AH",
+"description":"rtryuyrtyuiouytryui",
+"bedrooms":["Double Enduite", "Double Ensuite"],
+"deposit":500,
+"availability":["31 March 2021", "31 June 2021"],
+"billsIncluded":["Gas", "Electricity","Internet","Water","TV Licence"],
+"bathrooms":2,
+"type":"Home",
+"liked":false,
+"images":["https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-1-2et.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-2-a3f.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-4-ou9.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-3-w5g.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-5-f1i.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-6-8pl.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-7-lfn.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-8-rqg.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-1-2et.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-2-a3f.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-3-w5g.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-4-ou9.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-6-8pl.jpg"],
+"price":146
+}
