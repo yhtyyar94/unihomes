@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
+// Hello from new user
 //db connection
 require('./config/db.config')();
 
