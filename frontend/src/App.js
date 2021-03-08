@@ -19,6 +19,7 @@ function App() {
           Learn React
         </a>
         <h1>talha</h1>
+        <h1>talhe test 2</h1>
 
 	return (
 		<div className="App">
