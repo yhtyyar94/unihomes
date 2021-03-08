@@ -1,7 +1,19 @@
-POST http://localhost:5000/create
+//to run this file install REST Client extension
+###
+POST http://localhost:5000/createcity
 Content-Type: application/json
 
 {
     "name":"Surrey",
     "image":"https://www.whcoxremovals.co.uk/wp-content/uploads/2017/11/Buyers-in-Surrey.jpg"
+}
+
+###
+
+POST http://localhost:5000/createagent
+Content-Type: application/json
+
+{
+    "email":"black@gmail.com",
+    "password":"1234"
 }

@@ -5,6 +5,7 @@ const PropertiesSchema = new Schema({
     name: {type:String, required:true},
     numberOfProperty: {type:Number},
     city: {type:mongoose.Types.ObjectId},
+    user:{type:mongoose.Types.ObjectId},
     keyFeatures:{type:Array},
     location:{type:String},
     description:{type:String},
