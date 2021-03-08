@@ -22,6 +22,7 @@ app.use(function(req, res, next) {
 //import Routers
 const citiesRouter = require('./routes/cities.routes')
 const agentsRouter = require('./routes/agents.routes')
+const propertiesRouter = require('./routes/properties.routes')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,6 +38,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/', citiesRouter)
 app.use('/', agentsRouter)
+app.use('/', propertiesRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

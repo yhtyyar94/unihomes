@@ -3,7 +3,6 @@ const Schema = mongoose.Schema
 
 const PropertiesSchema = new Schema({
     name: {type:String, required:true},
-    numberOfProperty: {type:Number},
     city: {type:mongoose.Types.ObjectId},
     user:{type:mongoose.Types.ObjectId},
     keyFeatures:{type:Array},
@@ -15,7 +14,7 @@ const PropertiesSchema = new Schema({
     billsIncluded:{type:Array},
     bathrooms:{type:Number},
     type:{type:String},
-    liked:{type:Boolean},
+    liked:{type:Boolean, default:false},
     images:{type:Array},
     price:{type:Number},
     addedAt:{type:Date, default:Date.now}
