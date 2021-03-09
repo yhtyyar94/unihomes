@@ -5,9 +5,8 @@ new
 new
 elif
 
-
-
-mursel 
+mursel
+Merhaba
 
 3/9/2021 Tuesday
 3/9/2021 Tuesday
