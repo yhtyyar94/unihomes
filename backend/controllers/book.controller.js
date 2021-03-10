@@ -4,7 +4,7 @@ const BookModel = require('../models/Book.model')
 exports.getMessages = async (req, res) => {
     const userId = req.params.userId
 
-    await BookModel.findById({user:mongoose.Types.ObjectId.apply(userId)}, (err, data) => {
+    await BookModel.find({user:userId}, (err, data) => {
         if(err) {
             res.status(500).json({message: err})
         } else {
