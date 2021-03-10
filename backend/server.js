@@ -24,6 +24,7 @@ app.use(function(req, res, next) {
 const citiesRouter = require('./routes/cities.routes')
 const agentsRouter = require('./routes/agents.routes')
 const propertiesRouter = require('./routes/properties.routes')
+const booksRouter = require('./routes/book.routes')
 
 //middlewares
 const userAuth = require('./middlewares/userAuth')
@@ -47,6 +48,7 @@ app.set('api_secret_key', config.api_secret_key)
 app.use('/api', citiesRouter)
 app.use('/api', agentsRouter)
 app.use('/api', propertiesRouter)
+app.use('/api', booksRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
