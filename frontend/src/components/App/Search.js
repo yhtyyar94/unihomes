@@ -14,11 +14,25 @@ export default function Search() {
             </div>
             <div className="search-container">
                 <form className="form">
-                    <input type="text" className="input-one" placeHolder="Search by city"/>
-                    <input className="input-two" placeHolder="Any bedrooms"/>
+                    <select className="input-one">
+                            <option value="search">Search by city</option>
+                            <option value="birmingham">Birmingham</option>
+                            <option value="london">London</option>
+                            <option value="coventry">Coventry</option>
+                    </select>
+                    <select className="input-two">
+                            <option value="any">Any bedroom</option>
+                            <option value="one">1</option>
+                            <option value="two">2</option>
+                            <option value="three">3</option>
+                    </select>
+                   
                     <button className="btn" >Find Homes</button>
                 </form>
             </div>
         </div>
     )
 }
+
+{/* <input type="text" className="input-one" placeHolder="Search by city"/>
+<input className="input-two" placeHolder="Any bedrooms"/> */}
