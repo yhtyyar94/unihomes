@@ -24,7 +24,7 @@ POST http://localhost:5000/user/authenticate
 Content-Type: application/json
 
 {
-    "email":"black1@gmail.com",
+    "email":"black@gmail.com",
     "password":"123asd"
 }
 
@@ -48,4 +48,12 @@ Content-Type: application/json
 "liked":false,
 "images":["https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-1-2et.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-2-a3f.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-4-ou9.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-3-w5g.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-5-f1i.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-6-8pl.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-7-lfn.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-8-rqg.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-1-2et.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-2-a3f.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-3-w5g.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-4-ou9.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-6-8pl.jpg"],
 "price":146
+}
+
+###
+GET http://localhost:5000/api/getproperties
+Content-Type: application/json
+
+{
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJsYWNrQGdtYWlsLmNvbSIsImlhdCI6MTYxNTQ2NTA4NywiZXhwIjoxNjE1NDY4Njg3fQ.feJLcTNn8Ww5hTIPeFXCragksgYZlFKUKoAbpGt1T2g"
 }
