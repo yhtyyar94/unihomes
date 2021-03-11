@@ -29,7 +29,10 @@ const UserSchema = new Schema({
    city:{
     type: String,
     require: [true, 'Please choose a city ']
-   }
+   },
+   createdAt:{
+    type:Date,default: Date.now
+}
 
 })
 
