@@ -13,17 +13,19 @@ exports.getMessages = async (req, res) => {
     })
 }
 
-exports.getMessageById = async (req, res) => {
-    const messageId = req.body.user
-
-    await BookModel.findById({_id:userId}, (err, data) => {
-        if(err) {
-            res.status(500).json({message: err})
-        } else {
             res.status(200).json(data)
-        }
-    })
 }
+// exports.getMessageById = async (req, res) => {
+//     const messageId = req.body.user
+
+//     await BookModel.findById({_id:userId}, (err, data) => {
+//         if(err) {
+//             res.status(500).json({message: err})
+//         } else {
+//             res.status(200).json(data)
+//         }
+//     })
+// }
 
 exports.sendMessage = async (req, res) => {
     const newMessage = await new BookModel(req.body)
