@@ -13,8 +13,6 @@ exports.getMessages = async (req, res) => {
     })
 }
 
-            res.status(200).json(data)
-}
 // exports.getMessageById = async (req, res) => {
 //     const messageId = req.body.user
 
