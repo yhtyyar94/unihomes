@@ -25,6 +25,7 @@ const citiesRouter = require('./routes/cities.routes')
 const agentsRouter = require('./routes/agents.routes')
 const propertiesRouter = require('./routes/properties.routes')
 const booksRouter = require('./routes/book.routes')
+const signup = require('./routes/signup.routes')
 
 //middlewares
 const userAuth = require('./middlewares/userAuth')
@@ -44,6 +45,7 @@ const config = require('./config')
 app.set('api_secret_key', config.api_secret_key)
 
 app.use('/user', indexRouter)
+app.use('/signup', signup)
 app.use('/api', userAuth)
 app.use('/api', citiesRouter)
 app.use('/api', agentsRouter)
