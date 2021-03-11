@@ -43,8 +43,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 const config = require('./config')
 app.set('api_secret_key', config.api_secret_key)
 
-// app.use('/user', indexRouter)
-// app.use('/api', userAuth)
+app.use('/', indexRouter)
+app.use('/api', userAuth)
 app.use('/api', citiesRouter)
 app.use('/api', agentsRouter)
 app.use('/api', propertiesRouter)
