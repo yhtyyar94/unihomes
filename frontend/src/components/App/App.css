@@ -1,0 +1,80 @@
+/* .img-overlay img {
+  margin: 0;
+  opacity: 0.5;
+  display: block;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 191, 255, 0.5);
+  font-family: "Poppins";
+}
+.img-overlay {
+  position: relative;
+  float: left;
+} */
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 680px;
+  left: -2px;
+  top: 65px;
+  z-index: auto;
+  /* align-items: center; */
+}
+
+.titleText {
+  position: absolute;
+  width: 743px;
+  height: 216px;
+  left: 270px;
+  top: 160px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 108px;
+  text-align: center;
+  color: #ffffff;
+  z-index: 10;
+}
+
+.subText {
+  position: absolute;
+  width: 840px;
+  height: 50px;
+  left: 230px;
+  top: 411px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #ffffff;
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 680px;
+  top: 65px;
+  background: rgba(0, 191, 255, 0.69);
+  /* border: 1px solid #ffffff; */
+  box-sizing: border-box;
+}
+
+.img {
+  position: absolute;
+  width: 100%;
+  height: 680px;
+  left: 1px;
+  top: 65px;
+}
