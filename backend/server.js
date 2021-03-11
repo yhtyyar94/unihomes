@@ -24,6 +24,8 @@ app.use(function(req, res, next) {
 const citiesRouter = require('./routes/cities.routes')
 const agentsRouter = require('./routes/agents.routes')
 const propertiesRouter = require('./routes/properties.routes')
+const booksRouter = require('./routes/book.routes')
+const signup = require('./routes/signup.routes')
 
 //middlewares
 const userAuth = require('./middlewares/userAuth')
@@ -42,11 +44,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 const config = require('./config')
 app.set('api_secret_key', config.api_secret_key)
 
-// app.use('/user', indexRouter)
-// app.use('/api', userAuth)
+app.use('/user', indexRouter)
+app.use('/signup', signup)
+app.use('/api', userAuth)
 app.use('/api', citiesRouter)
 app.use('/api', agentsRouter)
 app.use('/api', propertiesRouter)
+app.use('/api', booksRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

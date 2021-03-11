@@ -10,12 +10,17 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:5000/createagent
+POST http://localhost:5000/signup/createagent
 Content-Type: application/json
 
 {
-    "email":"black1@gmail.com",
-    "password":"123asd"
+    "email":"kim123@gmail.com",
+    "password":"123",
+    "name" : "Kim",
+    "contactNumber" : 125866987,
+    "company" : "New3",
+    "city" : "London",
+    "meetingdate":["12 sept 2021", "10.30"]
 }
 
 ###
@@ -24,8 +29,8 @@ POST http://localhost:5000/user/authenticate
 Content-Type: application/json
 
 {
-    "email":"black1@gmail.com",
-    "password":"123asd"
+    "email":"kim123@gmail.com",
+    "password":"123"
 }
 
 ###
@@ -48,4 +53,22 @@ Content-Type: application/json
 "liked":false,
 "images":["https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-1-2et.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-2-a3f.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-4-ou9.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-3-w5g.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-5-f1i.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-6-8pl.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-7-lfn.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-8-rqg.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-1-2et.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-2-a3f.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-3-w5g.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-4-ou9.jpg","https://www.unihomes.co.uk/data/property/images/2-bedroom-student-apartment-in-headingley-leeds_2170674-6-8pl.jpg"],
 "price":146
+}
+
+###
+GET http://localhost:5000/api/getcities
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtpbTEyM0BnbWFpbC5jb20iLCJpYXQiOjE2MTU0OTIxNjcsImV4cCI6MTYxNTQ5NTc2N30._KfElVyVa7VYv9IPvn4RilGa5_gNKp1_T5Xp9Q9F6dU"
+}
+
+###
+
+PUT  http://localhost:5000/api/cities/604538342e1b74357c4279f1/update
+Content-Type: application/json
+
+{
+    "name":"Swansea1",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtpbTEyM0BnbWFpbC5jb20iLCJpYXQiOjE2MTU0OTIzMTUsImV4cCI6MTYxNTQ5NTkxNX0.DCU4OGayDW-jkB2upICy5ZGOGoGgopKb4nwHapaXXds"
 }

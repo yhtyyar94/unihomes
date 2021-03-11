@@ -2,12 +2,14 @@ var express = require('express');
 var router = express.Router();
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+//Model
 const AgentModel = require('../models/Agents.model')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
 
 router.post('/authenticate', async (req, res) => {
   const {email, password} = req.body
