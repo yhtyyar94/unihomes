@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Cities from '../City/Cities';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import './App.css';
 
 export default function App() {
 	return (
