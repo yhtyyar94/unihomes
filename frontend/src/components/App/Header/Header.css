@@ -1,0 +1,159 @@
+.logContainer {
+  position: relative;
+  width: 374px;
+  height: 450px;
+  overflow: scroll;
+  background: #00bfff;
+}
+
+.logTitle {
+  position: absolute;
+  width: 165px;
+  height: 27px;
+  left: 18px;
+  top: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+}
+
+.logLine {
+  position: absolute;
+  width: 340.01px;
+  height: 1px;
+  left: 8.99px;
+  top: 49px;
+  background: #ffffff;
+  transform: rotate(-0.33deg);
+  border-width: 0px;
+}
+
+.logTitleTwo {
+  position: absolute;
+  width: 106px;
+  height: 18px;
+  left: 18px;
+  top: 100px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.inputOne {
+  position: absolute;
+  width: 300px;
+  height: 25px;
+  left: 18px;
+  top: 125px;
+  background: #ffffff;
+  border-width: 0px;
+}
+
+.logTitleThree {
+  position: absolute;
+  width: 106px;
+  height: 18px;
+  left: 18px;
+  top: 175px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+}
+.inputTwo {
+  position: absolute;
+  width: 300px;
+  height: 25px;
+  left: 18px;
+  top: 200px;
+  background: #ffffff;
+  border-width: 0px;
+}
+.forgotPass {
+  position: absolute;
+  width: 87px;
+  height: 11px;
+  left: 18px;
+  top: 235px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ffffff;
+}
+
+.loginBtn {
+  position: absolute;
+  width: 305px;
+  height: 51px;
+  left: 18px;
+  top: 269px;
+  background: #ff8c00;
+  border-width: 0px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+}
+
+.registerPlc {
+  position: absolute;
+  width: 374px;
+  height: 117px;
+  left: 0px;
+  top: 333px;
+  background: #ffffff;
+}
+
+.registerTxt {
+  position: absolute;
+  width: 218px;
+  height: 25px;
+  left: -8px;
+  top: 350px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #03c5f0;
+}
+
+.regLine {
+  position: absolute;
+  width: 340.01px;
+  height: 1px;
+  left: 8.99px;
+  top: 376px;
+  background: #03c5f0;
+  border-width: 0px;
+}
+
+.agentBtn {
+  position: absolute;
+  width: 305px;
+  height: 30px;
+  left: 22px;
+  top: 403px;
+  background: #00bfff;
+  border-width: 0px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+}
