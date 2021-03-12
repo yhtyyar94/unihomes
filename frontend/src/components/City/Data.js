@@ -2,7 +2,7 @@ const homes = [
 	{
 		id: 1,
 		city: 'Liverpool',
-		image:
+		url:
 			'https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg',
 		rent: 106,
 		bedroom: 4,
@@ -24,7 +24,7 @@ const homes = [
 	{
 		id: 2,
 		city: 'Liverpool',
-		image:
+		url:
 			'https://i.postimg.cc/FHxCs2w3/jon-nathon-stebbe-paydk0-Jc-IOQ-unsplash.jpg',
 		rent: 200,
 		bedroom: 5,
@@ -46,7 +46,7 @@ const homes = [
 	{
 		id: 3,
 		city: 'Liverpool',
-		image:
+		url:
 			'https://i.postimg.cc/90jy9f7M/sidekix-media-Wgk-A3-CSFrjc-unsplash.jpg',
 		rent: 240,
 		bedroom: 2,
@@ -68,7 +68,7 @@ const homes = [
 	{
 		id: 4,
 		city: 'Birmingham',
-		image:
+		url:
         'https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg',
 		rent: 306,
 		bedroom: 5,
@@ -89,7 +89,7 @@ const homes = [
 	},
 	{
 		id: 5,
-		city: 'Birmingham',
+		url: 'Birmingham',
 		image:
         'https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg',
 		rent: 56,
@@ -112,7 +112,7 @@ const homes = [
 	{
 		id: 6,
 		city: 'Birmingham',
-		image:
+		url:
         'https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg',
 		rent: 106,
 		bedroom: 4,

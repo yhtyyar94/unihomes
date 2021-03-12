@@ -6,7 +6,7 @@ export default function City({home}) {
     return (
         <div className="city">
             <div className="home-img">
-                <img src={home.image} alt="home" width="100%" height="300px"/>
+                <img src={home.url} alt="home" width="100%" height="300px"/>
             </div>
             <div className="info-one">
                 <p>£{home.rent} pppw including bills</p>
