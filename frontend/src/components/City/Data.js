@@ -3,7 +3,7 @@ const homes = [
 		id: 1,
 		city: 'Liverpool',
 		image:
-			'https://i.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY',
+			'https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg',
 		rent: 106,
 		bedroom: 4,
 		bathroom: 2,
@@ -25,9 +25,9 @@ const homes = [
 		id: 2,
 		city: 'Liverpool',
 		image:
-			'https://i.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY',
-		rent: 106,
-		bedroom: 4,
+			'https://i.postimg.cc/FHxCs2w3/jon-nathon-stebbe-paydk0-Jc-IOQ-unsplash.jpg',
+		rent: 200,
+		bedroom: 5,
 		bathroom: 2,
 		address: {
 			street: 'Holmes',
@@ -47,9 +47,9 @@ const homes = [
 		id: 3,
 		city: 'Liverpool',
 		image:
-			'https://i.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY',
-		rent: 106,
-		bedroom: 4,
+			'https://i.postimg.cc/90jy9f7M/sidekix-media-Wgk-A3-CSFrjc-unsplash.jpg',
+		rent: 240,
+		bedroom: 2,
 		bathroom: 2,
 		address: {
 			street: 'Holmes',
@@ -69,9 +69,9 @@ const homes = [
 		id: 4,
 		city: 'Birmingham',
 		image:
-			'https://i.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY',
-		rent: 106,
-		bedroom: 4,
+        'https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg',
+		rent: 306,
+		bedroom: 5,
 		bathroom: 2,
 		address: {
 			street: 'Holmes',
@@ -91,9 +91,9 @@ const homes = [
 		id: 5,
 		city: 'Birmingham',
 		image:
-			'https://i.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY',
-		rent: 106,
-		bedroom: 4,
+        'https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg',
+		rent: 56,
+		bedroom: 7,
 		bathroom: 2,
 		address: {
 			street: 'Holmes',
@@ -113,7 +113,7 @@ const homes = [
 		id: 6,
 		city: 'Birmingham',
 		image:
-			'https://i.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY',
+        'https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg',
 		rent: 106,
 		bedroom: 4,
 		bathroom: 2,
