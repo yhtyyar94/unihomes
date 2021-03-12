@@ -1,6 +1,5 @@
 import React from 'react'
-import view from './images/view.png'
-import './App.css'
+import './Search.css'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 

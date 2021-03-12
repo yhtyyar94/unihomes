@@ -1,5 +1,5 @@
 import React from 'react'
-import Search from './Search'
+import Search from './Search/Search'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import City from '../City/City';
