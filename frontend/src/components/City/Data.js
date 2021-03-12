@@ -30,8 +30,8 @@ const homes = [
 		bedroom: 5,
 		bathroom: 2,
 		address: {
-			street: 'Holmes',
-			district: 'Kentish Town',
+			street: 'Sherlock',
+			district: 'Ealing',
 			postcode: 'NW5 3AN',
 		},
 		type: 'House',
@@ -52,8 +52,8 @@ const homes = [
 		bedroom: 2,
 		bathroom: 2,
 		address: {
-			street: 'Holmes',
-			district: 'Kentish Town',
+			street: 'Pasazade',
+			district: 'Yukari Mahalle',
 			postcode: 'NW5 3AN',
 		},
 		type: 'House',
