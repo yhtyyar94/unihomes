@@ -1,0 +1,20 @@
+.filter {
+  background: white;
+  height: 127px;
+  width: auto;
+}
+.homes {
+  background: #e5e5e5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+p {
+  padding: 20px;
+}
+.banner-bottom {
+  background: url("https://i.postimg.cc/Gt3k6dyM/naassom-azevedo-Q-Sei-Tq-Slc-unsplash.jpg")
+    to left/cover no-repeat;
+  height: 999px;
+  width: 100%;
+}

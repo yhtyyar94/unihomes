@@ -1,8 +1,9 @@
 import React from 'react'
+import './City.css'
 
-export default function City() {
+export default function City({home}) {
     return (
-        <div>
+        <div className="city">
             City
         </div>
     )
