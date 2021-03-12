@@ -51,9 +51,10 @@ const [homes,setHomes]=useState(data)
                 </div>
        </div>
        <div className="banner-bottom">
-                    {/* <img src={view} alt="view" className="img"/> */}
-                    <h1 >Find student homes with bills included</h1>
-                    <h5 >A simple and faster way to search for student accommodation</h5>
+           <div className="text">
+                    <h1 >Being a student in Liverpool</h1>
+                    <h5 >An abundance of shops, bars, restaurants, and nightclubs have collectively put Liverpool well and truly on the student map. The city is known for being a party destination (made famous by Geordie Shore), and there’s plenty of this on offer for students. With a diverse mix of places to eat, drink and party, there's no wonder it's such a popular city to study in.</h5>
+            </div>                      
         </div>
             
     </div>

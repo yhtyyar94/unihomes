@@ -1,6 +1,5 @@
 import React from 'react';
 import Search from './Search/Search';
-
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Cities from '../City/Cities';
 import Header from './Header/Header';
