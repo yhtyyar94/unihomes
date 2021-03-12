@@ -1,87 +1,76 @@
-.container {
-  position: absolute;
+.banner {
+  color: white;
+  background: url("https://i.postimg.cc/tTD20Kn4/Group-65.png") top left/cover
+    no-repeat;
+  height: 800px;
   width: 100%;
-  height: 680px;
-  left: -2px;
-  top: 65px;
-  z-index: auto;
-  /* align-items: center; */
+  position: relative;
 }
-
-.titleText {
-  position: absolute;
-  width: 743px;
-  height: 216px;
-  left: 270px;
-  top: 160px;
+.banner h1,
+.banner h5 {
+  margin: 0;
+  text-shadow: 2px 2px 6px grey;
+  text-align: center;
+}
+.banner h1 {
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 72px;
   line-height: 108px;
-  text-align: center;
-  color: #ffffff;
-  z-index: 10;
 }
-
-.subText {
-  position: absolute;
-  width: 840px;
-  height: 50px;
-  left: 230px;
-  top: 411px;
+.banner h5 {
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 36px;
-  text-align: center;
-  color: #ffffff;
+}
+
+.banner-text {
+  padding-top: 100px;
+  position: absolute;
   z-index: 10;
 }
 
-.overlay {
-  position: absolute;
+.img-container {
+  display: relative;
   width: 100%;
   height: 680px;
-  top: 65px;
+  z-index: auto;
+}
+
+.overlay {
+  width: 100%;
+  height: 800px;
   background: rgba(0, 191, 255, 0.69);
-  /* border: 1px solid #ffffff; */
-  box-sizing: border-box;
+  position: absolute;
 }
 
 .img {
-  position: absolute;
   width: 100%;
   height: 680px;
-  left: 1px;
-  top: 65px;
 }
 
-.search-container {
-  position: absolute;
-  width: 1051px;
-  height: 140px;
-  left: 35px;
-  top: 527px;
-}
+/* .search-container {
+  display: flex;
+} */
 
 .form {
   position: absolute;
   width: 1051px;
   height: 140px;
-  left: 35px;
-  top: 100px;
   background: rgb(58, 82, 149, 0.84);
   border-radius: 10px;
+  /* margin-top: 400px;
+  margin-left: 200px; */
+  z-index: 20;
 }
-
 .input-one {
-  position: absolute;
+  float: left;
+  margin: 40px 0px 0px 50px;
   width: 366px;
   height: 47px;
-  left: 57px;
-  top: 47px;
   background: hsl(0, 0%, 100%);
   border: none;
   font-family: Roboto;
@@ -94,11 +83,10 @@
 }
 
 .input-two {
-  position: absolute;
+  margin: 40px 0px 0px 50px;
+  float: center;
   width: 366px;
   height: 47px;
-  left: 459px;
-  top: 47px;
   background: #ffffff;
   border: none;
   font-family: Roboto;
@@ -110,17 +98,13 @@
   border-radius: 10px;
 }
 
-::placeholder {
-  color: #ced3d8;
-}
-
 .btn {
-  position: absolute;
+  /* float: right; */
+  float: right;
+  margin-top: 40px;
+  margin-right: 50px;
   width: 150px;
   height: 47px;
-  left: 850px;
-  top: 48px;
-  position: absolute;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
