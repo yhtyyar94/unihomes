@@ -5,6 +5,7 @@ import Cities from '../City/Cities';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import './App.css';
+import HomeDetails from '../HomeDetails/HomeDetails';
 
 export default function App() {
 	return (
@@ -15,6 +16,7 @@ export default function App() {
 				<Switch>
 					<Route exact path="/" component={Search} />
 					<Route exact path="/city" component={Cities} />
+					<Route exact path="/homedetails" component={HomeDetails} />
 				</Switch>
 			</Router>
 			<Footer />
