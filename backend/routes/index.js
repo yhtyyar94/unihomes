@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/authenticate', async (req, res) => {
+router.post('/login', async (req, res) => {
   const {email, password} = req.body
   AgentModel.findOne({email}, (err, result) => {
     console.log(result)
