@@ -1,3 +1,41 @@
 * {
   margin: 0;
 }
+
+.shortlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shortlist-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #03C5F0;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shortlist-header h1 {
+  color: #ffffff
+}
+
+.shortlist-counter {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+}
+
+.shortlist-counter h3 {
+  margin-left: 2%;
+  margin-top: 10px;
+}
+
+.shortlist-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
