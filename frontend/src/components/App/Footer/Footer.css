@@ -34,6 +34,10 @@
 	height: 58px;
 	background-color: #00a2e1;
 	border: 0ch;
+	padding-left: 15px;
+	color: white;
+	font-size: 20px;
+	border-radius: 5px;
 }
 
 #btn-keepintouch {

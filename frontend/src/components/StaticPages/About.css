@@ -1,10 +1,72 @@
 .about-header {
 	height: 153px;
 	background-color: #03c5f0;
+	text-align: center;
+	width: 100%;
+	padding-top: 50px;
+	margin-top: 0px;
+}
+
+.aboutus-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.aboutus-title {
 	color: #fff;
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 44px;
 	line-height: 30px;
+}
+
+.aboutus-content-title {
+	display: flex;
+	flex-wrap: wrap;
+	width: 871px;
+	margin-top: 78px;
+	margin-left: 20%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 30px;
+	color: #000000;
+}
+
+.aboutus-content-text {
+	width: 971px;
+	margin-top: 28px;
+	margin-left: 15%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 30px;
+	color: #000000;
+}
+
+.btn-search-compare-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-search-compare {
+	width: 452px;
+	height: 75px;
+	background: #f49131;
+	border-radius: 10px;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 35px;
+	text-align: center;
+	color: #ffffff;
 }
