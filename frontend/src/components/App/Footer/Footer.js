@@ -18,25 +18,34 @@ const Footer = () => {
 							id="input-keepintouch"
 							placeholder="Enter your email address..."
 						/>
-						<button id="btn-keepintouch" type="submit">
-							Click
-						</button>
 					</form>
 				</div>
 				<div id="social-media">
 					<h1 className="footer-title">Let's Socialize</h1>
 					<div className="sm-icons">
-						<a href="#fb">
+						<a
+							href="https://www.facebook.com/"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<AiOutlineFacebook
 								style={{ fill: 'white', marginRight: 20 }}
 							/>
 						</a>
-						<a href="#instagram">
+						<a
+							href="https://www.instagram.com/"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<AiOutlineInstagram
 								style={{ fill: 'white', marginRight: 20 }}
 							/>
 						</a>
-						<a href="#twitter">
+						<a
+							href="https://twitter.com/home"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<AiFillTwitterCircle style={{ fill: 'white' }} />
 						</a>
 					</div>
@@ -49,10 +58,10 @@ const Footer = () => {
 							<a href="/aboutus">About Us</a>
 						</li>
 						<li>
-							<a href="#terms">Terms & Conditions</a>
+							<a href="/terms">Terms & Conditions</a>
 						</li>
 						<li>
-							<a href="#policies">Privacy & Cookie Policies</a>
+							<a href="/policies">Privacy & Cookie Policies</a>
 						</li>
 						<li style={{ float: 'right' }}>
 							2021 &copy; SoftwareChasers

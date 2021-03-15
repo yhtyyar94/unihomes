@@ -35,6 +35,13 @@ const About = () => {
 					</p>
 				</div>
 			</div>
+			<div className="btn-search-compare-container">
+				<a href="/">
+					<button className="btn-search-compare">
+						Search and Compare
+					</button>
+				</a>
+			</div>
 		</div>
 	);
 };
