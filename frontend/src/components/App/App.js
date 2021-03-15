@@ -8,6 +8,8 @@ import './App.css';
 import HomeDetails from '../HomeDetails/HomeDetails';
 import Shortlist from './Shortlist';
 import About from '../StaticPages/About';
+import Terms from '../StaticPages/Terms';
+import Policies from '../StaticPages/Policies';
 
 export default function App() {
 	return (
@@ -21,6 +23,8 @@ export default function App() {
 					<Route exact path="/homedetails" component={HomeDetails} />
 					<Route exact path="/shortlists" component={Shortlist} />
 					<Route exact path="/aboutus" component={About} />
+					<Route exact path="/terms" component={Terms} />
+					<Route exact path="/policies" component={Policies} />
 				</Switch>
 			</Router>
 			<Footer />
