@@ -157,3 +157,32 @@
   text-align: center;
   color: #ffffff;
 }
+
+#header{
+  background-color:#03C5F0 ;
+  height: 100;
+  width: 100%;
+  padding-top: 5px;
+  align-items: baseline;
+  
+}
+
+#unihomes{
+  margin: 5px;
+  color: white;
+  text-align: left;
+  font-size: 40px;
+}
+
+
+.navbar-item{
+  float: right;
+  flex-direction: row-reverse;
+  color: white;
+  margin-left: 50px;
+  padding-top: 10;
+}
+
+
+
+
