@@ -26,7 +26,7 @@ export default function App() {
         .catch(err=>{
             console.log(err)
         })
-    })
+    },[])
 
 	useEffect(()=>{
         axios.get('http://localhost:5000/homes')
@@ -36,7 +36,7 @@ export default function App() {
         .catch(err=>{
             console.log(err)
         })
-    })
+    },[])
 
 	
 
