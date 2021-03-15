@@ -25,7 +25,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:5000/user/authenticate
+POST http://localhost:5001/login
 Content-Type: application/json
 
 {
@@ -60,7 +60,7 @@ GET http://localhost:5000/api/getcities
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtpbTEyM0BnbWFpbC5jb20iLCJpYXQiOjE2MTU0OTIxNjcsImV4cCI6MTYxNTQ5NTc2N30._KfElVyVa7VYv9IPvn4RilGa5_gNKp1_T5Xp9Q9F6dU"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtpbTEyM0BnbWFpbC5jb20iLCJpYXQiOjE2MTU2NjAzMTMsImV4cCI6MTYxNTY2MzkxM30.b7weMpyZQMnlRfjB1K0QMlNzvBx9N1k2Ng6GUkfXw4o"
 }
 
 ###
