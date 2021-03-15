@@ -7,6 +7,7 @@ import Footer from './Footer/Footer';
 import './App.css';
 import HomeDetails from '../HomeDetails/HomeDetails';
 import Shortlist from './Shortlist';
+import About from '../StaticPages/About';
 
 export default function App() {
 	return (
@@ -19,6 +20,7 @@ export default function App() {
 					<Route exact path="/city" component={Cities} />
 					<Route exact path="/homedetails" component={HomeDetails} />
 					<Route exact path="/shortlists" component={Shortlist} />
+					<Route exact path="/about-us" component={About} />
 				</Switch>
 			</Router>
 			<Footer />
