@@ -1,0 +1,372 @@
+{
+  "homes": [
+    {
+      "id": 1,
+      "city_id": 1,
+      "city_description":"Brighton is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 2,
+      "city_id": 1,
+      "city_description":"Brighton is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 3,
+      "city_id": 1,
+      "city_description":"Brighton is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 4,
+      "city_id": 1,
+      "city_description":"Brighton is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 5,
+      "city_id": 1,
+      "city_description":"Brighton is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 6,
+      "city_id": 2,
+      "city_description":"Birmingham is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 7,
+      "city_id": 2,
+      "city_description":"Birmingham is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 8,
+      "city_id": 2,
+      "city_description":"Birmingham is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 9,
+      "city_id": 2,
+      "city_description":"Birmingham is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 10,
+      "city_id": 2,
+      "city_description":"Birmingham is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 11,
+      "city": 3,
+      "city_description":"Newcastle is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 11,
+      "city": 3,
+      "city_description":"Newcastle is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 12,
+      "city": 3,
+      "city_description":"Newcastle is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
+      "id": 13,
+      "city": 3,
+      "city_description":"Newcastle is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here.",
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    }
+  ],
+  "cities":[
+    {
+      "id":1,
+      "name":"Liverpool",
+      "city_description":"Liverpool is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here."
+    },
+    {
+      "id":2,
+      "name":"Birmingham",
+      "city_description":"Birmingham is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here."
+    },
+    {
+      "id":3,
+      "name":"Newcastle",
+      "city_description":"Newcastle is a great location for students, no matter what you’re looking to get out of your time at university. Dubbed the UK’s ‘happiest city for students’, it’s understandable that over 30,000 students choose Brighton to call home every year. The city has a vibe like nowhere else in the UK, which is why 93% of students say they are ‘very happy’ here."
+    }
+
+  ]
+}
