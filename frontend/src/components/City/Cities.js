@@ -3,13 +3,9 @@ import data from './Data'
 import City from './City'
 import './Cities.css'
 
-export default function Cities() {
+export default function Cities({homes}) {
 
-const [homes,setHomes]=useState(data)
 
-// const change=()=>{
-
-// }
     return (
     <div>
         <div className="filter">
