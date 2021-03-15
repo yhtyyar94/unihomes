@@ -11,6 +11,7 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
+        "postcode": "NW5 3AN"
       },
       "type": "House",
       "keyFeatures": [
