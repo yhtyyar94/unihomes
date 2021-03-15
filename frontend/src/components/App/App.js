@@ -20,7 +20,7 @@ export default function App() {
 					<Route exact path="/city" component={Cities} />
 					<Route exact path="/homedetails" component={HomeDetails} />
 					<Route exact path="/shortlists" component={Shortlist} />
-					<Route exact path="/about-us" component={About} />
+					<Route exact path="/aboutus" component={About} />
 				</Switch>
 			</Router>
 			<Footer />

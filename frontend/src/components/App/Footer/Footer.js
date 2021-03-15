@@ -46,7 +46,7 @@ const Footer = () => {
 				<nav>
 					<ul>
 						<li>
-							<a href="/about-us">About Us</a>
+							<a href="/aboutus">About Us</a>
 						</li>
 						<li>
 							<a href="#terms">Terms & Conditions</a>
