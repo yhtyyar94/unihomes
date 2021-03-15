@@ -9,7 +9,6 @@ import {
 const Footer = () => {
 	return (
 		<div>
-			<div style={{ height: 500 }}></div>
 			<div className="keepintouch-sm">
 				<div id="keepintouch">
 					<h1 className="footer-title">Keep In Touch</h1>
