@@ -17,6 +17,8 @@ export default function App() {
 
     const[cities,setCities]=useState([])
 	const[homes,setHomes]=useState([])
+	const[currentCity,setCurrentCity]=useState('Liverpool')
+	const[roomCount,setRoomCount]=useState(4)
 
     useEffect(()=>{
         axios.get('http://localhost:5000/cities')
@@ -38,9 +40,11 @@ export default function App() {
         })
     },[])
 
+	 const handleSubmit =(cityName,roomNum)=>{
+		 setCurrentCity(cityName)
+		 setRoomCount(roomNum)
+	 }
 	
-
-
 
 	return (
 		<div>
@@ -48,8 +52,11 @@ export default function App() {
 
 			<Router>
 				<Switch>
-					<Route exact path="/" render={()=><Search cities={cities}/>} />
-					<Route exact path="/city" render={()=><Cities homes={homes}/>} />
+					<Route exact path="/" render={()=><Search cities={cities} currentCity={currentCity} 
+					handleSubmit={handleSubmit} roomCount={roomCount}
+				
+					/>} />
+					<Route exact path="/city" render={()=><Cities homes={homes} currentCity={currentCity} roomCount={roomCount}/>} />
 					<Route exact path="/homedetails" component={HomeDetails} />
 					<Route exact path="/shortlists" component={Shortlist} />
 					<Route exact path="/aboutus" component={About} />
