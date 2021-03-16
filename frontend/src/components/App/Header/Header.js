@@ -4,7 +4,7 @@ import { MdHome } from "react-icons/md";
 import { MdSearch } from "react-icons/md";
 import { MdPerson } from "react-icons/md";
 import { MdMail } from "react-icons/md";
-import { MdBookmark } from "react-icons/md";
+import { GoHeart } from "react-icons/go";
 
 
 
@@ -23,8 +23,10 @@ export default function Header() {
                 <li >
                 <h2 a href="/" id="unihomes" style={{fontSize: 35}}><MdHome />Unihomes</h2>
                 </li>
-                <a href ="/LoginPop" className="navbar-item"><MdPerson /> Login</a>               
-                <a href ="/shortlist" className="navbar-item"><MdBookmark /> Shortlist</a>
+                
+                <a href ="/LoginPop" className="navbar-item"><MdPerson /> Login</a>   
+                           
+                <a href ="/shortlist" className="navbar-item"><GoHeart /> Shortlist</a>
               <a href ="/contact" className="navbar-item"><MdMail /> Contant Us</a> 
                <a href ="/" className="navbar-item"><MdSearch /> Search</a>
       
