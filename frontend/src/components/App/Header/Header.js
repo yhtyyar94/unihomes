@@ -5,6 +5,7 @@ import { MdSearch } from "react-icons/md";
 import { MdPerson } from "react-icons/md";
 import { MdMail } from "react-icons/md";
 import { GoHeart } from "react-icons/go";
+import {MdBookmark} from "react-icons/md"
 import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
 import Login from "./LoginPop.js";
 
@@ -30,16 +31,8 @@ export default function Header({toggleLogin}) {
                 <li >
                 <h2 a href="/" id="unihomes" style={{fontSize: 35}}><MdHome />Unihomes</h2>
                 </li>
-<<<<<<< Updated upstream
-                <button id="PopoverLegacy" className="navbar-item"><MdPerson /> Login</button>
-                <UncontrolledPopover trigger="legacy" placement="bottom" target="PopoverLegacy">
-        <Login></Login>
-      </UncontrolledPopover>
-                <a href ="/shortlists" className="navbar-item"><GoHeart /> Shortlist</a>
-=======
                 <button href ="/LoginPop" className="navbar-item" onClick={toggleLogin}><MdPerson /> Login</button>               
                 <a href ="/shortlists" className="navbar-item"><MdBookmark /> Shortlist</a>
->>>>>>> Stashed changes
               <a href ="/contact" className="navbar-item"><MdMail /> Contant Us</a> 
                <a href ="/" className="navbar-item"><MdSearch /> Search</a>
       
