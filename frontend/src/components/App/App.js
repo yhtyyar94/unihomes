@@ -21,7 +21,7 @@ export default function App() {
 	const[homes,setHomes]=useState([])
 	const[currentCity,setCurrentCity]=useState('Liverpool')
 	const[roomCount,setRoomCount]=useState(4)
-	const[login,setLog]=useState(true)
+	const[login,setLog]=useState(false)
 	const[signup,setSignUp]=useState()
 	
 
@@ -58,8 +58,14 @@ export default function App() {
 	 }
 
 	 const toggleLogin=()=>{
-		 setLog(!login)
-		
+		 if(signup) {
+			setSignUp(false);
+			setLog(false)
+		 } else{
+			setLog(!login);
+		 }
+		 
+		 
 	 }
 	 const register=()=>{
 		 setLog(false)
@@ -79,13 +85,9 @@ export default function App() {
 		<div>
 			<Header toggleLogin={toggleLogin} />
 			{login===true ? 
-            <div style={{position:'absolute',marginLeft:'300px',zIndex:30}}><LoginPop register={register}/></div> : null 
-            
-        }
-		{signup===true ? 
-		<div style={{position:'absolute',marginLeft:'300px',zIndex:30}}><RegisterPop register={register} backtoLogin={backtoLogin}/></div> : null 
-	
-	}
+            <LoginPop register={register}/> : null }
+			{signup===true ? 
+						<RegisterPop backtoLogin={backtoLogin}/> : null }
 			<Router>
 				<Switch>
 					<Route exact path="/" render={()=><Search  cities={cities} currentCity={currentCity} 
