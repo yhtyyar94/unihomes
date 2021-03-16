@@ -75,6 +75,8 @@
 	height: 33px;
 	padding-left: 10px;
 	font-family: Roboto;
+	border: none;
+	border-radius: 3px;
 }
 .book-viewing-form input::placeholder {
 	height: 18px;
@@ -118,7 +120,7 @@
 	align-items: center;
 	margin: 0 auto;
 	height: 100px;
-	margin-left: 72%;
+	margin-left: 75%;
 }
 
 .btn-book-viewing {
