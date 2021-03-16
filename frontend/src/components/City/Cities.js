@@ -1,45 +1,58 @@
-import React,{useState} from 'react'
-import data from './Data'
+import React from 'react'
 import City from './City'
 import './Cities.css'
 
-export default function Cities({homes,currentCity,roomCount}) {
+export default function Cities({homes,currentCity,roomCount,filterBedrooms}) {
     
    const numbers = [1,2,3,4,5,6,7,8,9,'10+']
    const maxPrice=['£65','£80','£100','£120','£140','£160','£180','£200']
   
+   
     return (
     <div>
                 <div className="filter">
-                        <h3>Student accomodation in {currentCity} {roomCount}</h3>
-                        
-                        <form>
-                                <label>Bedroom</label>
-                                <select>
-                                    <option>Any</option>   
-                                    {numbers.map(number=><option>{number}</option>)}
-                                </select>
-                                <label>Bathroom</label>
-                                <select>
-                                    <option>Any</option>
-                                    {numbers.map(number=><option>{number}</option>)}
-                                </select>
-                                <label>Max Price</label>
-                                <select>
-                                    <option>Any</option>
-                                    {maxPrice.map(price=><option>{price}</option>)}
-                                </select>
-                                <label>Home Type</label>
-                                <select>
-                                    <option>House</option>
-                                    <option>Apartment</option>
-                                </select>
-                        </form>
-                </div> 
+                        <h3 className="title-text">Student accomodation in {currentCity}</h3>
+                   
+                        <form style={{display:"flex"}}>
+                                    <div className="form-select">
+                                            <label>Bedroom</label>
+                                            <select className="form-option" onChange={(e)=>filterBedrooms(e.target.value)} >
+                                                <option>Any</option>   
+                                                {numbers.map(number=><option>{number}</option>)}
+                                            </select>
+                                    </div>
+                                    <div className="form-select">
+                                            <label>Bathroom</label>
+                                            <select className="form-option">
+                                                <option>Any</option>
+                                                {numbers.map(number=><option>{number}</option>)}
+                                            </select>
+                                    </div>
+                                    <div className="form-select">
+                                            <label>Max Price</label>
+                                            <select className="form-option">
+                                                <option>Any</option>
+                                                {maxPrice.map(price=><option>{price}</option>)}
+                                            </select>
+                                    </div>
+                                    <div className="form-select">
+                                            <label>Home Type</label>
+                                            <select className="form-option">
+                                                <option>House</option>
+                                                <option>Apartment</option>
+                                            </select>
+                                    </div>
+                            </form>         
+                    </div> 
                 <div >
-                        
+                    
+                        <div style={{backgroundColor:"#e5e5e5", padding:"20px"}}>
+                            <h3>{homes.filter(home=>
+                                home.city_id===1).length} homes in {currentCity} </h3>
+                        </div>
                         <div className="homes">
-                            {homes.map(home=> 
+                            
+                            {homes.filter(item=>item.city_id===1).map(home=> 
                             <City home={home}/>       
                             )}
                         </div> 
