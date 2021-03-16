@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Header.css"
 
-export default function RegisterPop() {
+export default function RegisterPop({backtoLogin}) {
   return (
     <div className="regContainer">
     <form >
@@ -13,11 +13,11 @@ export default function RegisterPop() {
       <input type="password" className="inputTwo" placeholder="Enter Password" id="psw" name="psw" required/>
       <label for="psw-repeat" className="logTitleFour"><b>Repeat Password</b></label>
       <input type="password" className="inputThree" placeholder="Repeat Password" id="psw-repeat" name="psw-repeat" required/>
-      <button className="signupBtn">Sign Up</button>
+      <button className="signupBtn" >Sign Up</button>
       
     </form> 
       <div className="loginPlc"></div>
-      <button className="loginBtn2">Login</button>
+      <button className="loginBtn2" onClick={backtoLogin}>Login</button>
     </div>
   )
 }

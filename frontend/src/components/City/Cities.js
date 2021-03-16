@@ -1,12 +1,19 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import City from './City'
 import './Cities.css'
 
-export default function Cities({homes,currentCity,roomCount,filterBedrooms}) {
+export default function Cities({homes,roomCount,filterBedrooms}) {
     
    const numbers = [1,2,3,4,5,6,7,8,9,'10+']
    const maxPrice=['£65','£80','£100','£120','£140','£160','£180','£200']
-  
+   const [currentCity,setCurrentCity]=useState([])
+
+  useEffect(()=>{
+      const data = localStorage.getItem("list");
+      if(data){
+          setCurrentCity(JSON.parse(data))
+      }
+  })
    
     return (
     <div>
