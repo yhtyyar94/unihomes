@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import axios from 'axios'
 import Search from './Search/Search';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -19,10 +19,12 @@ export default function App() {
 	const[homes,setHomes]=useState([])
 	const[currentCity,setCurrentCity]=useState('Liverpool')
 	const[roomCount,setRoomCount]=useState(4)
+	
+
 
     useEffect(()=>{
         axios.get('http://localhost:5000/cities')
-        .then(res=>{
+        .then(res=>{ 
             setCities(res.data)
         })
         .catch(err=>{
@@ -44,19 +46,25 @@ export default function App() {
 		 setCurrentCity(cityName)
 		 setRoomCount(roomNum)
 	 }
+	 const filterBedrooms=(bedroom)=>{
+		let filteredHomes=homes.filter(home=>home.bedroom===bedroom)
+		setHomes(filteredHomes)
 	
-
+	 }
+    
+	
 	return (
 		<div>
 			<Header />
-
 			<Router>
 				<Switch>
 					<Route exact path="/" render={()=><Search cities={cities} currentCity={currentCity} 
-					handleSubmit={handleSubmit} roomCount={roomCount}
-				
+					handleSubmit={handleSubmit} roomCount={roomCount}/>} />
+					<Route exact path="/city" render={()=><Cities homes={homes} 
+					currentCity={currentCity} 
+					roomCount={roomCount}
+					filterBedrooms={filterBedrooms}
 					/>} />
-					<Route exact path="/city" render={()=><Cities homes={homes} currentCity={currentCity} roomCount={roomCount}/>} />
 					<Route exact path="/homedetails" component={HomeDetails} />
 					<Route exact path="/shortlists" component={Shortlist} />
 					<Route exact path="/aboutus" component={About} />

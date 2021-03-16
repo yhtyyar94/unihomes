@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+// import {Link} from 'react'
 import './Search.css'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function Search({cities,currentCity,roomCount,handleSubmit}) {
 
@@ -39,7 +39,7 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
                                             <option value="6">6</option>
                                     </select>
 
-                                    <button className="btn-search" >Find Homes </button>
+                                    <button className="btn-search">Find Homes </button>
                             </form>
                     </div> 
                 </div>  
