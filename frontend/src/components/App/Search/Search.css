@@ -125,10 +125,11 @@
   .form-container {
     margin-top: 150px;
     margin-left: 220px;
+    width:300px;
   }
   .form-search {
     padding: 30px;
-    width: 50%;
+    width: 100%;
     height: auto;
   }
   .select-search {
@@ -148,14 +149,14 @@
   }
 }
 
-@media (max-width: 320px) {
+/* @media (max-width: 360px) {
   .banner {
     height: 300px;
   }
 
   .banner h1 {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 15px;
+    line-height: 20px;
   }
   .banner h5 {
     font-size: 12px;
@@ -179,11 +180,13 @@
   .form-container {
     margin-top: 140px;
     margin-left: 70px;
+   width:200px;
+   
   }
 
   .form-search {
     padding: 5px;
-    width: 50%;
+    width: 100%;
     height: auto;
   }
   .select-search {
@@ -202,4 +205,4 @@
     background-color: pink;
    
   }
-}
+} */
