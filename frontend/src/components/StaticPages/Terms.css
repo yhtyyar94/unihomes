@@ -1,0 +1,18 @@
+.terms-header {
+	height: 153px;
+	background-color: #03c5f0;
+	text-align: center;
+	width: 100%;
+	padding-top: 50px;
+	margin-top: 0px;
+	margin-bottom: 78px;
+}
+
+.terms-title {
+	color: #fff;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 44px;
+	line-height: 30px;
+}

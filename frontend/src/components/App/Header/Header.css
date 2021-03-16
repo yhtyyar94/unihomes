@@ -2,8 +2,19 @@
   position: relative;
   width: 374px;
   height: 450px;
-  overflow: scroll;
+  /* overflow: scroll; */
   background: #00bfff;
+  border-radius: 3px;
+  box-shadow: 0 -3px 3px rgb(0 0 0 / 10%), 0 3px 3px #ececfb;
+}
+.regContainer {
+  position: relative;
+  width: 374px;
+  height: 542px;
+  /* overflow: scroll; */
+  background: #00bfff;
+  border-radius: 3px;
+  box-shadow: 0 -3px 3px rgb(0 0 0 / 10%), 0 3px 3px #ececfb;
 }
 
 .logTitle {
@@ -77,26 +88,49 @@
   background: #ffffff;
   border-width: 0px;
 }
-.forgotPass {
+.logTitleFour {
   position: absolute;
-  width: 87px;
-  height: 11px;
+  width: 200px;
+  height: 18px;
   left: 18px;
-  top: 235px;
+  top: 250px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 18px;
+  line-height: 21px;
   color: #ffffff;
 }
-
+.inputThree {
+  position: absolute;
+  width: 300px;
+  height: 25px;
+  left: 18px;
+  top: 275px;
+  background: #ffffff;
+  border-width: 0px;
+}
 .loginBtn {
   position: absolute;
   width: 305px;
   height: 51px;
   left: 18px;
   top: 269px;
+  background: #ff8c00;
+  border-width: 0px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+}
+.signupBtn {
+  position: absolute;
+  width: 305px;
+  height: 51px;
+  left: 18px;
+  top: 350px;
   background: #ff8c00;
   border-width: 0px;
   font-family: Roboto;
@@ -115,7 +149,15 @@
   top: 333px;
   background: #ffffff;
 }
-
+.loginPlc {
+  position: absolute;
+  width: 374px;
+  height: 117px;
+  left: 0px;
+  top: 425px;
+  background: #ffffff;
+  
+}
 .registerTxt {
   position: absolute;
   width: 218px;
@@ -157,7 +199,22 @@
   text-align: center;
   color: #ffffff;
 }
-
+.loginBtn2 {
+  position: absolute;
+  width: 305px;
+  height: 40px;
+  left: 22px;
+  top: 470px;
+  background: #00bfff;
+  border-width: 0px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+}
 #header{
   background-color:#03C5F0 ;
   height: 100;

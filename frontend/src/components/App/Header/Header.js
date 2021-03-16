@@ -23,10 +23,15 @@ export default function Header() {
                 <li >
                 <h2 a href="/" id="unihomes" style={{fontSize: 35}}><MdHome />Unihomes</h2>
                 </li>
+
                 
                 <a href ="/LoginPop" className="navbar-item"><MdPerson /> Login</a>   
                            
                 <a href ="/shortlist" className="navbar-item"><GoHeart /> Shortlist</a>
+
+                <a href ="/LoginPop" className="navbar-item"><MdPerson /> Login</a>               
+                <a href ="/shortlists" className="navbar-item"><GoHeart /> Shortlist</a>
+
               <a href ="/contact" className="navbar-item"><MdMail /> Contant Us</a> 
                <a href ="/" className="navbar-item"><MdSearch /> Search</a>
       
