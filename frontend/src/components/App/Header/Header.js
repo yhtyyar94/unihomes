@@ -5,6 +5,8 @@ import { MdSearch } from "react-icons/md";
 import { MdPerson } from "react-icons/md";
 import { MdMail } from "react-icons/md";
 import { GoHeart } from "react-icons/go";
+import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
+import Login from "./LoginPop.js";
 
 
 
@@ -13,6 +15,11 @@ import { GoHeart } from "react-icons/go";
 export default function Header() {
     return (
         <div id="header">
+
+            <div>
+
+
+            </div>
         
         
         <div className = "unihomes-h">
@@ -23,19 +30,20 @@ export default function Header() {
                 <li >
                 <h2 a href="/" id="unihomes" style={{fontSize: 35}}><MdHome />Unihomes</h2>
                 </li>
-
-                
-                
-
-                <a href ="/LoginPop" className="navbar-item"><MdPerson /> Login</a>               
+                <button id="PopoverLegacy" className="navbar-item"><MdPerson /> Login</button>
+                <UncontrolledPopover trigger="legacy" placement="bottom" target="PopoverLegacy">
+        <Login></Login>
+      </UncontrolledPopover>
                 <a href ="/shortlists" className="navbar-item"><GoHeart /> Shortlist</a>
               <a href ="/contact" className="navbar-item"><MdMail /> Contant Us</a> 
                <a href ="/" className="navbar-item"><MdSearch /> Search</a>
       
             </section>
         </div>
-
         </div>
+
+    
+        
 
      
     )
