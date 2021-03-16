@@ -19,7 +19,7 @@ export default function App() {
 	const [homes, setHomes] = useState([]);
 	const [currentCity, setCurrentCity] = useState('Liverpool');
 	const [roomCount, setRoomCount] = useState(4);
-	const [login, setLog] = useState(true);
+	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
 
 	useEffect(() => {
@@ -27,7 +27,7 @@ export default function App() {
 			.get('http://localhost:5000/cities')
 			.then((res) => {
 				setCities(res.data);
-			})
+			}) 
 			.catch((err) => {
 				console.log(err);
 			});
@@ -88,9 +88,7 @@ export default function App() {
 		setLog(true);
 	};
 
-	// useEffect(() => {
-	// localStorage.setItem('list',JSON.stringify(cities))
-	// }, [])
+	
 	return (
 		<div>
 			<Header toggleLogin={toggleLogin} />

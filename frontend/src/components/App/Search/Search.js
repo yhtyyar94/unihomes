@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 
 // import {Link} from 'react'
 import './Search.css'
@@ -40,7 +41,7 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
                                             <option value="6">6</option>
                                     </select>
 
-                                    <button className="btn-search">Find Homes </button>
+                                   <button className="btn-search">Find Homes </button> 
                             </form>
                     </div> 
                 </div>  

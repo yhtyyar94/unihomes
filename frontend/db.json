@@ -4,7 +4,7 @@
       "id": 1,
       "city_id": 1,
       "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
-      "rent": 106,
+      "rent": 16,
       "bedroom": 5,
       "bathroom": 2,
       "address": {
@@ -28,8 +28,8 @@
       "id": 2,
       "city_id": 1,
       "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
-      "rent": 106,
-      "bedroom": 4,
+      "rent": 16,
+      "bedroom": 3,
       "bathroom": 2,
       "address": {
         "street": "Holmes",

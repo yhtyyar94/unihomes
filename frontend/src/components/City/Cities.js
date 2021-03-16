@@ -6,19 +6,20 @@ export default function Cities({homes,roomCount,filterBedrooms}) {
     
    const numbers = [1,2,3,4,5,6,7,8,9,'10+']
    const maxPrice=['£65','£80','£100','£120','£140','£160','£180','£200']
-   const [currentCity,setCurrentCity]=useState([])
+//    const [currentCity,setCurrentCity]=useState([])
 
-  useEffect(()=>{
-      const data = localStorage.getItem("list");
-      if(data){
-          setCurrentCity(JSON.parse(data))
-      }
-  })
+//   useEffect(()=>{
+//       const data = localStorage.getItem("list");
+//       if(data){
+//           setCurrentCity(JSON.parse(data))
+//       }
+//   })
+
    
     return (
     <div>
                 <div className="filter">
-                        <h3 className="title-text">Student accomodation in {currentCity}</h3>
+                        <h3 className="title-text">Student accomodation in </h3>
                    
                         <form style={{display:"flex"}}>
                                     <div className="form-select">
@@ -49,13 +50,13 @@ export default function Cities({homes,roomCount,filterBedrooms}) {
                                                 <option>Apartment</option>
                                             </select>
                                     </div>
-                            </form>         
+                            </form>          
                     </div> 
                 <div >
                     
                         <div style={{backgroundColor:"#e5e5e5", padding:"20px"}}>
                             <h3>{homes.filter(home=>
-                                home.city_id===1).length} homes in {currentCity} </h3>
+                                home.city_id===1).length} homes in  </h3>
                         </div>
                         <div className="homes">
                             
@@ -70,7 +71,7 @@ export default function Cities({homes,roomCount,filterBedrooms}) {
                         <div className="text">
                                     <h1 >Being a student in Liverpool</h1>
                                     <h5 >An abundance of shops, bars, restaurants, and nightclubs have collectively put Liverpool well and truly on the student map. The city is known for being a party destination (made famous by Geordie Shore), and there’s plenty of this on offer for students. With a diverse mix of places to eat, drink and party, there's no wonder it's such a popular city to study in.</h5>
-                        </div>                      
+                        </div>                       
                 </div>     
             
     </div>
