@@ -1,5 +1,5 @@
-import React,{useState,useEffect,useRef} from 'react';
-import axios from 'axios'
+import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 import Search from './Search/Search';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Cities from '../City/Cities';
@@ -15,8 +15,23 @@ import LoginPop from '../App/Header/LoginPop'
 import RegisterPop from '../App/Header/RegisterPop'
 
 export default function App() {
+	const [cities, setCities] = useState([]);
+	const [homes, setHomes] = useState([]);
+	const [currentCity, setCurrentCity] = useState('Liverpool');
+	const [roomCount, setRoomCount] = useState(4);
 
+	useEffect(() => {
+		axios
+			.get('http://localhost:5000/cities')
+			.then((res) => {
+				setCities(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
 
+<<<<<<< Updated upstream
     const[cities,setCities]=useState([])
 	const[homes,setHomes]=useState([])
 	const[currentCity,setCurrentCity]=useState('Liverpool')
@@ -24,8 +39,29 @@ export default function App() {
 	const[login,setLog]=useState(true)
 	const[signup,setSignUp]=useState()
 	
+=======
+	useEffect(() => {
+		axios
+			.get('http://localhost:5000/homes')
+			.then((res) => {
+				setHomes(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
+>>>>>>> Stashed changes
 
+	const handleSubmit = (cityName, roomNum) => {
+		setCurrentCity(cityName);
+		setRoomCount(roomNum);
+	};
+	const filterBedrooms = (bedroom) => {
+		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
+		setHomes(filteredHomes);
+	};
 
+<<<<<<< Updated upstream
     useEffect(()=>{
         axios.get('http://localhost:5000/cities')
         .then(res=>{ 
@@ -75,6 +111,8 @@ export default function App() {
 	// useEffect(() => {
 	// localStorage.setItem('list',JSON.stringify(cities))
 	// }, [])
+=======
+>>>>>>> Stashed changes
 	return (
 		<div>
 			<Header toggleLogin={toggleLogin} />
@@ -88,6 +126,7 @@ export default function App() {
 	}
 			<Router>
 				<Switch>
+<<<<<<< Updated upstream
 					<Route exact path="/" render={()=><Search  cities={cities} currentCity={currentCity} 
 					handleSubmit={handleSubmit} roomCount={roomCount}/>} />
 					<Route exact path="/city" render={()=><Cities homes={homes} 
@@ -95,6 +134,32 @@ export default function App() {
 					roomCount={roomCount}
 					filterBedrooms={filterBedrooms}
 					/>} />
+=======
+					<Route
+						exact
+						path="/"
+						render={() => (
+							<Search
+								cities={cities}
+								currentCity={currentCity}
+								handleSubmit={handleSubmit}
+								roomCount={roomCount}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/city"
+						render={() => (
+							<Cities
+								homes={homes}
+								currentCity={currentCity}
+								roomCount={roomCount}
+								filterBedrooms={filterBedrooms}
+							/>
+						)}
+					/>
+>>>>>>> Stashed changes
 					<Route exact path="/homedetails" component={HomeDetails} />
 					<Route exact path="/shortlists" component={Shortlist} />
 					<Route exact path="/aboutus" component={About} />

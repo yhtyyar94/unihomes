@@ -9,7 +9,7 @@
 .book-viewing-container {
 	position: absolute;
 	width: 560px;
-	height: 578px;
+	height: 750px;
 	background: #03c5f0;
 	border: 1px solid #000000;
 	box-sizing: border-box;
@@ -18,7 +18,7 @@
 	border: none;
 }
 
-.btn-book-viewing-close {
+.btn-book-viewing-page-close {
 	float: right;
 	justify-content: right;
 	align-items: flex-start;
@@ -35,14 +35,20 @@
 .book-viewing-form-container {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: left;
 	justify-content: space-around;
 }
 
 .book-viewing-form {
 	display: flex;
 	flex-direction: column;
-	margin-left: 0;
+	padding-left: 30px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 20px;
+	color: #ffffff;
 }
 
 .book-viewing-form-title {
@@ -65,12 +71,54 @@
 	color: #ffffff;
 }
 
+.book-viewing-form input {
+	height: 33px;
+	padding-left: 10px;
+	font-family: Roboto;
+}
+.book-viewing-form input::placeholder {
+	height: 18px;
+	font-family: Roboto;
+	color: lightgray;
+	font-size: 14px;
+}
+
+.book-viewing-form textarea::placeholder {
+	height: 18px;
+	font-family: Roboto;
+	color: lightgray;
+	font-size: 14px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.book-viewing-check-box {
+	font-size: 12px;
+	border: 1px solid white;
+	border-radius: 20px;
+	margin-top: 30px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+.btn-book-viewing-page-form-submit {
+	background: #f49131;
+	border-radius: 10px;
+	border: none;
+	color: white;
+	height: 55px;
+	font-family: Roboto;
+	font-size: 22px;
+}
+
 .btn-book-viewing-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
 	height: 100px;
+	margin-left: 72%;
 }
 
 .btn-book-viewing {
