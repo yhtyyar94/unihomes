@@ -1,0 +1,92 @@
+.homedetails-container {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	height: 1000px;
+}
+
+.book-viewing-container {
+	position: absolute;
+	width: 560px;
+	height: 578px;
+	background: #03c5f0;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	top: 20px;
+	border-radius: 10px;
+	border: none;
+}
+
+.btn-book-viewing-close {
+	float: right;
+	justify-content: right;
+	align-items: flex-start;
+	border: solid 1px white;
+	background-color: #03c5f0;
+	font-weight: bolder;
+	color: white;
+	border-radius: 50%;
+	padding: 5px 9px;
+	margin-top: 8px;
+	margin-right: 8px;
+}
+
+.book-viewing-form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.book-viewing-form {
+	display: flex;
+	flex-direction: column;
+	margin-left: 0;
+}
+
+.book-viewing-form-title {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 26px;
+	text-align: center;
+	color: #ffffff;
+	padding-top: 40px;
+}
+.book-viewing-form-address {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 56px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.btn-book-viewing-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	height: 100px;
+}
+
+.btn-book-viewing {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 348px;
+	height: 52px;
+	background: #f49131;
+	border-radius: 5px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 26px;
+	text-align: center;
+	color: #ffffff;
+	border: none;
+}
