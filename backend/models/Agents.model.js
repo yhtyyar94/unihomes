@@ -30,6 +30,10 @@ const UserSchema = new Schema({
     type: String,
     require: [true, 'Please choose a city ']
    },
+   meetingdate:{
+       type:Array,
+       required:true
+   },
    createdAt:{
     type:Date,default: Date.now
 }

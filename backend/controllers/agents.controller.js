@@ -39,14 +39,14 @@ exports.create = async (req, res) => {
     }) 
 */
 //hashed pass
-const {email, password,name,contactNumber,company,city} = req.body
+const {email, password} = req.body
 
   bcrypt.hash(password, 10)
   .then(hashedPassword => {
     const agent = new AgentModel({
       email,
-      password:hashedPassword,
-      name,contactNumber,company,city
+      password:hashedPassword
+     
     })
   
     agent.save((err, data) => {

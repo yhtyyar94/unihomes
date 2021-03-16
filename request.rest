@@ -10,12 +10,17 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:5000/createagent
+POST http://localhost:5000/api/users/createagent
 Content-Type: application/json
 
 {
-    "email":"black1@gmail.com",
-    "password":"123asd"
+      "email":"kim@gmail.com",
+    "password":"123",
+    "name" : "Kim",
+    "contactNumber" : 125866987,
+    "company" : "New3",
+    "city" : "London",
+    "meetingdate":[]
 }
 
 ###
@@ -51,9 +56,9 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/api/getproperties
+GET http://localhost:5000/api/getagents
 Content-Type: application/json
 
 {
-    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJsYWNrQGdtYWlsLmNvbSIsImlhdCI6MTYxNTQ2NTA4NywiZXhwIjoxNjE1NDY4Njg3fQ.feJLcTNn8Ww5hTIPeFXCragksgYZlFKUKoAbpGt1T2g"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJsYWNrQGdtYWlsLmNvbSIsImlhdCI6MTYxNTQ2Njg5NywiZXhwIjoxNjE1NDcwNDk3fQ.e4l3Y_Rt2ouwqpEEnGEROmEGnc8gQTwluYyrRvIGKws"
 }
