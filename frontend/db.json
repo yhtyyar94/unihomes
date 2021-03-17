@@ -36,7 +36,7 @@
         "district": "Kentish Town",
         "postcode": "NW5 3AN"
       },
-      "type": "House",
+      "type": "Apartment",
       "keyFeatures": [
         "8 bedroom house in Highfield within easy access of the university and the local amenities",
         "Central heating",
@@ -125,7 +125,7 @@
       "city_id": 2,
       "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
       "rent": 106,
-      "bedroom": 4,
+      "bedroom": 6,
       "bathroom": 2,
       "address": {
         "street": "Holmes",
@@ -217,6 +217,30 @@
       "availability":"14th August 2021"
     },
     {
+      "id": 20,
+      "city_id": 2,
+      "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
+      "rent": 106,
+      "bedroom": 4,
+      "bathroom": 2,
+      "address": {
+        "street": "Holmes",
+        "district": "Kentish Town",
+        "postcode": "NW5 3AN"
+      },
+      "type": "House",
+      "keyFeatures": [
+        "8 bedroom house in Highfield within easy access of the university and the local amenities",
+        "Central heating",
+        "Double glazing",
+        "Parking available",
+        "A few minutes walk from University of Southampton Highfield Campus"
+      ],
+      "home_description": "Superb eight bedroom, three bathroom, student property located in Falmer, walking distance to both Universities, the Amex and multiple transport links to the town centre! The accommodation briefly comprises of an entrance hallway leading to large bright living room which opens into a modern kitchen which includes two large fridge freezers, dish washer, gas hob, two ovens and double patio doors to the rear garden. The ground floor also has a modern shower room with toilet and the first double bedroom. The first floor consists of four good sized double bedrooms and a second spacious, modern bathroom with toilet. Up a second set of stairs is the top floor which consists of three double bedrooms and another modern shower room with toilet.",
+      "deposit":"Deposit will be confirmed by the letting agent.",
+      "availability":"14th August 2021"
+    },
+    {
       "id": 10,
       "city_id": 2,
       "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
@@ -269,7 +293,7 @@
       "city_id": 3,
       "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
       "rent": 106,
-      "bedroom": 4,
+      "bedroom": 2,
       "bathroom": 2,
       "address": {
         "street": "Holmes",
@@ -293,7 +317,7 @@
       "city_id": 3,
       "url": "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
       "rent": 106,
-      "bedroom": 4,
+      "bedroom": 2,
       "bathroom": 2,
       "address": {
         "street": "Holmes",

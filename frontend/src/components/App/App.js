@@ -44,33 +44,7 @@ export default function App() {
 			});
 	}, []);
 
-	useEffect(() => {
-		axios
-			.get('http://localhost:5000/cities')
-			.then((res) => {
-				setCities(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	}, []);
 
-	useEffect(() => {
-		axios 
-			.get('http://localhost:5000/homes')
-			.then((res) => {
-				setHomes(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	}, []); 
-
-	const handleSubmit = (cityName, roomNum) => {
-		// localStorage.setItem('list', JSON.stringify(cityName));
-		// setCurrentCity(cityName);
-		// setRoomCount(roomNum);
-	};
 	const filterBedrooms = (bedroom) => {
 		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
 		setHomes(filteredHomes);
@@ -114,19 +88,16 @@ export default function App() {
 						render={() => (
 							<Search
 								cities={cities}
-								// currentCity={currentCity}
-								handleSubmit={handleSubmit}
-								// roomCount={roomCount}
 							/>
 						)}
 					/>
 					<Route
 						
-						path={`/cities/:id`}
+						path={`/cities/:id/:bedroom`}
 						render={() => (
 							<Cities
 								homes={homes}
-								// roomCount={roomCount}
+								cities={cities}
 								filterBedrooms={filterBedrooms}
 							/>
 						)}

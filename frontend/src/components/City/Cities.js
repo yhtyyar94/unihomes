@@ -1,35 +1,34 @@
-import React,{useEffect,useState} from 'react'
+import React,{useLayoutEffect,useState} from 'react'
 import City from './City'
 import {useParams} from 'react-router-dom'
 import './Cities.css'
 
-export default function Cities({homes,filterBedrooms,currentCity}) {
-    // const{name}=useParams()
-    const{id}=useParams()
+export default function Cities({homes,filterBedrooms,currentCity,cities}) {
     
-   const numbers = [1,2,3,4,5,6,7,8,9,'10+']
+    const{id}=useParams()
+    const{bedroom}=useParams()
+   
+    
+    
+   const numbers = [1,2,3,4,5,6,7,8,9,10]
    const maxPrice=['£65','£80','£100','£120','£140','£160','£180','£200']
-//    const [currentCity,setCurrentCity]=useState([])
 
-//   useEffect(()=>{
-//       const data = localStorage.getItem("list");
-//       if(data){
-//           setCurrentCity(JSON.parse(data))
-//       }
-//   })
-  
+   useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+   }, [])
    
     return ( 
     <div>
                 <div className="filter">
-                        <h3 className="title-text">Student accomodation in  {id}</h3>
-                   
+                 
+                {cities.map(city=>city.id===id*1 ? <h3 className="title-text">Student accomodation in {city.name} </h3> : null) }
+     
                         <form style={{display:"flex"}}>
                                     <div className="form-select">
                                             <label>Bedroom</label>
                                             <select className="form-option" onChange={(e)=>filterBedrooms(e.target.value)} >
                                                 <option>Any</option>   
-                                                {numbers.map(number=><option>{number}</option>)}
+                                                {numbers.map(number=><option value={number}>{number}</option>)}
                                             </select>
                                     </div>
                                     <div className="form-select">
@@ -59,11 +58,11 @@ export default function Cities({homes,filterBedrooms,currentCity}) {
                     
                         <div style={{backgroundColor:"#e5e5e5", padding:"20px"}}>
                             <h3>{homes.filter(home=>
-                                home.city_id===1).length} homes in {currentCity} </h3>
+                                home.city_id===id*1 && home.bedroom===bedroom*1).length} homes in {cities.map(city=>city.id===id*1 ? <span>{city.name}</span>:null)}</h3>
                         </div>
                         <div className="homes">
                             
-                            {homes.filter(item=>item.city_id===1).map(home=> 
+                            {homes.filter(item=>item.city_id===id*1 && item.bedroom===bedroom*1).map(home=> 
                             <City home={home}/>       
                             )}
                         </div> 
