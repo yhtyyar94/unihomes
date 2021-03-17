@@ -20,7 +20,7 @@ export default function App() {
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
 
-	useEffect(() => {
+	useEffect(() => { 
 		axios
 			.get('http://localhost:5000/cities')
 			.then((res) => {
@@ -31,10 +31,6 @@ export default function App() {
 			});
 	}, []);
 
-    const[cities,setCities]=useState([])
-	const[homes,setHomes]=useState([])
-	const[currentCity,setCurrentCity]=useState('Liverpool')
-	const[roomCount,setRoomCount]=useState(4)
 	
 
 
