@@ -13,7 +13,7 @@ export default function Cities({homes,roomCount,filterBedrooms}) {
       if(data){
           setCurrentCity(JSON.parse(data))
       }
-  })
+  },[])
    
     return (
     <div>
