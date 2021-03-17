@@ -11,6 +11,8 @@ import Shortlist from './Shortlist';
 import About from '../StaticPages/About';
 import Terms from '../StaticPages/Terms';
 import Policies from '../StaticPages/Policies';
+import LoginPop from '../App/Header/LoginPop';
+import RegisterPop from '../App/Header/RegisterPop';
 
 export default function App() {
 	const [cities, setCities] = useState([]);
@@ -20,7 +22,7 @@ export default function App() {
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
 
-	useEffect(() => { 
+	useEffect(() => {
 		axios
 			.get('http://localhost:5000/cities')
 			.then((res) => {
@@ -31,8 +33,27 @@ export default function App() {
 			});
 	}, []);
 
-	
+	useEffect(() => {
+		axios
+			.get('http://localhost:5000/homes')
+			.then((res) => {
+				setHomes(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
 
+	useEffect(() => {
+		axios
+			.get('http://localhost:5000/cities')
+			.then((res) => {
+				setCities(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
 
 	useEffect(() => {
 		axios 
@@ -70,7 +91,21 @@ export default function App() {
 	
 	return (
 		<div>
-			<Header />
+			<Header toggleLogin={toggleLogin} />
+			{login === true ? (
+				<div
+					style={{ position: 'absolute', marginLeft: '300px', zIndex: 30 }}
+				>
+					<LoginPop register={register} />
+				</div>
+			) : null}
+			{signup === true ? (
+				<div
+					style={{ position: 'absolute', marginLeft: '300px', zIndex: 30 }}
+				>
+					<RegisterPop register={register} backtoLogin={backtoLogin} />
+				</div>
+			) : null} 
 			<Router>
 				<Switch>
 					<Route
