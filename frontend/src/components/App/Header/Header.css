@@ -1,5 +1,7 @@
 .logContainer {
-  position: relative;
+  position:absolute;
+  right:0;
+  z-index:30;
   width: 374px;
   height: 450px;
   /* overflow: scroll; */
@@ -8,7 +10,9 @@
   box-shadow: 0 -3px 3px rgb(0 0 0 / 10%), 0 3px 3px #ececfb;
 }
 .regContainer {
-  position: relative;
+  position:absolute;
+  right:0;
+  z-index:30;
   width: 374px;
   height: 542px;
   /* overflow: scroll; */
@@ -230,7 +234,6 @@
   text-align: left;
   font-size: 40px;
 }
-
 
 .navbar-item{
   float: right;

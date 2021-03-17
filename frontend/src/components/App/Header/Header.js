@@ -5,8 +5,6 @@ import { MdSearch } from "react-icons/md";
 import { MdPerson } from "react-icons/md";
 import { MdMail } from "react-icons/md";
 import { GoHeart } from "react-icons/go";
-import {MdBookmark} from "react-icons/md"
-import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
 import Login from "./LoginPop.js";
 
 
@@ -31,8 +29,10 @@ export default function Header({toggleLogin}) {
                 <li >
                 <h2 a href="/" id="unihomes" style={{fontSize: 35}}><MdHome />Unihomes</h2>
                 </li>
-                <button href ="/LoginPop" className="navbar-item" onClick={toggleLogin}><MdPerson /> Login</button>               
-                <a href ="/shortlists" className="navbar-item"><MdBookmark /> Shortlist</a>
+
+                <button style={{background:"#00bfff"}} className="navbar-item" onClick={toggleLogin}><MdPerson /> Login</button>               
+                <a href ="/shortlists" className="navbar-item"> Shortlist</a>
+
               <a href ="/contact" className="navbar-item"><MdMail /> Contant Us</a> 
                <a href ="/" className="navbar-item"><MdSearch /> Search</a>
       
