@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import Search from './Search/Search';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -17,8 +17,8 @@ import RegisterPop from '../App/Header/RegisterPop';
 export default function App() {
 	const [cities, setCities] = useState([]);
 	const [homes, setHomes] = useState([]);
-	const [currentCity, setCurrentCity] = useState('Liverpool');
-	const [roomCount, setRoomCount] = useState(4);
+	// const [currentCity, setCurrentCity] = useState('Liverpool');
+	// const [roomCount, setRoomCount] = useState(4);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
 
@@ -56,7 +56,7 @@ export default function App() {
 	}, []);
 
 	useEffect(() => {
-		axios
+		axios 
 			.get('http://localhost:5000/homes')
 			.then((res) => {
 				setHomes(res.data);
@@ -64,12 +64,12 @@ export default function App() {
 			.catch((err) => {
 				console.log(err);
 			});
-	}, []);
+	}, []); 
 
 	const handleSubmit = (cityName, roomNum) => {
-		localStorage.setItem('list', JSON.stringify(cityName));
-		setCurrentCity(cityName);
-		setRoomCount(roomNum);
+		// localStorage.setItem('list', JSON.stringify(cityName));
+		// setCurrentCity(cityName);
+		// setRoomCount(roomNum);
 	};
 	const filterBedrooms = (bedroom) => {
 		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
@@ -114,20 +114,19 @@ export default function App() {
 						render={() => (
 							<Search
 								cities={cities}
-								currentCity={currentCity}
+								// currentCity={currentCity}
 								handleSubmit={handleSubmit}
-								roomCount={roomCount}
+								// roomCount={roomCount}
 							/>
 						)}
 					/>
 					<Route
-						exact
-						path="/city"
+						
+						path={`/cities/:id`}
 						render={() => (
 							<Cities
 								homes={homes}
-								currentCity={currentCity}
-								roomCount={roomCount}
+								// roomCount={roomCount}
 								filterBedrooms={filterBedrooms}
 							/>
 						)}

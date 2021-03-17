@@ -1,8 +1,11 @@
 import React,{useEffect,useState} from 'react'
 import City from './City'
+import {useParams} from 'react-router-dom'
 import './Cities.css'
 
-export default function Cities({homes,roomCount,filterBedrooms}) {
+export default function Cities({homes,filterBedrooms,currentCity}) {
+    // const{name}=useParams()
+    const{id}=useParams()
     
    const numbers = [1,2,3,4,5,6,7,8,9,'10+']
    const maxPrice=['£65','£80','£100','£120','£140','£160','£180','£200']
@@ -14,12 +17,12 @@ export default function Cities({homes,roomCount,filterBedrooms}) {
 //           setCurrentCity(JSON.parse(data))
 //       }
 //   })
-
+  
    
-    return (
+    return ( 
     <div>
                 <div className="filter">
-                        <h3 className="title-text">Student accomodation in </h3>
+                        <h3 className="title-text">Student accomodation in  {id}</h3>
                    
                         <form style={{display:"flex"}}>
                                     <div className="form-select">
@@ -56,7 +59,7 @@ export default function Cities({homes,roomCount,filterBedrooms}) {
                     
                         <div style={{backgroundColor:"#e5e5e5", padding:"20px"}}>
                             <h3>{homes.filter(home=>
-                                home.city_id===1).length} homes in  </h3>
+                                home.city_id===1).length} homes in {currentCity} </h3>
                         </div>
                         <div className="homes">
                             
