@@ -35,6 +35,7 @@
   color: #ffffff;
 }
 
+
 .logLine {
   position: absolute;
   width: 340.01px;
@@ -45,13 +46,26 @@
   transform: rotate(-0.33deg);
   border-width: 0px;
 }
+.logTitleOne {
+  position: absolute;
+  width: 165px;
+  height: 27px;
+  left: 18px;
+  top: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+}
 
 .logTitleTwo {
   position: absolute;
   height: 18px;
   width: 106px;
   left: 18px;
-  top: 100px;
+  top: 175px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -75,7 +89,7 @@
   width: 106px;
   height: 18px;
   left: 18px;
-  top: 175px;
+  top: 250px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -97,7 +111,7 @@
   width: 200px;
   height: 18px;
   left: 18px;
-  top: 250px;
+  top: 325px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;

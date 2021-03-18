@@ -11,6 +11,8 @@ import Shortlist from './Shortlist';
 import About from '../StaticPages/About';
 import Terms from '../StaticPages/Terms';
 import Policies from '../StaticPages/Policies';
+import LoginPop from '../App/Header/LoginPop';
+import RegisterPop from '../App/Header/RegisterPop';
 
 export default function App() {
 	const [cities, setCities] = useState([]);
@@ -31,12 +33,27 @@ export default function App() {
 			});
 	}, []);
 
-    const[cities,setCities]=useState([])
-	const[homes,setHomes]=useState([])
-	const[currentCity,setCurrentCity]=useState('Liverpool')
-	const[roomCount,setRoomCount]=useState(4)
-	
+	useEffect(() => {
+		axios
+			.get('http://localhost:5000/homes')
+			.then((res) => {
+				setHomes(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
 
+	useEffect(() => {
+		axios
+			.get('http://localhost:5000/cities')
+			.then((res) => {
+				setCities(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
 
 	useEffect(() => {
 		axios 
@@ -60,7 +77,13 @@ export default function App() {
 	};
 
 	const toggleLogin = () => {
-		setLog(!login);
+		if(signup===true) {
+			setSignUp(false);
+			setLog(false);
+		} else {
+			setLog(!login);
+		}
+	
 	};
 	const register = () => {
 		setLog(false);
@@ -74,7 +97,9 @@ export default function App() {
 	
 	return (
 		<div>
-			<Header />
+			<Header toggleLogin={toggleLogin} />
+			{login === true ? (<LoginPop register={register} />) : null}
+			{signup === true ? (<RegisterPop register={register} backtoLogin={backtoLogin} />) : null}
 			<Router>
 				<Switch>
 					<Route
