@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Header.css"
 
-export default function LoginPop() {
+export default function LoginPop({register}) {
   return (
     <div className="logContainer">
     <form>
@@ -17,7 +17,7 @@ export default function LoginPop() {
     <div className="registerPlc"></div>
       <div className="registerTxt">Register as a...</div>
       <hr className="regLine"/>
-      <button className="agentBtn">Letting Agent</button>
+      <button className="agentBtn" onClick={register}>Letting Agent</button>
     </div>
   )
 }

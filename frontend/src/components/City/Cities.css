@@ -2,14 +2,41 @@
   background: white;
   height: 127px;
   width: auto;
+  display:flex;
+  font-family:Roboto;
+
+}
+
+.form-select {
+  display:flex;
+  flex-direction:column;
+  margin:30px;
+  width:140px;
+ 
+  
+}
+
+.form-option{ 
+  border:solid 1px #e5e5e5;
+  margin-top:10px;
+  border-radius: 4px;
+  padding:5px;
+  font-family:Roboto;
+ 
+}
+.title-text{
+  margin:10px;
+  padding:10px;
+  font-weight: 20;
+  font-family:Roboto;
 }
 .homes {
   background: #e5e5e5;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-p {
+} 
+p { 
   padding: 20px;
 }
 .banner-bottom {

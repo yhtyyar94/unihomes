@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors')
 
-var indexRouter = require('./routes/index');
+var login = require('./routes/login.routes');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -46,7 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const config = require('./config')
 app.set('api_secret_key', config.api_secret_key)
 
-app.use('/', indexRouter)
+app.use('/', login)
 app.use('/signup', signup)
 app.use('/api', userAuth)
 app.use('/api', citiesRouter)

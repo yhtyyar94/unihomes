@@ -1,0 +1,156 @@
+.homedetails-container {
+	display: flex;
+	position: relative;
+	justify-content: space-around;
+	align-items: flex-start;
+	height: 1000px;
+	margin-left: 30px;
+}
+
+.homedetails-container-main {
+	flex: 5;
+	background-color: blueviolet;
+	height: 1000px;
+	margin-right: 15px;
+}
+
+.homedetails-sidebar-container {
+	flex: 2;
+	background-color: coral;
+	height: 500px;
+	margin-right: -90px;
+}
+
+.book-viewing-container {
+	position: absolute;
+	width: 560px;
+	height: 750px;
+	background: #03c5f0;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	top: 20px;
+	border-radius: 10px;
+	border: none;
+}
+
+.btn-book-viewing-page-close {
+	float: right;
+	justify-content: right;
+	align-items: flex-start;
+	border: solid 1px white;
+	background-color: #03c5f0;
+	font-weight: bolder;
+	color: white;
+	border-radius: 50%;
+	padding: 5px 9px;
+	margin-top: 8px;
+	margin-right: 8px;
+}
+
+.book-viewing-form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	justify-content: space-around;
+}
+
+.book-viewing-form {
+	display: flex;
+	flex-direction: column;
+	padding-left: 30px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 20px;
+	color: #ffffff;
+}
+
+.book-viewing-form-title {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 26px;
+	text-align: center;
+	color: #ffffff;
+	padding-top: 40px;
+}
+.book-viewing-form-address {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 56px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.book-viewing-form input {
+	height: 33px;
+	padding-left: 10px;
+	font-family: Roboto;
+	border: none;
+	border-radius: 3px;
+}
+.book-viewing-form input::placeholder {
+	height: 18px;
+	font-family: Roboto;
+	color: lightgray;
+	font-size: 14px;
+}
+
+.book-viewing-form textarea::placeholder {
+	height: 18px;
+	font-family: Roboto;
+	color: lightgray;
+	font-size: 14px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.book-viewing-check-box {
+	font-size: 12px;
+	border: 1px solid white;
+	border-radius: 20px;
+	margin-top: 30px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+.btn-book-viewing-page-form-submit {
+	background: #f49131;
+	border-radius: 10px;
+	border: none;
+	color: white;
+	height: 55px;
+	font-family: Roboto;
+	font-size: 22px;
+}
+
+.btn-book-viewing-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	height: 100px;
+}
+
+.btn-book-viewing {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	height: 52px;
+	background: #f49131;
+	border-radius: 5px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 26px;
+	text-align: center;
+	color: #ffffff;
+	border: none;
+}

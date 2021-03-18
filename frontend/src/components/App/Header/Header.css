@@ -1,5 +1,7 @@
 .logContainer {
-  position: relative;
+  position: absolute;
+  right: 0;
+  z-index: 30;
   width: 374px;
   height: 450px;
   /* overflow: scroll; */
@@ -8,7 +10,9 @@
   box-shadow: 0 -3px 3px rgb(0 0 0 / 10%), 0 3px 3px #ececfb;
 }
 .regContainer {
-  position: relative;
+  position: absolute;
+  right: 0;
+  z-index: 30;
   width: 374px;
   height: 542px;
   /* overflow: scroll; */
@@ -41,13 +45,26 @@
   transform: rotate(-0.33deg);
   border-width: 0px;
 }
+.logTitleOne {
+  position: absolute;
+  width: 165px;
+  height: 27px;
+  left: 18px;
+  top: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+}
 
 .logTitleTwo {
   position: absolute;
   height: 18px;
   width: 106px;
   left: 18px;
-  top: 100px;
+  top: 175px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -71,7 +88,7 @@
   width: 106px;
   height: 18px;
   left: 18px;
-  top: 175px;
+  top: 250px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -93,7 +110,7 @@
   width: 200px;
   height: 18px;
   left: 18px;
-  top: 250px;
+  top: 325px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -156,7 +173,6 @@
   left: 0px;
   top: 425px;
   background: #ffffff;
-  
 }
 .registerTxt {
   position: absolute;
@@ -215,24 +231,22 @@
   text-align: center;
   color: #ffffff;
 }
-#header{
-  background-color:#03C5F0 ;
+#header {
+  background-color: #03c5f0;
   height: 100;
   width: 100%;
   padding-top: 5px;
   align-items: baseline;
-  
 }
 
-#unihomes{
+#unihomes {
   margin: 5px;
   color: white;
   text-align: left;
   font-size: 40px;
 }
 
-
-.navbar-item{
+.navbar-item {
   float: right;
   flex-direction: row-reverse;
   color: white;
@@ -240,6 +254,6 @@
   padding-top: 10;
 }
 
-
-
-
+#PopoverLegacy {
+  background-color: #00bfff;
+}
