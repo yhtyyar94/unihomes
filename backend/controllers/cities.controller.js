@@ -55,7 +55,7 @@ exports.getSingleCity = async (req, res) => {
 exports.updateCity = async (req, res) => {
     let cityID = req.params.id
 
-    await Posts.findByIdAndUpdate({_id: cityID}, {$set: req.body}, (err, data) => {
+    await CitiesModel.findByIdAndUpdate({_id: cityID}, {$set: req.body}, (err, data) => {
         if(err) {
             res.status(500).json({message: err})
         } else {

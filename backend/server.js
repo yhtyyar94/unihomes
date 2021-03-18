@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -14,6 +15,7 @@ var app = express();
 require('./config/db.config')();
 
 //cors policy
+app.use(cors())
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -25,6 +27,7 @@ const citiesRouter = require('./routes/cities.routes')
 const agentsRouter = require('./routes/agents.routes')
 const propertiesRouter = require('./routes/properties.routes')
 const booksRouter = require('./routes/book.routes')
+const signup = require('./routes/signup.routes')
 
 //middlewares
 const userAuth = require('./middlewares/userAuth')
@@ -44,6 +47,7 @@ const config = require('./config')
 app.set('api_secret_key', config.api_secret_key)
 
 app.use('/', indexRouter)
+app.use('/signup', signup)
 app.use('/api', userAuth)
 app.use('/api', citiesRouter)
 app.use('/api', agentsRouter)

@@ -1,0 +1,60 @@
+.city {
+  height: 442px;
+  width: 500px;
+  margin: 20px;
+  background-color: white;
+}
+.home-img {
+  height: 300px;
+  width: 100%;
+}
+.info-one {
+  background-color: #03c5f0;
+  height: 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.info-two {
+  background-color: white;
+  height: 30px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.address {
+  background-color: white;
+  height: 20px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.buttons {
+  height: 50;
+  display: flex;
+}
+.short {
+  flex: 6;
+  height: 50px;
+  border-top: solid 1px #e5e5e5;
+  font-size: 24px;
+  text-align: center;
+}
+
+.view {
+  flex: 6;
+  height: 50px;
+  border-top: solid 1px #e5e5e5;
+  border-left: solid 1px #e5e5e5;
+  font-size: 24px;
+  text-align: center;
+}
