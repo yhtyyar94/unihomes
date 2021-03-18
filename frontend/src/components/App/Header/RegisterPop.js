@@ -23,11 +23,3 @@ export default function RegisterPop({backtoLogin}) {
 }
 
 
-
-{/* 
-    <label for="email" className="logTitleTwo">Email adress</label>
-      <input type="text" id="email" className="inputOne"/>
-      <label for="password" className="logTitleThree">Password</label>
-      <input type="text" id="password" className="inputTwo"/>
-      <label for="passwordConfirm" className="logTitleThree">Password</label>
-      <input type="text" id="passwordConfirm" className="inputTwo"/> */}

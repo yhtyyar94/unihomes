@@ -15,6 +15,12 @@ import LoginPop from '../App/Header/LoginPop';
 import RegisterPop from '../App/Header/RegisterPop';
 
 export default function App() {
+	const [cities, setCities] = useState([]);
+	const [homes, setHomes] = useState([]);
+	const [currentCity, setCurrentCity] = useState('Liverpool');
+	const [roomCount, setRoomCount] = useState(4);
+	const [login, setLog] = useState(false);
+	const [signup, setSignUp] = useState();
 
 	useEffect(() => {
 		axios

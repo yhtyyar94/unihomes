@@ -1,5 +1,7 @@
 .logContainer {
-  position: relative;
+  position: absolute;
+  right: 0;
+  z-index: 30;
   width: 374px;
   height: 450px;
   /* overflow: scroll; */
@@ -8,7 +10,9 @@
   box-shadow: 0 -3px 3px rgb(0 0 0 / 10%), 0 3px 3px #ececfb;
 }
 .regContainer {
-  position: relative;
+  position: absolute;
+  right: 0;
+  z-index: 30;
   width: 374px;
   height: 542px;
   /* overflow: scroll; */
@@ -30,7 +34,6 @@
   line-height: 28px;
   color: #ffffff;
 }
-
 
 .logLine {
   position: absolute;
@@ -170,7 +173,6 @@
   left: 0px;
   top: 425px;
   background: #ffffff;
-  
 }
 .registerTxt {
   position: absolute;
@@ -229,24 +231,22 @@
   text-align: center;
   color: #ffffff;
 }
-#header{
-  background-color:#03C5F0 ;
+#header {
+  background-color: #03c5f0;
   height: 100;
   width: 100%;
   padding-top: 5px;
   align-items: baseline;
-  
 }
 
-#unihomes{
+#unihomes {
   margin: 5px;
   color: white;
   text-align: left;
   font-size: 40px;
 }
 
-
-.navbar-item{
+.navbar-item {
   float: right;
   flex-direction: row-reverse;
   color: white;
@@ -254,10 +254,6 @@
   padding-top: 10;
 }
 
-#PopoverLegacy{
+#PopoverLegacy {
   background-color: #00bfff;
 }
-
-
-
-
