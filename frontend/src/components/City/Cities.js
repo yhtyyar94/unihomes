@@ -1,33 +1,52 @@
 import React,{useLayoutEffect,useState} from 'react'
 import City from './City'
-import {useParams} from 'react-router-dom'
+import {useParams,useHistory} from 'react-router-dom'
 import './Cities.css'
 
 export default function Cities({homes,cities}) {
 
-        useLayoutEffect(() => {
-                window.scrollTo(0, 0);
-               }, []) 
-               
-    const numbers = [1,2,3,4,5,6,7,8,9,10]
-    const maxPrice=['£65','£80','£100','£120','£140','£160','£180','£200']
+        const history=useHistory()
+    
     const{id}=useParams()
     const{bedroom}=useParams()
-
-    const[homesHere,setHomesHere]=useState(homes)
+ 
+    const[homesCity,setHomesCity]=useState(homes)
    
         const filterHomeTypes = (homeType) => {
-                let filteredHomes = homes.filter((home) => home.type === homeType);
-                setHomesHere(filteredHomes);
-        };
-        const filterBedrooms = (bedroom) => {
-                let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
-                setHomesHere(filteredHomes);
-        };
-    
-  
+                if(homeType==='Any'){
+                        setHomesCity(homes)
+                } else {   
+                        setHomesCity(homes.filter((home) => home.type === homeType));
+                }};
 
-  
+        const filterBedrooms = (bedroom) => {     
+        //  setHomesCity(homes.filter((home) => home.bedroom === bedroom));
+         history.push(`/cities/${id}/${bedroom}`)
+        };
+
+        const filterBathroom=(bathroom)=>{
+         if(bathroom==='Any'){
+                setHomesCity(homes) 
+         }else{
+                setHomesCity(homes.filter((home) => home.bathroom === bathroom*1)); 
+         }}
+
+         const filterRent=(rent)=>{
+                if(rent==='Any'){
+                        setHomesCity(homes)   
+                }else{
+                        setHomesCity(homes.filter((home) => home.rent <= rent*1)); 
+                }
+                
+         }
+    
+   const numbers = [1,2,3,4,5,6,7,8,9,10]
+   const maxPrice=[65,80,100,120,140,160,180,200]
+//    const maxPrice=[65,80,100,120,'£140','£160','£180','£200']
+   
+   useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+   }, []) 
    
     return ( 
     <div> 
@@ -45,16 +64,16 @@ export default function Cities({homes,cities}) {
                                     </div>
                                     <div className="form-select">
                                             <label>Bathroom</label>
-                                            <select className="form-option">
-                                                <option>Any</option>
-                                                {numbers.map(number=><option>{number}</option>)}
+                                            <select className="form-option" onChange={(e)=>filterBathroom(e.target.value)}>
+                                                <option value="Any">Any</option>
+                                                {numbers.map(number=><option value={number}>{number}</option>)}
                                             </select>
                                     </div>
                                     <div className="form-select">
                                             <label>Max Price</label>
-                                            <select className="form-option">
-                                                <option>Any</option>
-                                                {maxPrice.map(price=><option>{price}</option>)}
+                                            <select className="form-option" onChange={(e)=>filterRent(e.target.value)} >
+                                                <option value="Any">Any</option>
+                                                {maxPrice.map(number=><option value={number}>£{number}</option>)}
                                             </select>
                                     </div>
                                     <div className="form-select">
@@ -70,12 +89,12 @@ export default function Cities({homes,cities}) {
                 <div > 
                     
                         <div style={{backgroundColor:"#e5e5e5", padding:"20px"}}>
-                            <h3>{homesHere.filter(home=>
+                            <h3>{homesCity.filter(home=>
                                 home.city_id===id*1 && home.bedroom===bedroom*1).length} homes in {cities.map(city=>city.id===id*1 ? <span>{city.name}</span>:null)}</h3>
                         </div>
                         <div className="homes">
                             
-                            {homesHere.filter(item=>item.city_id===id*1 && item.bedroom===bedroom*1).map(home=> 
+                            {homesCity.filter(item=>item.city_id===id*1 && item.bedroom===bedroom*1).map(home=> 
                             <City home={home}/>       
                             )}
                         </div> 

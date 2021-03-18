@@ -14,7 +14,6 @@ import Policies from '../StaticPages/Policies';
 
 export default function App() {
 
-
     const[cities,setCities]=useState([])
 	const[homes,setHomes]=useState([])
 	const[currentCity,setCurrentCity]=useState('Liverpool')
