@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from 'react';
-import axios from 'axios';
+import React,{useState,useEffect,useRef} from 'react';
+import axios from 'axios'
 import Search from './Search/Search';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Cities from '../City/Cities';
@@ -15,23 +15,6 @@ import LoginPop from '../App/Header/LoginPop';
 import RegisterPop from '../App/Header/RegisterPop';
 
 export default function App() {
-	const [cities, setCities] = useState([]);
-	const [homes, setHomes] = useState([]);
-	// const [currentCity, setCurrentCity] = useState('Liverpool');
-	// const [roomCount, setRoomCount] = useState(4);
-	const [login, setLog] = useState(false);
-	const [signup, setSignUp] = useState();
-
-	useEffect(() => {
-		axios
-			.get('http://localhost:5000/cities')
-			.then((res) => {
-				setCities(res.data);
-			}) 
-			.catch((err) => {
-				console.log(err);
-			});
-	}, []);
 
 	useEffect(() => {
 		axios
@@ -55,26 +38,6 @@ export default function App() {
 			});
 	}, []);
 
-	useEffect(() => {
-		axios 
-			.get('http://localhost:5000/homes')
-			.then((res) => {
-				setHomes(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	}, []); 
-
-	const handleSubmit = (cityName, roomNum) => {
-		// localStorage.setItem('list', JSON.stringify(cityName));
-		// setCurrentCity(cityName);
-		// setRoomCount(roomNum);
-	};
-	const filterBedrooms = (bedroom) => {
-		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
-		setHomes(filteredHomes);
-	};
 
 	const toggleLogin = () => {
 		if(signup===true) {
@@ -94,6 +57,17 @@ export default function App() {
 		setLog(true);
 	};
 
+
+	 const handleSubmit =(cityName,roomNum)=>{
+		 setCurrentCity(cityName)
+		 setRoomCount(roomNum)
+	 }
+	 const filterBedrooms=(bedroom)=>{
+		let filteredHomes=homes.filter(home=>home.bedroom===bedroom)
+		setHomes(filteredHomes)
+	
+	 }
+    
 	
 	return (
 		<div>
@@ -102,29 +76,8 @@ export default function App() {
 			{signup === true ? (<RegisterPop register={register} backtoLogin={backtoLogin} />) : null}
 			<Router>
 				<Switch>
-					<Route
-						exact
-						path="/"
-						render={() => (
-							<Search
-								cities={cities}
-								// currentCity={currentCity}
-								handleSubmit={handleSubmit}
-								// roomCount={roomCount}
-							/>
-						)}
-					/>
-					<Route
-						
-						path={`/cities/:id`}
-						render={() => (
-							<Cities
-								homes={homes}
-								// roomCount={roomCount}
-								filterBedrooms={filterBedrooms}
-							/>
-						)}
-					/>
+					<Route exact path="/" render={() => (<Search cities={cities} />)}/>
+					<Route path={`/cities/:id/:bedroom`} render={() => (<Cities homes={homes} cities={cities}/>)}/>
 					<Route exact path="/homedetails" component={HomeDetails} />
 					<Route exact path="/shortlists" component={Shortlist} />
 					<Route exact path="/aboutus" component={About} />
