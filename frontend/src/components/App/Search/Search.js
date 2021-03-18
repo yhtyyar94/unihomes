@@ -10,10 +10,10 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
 
     const [cityId,setCityId]=useState([])
     const [roomNum,setRoomNum]=useState([])
-    const numbers = [1,2,3,4,5,6,7,8,9,'10+']
+    const numbers = [1,2,3,4,5,6,7,8,9,10]
 
     return (
-    
+     
         <div className="container">
                 <div className="banner">
                     <div className="banner-text">
@@ -34,7 +34,7 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
                                     <select className="select-search" onChange={(e)=>setRoomNum(e.target.value)}>
                                             <option value="">Any bedroom</option>
                                             {numbers.map(number=><option value={number}>{number}</option>)}
-                                    </select>
+                                     </select>
 
                                    <Link to={`/cities/${cityId}/${roomNum}`} ><span className="btn-search">Find Homes</span></Link> 
                             </form>

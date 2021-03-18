@@ -22,7 +22,7 @@ export default function App() {
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
 
-	useEffect(() => {
+	useEffect(() => { 
 		axios
 			.get('http://localhost:5000/cities')
 			.then((res) => {
@@ -45,10 +45,8 @@ export default function App() {
 	}, []);
 
 
-	const filterBedrooms = (bedroom) => {
-		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
-		setHomes(filteredHomes);
-	};
+
+	
 
 	const toggleLogin = () => {
 		setLog(!login);
@@ -98,7 +96,6 @@ export default function App() {
 							<Cities
 								homes={homes}
 								cities={cities}
-								filterBedrooms={filterBedrooms}
 							/>
 						)}
 					/>
@@ -113,3 +110,4 @@ export default function App() {
 		</div>
 	);
 }
+ 

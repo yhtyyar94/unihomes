@@ -3,22 +3,34 @@ import City from './City'
 import {useParams} from 'react-router-dom'
 import './Cities.css'
 
-export default function Cities({homes,filterBedrooms,currentCity,cities}) {
-    
+export default function Cities({homes,cities}) {
+
+        useLayoutEffect(() => {
+                window.scrollTo(0, 0);
+               }, []) 
+               
+    const numbers = [1,2,3,4,5,6,7,8,9,10]
+    const maxPrice=['£65','£80','£100','£120','£140','£160','£180','£200']
     const{id}=useParams()
     const{bedroom}=useParams()
-   
-    
-    
-   const numbers = [1,2,3,4,5,6,7,8,9,10]
-   const maxPrice=['£65','£80','£100','£120','£140','£160','£180','£200']
 
-   useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-   }, [])
+    const[homesHere,setHomesHere]=useState(homes)
+   
+        const filterHomeTypes = (homeType) => {
+                let filteredHomes = homes.filter((home) => home.type === homeType);
+                setHomesHere(filteredHomes);
+        };
+        const filterBedrooms = (bedroom) => {
+                let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
+                setHomesHere(filteredHomes);
+        };
+    
+  
+
+  
    
     return ( 
-    <div>
+    <div> 
                 <div className="filter">
                  
                 {cities.map(city=>city.id===id*1 ? <h3 className="title-text">Student accomodation in {city.name} </h3> : null) }
@@ -47,22 +59,23 @@ export default function Cities({homes,filterBedrooms,currentCity,cities}) {
                                     </div>
                                     <div className="form-select">
                                             <label>Home Type</label>
-                                            <select className="form-option">
-                                                <option>House</option>
-                                                <option>Apartment</option>
+                                            <select className="form-option" onChange={(e)=>filterHomeTypes(e.target.value)}>
+                                                <option value="Any">Any</option>
+                                                <option value="House">House</option>
+                                                <option value="Apartment">Apartment</option>
                                             </select>
                                     </div>
                             </form>          
                     </div> 
-                <div >
+                <div > 
                     
                         <div style={{backgroundColor:"#e5e5e5", padding:"20px"}}>
-                            <h3>{homes.filter(home=>
+                            <h3>{homesHere.filter(home=>
                                 home.city_id===id*1 && home.bedroom===bedroom*1).length} homes in {cities.map(city=>city.id===id*1 ? <span>{city.name}</span>:null)}</h3>
                         </div>
                         <div className="homes">
                             
-                            {homes.filter(item=>item.city_id===id*1 && item.bedroom===bedroom*1).map(home=> 
+                            {homesHere.filter(item=>item.city_id===id*1 && item.bedroom===bedroom*1).map(home=> 
                             <City home={home}/>       
                             )}
                         </div> 
