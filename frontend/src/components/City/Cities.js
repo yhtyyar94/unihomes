@@ -1,16 +1,20 @@
-import React,{useLayoutEffect,useState} from 'react'
+import React,{useLayoutEffect,useState,useEffect} from 'react'
 import City from './City'
 import {useParams,useHistory} from 'react-router-dom'
+import axios from 'axios'
 import './Cities.css'
 
 export default function Cities({homes,cities}) {
+         useLayoutEffect(() => {
+                window.scrollTo(0, 0);
+               }, [])
 
-        const history=useHistory()
-    
+    const history=useHistory()
     const{id}=useParams()
     const{bedroom}=useParams()
- 
     const[homesCity,setHomesCity]=useState(homes)
+    const numbers = [1,2,3,4,5,6,7,8,9,10]
+    const maxPrice=[65,80,100,120,140,160,180,200]
    
         const filterHomeTypes = (homeType) => {
                 if(homeType==='Any'){
@@ -20,7 +24,6 @@ export default function Cities({homes,cities}) {
                 }};
 
         const filterBedrooms = (bedroom) => {     
-        //  setHomesCity(homes.filter((home) => home.bedroom === bedroom));
          history.push(`/cities/${id}/${bedroom}`)
         };
 
@@ -39,15 +42,21 @@ export default function Cities({homes,cities}) {
                 }
                 
          }
+
+      
+	useEffect(() => {
+		axios
+			.get('http://localhost:5000/homes')
+			.then((res) => {
+				setHomesCity(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
     
-   const numbers = [1,2,3,4,5,6,7,8,9,10]
-   const maxPrice=[65,80,100,120,140,160,180,200]
-//    const maxPrice=[65,80,100,120,'£140','£160','£180','£200']
-   
-   useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-   }, []) 
-   
+
+
     return ( 
     <div> 
                 <div className="filter">
@@ -98,15 +107,16 @@ export default function Cities({homes,cities}) {
                             <City home={home}/>       
                             )}
                         </div> 
-                        <button>View More</button>
+                      
                 </div>
             
                 <div className="banner-bottom">
                         <div className="text">
-                                    <h1 >Being a student in Liverpool</h1>
-                                    <h5 >An abundance of shops, bars, restaurants, and nightclubs have collectively put Liverpool well and truly on the student map. The city is known for being a party destination (made famous by Geordie Shore), and there’s plenty of this on offer for students. With a diverse mix of places to eat, drink and party, there's no wonder it's such a popular city to study in.</h5>
-                        </div>                       
+                        {cities.map(city=>city.id===id*1 ? <h1>Being a student in {city.name} </h1> : null) }
+                        {cities.map(city=>city.id===id*1 ? <h5>{city.city_description} </h5> : null) }
+                        </div>
                 </div>     
+
             
     </div>
     )

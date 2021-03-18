@@ -57,13 +57,8 @@ export default function App() {
 			<Header />
 			<Router>
 				<Switch>
-					<Route exact path="/" render={()=><Search cities={cities} currentCity={currentCity} 
-					handleSubmit={handleSubmit} roomCount={roomCount}/>} />
-					<Route exact path="/city" render={()=><Cities homes={homes} 
-					currentCity={currentCity} 
-					roomCount={roomCount}
-					filterBedrooms={filterBedrooms}
-					/>} />
+					<Route exact path="/" render={() => (<Search cities={cities} />)}/>
+					<Route path={`/cities/:id/:bedroom`} render={() => (<Cities homes={homes} cities={cities}/>)}/>
 					<Route exact path="/homedetails" component={HomeDetails} />
 					<Route exact path="/shortlists" component={Shortlist} />
 					<Route exact path="/aboutus" component={About} />
