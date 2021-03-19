@@ -10,7 +10,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Liverpool"
       },
       "type": "Apartment",
       "keyFeatures": [
@@ -34,7 +35,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Liverpool"
       },
       "type": "House",
       "keyFeatures": [
@@ -58,7 +60,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Liverpool"
       },
       "type": "Apartment",
       "keyFeatures": [
@@ -82,7 +85,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Liverpool"
       },
       "type": "House",
       "keyFeatures": [
@@ -106,7 +110,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Liverpool"
       },
       "type": "House",
       "keyFeatures": [
@@ -130,7 +135,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Birmingham"
       },
       "type": "House",
       "keyFeatures": [
@@ -154,7 +160,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Birmingham"
       },
       "type": "House",
       "keyFeatures": [
@@ -178,7 +185,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Birmingham"
       },
       "type": "House",
       "keyFeatures": [
@@ -202,7 +210,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Birmingham"
       },
       "type": "House",
       "keyFeatures": [
@@ -226,7 +235,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Birmingham"
       },
       "type": "House",
       "keyFeatures": [
@@ -250,7 +260,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Birmingham"
       },
       "type": "House",
       "keyFeatures": [
@@ -274,7 +285,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Newcastle"
       },
       "type": "House",
       "keyFeatures": [
@@ -298,7 +310,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Newcastle"
       },
       "type": "House",
       "keyFeatures": [
@@ -322,7 +335,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Newcastle"
       },
       "type": "House",
       "keyFeatures": [
@@ -346,7 +360,8 @@
       "address": {
         "street": "Holmes",
         "district": "Kentish Town",
-        "postcode": "NW5 3AN"
+        "postcode": "NW5 3AN",
+        "city":"Newcastle"
       },
       "type": "House",
       "keyFeatures": [
