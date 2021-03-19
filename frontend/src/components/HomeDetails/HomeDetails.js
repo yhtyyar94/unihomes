@@ -14,6 +14,20 @@ export default function HomeDetails() {
 	};
 	return (
 		<div className="homedetails-container">
+			<div className="homedetails-container-main"></div>
+			<div className="homedetails-sidebar-container">
+				<div className="btn-book-viewing-container">
+					<button
+						className="btn-book-viewing"
+						type="submit"
+						onClick={showBookViewing}
+					>
+						<BsEnvelope style={{ fill: 'white', marginRight: 10 }} />
+						Book Viewing
+					</button>
+				</div>
+			</div>
+
 			{bookViewing ? (
 				<div className="book-viewing-container">
 					<button
@@ -82,17 +96,6 @@ export default function HomeDetails() {
 					</div>
 				</div>
 			) : null}
-
-			<div className="btn-book-viewing-container">
-				<button
-					className="btn-book-viewing"
-					type="submit"
-					onClick={showBookViewing}
-				>
-					<BsEnvelope style={{ fill: 'white', marginRight: 10 }} />
-					Book Viewing
-				</button>
-			</div>
 		</div>
 	);
 }
