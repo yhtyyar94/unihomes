@@ -28,6 +28,8 @@ export default function HomeDetails() {
 			<div className="homedetails-container-main"></div>
 			<div className="homedetails-sidebar-container">
 				<div className="btn-book-viewing-container">
+					<h1>{home.rent}</h1>
+					{console.log(home.rent)}
 					<button
 						className="btn-book-viewing"
 						type="submit"
