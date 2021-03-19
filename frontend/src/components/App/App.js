@@ -11,12 +11,10 @@ import Shortlist from './Shortlist';
 import About from '../StaticPages/About';
 import Terms from '../StaticPages/Terms';
 import Policies from '../StaticPages/Policies';
-<<<<<<< HEAD
-import MainContent from'./MainContent/MainContent'
-=======
+import MainContent from './MainContent/MainContent'
 import LoginPop from '../App/Header/LoginPop';
 import RegisterPop from '../App/Header/RegisterPop';
->>>>>>> 3d628572c207e974c4fd82c9968340947da97255
+
 
 export default function App() {
 	const [cities, setCities] = useState([]);
@@ -47,6 +45,7 @@ export default function App() {
 				console.log(err);
 			});
 	}, []);
+
 
 	const toggleLogin = () => {
 		if(signup===true) {
@@ -96,7 +95,7 @@ export default function App() {
 
 				</Switch>
 			</Router>
-			<MainContent/>
+			{/* <MainContent/> */}
 			<Footer />
 		</div>
 	);

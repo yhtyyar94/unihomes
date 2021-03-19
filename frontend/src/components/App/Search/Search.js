@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
+import MainContent from '../MainContent/MainContent'
 
 // import {Link} from 'react'
 import './Search.css'
@@ -39,7 +40,8 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
                                    <Link to={`/cities/${cityId}/${roomNum}`} ><span className="btn-search">Find Homes</span></Link> 
                             </form>
                     </div> 
-                </div>  
+                </div> 
+                <MainContent />
         </div> 
     )
 }
