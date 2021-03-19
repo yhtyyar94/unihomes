@@ -30,26 +30,29 @@ export default function HomeDetails() {
 			<div className="homedetails-sidebar-container">
 				<div className="btn-book-viewing-container">
 					<h3>
-						{home.address.street}, {home.address.district}
+						{console.log(home)}
+						{home.length !== 0 && home.address.street},{' '}
+						{home.length !== 0 && home.address.district}
 					</h3>
 					<br />
 					<h3>
-						{home.address.city}, {home.address.postcode}
+						{home.length !== 0 && home.address.city},{' '}
+						{home.length !== 0 && home.address.postcode}
 					</h3>
 					<div className="homedetails-rooms-count-type-container">
 						<div className="homedetails-rooms-count-bedroom">
 							<p>Bedrooms</p>
-							<FaBed /> {home.bedroom}
+							<FaBed /> {home.length !== 0 && home.bedroom}
 						</div>
 						<div className="homedetails-rooms-count-bathroom">
 							<p>Bathrooms</p>
 							<FaBath />
-							{home.bathroom}
+							{home.length !== 0 && home.bathroom}
 						</div>
 						<div className="homedetails-rooms-type">
 							<p>Type</p>
 							<FaRegBuilding />
-							{home.type}
+							{home.length !== 0 && home.type}
 						</div>
 					</div>
 
