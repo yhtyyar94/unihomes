@@ -86,7 +86,7 @@ export default function App() {
 						render={() => <Search cities={cities} />}
 					/>
 					<Route
-						path={`/cities/:id/:bedroom`}
+						path={`/cities/:cityname/:bedroom`}
 						render={() => <Cities homes={homes} cities={cities} />}
 					/>
 					<Route
