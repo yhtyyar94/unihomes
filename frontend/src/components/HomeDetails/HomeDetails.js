@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsEnvelope } from 'react-icons/bs';
 import './HomeDetails.css';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function HomeDetails() {
 	const [bookViewing, setBookViewing] = useState(false);
+	const { id } = useParams();
+	const [home, setHome] = useState([]);
+
+	useEffect(() => {
+		axios
+			.get(`http://localhost:5000/homes/${id}`)
+			.then((res) => setHome(res.data))
+			.catch((err) => console.log(err));
+	}, []);
 
 	const showBookViewing = () => {
 		setBookViewing(!bookViewing);
