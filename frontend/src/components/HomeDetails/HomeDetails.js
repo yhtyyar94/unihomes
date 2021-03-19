@@ -3,6 +3,7 @@ import { BsEnvelope } from 'react-icons/bs';
 import './HomeDetails.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { FaBed, FaBath, FaRegBuilding } from 'react-icons/fa';
 
 export default function HomeDetails() {
 	const [bookViewing, setBookViewing] = useState(false);
@@ -28,8 +29,30 @@ export default function HomeDetails() {
 			<div className="homedetails-container-main"></div>
 			<div className="homedetails-sidebar-container">
 				<div className="btn-book-viewing-container">
-					<h1>{home.rent}</h1>
-					{console.log(home.rent)}
+					<h3>
+						{home.address.street}, {home.address.district}
+					</h3>
+					<br />
+					<h3>
+						{home.address.city}, {home.address.postcode}
+					</h3>
+					<div className="homedetails-rooms-count-type-container">
+						<div className="homedetails-rooms-count-bedroom">
+							<p>Bedrooms</p>
+							<FaBed /> {home.bedroom}
+						</div>
+						<div className="homedetails-rooms-count-bathroom">
+							<p>Bathrooms</p>
+							<FaBath />
+							{home.bathroom}
+						</div>
+						<div className="homedetails-rooms-type">
+							<p>Type</p>
+							<FaRegBuilding />
+							{home.type}
+						</div>
+					</div>
+
 					<button
 						className="btn-book-viewing"
 						type="submit"
