@@ -4,7 +4,7 @@ import MainContent from '../MainContent/MainContent'
 
 // import {Link} from 'react'
 import './Search.css'
-
+ 
 
 export default function Search({cities,currentCity,roomCount,handleSubmit}) {
 

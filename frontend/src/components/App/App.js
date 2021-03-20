@@ -22,7 +22,7 @@ export default function App() {
 	const [roomCount, setRoomCount] = useState(4);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-
+ 
 	useEffect(() => {
 		axios
 			.get('http://localhost:5000/homes')
@@ -86,7 +86,7 @@ export default function App() {
 						render={() => <Search cities={cities} />}
 					/>
 					<Route
-						path={`/cities/:cityname/:bedroom`}
+						path={`/cities/:cityname/:bedroom?`}
 						render={() => <Cities homes={homes} cities={cities} />}
 					/>
 					<Route
