@@ -1,5 +1,5 @@
-import React,{useState,useEffect,useRef} from 'react';
-import axios from 'axios'
+import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 import Search from './Search/Search';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Cities from '../City/Cities';
@@ -11,9 +11,9 @@ import Shortlist from './Shortlist';
 import About from '../StaticPages/About';
 import Terms from '../StaticPages/Terms';
 import Policies from '../StaticPages/Policies';
+import MainContent from './MainContent/MainContent';
 import LoginPop from '../App/Header/LoginPop';
 import RegisterPop from '../App/Header/RegisterPop';
-import MainContent from '../App/MainContent/MainContent';
 
 export default function App() {
 	const [cities, setCities] = useState([]);
@@ -22,7 +22,7 @@ export default function App() {
 	const [roomCount, setRoomCount] = useState(4);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-
+ 
 	useEffect(() => {
 		axios
 			.get('http://localhost:5000/homes')
@@ -45,15 +45,13 @@ export default function App() {
 			});
 	}, []);
 
-
 	const toggleLogin = () => {
-		if(signup===true) {
+		if (signup === true) {
 			setSignUp(false);
 			setLog(false);
 		} else {
 			setLog(!login);
 		}
-	
 	};
 	const register = () => {
 		setLog(false);
@@ -64,37 +62,46 @@ export default function App() {
 		setLog(true);
 	};
 
+	const handleSubmit = (cityName, roomNum) => {
+		setCurrentCity(cityName);
+		setRoomCount(roomNum);
+	};
+	const filterBedrooms = (bedroom) => {
+		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
+		setHomes(filteredHomes);
+	};
 
-	 const handleSubmit =(cityName,roomNum)=>{
-		 setCurrentCity(cityName)
-		 setRoomCount(roomNum)
-	 }
-	 const filterBedrooms=(bedroom)=>{
-		let filteredHomes=homes.filter(home=>home.bedroom===bedroom)
-		setHomes(filteredHomes)
-	
-	 }
-    
-	
 	return (
 		<div>
 			<Header toggleLogin={toggleLogin} />
-			{login === true ? (<LoginPop register={register} />) : null}
-			{signup === true ? (<RegisterPop register={register} backtoLogin={backtoLogin} />) : null}
+			{login === true ? <LoginPop register={register} /> : null}
+			{signup === true ? (
+				<RegisterPop register={register} backtoLogin={backtoLogin} />
+			) : null}
 			<Router>
 				<Switch>
-					<Route exact path="/" render={() => (<Search cities={cities} />)}/>
-					<Route path={`/cities/:id/:bedroom`} render={() => (<Cities homes={homes} cities={cities}/>)}/>
-					<Route exact path="/homedetails" component={HomeDetails} />
+					<Route
+						exact
+						path="/"
+						render={() => <Search cities={cities} />}
+					/>
+					<Route
+						path={`/cities/:cityname/:bedroom?`}
+						render={() => <Cities homes={homes} cities={cities} />}
+					/>
+					<Route
+						exact
+						path="/homedetails/:id"
+						render={() => <HomeDetails />}
+					/>
 					<Route exact path="/shortlists" component={Shortlist} />
 					<Route exact path="/aboutus" component={About} />
 					<Route exact path="/terms" component={Terms} />
 					<Route exact path="/policies" component={Policies} />
 					{/* <Route exact path="/maincontent" component={MainContent} /> */}
-
 				</Switch>
 			</Router>
-			<MainContent/>
+			{/* <MainContent/> */}
 			<Footer />
 		</div>
 	);

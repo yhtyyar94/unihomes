@@ -1,6 +1,6 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './City.css'
-import homes from './Data'
 
 export default function City({home}) {
     return (
@@ -22,7 +22,7 @@ export default function City({home}) {
                     <p>Shortlist</p>
                 </div>
                 <div className="view">
-                   <p>View Home</p>
+                   <Link to={`/homedetails/${home.id}`}>View Home</Link>
                 </div>
             </div>
             

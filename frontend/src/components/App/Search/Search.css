@@ -1,3 +1,6 @@
+.container {
+}
+
 .banner {
   color: white;
   background: url("https://i.postimg.cc/tTD20Kn4/Group-65.png") top left/cover
@@ -28,6 +31,7 @@
 }
 
 .banner-text {
+  margin-top: 75px;
   padding-top: 20px;
   position: absolute;
   z-index: 10;

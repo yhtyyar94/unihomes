@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsEnvelope } from 'react-icons/bs';
 import './HomeDetails.css';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { FaBed, FaBath, FaRegBuilding } from 'react-icons/fa';
 
 export default function HomeDetails() {
 	const [bookViewing, setBookViewing] = useState(false);
+	const { id } = useParams();
+	const [home, setHome] = useState([]);
+
+	useEffect(() => {
+		axios
+			.get(`http://localhost:5000/homes/${id}`)
+			.then((res) => setHome(res.data))
+			.catch((err) => console.log(err));
+	}, []);
 
 	const showBookViewing = () => {
 		setBookViewing(!bookViewing);
@@ -14,6 +26,47 @@ export default function HomeDetails() {
 	};
 	return (
 		<div className="homedetails-container">
+			<div className="homedetails-container-main"></div>
+			<div className="homedetails-sidebar-container">
+				<div className="btn-book-viewing-container">
+					<h3>
+						{console.log(home)}
+						{home.length !== 0 && home.address.street},{' '}
+						{home.length !== 0 && home.address.district}
+					</h3>
+					<br />
+					<h3>
+						{home.length !== 0 && home.address.city},{' '}
+						{home.length !== 0 && home.address.postcode}
+					</h3>
+					<div className="homedetails-rooms-count-type-container">
+						<div className="homedetails-rooms-count-bedroom">
+							<p>Bedrooms</p>
+							<FaBed /> {home.length !== 0 && home.bedroom}
+						</div>
+						<div className="homedetails-rooms-count-bathroom">
+							<p>Bathrooms</p>
+							<FaBath />
+							{home.length !== 0 && home.bathroom}
+						</div>
+						<div className="homedetails-rooms-type">
+							<p>Type</p>
+							<FaRegBuilding />
+							{home.length !== 0 && home.type}
+						</div>
+					</div>
+
+					<button
+						className="btn-book-viewing"
+						type="submit"
+						onClick={showBookViewing}
+					>
+						<BsEnvelope style={{ fill: 'white', marginRight: 10 }} />
+						Book Viewing
+					</button>
+				</div>
+			</div>
+
 			{bookViewing ? (
 				<div className="book-viewing-container">
 					<button
@@ -82,17 +135,6 @@ export default function HomeDetails() {
 					</div>
 				</div>
 			) : null}
-
-			<div className="btn-book-viewing-container">
-				<button
-					className="btn-book-viewing"
-					type="submit"
-					onClick={showBookViewing}
-				>
-					<BsEnvelope style={{ fill: 'white', marginRight: 10 }} />
-					Book Viewing
-				</button>
-			</div>
 		</div>
 	);
 }

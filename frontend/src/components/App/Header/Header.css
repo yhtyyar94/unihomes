@@ -1,3 +1,86 @@
+.header {
+  display:flex;
+  justify-content: space-between;
+  background: rgb(0, 191, 255, 0.05);
+  height: 100px;
+  z-index: 11;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.scroll {
+  display:flex;
+  justify-content: space-between;
+  background: rgb(0, 191, 255);
+  height: 70px;
+  z-index: 11;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.scroll .header-logo {
+  float: left;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+
+.scroll .header-items {
+  float: right;
+  margin-right: 20px;
+  transition: all 0.5s;
+}
+
+.header-logo {
+  float: left;
+  margin-left: 30px;
+  margin-top: 20px;
+  transition: all 0.5s;
+}
+
+.header-logo a {
+  color: #ffffff;
+}
+
+.header-items {
+  float: right;
+  margin-right: 40px;
+  margin-top: 20px;
+  transition: all 0.5s;
+}
+
+.header-items button {
+  border: none;
+  background:none;
+  color: #ffffff;
+  font-size: large;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.home-logo {
+  margin-top: +5px;
+}
+
+.navbar-item {
+  margin: 10px;
+  color: #ffffff;
+  font-size: large;
+  font-weight: 200;
+}
+
+.search-toggle input {
+  margin-top: +15px;
+  margin-left: +150px;
+  width: 350px;
+  height:30px;
+  border: 2px solid #333;
+  border-radius: 5px;
+}
+
 .logContainer {
   position: absolute;
   right: 0;
@@ -230,28 +313,6 @@
   line-height: 21px;
   text-align: center;
   color: #ffffff;
-}
-#header {
-  background-color: #03c5f0;
-  height: 100;
-  width: 100%;
-  padding-top: 5px;
-  align-items: baseline;
-}
-
-#unihomes {
-  margin: 5px;
-  color: white;
-  text-align: left;
-  font-size: 40px;
-}
-
-.navbar-item {
-  float: right;
-  flex-direction: row-reverse;
-  color: white;
-  margin-left: 50px;
-  padding-top: 10;
 }
 
 #PopoverLegacy {
