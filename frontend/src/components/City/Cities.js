@@ -10,7 +10,7 @@ export default function Cities({homes,cities}) {
                }, [])
 
     const history=useHistory()
-    const{id}=useParams()
+    const{cityname}=useParams() 
     const{bedroom}=useParams()
     const[homesCity,setHomesCity]=useState(homes)
     const numbers = [1,2,3,4,5,6,7,8,9,10]
@@ -23,8 +23,10 @@ export default function Cities({homes,cities}) {
                         setHomesCity(homes.filter((home) => home.type === homeType));
                 }};
 
-        const filterBedrooms = (bedroom) => {     
-         history.push(`/cities/${id}/${bedroom}`)
+        const filterBedrooms = (bedroom) => {  
+      
+                        history.push(`/cities/${cityname}/${bedroom}`) 
+
         };
 
         const filterBathroom=(bathroom)=>{
@@ -45,8 +47,7 @@ export default function Cities({homes,cities}) {
 
       
 	useEffect(() => {
-		axios
-			.get('http://localhost:5000/homes')
+		axios.get('http://localhost:5000/homes')
 			.then((res) => {
 				setHomesCity(res.data);
 			})
@@ -58,16 +59,17 @@ export default function Cities({homes,cities}) {
 
 
     return ( 
-    <div> 
+    <div style={{paddingTop:"100px"}}> 
                 <div className="filter">
+             {console.log(bedroom)}
                  
-                {cities.map(city=>city.id===id*1 ? <h3 className="title-text">Student accomodation in {city.name} </h3> : null) }
+                {cities.map(city=>city.name===cityname ? <h3 className="title-text">Student accomodation in {city.name} </h3> : null) }
      
                         <form style={{display:"flex"}}>
                                     <div className="form-select">
                                             <label>Bedroom</label>
                                             <select className="form-option" onChange={(e)=>filterBedrooms(e.target.value)} >
-                                                <option>Any</option>   
+                                                <option value={'allbedrooms'}>Any</option>   
                                                 {numbers.map(number=><option value={number}>{number}</option>)}
                                             </select>
                                     </div>
@@ -95,25 +97,36 @@ export default function Cities({homes,cities}) {
                                     </div>
                             </form>          
                     </div> 
-                <div > 
+                <div >  
                     
                         <div style={{backgroundColor:"#e5e5e5", padding:"20px"}}>
-                            <h3>{homesCity.filter(home=>
-                                home.city_id===id*1 && home.bedroom===bedroom*1).length} homes in {cities.map(city=>city.id===id*1 ? <span>{city.name}</span>:null)}</h3>
+                         {bedroom==='allbedrooms' || !bedroom
+                         
+                        ? <h3>{homesCity.filter(home=>
+                                home.address.city===cityname).length} homes in {cities.map(city=>city.name===cityname ? <span>{city.name}</span>:null)}
+                           </h3>
+                
+                        : <h3>{homesCity.filter(home=>
+                                home.address.city===cityname && home.bedroom===bedroom*1).length} homes in {cities.map(city=>city.name===cityname ? <span>{city.name}</span>:null)}
+                          </h3> }
+                            
                         </div>
                         <div className="homes">
-                            
-                            {homesCity.filter(item=>item.city_id===id*1 && item.bedroom===bedroom*1).map(home=> 
+                             {bedroom==="allbedrooms" || !bedroom
+                             ? homesCity.filter(item=>item.address.city===cityname).map(home=> 
+                                <City home={home}/>) 
+                             : homesCity.filter(item=>item.address.city===cityname && item.bedroom===bedroom*1).map(home=> 
                             <City home={home}/>       
-                            )}
+                            )} 
+                           
                         </div> 
                       
                 </div>
             
                 <div className="banner-bottom">
-                        <div className="text">
-                        {cities.map(city=>city.id===id*1 ? <h1>Being a student in {city.name} </h1> : null) }
-                        {cities.map(city=>city.id===id*1 ? <h5>{city.city_description} </h5> : null) }
+                        <div className="text">        
+                                {cities.map(city=>city.name===cityname ? <h1>Being a student in {city.name} </h1> : null) }
+                                {cities.map(city=>city.name===cityname ? <h5>{city.city_description} </h5> : null) }
                         </div>
                 </div>     
 
