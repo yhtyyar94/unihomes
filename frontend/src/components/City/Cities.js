@@ -97,7 +97,7 @@ export default function Cities({homes,cities}) {
                                     </div>
                             </form>          
                     </div> 
-                <div > 
+                <div >  
                     
                         <div style={{backgroundColor:"#e5e5e5", padding:"20px"}}>
                          {bedroom==='allbedrooms' || !bedroom
@@ -124,9 +124,9 @@ export default function Cities({homes,cities}) {
                 </div>
             
                 <div className="banner-bottom">
-                        <div className="text">
-                        {cities.map(city=>city.name===cityname ? <h1>Being a student in {city.name} </h1> : null) }
-                        {cities.map(city=>city.name===cityname ? <h5>{city.city_description} </h5> : null) }
+                        <div className="text">        
+                                {cities.map(city=>city.name===cityname ? <h1>Being a student in {city.name} </h1> : null) }
+                                {cities.map(city=>city.name===cityname ? <h5>{city.city_description} </h5> : null) }
                         </div>
                 </div>     
 
