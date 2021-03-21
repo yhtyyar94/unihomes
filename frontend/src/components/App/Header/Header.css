@@ -1,5 +1,8 @@
+* {
+  overflow-x: hidden;
+}
 .header {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   background: rgb(0, 191, 255, 0.05);
   height: 100px;
@@ -11,7 +14,7 @@
 }
 
 .scroll {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   background: rgb(0, 191, 255);
   height: 70px;
@@ -54,7 +57,7 @@
 
 .header-items button {
   border: none;
-  background:none;
+  background: none;
   color: #ffffff;
   font-size: large;
   font-weight: 200;
@@ -76,7 +79,7 @@
   margin-top: +15px;
   margin-left: +150px;
   width: 350px;
-  height:30px;
+  height: 30px;
   border: 2px solid #333;
   border-radius: 5px;
 }
