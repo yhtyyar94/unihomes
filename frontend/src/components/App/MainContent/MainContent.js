@@ -1,6 +1,6 @@
 import React from "react";
 import "./MainContent.css";
-import img1 from './img/img1.png';
+// import img from './img/';
 import img2 from './img/img2.png';
 import img3 from './img/img3.png';
 import vector from './icon/Vector.png';
@@ -180,7 +180,9 @@ const MainContent = () => {
         </div>
         <div className="mcs_content">
           <div className="mcs_box1">
-            <img src={img1}/>
+          <img src={process.env.PUBLIC_URL + '/1.jpg'}
+ />
+
             <h2>Search</h2>
             <p>Find your dream home in the perfect area near your university.</p>
           </div>
