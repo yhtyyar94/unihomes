@@ -29,9 +29,8 @@ export default function Header({ toggleLogin }) {
 	}
 
 	useEffect(() => {
-		if(window.location.pathname === '/') {
 			window.addEventListener("scroll", changeClass)
-		  }
+
 	},[window.location.pathname])
 	return (
 		<div className="header" id="header">
