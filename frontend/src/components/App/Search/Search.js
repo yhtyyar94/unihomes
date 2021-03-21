@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import MainContent from '../MainContent/MainContent'
+import MContent from '../MainContent/MContent'
 
 // import {Link} from 'react'
 import './Search.css'
@@ -41,7 +42,7 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
                             </form>
                     </div> 
                 </div> 
-                <MainContent />
+                <MContent />
         </div> 
     )
 }
