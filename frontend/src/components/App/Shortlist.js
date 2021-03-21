@@ -23,7 +23,7 @@ const Shortlist = () => {
             </div>
             <hr className="hr"/>
             <div className="shortlist-body">
-                {data.map(city => <City home={city}/>)}
+                {data.length !== 0 ? data.map(city => <City home={city}/>) : <p>You have not yet shortlisted any properties</p>}
             </div>
             <div className="book-viewings">
                 <button> <div className="icon"><BiEnvelope/></div>Book Viewings for All</button>
