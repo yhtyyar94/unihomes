@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import MainContent from '../MainContent/MainContent'
+<<<<<<< Updated upstream
 import MContent from '../MainContent/MContent'
+=======
+import {FaBed,FaBath,FaRegBuilding} from "react-icons/fa";
+
+>>>>>>> Stashed changes
 
 // import {Link} from 'react'
 import './Search.css'
@@ -14,7 +19,7 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
     const [roomNum,setRoomNum]=useState([])
     const numbers = [1,2,3,4,5,6,7,8,9,10]
 
-    return ( 
+    return (    
      
         <div className="container">
                 <div className="banner">
@@ -27,7 +32,7 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
                     <div className='form-container'>
                             <form className="form-search" >
                                     <select className="select-search" onChange={(e)=>setCityName(e.target.value)}>
-                                    <option value="">Search by city</option>
+                                    <option value="" >Search by city</option>
                                         {cities.map(city=>
                                             <option value={city.name}>{city.name}</option>
                                             )}
