@@ -13,11 +13,13 @@ import Login from './LoginPop.js';
 export default function Header({ toggleLogin }) {
 	const [visible, setVisibility] = useState(true)
 	const changeClass = () => {
-		if (window.pageYOffset > 0) {
-			document.querySelector(".header").className = "header scroll"
-		  } else {
-			document.querySelector(".header").className = "header";
-		  }
+		if(window.location.pathname === '/' || window.location.pathname === '/student-accommodation') {
+			if (window.pageYOffset > 0) {
+				document.querySelector(".header").className = "header scroll"
+			  } else {
+				document.querySelector(".header").className = "header";
+			  }
+		}
 	}
 
 	const styles = {
@@ -28,7 +30,7 @@ export default function Header({ toggleLogin }) {
 		window.addEventListener("scroll", changeClass)
 	},[])
 	return (
-		<div className="header">
+		<div className={window.location.pathname === '/' || window.location.pathname === '/student-accommodation' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
 				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
 					<MdHome />Unihomes
