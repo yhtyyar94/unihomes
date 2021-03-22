@@ -1,5 +1,8 @@
+* {
+  overflow-x: hidden;
+}
 .header {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   background: rgb(0, 191, 255, 0.05);
   height: 100px;
@@ -8,10 +11,23 @@
   width: 100%;
   align-items: center;
   transition: all 0.5s;
+  overflow-y: hidden;
+}
+
+.header .search-toggle input {
+  border: none;
+  margin-bottom: 2px;
+}
+
+
+.header .search-toggle input::placeholder {
+  color: rgba(51, 51, 51, 0.63);
+    font-size: 14px;
+
 }
 
 .scroll {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   background: rgb(0, 191, 255);
   height: 70px;
@@ -20,6 +36,7 @@
   width: 100%;
   align-items: center;
   transition: all 0.5s;
+  overflow-y: hidden;
 }
 
 .scroll .header-logo {
@@ -32,6 +49,19 @@
   float: right;
   margin-right: 20px;
   transition: all 0.5s;
+}
+
+.scroll .search-toggle input::placeholder {
+  color: rgba(51, 51, 51, 0.63);
+  font-size: small;
+}
+
+.scroll .search-toggle input {
+ border: none;
+}
+
+.home-logo {
+  margin-bottom: -5px;
 }
 
 .header-logo {
@@ -54,14 +84,14 @@
 
 .header-items button {
   border: none;
-  background:none;
+  background: none;
   color: #ffffff;
   font-size: large;
   font-weight: 200;
   cursor: pointer;
 }
 
-.home-logo {
+.search-logo {
   margin-top: +5px;
 }
 
@@ -76,7 +106,7 @@
   margin-top: +15px;
   margin-left: +150px;
   width: 350px;
-  height:30px;
+  height: 30px;
   border: 2px solid #333;
   border-radius: 5px;
 }
@@ -317,4 +347,67 @@
 
 #PopoverLegacy {
   background-color: #00bfff;
+}
+.btn {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    display: grid;
+    justify-content: space-between;
+    background: rgb(0, 191, 255, 0.05);
+    height: 100px;
+    z-index: 11;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    transition: all 0.5s;
+    overflow-y: hidden;
+  }
+
+  .header .header-items {
+    margin-bottom: 10px;
+  }
+
+  .header .search-toggle input {
+    float: right;
+    top: 0;
+    width: 50%;
+    margin-bottom: 50px;
+  }
+
+  .scroll {
+    display: grid;
+    justify-content: space-between;
+    background: rgb(0, 191, 255);
+    height: 70px;
+    z-index: 11;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    transition: all 0.5s;
+    overflow-y: hidden;
+  }
+  .scroll .header-items {
+    margin-bottom: 10px;
+  }
+
+  .scroll .search-toggle input {
+    float: right;
+    top: 0;
+    width: 50%;
+    margin-bottom: 30px;
+    border:none;
+  }
+
+  .header .search-toggle input::placeholder {
+    color: rgba(51, 51, 51, 0.63);
+    font-size: small;
+  }
+
+  .scroll .search-toggle input::placeholder {
+    color: rgba(51, 51, 51, 0.63);
+    font-size: small;
+  }
 }
