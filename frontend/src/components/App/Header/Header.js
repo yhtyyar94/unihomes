@@ -37,7 +37,7 @@ export default function Header({ toggleLogin }) {
 				</a>
 			</div>
 			<div className="search-toggle" style={styles}>
-				<input type="text" placeholder="Search accomadation by cities..."/>
+				<input type="text" placeholder="Search accommodation by cities..."/>
 			</div>
 			<div className="header-items">
 				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
