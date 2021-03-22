@@ -17,7 +17,7 @@
 }
 #main_cont_img {
   display: grid;
-  grid-template-columns: repeat(3, 380px);
+  grid-template-columns: repeat(3, 350px);
   margin: auto auto;
   height: 850px;
   /* border: 1px solid green; */
@@ -31,59 +31,35 @@
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
   overflow: hidden;
-  
-} 
+}
 .main_cont_img_box img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-   transition: transform .2s ease;
+ 
+  transition: transform .2s ease;
   
 }
 .main_cont_img_box:hover img {
   transform: scale(1.15, 1.15);
-  opacity: 0.7;
-  /* background-color: rgba(0, 0, 0, 0.7); */
+
 }
 
-.main_cont_img_box h3  {
+.main_cont_img_box h3 {
   position: absolute;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 36px;
   line-height: 42px;
+  /* text-align: center; */
   top: 40%;
   left: 25%;
   color: #ffffff;
-  z-index: 2;
-  transition: all 0.5s;
-}
-.main_cont_img_box:hover h3 {
-  color: #ffffff;
-  font-weight: bold;
-  transform: scale(1.15, 1.15);
-  transition: all 0.5s;
- 
- 
 }
 
-.main_cont_img_box p {
-  position: absolute;
-  top: 50%;
-  left: 25%;
-  color: #ffffff00;
-  transition: all 0.5s;
 
-}
-.main_cont_img_box:hover p {
-  color: #ffffff;
-  font-weight: bold;
-  transform: scale(1.15, 1.15);
-  transition: all 0.5s;
- 
- 
-}
+
 
 /*see all cities*/
 .main_cont_btn {
@@ -247,3 +223,74 @@ color: #FFFFFF;
   width: 100%;
   
   } 
+
+  .mcontent-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .mcontent-container h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(104, 100, 100);
+  }
+  
+  .main-content-container {
+    /* display: flex; */
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    columns: 3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+    .image {
+      height: 200px;
+      overflow: hidden;
+      width: 400px;
+      border-radius: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto
+    }
+  
+    .image .inner {
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      transform: scale(1, 1);
+      transition: transform 0.2s;
+    }
+    
+    .image:hover .inner {
+      transform: scale(1.15, 1.15);
+      cursor: pointer;
+    }
+  
+    .inner h3 {
+      color: #ffffff;
+      font-size: 32px;
+      z-index: 2;
+    }
+  
+    .inner p {
+      color: #ffffff00;
+      transition: all 0.5s;
+    }
+  
+    .image:hover .inner p {
+      color: #ffffff;
+      font-weight: bold;
+      transform: scale(1.15, 1.15);
+      transition: all 0.5s;
+    }
