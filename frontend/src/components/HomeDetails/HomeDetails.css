@@ -5,7 +5,27 @@
 	align-items: flex-start;
 	height: 1400px;
 	margin-left: 30px;
-	padding-top: 100px;
+	padding-top: 20px;
+}
+
+.homedetails-back-to-search {
+	margin-top: 110px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.homedetails-back-to-search-btn {
+	border: none;
+	background-color: #fff;
+	cursor: pointer;
+	font-family: Roboto;
+	font-size: 16px;
+}
+
+.homedetails-back-to-search-btn:hover {
+	text-decoration: underline;
+	color: #03c5f0;
+	font-size: 19px;
 }
 
 .homedetails-container-main {
@@ -79,6 +99,26 @@ li {
 	line-height: 26px;
 	text-align: center;
 	border: none;
+	cursor: pointer;
+}
+
+.homedetails-sidebar-btn-shortlist:hover {
+	background-color: red;
+	font-size: 24px;
+	padding: 7px;
+	color: #fff;
+	border: '1px #fff';
+	border-radius: 5px;
+}
+
+.homedetails-sidebar-btn-shortlist::after {
+	content: 'Shortlist';
+	margin-left: 8px;
+}
+.homedetails-sidebar-btn-shortlist:hover::after {
+	content: 'Add';
+	padding: 7px 6px;
+	fill: #fff;
 }
 
 .btn-book-viewing {
@@ -111,6 +151,14 @@ li {
 	border-radius: 10px;
 	border: none;
 	z-index: 505;
+}
+
+.book-viewing-container-background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #f3f3f3;
+	z-index: 11;
 }
 
 .btn-book-viewing-page-close {
@@ -155,6 +203,7 @@ li {
 	text-align: center;
 	color: #ffffff;
 	padding-top: 40px;
+	height: auto;
 }
 .book-viewing-form-address {
 	font-family: Roboto;
