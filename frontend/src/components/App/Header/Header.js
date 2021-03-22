@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
 import { MdHome } from 'react-icons/md';
 import { MdSearch } from 'react-icons/md';
 import { MdPerson } from 'react-icons/md';
 import { MdMail } from 'react-icons/md';
-import { GoHeart } from 'react-icons/go';
 import { MdBookmark } from 'react-icons/md';
-import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
+import { BiLayerPlus } from 'react-icons/bi';
+import { FaHome } from 'react-icons/fa';
+import { CgProfile } from 'react-icons/cg';
+import { RiLogoutBoxFill } from 'react-icons/ri';
 import Login from './LoginPop.js';
 import { useHistory} from 'react-router-dom'
 
-export default function Header({ toggleLogin }) {
+export default function Header({ toggleLogin, isLoggedIn }) {
 	const [visible, setVisibility] = useState(true)
 	const [history, setHistory] = useState('/')
 	const pathHistory = useHistory()
@@ -52,7 +53,7 @@ export default function Header({ toggleLogin }) {
 			<div className="search-toggle" style={styles}>
 				<input type="text" placeholder="Search accommodation by cities..."/>
 			</div>
-			<div className="header-items">
+			{!isLoggedIn ? <div className="header-items">
 				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
 					<MdSearch className="search-logo"/> Search
 				</a>
@@ -65,7 +66,20 @@ export default function Header({ toggleLogin }) {
 				<button href="/LoginPop" className="navbar-item" onClick={toggleLogin}>
 					<MdPerson /> Login
 				</button>
-			</div>
+			</div> : <div className="agency">
+				<a className="navbar-item btn" >
+					<BiLayerPlus className="search-logo"/> Add Property
+				</a>
+				<a className="navbar-item">
+					<FaHome /> Properties
+				</a>
+				<a className="navbar-item">
+					<CgProfile /> My Profile
+				</a>
+				<a className="navbar-item" >
+					<RiLogoutBoxFill /> Log out
+				</a>
+			</div>}
 		</div>
 	);
 }

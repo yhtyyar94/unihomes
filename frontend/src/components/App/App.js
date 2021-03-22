@@ -11,10 +11,11 @@ import Shortlist from './Shortlist';
 import About from '../StaticPages/About';
 import Terms from '../StaticPages/Terms';
 import Policies from '../StaticPages/Policies';
-
 import LoginPop from '../App/Header/LoginPop';
 import RegisterPop from '../App/Header/RegisterPop';
 import TopCities from './TopCities'
+import {Authentication} from '../Agency/Authentication'
+import WelcomePage from '../Agency/WelcomePage.css'
 
 export default function App() {
 	const [cities, setCities] = useState([]);
@@ -23,6 +24,7 @@ export default function App() {
 	const [roomCount, setRoomCount] = useState(4);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
+	const [isLoggedIn, setIsLoggedIn] = useState(true)
  
 	useEffect(() => {
 		axios
@@ -74,7 +76,7 @@ export default function App() {
 
 	return (
 		<div>
-			<Header toggleLogin={toggleLogin} />
+			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn}/>
 			{login === true ? <LoginPop register={register} /> : null}
 			{signup === true ? (
 				<RegisterPop register={register} backtoLogin={backtoLogin} />
@@ -100,7 +102,7 @@ export default function App() {
 					<Route exact path="/terms" component={Terms} />
 					<Route exact path="/policies" component={Policies} />
 					<Route exact path="/student-accommodation" component={TopCities} />
-					{/* <Route exact path="/maincontent" component={MainContent} /> */}
+					{Authentication() ? <Route exact path='/welcomepage' component={WelcomePage} />}
 				</Switch>
 			</Router>
 			
