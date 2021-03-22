@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import City from '../City/City'
 import data from '../City/Data'
 import {BiEnvelope} from 'react-icons/bi'
+import ShortListModal from '../ShortListBook'
+
 
 const Shortlist = () => {
 
@@ -28,6 +30,7 @@ const Shortlist = () => {
             <div className="book-viewings">
                 <button> <div className="icon"><BiEnvelope/></div>Book Viewings for All</button>
             </div>
+            <ShortListModal />
         </div>
     )
 }
