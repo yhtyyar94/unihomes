@@ -16,7 +16,7 @@ export default function Header({ toggleLogin }) {
 	const [history, setHistory] = useState('/')
 	const pathHistory = useHistory()
 	const changeClass = () => {
-		if(window.location.pathname === '/' || window.location.pathname === '/student-accommodation') {
+		if(window.location.pathname === '/') {
 			if (window.pageYOffset > 0) {
 				document.querySelector(".header").className = "header scroll"
 			  } else {
@@ -43,7 +43,7 @@ export default function Header({ toggleLogin }) {
 
 	console.log(history);
 	return (
-		<div className={history === '/' || history === '/student-accommodation' ? 'header' : 'scroll'} id="header">
+		<div className={history === '/' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
 				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
 					<MdHome className="home-logo"/>Unihomes

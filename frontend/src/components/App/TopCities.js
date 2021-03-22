@@ -12,6 +12,7 @@ const TopCities = () => {
         axios.get('http://localhost:5001/api/getcities')
         .then(res => setCities(res.data))
         .catch(err => console.log(err))
+		window.scroll(0,0)
     },[])
 
     console.log(cities)
