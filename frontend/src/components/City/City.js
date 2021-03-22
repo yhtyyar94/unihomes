@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useLayoutEffect} from 'react'
 import {Link} from 'react-router-dom'
 import './City.css'
 import {FaBed,FaBath,FaHome} from "react-icons/fa";
@@ -8,6 +8,9 @@ import { MdLocationOn } from "react-icons/md";
 
 
 export default function City({home}) {
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     return ( 
         <div className="city">
