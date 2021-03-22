@@ -1,12 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import {useHistory} from 'react-router-dom'
 
 const TopCities = () => {
 
     const [cities, setCities] = useState(null)
 
+	const history = useHistory()
+
     useEffect(() => {
-        axios.get('http://localhost:5000/api/getcities')
+        axios.get('http://localhost:5001/api/getcities')
         .then(res => setCities(res.data))
         .catch(err => console.log(err))
     },[])
@@ -34,7 +37,7 @@ const TopCities = () => {
 			</div>
             <div className="container-header"><h1>Student Property Search By City</h1></div>
             <div className="container-cities">
-                {cities && cities.map(city => <div key={city._id}><p>{city.name}</p></div>)}
+                {cities && cities.map(city => <div key={city._id} onClick={() => history.push(`/cities/${city.name}/`)}><p>{city.name}</p></div>)}
             </div>
 		</div>
 	);
