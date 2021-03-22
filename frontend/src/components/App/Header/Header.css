@@ -51,6 +51,10 @@
   transition: all 0.5s;
 }
 
+.home-logo {
+  margin-bottom: -5px;
+}
+
 .header-logo {
   float: left;
   margin-left: 30px;
@@ -78,7 +82,7 @@
   cursor: pointer;
 }
 
-.home-logo {
+.search-logo {
   margin-top: +5px;
 }
 
@@ -384,7 +388,7 @@
     float: right;
     top: 0;
     width: 50%;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     border:none;
   }
 

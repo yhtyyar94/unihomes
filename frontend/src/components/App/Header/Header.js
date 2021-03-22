@@ -33,7 +33,7 @@ export default function Header({ toggleLogin }) {
 		<div className={window.location.pathname === '/' || window.location.pathname === '/student-accommodation' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
 				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
-					<MdHome />Unihomes
+					<MdHome className="home-logo"/>Unihomes
 				</a>
 			</div>
 			<div className="search-toggle" style={styles}>
@@ -41,7 +41,7 @@ export default function Header({ toggleLogin }) {
 			</div>
 			<div className="header-items">
 				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
-					<MdSearch className="home-logo"/> Search
+					<MdSearch className="search-logo"/> Search
 				</a>
 				<a href="/shortlists" className="navbar-item">
 					<MdBookmark /> Shortlist
