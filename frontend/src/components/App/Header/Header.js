@@ -12,28 +12,23 @@ import Login from './LoginPop.js';
 
 export default function Header({ toggleLogin }) {
 	const [visible, setVisibility] = useState(true)
-	if(window.location.pathname !== '/') {
-		document.querySelector("#header").className = "only";
-	  }
 	const changeClass = () => {
-		if (window.pageYOffset > 0 && window.location.pathname === '/') {
+		if (window.pageYOffset > 0) {
 			document.querySelector(".header").className = "header scroll"
-		  } else if(window.location.pathname !== '/') {
-			document.querySelector(".header").className = "header only";
 		  } else {
 			document.querySelector(".header").className = "header";
 		  }
 	}
+
 	const styles = {
 		visibility: visible ? 'hidden' : 'visible'
 	}
 
 	useEffect(() => {
-			window.addEventListener("scroll", changeClass)
-
-	},[window.location.pathname])
+		window.addEventListener("scroll", changeClass)
+	},[])
 	return (
-		<div className="header" id="header">
+		<div className="header">
 			<div className="header-logo">
 				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
 					<MdHome />Unihomes

@@ -18,12 +18,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
 }
 
 .shortlist-header h1 {
-  color: #ffffff;
-  font-weight: bolder;
+  color: #ffffff
 }
 
 .shortlist-counter {

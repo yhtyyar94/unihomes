@@ -3,7 +3,7 @@ import City from "./City";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import "./Cities.css";
-
+import { FaBed } from "react-icons/fa";
 
 export default function Cities({ homes, cities }) {
   useLayoutEffect(() => {

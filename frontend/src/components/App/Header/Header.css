@@ -37,17 +37,6 @@
   transition: all 0.5s;
 }
 
-.only {
-  display:flex;
-  justify-content: space-between;
-  background: rgb(0, 191, 255) !important;
-  height: 70px !important;
-  z-index: 11;
-  position: fixed;
-  width: 100%;
-  align-items: center;
-}
-
 .header-logo {
   float: left;
   margin-left: 30px;
@@ -93,11 +82,6 @@
   height: 30px;
   border: 2px solid #333;
   border-radius: 5px;
-}
-
-.search-toggle input::placeholder {
-  color: #333 !important;
-  font-size: small;
 }
 
 .logContainer {
