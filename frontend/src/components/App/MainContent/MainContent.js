@@ -1,77 +1,83 @@
 import React, { useState, useEffect } from "react";
-import "./MainContent.css";
-import img1 from "./img/img1.png";
-import img2 from "./img/img2.png";
-import img3 from "./img/img3.png";
-import vector from "./icon/Vector.png";
-import malte from "./icon/malte.png";
-import stroke from "./icon/Vector (Stroke).png";
+import './MainContent.css'
 import axios from "axios";
 
-const MainContent = () => {
-  const [images, setImages] = useState("");
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5000/api/getcities/`)
-      .then((res) => setImages(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+  const MainContent = () => {
+    const [images, setImages] = useState("");
+    useEffect(() => {
+      axios
+        .get(`http://localhost:5000/api/getcities/`)
+        .then((res) => setImages(res.data))
+        .catch((err) => console.log(err));
+    }, []);
+  
 
-  return (
-    <div className="main_content">
-      <section id="main_content">
-        <section className="main_cont_header">
-          <p>Student accommodation in our top cities</p>
-        </section>
-        <section id="main_cont_img">
-          {images.length !== 0 && images.slice(0, 9).map((image) => (
-              <div
-                className="main_cont_img_box">
-                <img src={image.image} />
-               
-                  <h3>{image.name}</h3>
-                  <p> 26 properties</p>
+    return (
+        <div className="mainContent">
+    <div className="main-title">
+    <p>Student accommodation in our top cities</p>
+    </div>
+
+   
+    <div className="main-image">
+    {images.length !== 0 && images.slice(0, 9).map((image) => (
+              <div className="main-image-all" role="image" 
+              style={{ 
+                backgroundImage: `url(${image.image})`,
+                backgroundRepeat: 'no-repeat',  
+                backgroundPosition: 'center',
+                backgroundSize: 'cover'
+              }}>                           
+             
+              <h3>{image.name}</h3>
+              <p> 26 properties</p>
               
               </div>
             ))}
-        </section>
-        <section className="main_cont_btn">
-          <button className="btn">See all cities</button>
-        </section>
-      </section>
 
-      <section id="main_cont_search">
-        <div className="mcs_header">
-          <p>Compare all inclusive student homes.</p>
-        </div>
-        <div className="mcs_content">
-          <div className="mcs_box1">
-            {/* <img src={process.env.PUBLIC_URL + '/1.jpg'} /> */}
-            <img src={img1} />
 
-            <h2>Search</h2>
-            <p>
-              Find your dream home in the perfect area near your university.
-            </p>
-          </div>
-          <div className="mcs_box2">
-            <img src={img2} />
-            <h2>Compare</h2>
-            <p>Compare student accommodation to find the right home for you.</p>
-          </div>
-          <div className="mcs_box3">
-            <img src={img3} />
-            <h2>Bills Included</h2>
-            <p>Bills are included in all rent prices. No hidden fees.</p>
-          </div>
+
+        {/* <div className="main-image-all"></div>
+        <div className="main-image-all"></div>
+        <div className="main-image-all"></div>
+        <div className="main-image-all"></div>
+        <div className="main-image-all"></div>
+        <div className="main-image-all"></div>
+        <div className="main-image-all"></div>
+        <div className="main-image-all"></div>
+        <div className="main-image-all"></div>  */}
+    </div>
+
+    <div className="main-allCities">
+    <button className="btn">See all cities</button>
+    </div>
+
+    <div className="main-search">
+    <p className="p">Compare all inclusive student homes.</p>
+    <div className="box-cont">
+        <div className="box">
+        <img src={process.env.PUBLIC_URL + '/MainContent/img/img1.png'}/>
+        <br/><h2>Search</h2>
+        <p>Find your dream home in the perfect area near your university.</p>
         </div>
-        <div>
-          <button className="mcs_btn">Search and Compare</button>
+        <div className="box">
+        <img src={process.env.PUBLIC_URL + '/MainContent/img/img2.png'}/>  
+        <br/> <h2>Compare</h2>
+        <p>Compare student accommodation to find the right home for you.</p>
         </div>
-      </section>
-      <section id="using_grid">
-        <div className="using_blog1">
-          <img src={vector} />
+        <div className="box">
+        <img src={process.env.PUBLIC_URL + '/MainContent/img/img3.png'}/>
+        <br/><h2>Bills Included</h2>
+        <p>Bills are included in all rent prices. No hidden fees.</p>
+        </div>
+    </div>
+    <div><button className="box-btn">Search and Compare</button></div>
+
+    </div>
+   
+    <div className="main-con">
+        <div className="img-box">
+        <img src={process.env.PUBLIC_URL + '/MainContent/icon/vector.png'}  />
           <br />
           <h3>1000s of Homes</h3>
           <p>
@@ -79,23 +85,32 @@ const MainContent = () => {
             right for you.
           </p>
         </div>
-        <div className="using_blog2">
-          <img src={malte} />
+        <div className="img-box1">
+        <img  src={process.env.PUBLIC_URL + '/MainContent/icon/malte.png'}  />
 
-          <img />
         </div>
-        <div className="using_blog3">
-          <img src={stroke} />
-          <br />
-          <h3>Save Shortlists</h3>
+        <div className="img-box">
+        <img src={process.env.PUBLIC_URL + '/MainContent/icon/vector1.png'}  />
+        <h3>Save Shortlists</h3>
           <p>
             Shortlist your favourite properties and send enquiries in one click.
           </p>
         </div>
-      </section>
-      <section className="book_demo"></section>
-    </div>
-  );
-};
 
-export default MainContent;
+
+    </div>
+
+    <div className="main-empty"></div>
+
+
+
+
+
+
+
+            
+        </div>
+    )
+}
+
+export default MainContent

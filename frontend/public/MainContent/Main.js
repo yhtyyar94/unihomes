@@ -26,9 +26,10 @@ const Main = () => {
     </div>
 
     <div className="main-search">
-        <div></div>
-        <div></div>
-        <div></div>
+    <p>Compare all inclusive student homes.</p>
+        <div className="box"></div>
+        <div className="box"></div>
+        <div className="box"></div>
         <div></div>
 
     </div>
