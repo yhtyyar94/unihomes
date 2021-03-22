@@ -11,7 +11,7 @@ import Shortlist from './Shortlist';
 import About from '../StaticPages/About';
 import Terms from '../StaticPages/Terms';
 import Policies from '../StaticPages/Policies';
-import MainContent from './MainContent/MainContent';
+
 import LoginPop from '../App/Header/LoginPop';
 import RegisterPop from '../App/Header/RegisterPop';
 import TopCities from './TopCities'
@@ -103,7 +103,7 @@ export default function App() {
 					{/* <Route exact path="/maincontent" component={MainContent} /> */}
 				</Switch>
 			</Router>
-			{/* <MainContent/> */}
+			
 			<Footer />
 		</div>
 	);

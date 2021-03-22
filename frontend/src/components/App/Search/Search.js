@@ -15,7 +15,7 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
     const [roomNum,setRoomNum]=useState([])
     const numbers = [1,2,3,4,5,6,7,8,9,10]
 
-    return (  
+    return (   
      
         <div className="container">
                 <div className="banner">
@@ -26,9 +26,9 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
                     </div>
                     <div className="overlay"></div> 
                     <div className='form-container'>
-                            <form className="form-search" >
-                                    <select className="select-search" onChange={(e)=>setCityName(e.target.value)}>
-                                    <option value="" >Search by city</option>
+                            <form className="form-search">
+                                    <select  className="select-search" onChange={(e)=>setCityName(e.target.value)} required>
+                                    <option >Search by city</option>
                                         {cities.map(city=>
                                             <option value={city.name}>{city.name}</option>
                                             )}
@@ -39,6 +39,7 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
                                             {numbers.map(number=><option value={number}>{number}</option>)}
                                      </select>
 
+                                     
                                    <Link to={`/cities/${cityName}/${roomNum}`} ><button className="btn-search">Find Homes</button></Link> 
                             </form>
                     </div> 

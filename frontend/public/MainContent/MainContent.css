@@ -1,0 +1,249 @@
+#main_content {
+  display: grid;
+  grid-template-columns: auto;
+}
+.main_cont_header {
+  display: grid;
+  grid-template-columns: auto;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  height: 100px;
+
+  /* border: 15px solid green; */
+}
+#main_cont_img {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  margin: auto auto;
+  height: 850px;
+  /* border: 1px solid green; */
+}
+.main_cont_img_box {
+  position: relative;
+  margin: 1rem 1rem;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+  overflow: hidden;
+  
+} 
+.main_cont_img_box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+   transition: transform .2s ease;
+  
+}
+.main_cont_img_box:hover img {
+  transform: scale(1.15, 1.15);
+  opacity: 0.7;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+}
+
+.main_cont_img_box h3  {
+  position: absolute;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 42px;
+  top: 40%;
+  left: 25%;
+  color: #ffffff;
+  z-index: 2;
+  transition: all 0.5s;
+}
+.main_cont_img_box:hover h3 {
+  color: #ffffff;
+  font-weight: bold;
+  transform: scale(1.15, 1.15);
+  transition: all 0.5s;
+ 
+ 
+}
+
+.main_cont_img_box p {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  color: #ffffff00;
+  transition: all 0.5s;
+
+}
+.main_cont_img_box:hover p {
+  color: #ffffff;
+  font-weight: bold;
+  transform: scale(1.15, 1.15);
+  transition: all 0.5s;
+ 
+ 
+}
+
+/*see all cities*/
+.main_cont_btn {
+  position: relative;
+  height: 100px;
+}
+.main_cont_btn .btn {
+  position: absolute;
+  width: 350px;
+  height: 60px;
+  left: 40%;
+  top: 50%;
+  background: #ffffff;
+  border: 1px solid #03c5f0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #03c5f0;
+  border-radius: 5px;
+}
+/*search and Compare*/
+#main_cont_search {
+    position: relative;
+    width: 100%;
+    height: 492px;
+    margin-top: 30px;
+    background: rgba(229, 229, 229, 0.76);
+}
+#main_cont_search .mcs_header{
+    position: absolute;
+
+left:30%;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+text-align: center;
+margin-top: 20px;
+color: #000000;
+}
+#main_cont_search .mcs_box1{
+
+  position: absolute;
+width: 25%;
+left: 10%;
+bottom: 0px;
+height: 400px;
+margin:10px 10px;
+}
+#main_cont_search .mcs_box2{
+  position: absolute;
+width: 25%;
+left: 37%;
+bottom: 0px;
+height: 400px;
+margin:10px 10px;
+
+
+}
+#main_cont_search .mcs_box3{
+  position: absolute;
+width: 25%;
+right: 10%;
+bottom: 0px; 
+height: 400px;
+margin:10px 10px;
+}
+#main_cont_search .mcs_content img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+ margin-top: 40px;
+}
+#main_cont_search .mcs_content h2{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  margin-top: 30px;
+}
+#main_cont_search .mcs_content p{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+#main_cont_search .mcs_btn{
+  position: absolute;
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 35px;
+text-align: center;
+color: #FFFFFF;
+background: #F49131;
+border-radius: 5px;
+border:none;
+bottom: 0px;
+left: 42%;
+margin-bottom: 30px;
+/* height: 70px; */
+padding: 15px 15px;
+}
+/*book a demo*/
+#using_grid{
+/* position:relative; */
+display: grid;
+grid-template-columns: 30% 40% 30%;
+background: #03C5F0;
+height: 461px;
+padding: 40px 70px 0px 70px;
+
+}
+
+#using_grid .using_blog1{
+
+
+  margin:40px 0px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+color: #FFFFFF;
+width: 100%;
+}
+#using_grid .using_blog2{
+ margin-top: 12px;
+  /* border:2px solid brown; */
+
+}
+#using_grid .using_blog3{
+
+
+  margin:40px 0px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+color: #FFFFFF;
+}
+
+
+.book_demo{
+
+  background: #E5E5E5;
+  height: 100px;
+  width: 100%;
+  
+  } 
