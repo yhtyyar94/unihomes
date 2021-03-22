@@ -19,6 +19,8 @@
   border-radius: 4px;
   padding: 5px;
   font-family: Roboto;
+  width: 100%;
+  height: auto;
 }
 .title-text {
   margin: 10px;
@@ -63,4 +65,67 @@ p {
   font-weight: normal;
   font-size: 24px;
   line-height: 35px;
+}
+
+@media (max-width: 900px) {
+  .form-select {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 230px;
+  }
+}
+@media (max-width: 780px) {
+  .form-select {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 13px;
+    width: 230px;
+    margin-top: 35px;
+    font-size: 14px;
+  }
+  .form-option {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 585px) {
+  .form-select {
+    font-size: 12px;
+  }
+  .form-option {
+    font-size: 12px;
+  }
+  .title-text {
+    font-size: 18px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .filter {
+    background: white;
+    height: 80px;
+    width: auto;
+    display: flex;
+  }
+
+  .form-select {
+    width: 140px;
+    font-size: 7px;
+  }
+
+  .form-option {
+    border-radius: 4px;
+    padding: 0;
+    font-family: Roboto;
+    width: 100%;
+    height: auto;
+    font-size: 7px;
+    -webkit-appearance: none;
+  }
+  .title-text {
+    font-size: 13px;
+  }
 }

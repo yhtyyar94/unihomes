@@ -14,6 +14,7 @@ import Policies from '../StaticPages/Policies';
 import MainContent from './MainContent/MainContent';
 import LoginPop from '../App/Header/LoginPop';
 import RegisterPop from '../App/Header/RegisterPop';
+import MContent from './MainContent/MContent';
 
 export default function App() {
 	const [cities, setCities] = useState([]);
@@ -98,10 +99,8 @@ export default function App() {
 					<Route exact path="/aboutus" component={About} />
 					<Route exact path="/terms" component={Terms} />
 					<Route exact path="/policies" component={Policies} />
-					{/* <Route exact path="/maincontent" component={MainContent} /> */}
 				</Switch>
 			</Router>
-			{/* <MainContent/> */}
 			<Footer />
 		</div>
 	);

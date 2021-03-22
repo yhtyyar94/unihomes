@@ -19,7 +19,7 @@ export default function HomeDetails() {
 
 	const showBookViewing = () => {
 		setBookViewing(!bookViewing);
-	};
+	}; 
 
 	const closeBookViewing = () => {
 		setBookViewing(false);
@@ -42,7 +42,7 @@ export default function HomeDetails() {
 					<div className="homedetails-rooms-count-type-container">
 						<div className="homedetails-rooms-count-bedroom">
 							<p>Bedrooms</p>
-							<FaBed /> {home.length !== 0 && home.bedroom}
+							<FaBed/> {home.length !== 0 && home.bedroom}
 						</div>
 						<div className="homedetails-rooms-count-bathroom">
 							<p>Bathrooms</p>

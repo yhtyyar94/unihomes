@@ -48,7 +48,7 @@ app.set('api_secret_key', config.api_secret_key)
 
 app.use('/', login)
 app.use('/signup', signup)
-app.use('/api', userAuth)
+// app.use('/api', userAuth)
 app.use('/api', citiesRouter)
 app.use('/api', agentsRouter)
 app.use('/api', propertiesRouter)

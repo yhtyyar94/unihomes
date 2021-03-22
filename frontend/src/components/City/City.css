@@ -1,60 +1,88 @@
+/* * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */
+
 .city {
-  height: 442px;
+  height: auto;
   width: 500px;
   margin: 20px;
   background-color: white;
+  font-family: Roboto;
+  border-radius: 3px;
 }
 .home-img {
-  height: 300px;
+  height: auto;
   width: 100%;
+  margin: 0;
+  font-family: Roboto;
 }
-.info-one {
+.rent-area {
   background-color: #03c5f0;
   height: 40px;
   color: white;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: Roboto;
+  /* flex-direction: column; */
 }
-.info-two {
+.bedroom-area {
   background-color: white;
-  height: 30px;
+  height: auto;
   color: black;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  font-size: 17px;
+  font-family: Roboto;
 }
 
-.address {
+.address-area {
   background-color: white;
-  height: 20px;
+  height: auto;
   color: black;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 15px;
+  font-family: Roboto;
 }
 
 .buttons {
   height: 50;
   display: flex;
-}
-.short {
-  flex: 6;
-  height: 50px;
   border-top: solid 1px #e5e5e5;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto;
+}
+.shortlist-btn {
+  flex: 6;
+  height: auto;
+  border-right: solid 1px #e5e5e5;
   font-size: 24px;
   text-align: center;
+  font-family: Roboto;
 }
 
-.view {
+.view-btn {
+  flex: 6;
+  height: auto;
+  font-size: 24px;
+  text-align: center;
+  font-family: Roboto;
+}
+
+/* .view-btn {
   flex: 6;
   height: 50px;
   border-top: solid 1px #e5e5e5;
   border-left: solid 1px #e5e5e5;
   font-size: 24px;
   text-align: center;
-}
+  justify-content: center;
+} */
