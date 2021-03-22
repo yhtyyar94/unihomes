@@ -171,7 +171,7 @@ const MainContent = () => {
           </div>
         </section>
         <section className="main_cont_btn">
-          <button className="btn">See all cities</button>
+          <a href="/student-accommodation"><button className="btn">See all cities</button></a>
         </section>
       </section>
       <section id="main_cont_search">

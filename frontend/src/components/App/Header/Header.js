@@ -38,9 +38,9 @@ export default function Header({ toggleLogin }) {
 				<input type="text" placeholder="Search accomadation by cities..."/>
 			</div>
 			<div className="header-items">
-				<button className="navbar-item" onClick={() => setVisibility(!visible)}>
+				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
 					<MdSearch className="home-logo"/> Search
-				</button>
+				</a>
 				<a href="/shortlists" className="navbar-item">
 					<MdBookmark /> Shortlist
 				</a>

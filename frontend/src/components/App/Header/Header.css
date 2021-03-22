@@ -321,3 +321,6 @@
 #PopoverLegacy {
   background-color: #00bfff;
 }
+.btn {
+  cursor: pointer;
+}
