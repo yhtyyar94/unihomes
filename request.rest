@@ -14,8 +14,8 @@ POST http://localhost:5000/signup/createagent
 Content-Type: application/json
 
 {
-    "email":"kim123@gmail.com",
-    "password":"123",
+    "email":"kim@gmail.com",
+    "password":"98",
     "name" : "Kim",
     "contactNumber" : 125866987,
     "company" : "New3",
@@ -29,8 +29,8 @@ POST http://localhost:5001/login
 Content-Type: application/json
 
 {
-    "email":"kim123@gmail.com",
-    "password":"123"
+    "email":"kim12@gmail.com",
+    "password":"12"
 }
 
 ###

@@ -43,8 +43,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //config keys
-const config = require('./config')
-app.set('api_secret_key', config.api_secret_key)
+// const config = require('./config')
+// app.set('api_secret_key', config.api_secret_key)
 
 app.use('/', login)
 app.use('/signup', signup)

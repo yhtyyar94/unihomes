@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  margin-top: +40px;
 }
 
 .shortlist-header {
@@ -78,4 +79,105 @@
 .icon {
   margin-top: +5px;
   margin-right: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.top-cities {
+  height: 350px;
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.container-text p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  color: rgb(66, 64, 64);
+}
+
+.container-header {
+  display: flex;
+  justify-content:center;
+}
+
+.container-header h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 56px;
+  overflow:hidden;
+  margin-bottom: 10px;
+  color: rgb(66, 64, 64);
+}
+
+.container-cities {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* columns: 4; */
+  text-align: center;
+}
+
+.container-cities div {
+  width: 50%;
+  height: 48px;
+  left: 111px;
+  top: 914px;
+  background: #03C5F0;
+  border-radius: 10px;
+  margin-left: 25%;
+  margin-right: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.container-cities div:hover {
+  background:#0c94b3;
+}
+
+.container-cities div p {
+  color: #ffffff;
+  font-family: Roboto;
+  font-weight: 200;
+  align-items: center;
+
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-text h1 {
+    overflow: hidden;
+  }
+
+  .container-header h1 {
+    font-size: xx-large;
+  }
+
+  .container-cities div {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto
+  }
+
+  .container-cities div p{
+    font-size: 12px;
+    text-align: center;
+  }
 }
