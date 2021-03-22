@@ -33,10 +33,10 @@ export default function City({home}) {
                 <div className="address-area">
                     <p style={{padding:"7px",marginLeft:"8px"}}><MdLocationOn fill="#03c5f0" size={20}/>{home.address.street} Street, {home.address.district}, {home.address.postcode}</p>
                 </div>
-
+ 
                 <div className="buttons">
                     <div className="shortlist-btn">
-                    <p> <BsHeart /> &nbsp; Shortlist</p>
+                    <p> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>
                     </div>
                   
                     <Link className="view-btn" to={`/homedetails/${home.id}`}><FaHome style={{fill:"white"}}/> <IoHomeOutline/> &nbsp; View Home</Link>

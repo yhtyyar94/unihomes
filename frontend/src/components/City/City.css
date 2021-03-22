@@ -12,6 +12,18 @@
   font-family: Roboto;
   border-radius: 3px;
 }
+.city:hover {
+  /* margin-top: 0;
+  height: 110%; */
+  transform: scale(1.03);
+  transition: all 0.2s ease-in-out;
+}
+/* .buttons:hover {
+  color: #03c5f0;
+}
+.rent-area:hover {
+  color: #03c5f0;
+} */
 .home-img {
   height: auto;
   width: 100%;
@@ -67,6 +79,20 @@
   font-size: 24px;
   text-align: center;
   font-family: Roboto;
+}
+
+.shortlist-btn .add-btn {
+  display: none;
+}
+.shortlist-btn:hover .short-btn {
+  display: none;
+}
+.shortlist-btn:hover .add-btn {
+  display: inline;
+  color: red;
+}
+.shortlist-btn:hover .heart-icon {
+  fill: red;
 }
 
 .view-btn {
