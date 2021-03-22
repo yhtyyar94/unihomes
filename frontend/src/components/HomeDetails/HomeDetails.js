@@ -3,7 +3,8 @@ import { BsEnvelope } from 'react-icons/bs';
 import './HomeDetails.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { FaBed, FaBath, FaRegBuilding } from 'react-icons/fa';
+import { FaBed, FaBath, FaRegBuilding, FaRegHeart } from 'react-icons/fa';
+import bill from './bills.png';
 
 export default function HomeDetails() {
 	const [bookViewing, setBookViewing] = useState(false);
@@ -19,14 +20,36 @@ export default function HomeDetails() {
 
 	const showBookViewing = () => {
 		setBookViewing(!bookViewing);
-	}; 
+	};
 
 	const closeBookViewing = () => {
 		setBookViewing(false);
 	};
 	return (
 		<div className="homedetails-container">
-			<div className="homedetails-container-main"></div>
+			<div className="homedetails-container-main">
+				<div className="homedetails-main-img">
+					<img src={home.url} alt="" />
+				</div>
+
+				<div className="homedetails-main-key-features">
+					<h3>Key Features</h3>
+					{home.length !== 0 &&
+						home.keyFeatures.map((keyFeature) => (
+							<ul>
+								<li>{keyFeature}</li>
+							</ul>
+						))}
+					{console.log(home.keyFeatures)}
+				</div>
+				<div className="homedetails-main-bedroom-prices">
+					<h3>Bedroom Prices</h3>
+				</div>
+				<div className="homedetails-main-availability">
+					<h3>Availability</h3>
+					Till {home.availability}
+				</div>
+			</div>
 			<div className="homedetails-sidebar-container">
 				<div className="btn-book-viewing-container">
 					<h3>
@@ -42,20 +65,60 @@ export default function HomeDetails() {
 					<div className="homedetails-rooms-count-type-container">
 						<div className="homedetails-rooms-count-bedroom">
 							<p>Bedrooms</p>
-							<FaBed/> {home.length !== 0 && home.bedroom}
+							<FaBed /> {home.length !== 0 && home.bedroom}
+							<div style={{ textAlign: 'center' }}>
+								<FaBed
+									style={{
+										fill: 'lightblue',
+										marginRight: 5,
+										marginLeft: 15,
+									}}
+								/>{' '}
+								{home.length !== 0 && home.bedroom}
+							</div>
 						</div>
 						<div className="homedetails-rooms-count-bathroom">
 							<p>Bathrooms</p>
-							<FaBath />
-							{home.length !== 0 && home.bathroom}
+							<div style={{ textAlign: 'center' }}>
+								<FaBath
+									style={{
+										fill: 'lightblue',
+										marginRight: 5,
+										marginLeft: 15,
+									}}
+								/>
+								{home.length !== 0 && home.bathroom}
+							</div>
 						</div>
 						<div className="homedetails-rooms-type">
 							<p>Type</p>
-							<FaRegBuilding />
-							{home.length !== 0 && home.type}
+							<div style={{ textAlign: 'center' }}>
+								<FaRegBuilding
+									style={{
+										fill: 'lightblue',
+										marginRight: 5,
+										marginLeft: 15,
+									}}
+								/>
+								<span style={{ fontSize: 12 }}>
+									{home.length !== 0 && home.type}
+								</span>
+							</div>
 						</div>
 					</div>
-
+					<br />
+					<hr />
+					<h4
+						style={{
+							textAlign: 'center',
+							paddingTop: 8,
+							paddingBottom: 8,
+						}}
+					>
+						{home.rent} pppw including bills
+					</h4>
+					<hr />
+					<br />
 					<button
 						className="btn-book-viewing"
 						type="submit"
@@ -64,6 +127,18 @@ export default function HomeDetails() {
 						<BsEnvelope style={{ fill: 'white', marginRight: 10 }} />
 						Book Viewing
 					</button>
+					<div style={{ textAlign: 'center', marginBottom: 20 }}>
+						<button className="homedetails-sidebar-btn-shortlist">
+							<FaRegHeart style={{ fill: 'blue' }} /> Shortlist
+						</button>
+					</div>
+					<div style={{ textAlign: 'center' }}>
+						<img
+							src={bill}
+							alt="bills"
+							style={{ width: '75%', height: 'auto' }}
+						/>
+					</div>
 				</div>
 			</div>
 
