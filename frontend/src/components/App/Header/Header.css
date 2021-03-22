@@ -51,6 +51,15 @@
   transition: all 0.5s;
 }
 
+.scroll .search-toggle input::placeholder {
+  color: rgba(51, 51, 51, 0.63);
+  font-size: small;
+}
+
+.scroll .search-toggle input {
+ border: none;
+}
+
 .home-logo {
   margin-bottom: -5px;
 }
@@ -393,6 +402,11 @@
   }
 
   .header .search-toggle input::placeholder {
+    color: rgba(51, 51, 51, 0.63);
+    font-size: small;
+  }
+
+  .scroll .search-toggle input::placeholder {
     color: rgba(51, 51, 51, 0.63);
     font-size: small;
   }
