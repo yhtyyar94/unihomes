@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { BsEnvelope } from 'react-icons/bs';
 import './HomeDetails.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { FaBed, FaBath, FaRegBuilding, FaRegHeart } from 'react-icons/fa';
+import { TiTickOutline } from 'react-icons/ti';
 import bill from './bills.png';
 
 export default function HomeDetails() {
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	const [bookViewing, setBookViewing] = useState(false);
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
@@ -37,7 +42,10 @@ export default function HomeDetails() {
 					{home.length !== 0 &&
 						home.keyFeatures.map((keyFeature) => (
 							<ul>
-								<li>{keyFeature}</li>
+								<li>
+									<TiTickOutline fill="#03c5f0" size={22} />
+									{keyFeature}
+								</li>
 							</ul>
 						))}
 					{console.log(home.keyFeatures)}
@@ -65,15 +73,14 @@ export default function HomeDetails() {
 					<div className="homedetails-rooms-count-type-container">
 						<div className="homedetails-rooms-count-bedroom">
 							<p>Bedrooms</p>
-							<FaBed /> {home.length !== 0 && home.bedroom}
 							<div style={{ textAlign: 'center' }}>
 								<FaBed
 									style={{
-										fill: 'lightblue',
-										marginRight: 5,
-										marginLeft: 15,
+										fill: '#03c5f0',
+										marginRight: 8,
+										marginLeft: 8,
 									}}
-								/>{' '}
+								/>
 								{home.length !== 0 && home.bedroom}
 							</div>
 						</div>
@@ -82,9 +89,9 @@ export default function HomeDetails() {
 							<div style={{ textAlign: 'center' }}>
 								<FaBath
 									style={{
-										fill: 'lightblue',
-										marginRight: 5,
-										marginLeft: 15,
+										fill: '#03c5f0',
+										marginRight: 8,
+										marginLeft: 8,
 									}}
 								/>
 								{home.length !== 0 && home.bathroom}
@@ -95,9 +102,9 @@ export default function HomeDetails() {
 							<div style={{ textAlign: 'center' }}>
 								<FaRegBuilding
 									style={{
-										fill: 'lightblue',
+										fill: '#03c5f0',
 										marginRight: 5,
-										marginLeft: 15,
+										marginLeft: 8,
 									}}
 								/>
 								<span style={{ fontSize: 12 }}>
@@ -129,7 +136,7 @@ export default function HomeDetails() {
 					</button>
 					<div style={{ textAlign: 'center', marginBottom: 20 }}>
 						<button className="homedetails-sidebar-btn-shortlist">
-							<FaRegHeart style={{ fill: 'blue' }} /> Shortlist
+							<FaRegHeart style={{ fill: '#03c5f0' }} /> Shortlist
 						</button>
 					</div>
 					<div style={{ textAlign: 'center' }}>

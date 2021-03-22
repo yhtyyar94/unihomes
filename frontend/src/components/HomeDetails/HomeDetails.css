@@ -10,7 +10,7 @@
 
 .homedetails-container-main {
 	flex: 5;
-	height: 1000px;
+	height: auto;
 	margin-right: 15px;
 }
 
@@ -45,7 +45,7 @@ li {
 	display: flex;
 	flex-direction: column;
 	flex: 2;
-	height: 500px;
+	height: auto;
 	margin-right: 30px;
 	font-family: Roboto;
 	line-height: 15px;
@@ -110,6 +110,7 @@ li {
 	top: 20px;
 	border-radius: 10px;
 	border: none;
+	z-index: 505;
 }
 
 .btn-book-viewing-page-close {
