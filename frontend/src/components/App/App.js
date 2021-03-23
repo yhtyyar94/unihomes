@@ -119,9 +119,12 @@ console.log(isAuthenticated())
 							return <Redirect to='/'/>
 						}
 					}}/>
+<<<<<<< HEAD
 
 					{/* {Authentication() ? <Route exact path='/welcomepage' component={WelcomePage}  />: null} */}
 
+=======
+>>>>>>> c736c7ae7f3c3c9ffad510c893c2ae5c740ed08a
 				</Switch>
 			</Router>
 			<Footer />
