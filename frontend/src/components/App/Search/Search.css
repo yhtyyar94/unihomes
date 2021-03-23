@@ -79,14 +79,17 @@
   font-weight: normal;
   font-size: 18px;
   color: #ced3d8;
-  border-radius: 10px;
+  border-radius: 7px;
+  border: solid 1px #03c5f0;
+}
+.select-search:hover {
+  color: #03c5f0;
 }
 
 .btn-search {
   flex: 2;
-  margin-left: 10px;
-  margin-left: 10px;
-  width: 150px;
+  margin-left: 2px;
+  width: 145px;
   height: 40px;
   font-family: Roboto;
   font-style: normal;
@@ -95,9 +98,12 @@
   color: #ffffff;
   background: #ff8c00;
   border: none;
-  border-radius: 10px;
+  border-radius: 7px;
   text-align: center;
   justify-content: center;
+}
+.btn-search:hover {
+  background: #03c5f0;
 }
 
 /* IPAD SCREEN */
