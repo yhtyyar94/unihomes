@@ -103,7 +103,6 @@ console.log(isAuthenticated())
 					<Route exact path="/terms" component={Terms} />
 					<Route exact path="/policies" component={Policies} />
 					<Route exact path="/student-accommodation" component={TopCities} />
-<<<<<<< Updated upstream
 					<Route exact path="/agency/welcomepage"  render={(props) => {
 						const token = isAuthenticated()
 						if(token) {
@@ -120,9 +119,9 @@ console.log(isAuthenticated())
 							return <Redirect to='/'/>
 						}
 					}}/>
-=======
-					{Authentication() ? <Route exact path='/welcomepage' component={WelcomePage}  />: null}
->>>>>>> Stashed changes
+
+					{/* {Authentication() ? <Route exact path='/welcomepage' component={WelcomePage}  />: null} */}
+
 				</Switch>
 			</Router>
 			<Footer />
