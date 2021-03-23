@@ -40,9 +40,9 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 		window.addEventListener("scroll", changeClass)
 		window.addEventListener("click", changeUrl)	
 		changeUrl()
+		localStorage.setItem("token", '12345')
 	},[])
 
-	console.log(history);
 	return (
 		<div className={history === '/' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
