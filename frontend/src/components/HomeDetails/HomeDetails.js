@@ -17,15 +17,17 @@ export default function HomeDetails() {
 	let history = useHistory();
 
 	const [bookViewing, setBookViewing] = useState(false);
+
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
+	// const [rowsOfBedroomPrices, setRowsOfBedroomPrices] = useState([]);
 
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5000/homes/${id}`)
 			.then((res) => setHome(res.data))
 			.catch((err) => console.log(err));
-	}, []);
+	}, [id]);
 
 	const showBookViewing = () => {
 		setBookViewing(!bookViewing);
@@ -34,6 +36,15 @@ export default function HomeDetails() {
 	const closeBookViewing = () => {
 		setBookViewing(false);
 	};
+
+	// useEffect(() => {
+	// 	for (let i = 1; i <= home.bedroom; i++) {
+	// 		setRowsOfBedroomPrices([...rowsOfBedroomPrices, `row${i}`]);
+	// 	}
+
+	// 	console.log(rowsOfBedroomPrices);
+	// }, []);
+
 	return (
 		<div>
 			<div className="homedetails-back-to-search">
@@ -68,10 +79,15 @@ export default function HomeDetails() {
 									</li>
 								</ul>
 							))}
-						{console.log(home.keyFeatures)}
 					</div>
 					<div className="homedetails-main-bedroom-prices">
 						<h3>Bedroom Prices</h3>
+						{/* {rowsOfBedroomPrices.length !== 0 &&
+							rowsOfBedroomPrices.map((index) => (
+								<div key={index} style={{ border: 'solid 1px black' }}>
+									{`Bedroom ${index + 1}`} {home.rent}
+								</div>
+							))} */}
 					</div>
 					<div className="homedetails-main-availability">
 						<h3>Availability</h3>
@@ -81,7 +97,6 @@ export default function HomeDetails() {
 				<div className="homedetails-sidebar-container">
 					<div className="btn-book-viewing-container">
 						<h3>
-							{console.log(home)}
 							{home.length !== 0 && home.address.street},{' '}
 							{home.length !== 0 && home.address.district}
 						</h3>
