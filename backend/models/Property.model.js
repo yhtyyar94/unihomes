@@ -2,22 +2,18 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const PropertiesSchema = new Schema({
-    name: {type:String, required:true},
     city: {type:mongoose.Types.ObjectId},
     user:{type:mongoose.Types.ObjectId},
     keyFeatures:{type:Array},
-    location:{type:String},
-    description:{type:String},
-    bedrooms:{type:Array},
+    address:{type:Object},
+    home_description:{type:String},
+    bedroom:{type:Array},
     deposit:{type:Number},
-    availability:{type:Array},
-    billsIncluded:{type:Array},
-    bathrooms:{type:Number},
+    availability:{type:Object},
+    bathroom:{type:Number},
     type:{type:String},
-    liked:{type:Boolean, default:false},
     images:{type:Array},
-    price:{type:Number},
-    addedAt:{type:Date, default:Date.now}
-})
+    rent:{type:Number}
+},{timestamps:true})
 
 module.exports = mongoose.model('property', PropertiesSchema)

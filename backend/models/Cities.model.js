@@ -3,8 +3,8 @@ const Schema = mongoose.Schema
 
 const CitiesSchema = new Schema({
     name: {type:String, required:true, unique:true},
-    // numberOfProperty: {type:Number},
-    image:{type:String}
-})
+    city_description: {type:String},
+    url:{type:String}
+},{timestamps:true})
 
 module.exports = mongoose.model('city', CitiesSchema)
