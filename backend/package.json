@@ -17,6 +17,7 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.5.1",
+    "mongod": "^2.0.0",
     "mongoose": "^5.12.0",
     "morgan": "~1.9.1",
     "validator": "^13.5.2"

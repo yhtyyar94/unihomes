@@ -21,8 +21,8 @@ import AddProperty from './Agency/AddProperty/AddProperty';
 export default function App() {
 	const [cities, setCities] = useState([]);
 	const [homes, setHomes] = useState([]);
-	const [currentCity, setCurrentCity] = useState('Liverpool');
-	const [roomCount, setRoomCount] = useState(4);
+	const [currentCity, setCurrentCity] = useState('');
+	const [roomCount, setRoomCount] = useState([]);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
 	const [isLoggedIn, setIsLoggedIn] = useState(true)
@@ -103,6 +103,7 @@ console.log(isAuthenticated())
 					<Route exact path="/terms" component={Terms} />
 					<Route exact path="/policies" component={Policies} />
 					<Route exact path="/student-accommodation" component={TopCities} />
+<<<<<<< Updated upstream
 					<Route exact path="/agency/welcomepage"  render={(props) => {
 						const token = isAuthenticated()
 						if(token) {
@@ -119,6 +120,9 @@ console.log(isAuthenticated())
 							return <Redirect to='/'/>
 						}
 					}}/>
+=======
+					{Authentication() ? <Route exact path='/welcomepage' component={WelcomePage}  />: null}
+>>>>>>> Stashed changes
 				</Switch>
 			</Router>
 			<Footer />
