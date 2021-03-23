@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Search from './Search/Search';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Redirect,
+	Route,
+	Switch,
+} from 'react-router-dom';
 import Cities from '../City/Cities';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
@@ -13,9 +18,9 @@ import Terms from '../StaticPages/Terms';
 import Policies from '../StaticPages/Policies';
 import LoginPop from '../App/Header/LoginPop';
 import RegisterPop from '../App/Header/RegisterPop';
-import TopCities from './TopCities'
-import isAuthenticated from './Agency/Authentication'
-import WelcomePage from './Agency/Welcome/WelcomePage'
+import TopCities from './TopCities';
+import isAuthenticated from './Agency/Authentication';
+import WelcomePage from './Agency/Welcome/WelcomePage';
 import AddProperty from './Agency/AddProperty/AddProperty';
 
 export default function App() {
@@ -25,8 +30,8 @@ export default function App() {
 	const [roomCount, setRoomCount] = useState([]);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-	const [isLoggedIn, setIsLoggedIn] = useState(true)
- 
+	const [isLoggedIn, setIsLoggedIn] = useState(true);
+
 	useEffect(() => {
 		axios
 			.get('http://localhost:5000/homes')
@@ -74,10 +79,10 @@ export default function App() {
 		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
 		setHomes(filteredHomes);
 	};
-console.log(isAuthenticated())
+	console.log(isAuthenticated());
 	return (
 		<div>
-			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn}/>
+			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} />
 			{login === true ? <LoginPop register={register} /> : null}
 			{signup === true ? (
 				<RegisterPop register={register} backtoLogin={backtoLogin} />
@@ -102,29 +107,68 @@ console.log(isAuthenticated())
 					<Route exact path="/aboutus" component={About} />
 					<Route exact path="/terms" component={Terms} />
 					<Route exact path="/policies" component={Policies} />
-					<Route exact path="/student-accommodation" component={TopCities} />
-					<Route exact path="/agency/welcomepage"  render={(props) => {
-						const token = isAuthenticated()
-						if(token) {
-							return <WelcomePage /> 
-						} else {
-							return <Redirect to='/'/>
-						}
-					}}/>
-					<Route exact path="/agency/addproperty"  render={(props) => {
-						const token = isAuthenticated()
-						if(token) {
-							return <AddProperty /> 
-						} else {
-							return <Redirect to='/'/>
-						}
-					}}/>
-<<<<<<< HEAD
+
+					<Route
+						exact
+						path="/student-accommodation"
+						component={TopCities}
+					/>
+					<Route
+						exact
+						path="/agency/welcomepage"
+						render={(props) => {
+							const token = isAuthenticated();
+							if (token) {
+								return <WelcomePage />;
+							} else {
+								return <Redirect to="/" />;
+							}
+						}}
+					/>
+					<Route
+						exact
+						path="/agency/addproperty"
+						render={(props) => {
+							const token = isAuthenticated();
+							if (token) {
+								return <AddProperty />;
+							} else {
+								return <Redirect to="/" />;
+							}
+						}}
+					/>
 
 					{/* {Authentication() ? <Route exact path='/welcomepage' component={WelcomePage}  />: null} */}
 
-=======
->>>>>>> c736c7ae7f3c3c9ffad510c893c2ae5c740ed08a
+					<Route
+						exact
+						path="/student-accommodation"
+						component={TopCities}
+					/>
+					<Route
+						exact
+						path="/agency/welcomepage"
+						render={(props) => {
+							const token = isAuthenticated();
+							if (token) {
+								return <WelcomePage />;
+							} else {
+								return <Redirect to="/" />;
+							}
+						}}
+					/>
+					<Route
+						exact
+						path="/agency/addproperty"
+						render={(props) => {
+							const token = isAuthenticated();
+							if (token) {
+								return <AddProperty />;
+							} else {
+								return <Redirect to="/" />;
+							}
+						}}
+					/>
 				</Switch>
 			</Router>
 			<Footer />
