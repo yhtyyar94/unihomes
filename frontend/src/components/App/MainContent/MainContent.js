@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import './MainContent.css'
 import axios from "axios";
+import { useHistory } from "react-router";
+
 
   const MainContent = () => {
     const [images, setImages] = useState("");
+    const history=useHistory();
     useEffect(() => {
       axios
         .get(`http://localhost:5001/api/getcities/`)
@@ -29,7 +32,7 @@ import axios from "axios";
                 backgroundPosition: 'center',
                 backgroundSize: 'cover'
               }} >  */}                      
-           <img src={image.image}></img>
+           <img src={image.url}></img>
               <h3>{image.name}</h3>
               <p> 26 properties</p>
              
@@ -50,7 +53,7 @@ import axios from "axios";
     </div>
 
     <div className="main-allCities">
-    <button className="btn">See all cities</button>
+    <button className="btn" onClick={()=>history.push('/student-accommodation')}>See all cities</button>
     </div>
 
     <div className="main-search">
@@ -72,7 +75,7 @@ import axios from "axios";
         <p>Bills are included in all rent prices. No hidden fees.</p>
         </div>
     </div>
-    <div><button className="box-btn">Search and Compare</button></div>
+    <div><a href="#search"><button className="box-btn" >Search and Compare</button></a></div>
 
     </div>
    

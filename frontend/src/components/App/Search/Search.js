@@ -17,7 +17,7 @@ export default function Search({cities,currentCity,roomCount,handleSubmit}) {
 
     return (   
      
-        <div className="container">
+        <div className="container" id="search">
                 <div className="banner">
                     <div className="banner-text">
                         <h1 >Find student homes with bills included</h1>
