@@ -6,7 +6,7 @@ import { BsHeart } from "react-icons/bs";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdLocationOn } from "react-icons/md";
 
-
+ 
 export default function City({home}) {
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
@@ -15,7 +15,7 @@ export default function City({home}) {
     return ( 
         <div className="city">
                 <div className="home-img">
-                    <img src={home.url} alt="home" style={{width:"100%",height:"auto",marginBottom:"-4px"}} />
+                    <img src={home.images[0]} alt="home" style={{width:"100%",height:"auto",marginBottom:"-4px"}} />
                 </div>    
                 <div className="rent-area">
                         <div style={{marginLeft:"-5%"}}>
