@@ -21,6 +21,7 @@ const AddProperty = () => {
 	const [ keys, setKeys ] = useState('');
 	const [ description, setDescription ] = useState(null);
 	const [multipleFiles, setMultipleFiles ] = useState([]);
+	const [successSubmit, setSuccessSubmit] = useState(null)
 
 	useEffect(() => {
 		axios
@@ -64,6 +65,9 @@ const AddProperty = () => {
 	}
 	return (
 		<div className="AddProperty">
+			<div className="addproperty-succes-message">
+				Your property added successfully
+			</div>
 			<form className="add-form" onSubmit={onSubmit}>
 				<div className="row row1">
 					<div>
@@ -94,7 +98,7 @@ const AddProperty = () => {
 				</div>
 				<div className="row row2">
 					<label htmlFor="images">Upload Images</label>
-					<input type="file" multiple onChange={e => multipleFileChange(e)} required/>
+					<input type="file" multiple onChange={e => multipleFileChange(e)} required />
 				</div>
 				<div className="row row3">
 					<div>

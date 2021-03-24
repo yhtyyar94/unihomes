@@ -40,6 +40,7 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 		window.addEventListener("scroll", changeClass)
 		window.addEventListener("click", changeUrl)	
 		changeUrl()
+		localStorage.setItem('token', '12345')
 	},[])
 
 	return (
