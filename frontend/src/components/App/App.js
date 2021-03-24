@@ -89,7 +89,7 @@ export default function App() {
 			) : null}
 			<Router>
 				<Switch>
-					<Route
+					<Route    
 						exact
 						path="/"
 						render={() => <Search cities={cities} />}
