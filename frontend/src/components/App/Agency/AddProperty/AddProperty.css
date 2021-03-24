@@ -11,9 +11,10 @@
     background-color: #03C5F0;
 }
 
-.add-form input, textarea {
+.add-form input, textarea, select {
     margin-left: 5px;
     margin-right: 5px;
+    border: none;
 }
 
 .add-form select {
@@ -29,7 +30,7 @@
 }
 
 .add-form input::placeholder {
-    color: #4d4f50;
+    color: #656d6d;
     font-size: 12px;
 }
 

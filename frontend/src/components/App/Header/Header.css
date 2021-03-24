@@ -113,6 +113,7 @@
   color: #ffffff;
   font-size: large;
   font-weight: 200;
+  cursor: pointer;
 }
 
 .search-toggle input {
@@ -126,39 +127,97 @@
 
 .logContainer {
   position: absolute;
+  display: inline;
+  top: 90px;
   right: 0;
   z-index: 30;
-  width: 374px;
-  height: 450px;
-  /* overflow: scroll; */
-  background: #00bfff;
-  border-radius: 3px;
-  box-shadow: 0 -3px 3px rgb(0 0 0 / 10%), 0 3px 3px #ececfb;
-}
-.regContainer {
-  position: absolute;
-  right: 0;
-  z-index: 30;
-  width: 374px;
-  height: 542px;
-  /* overflow: scroll; */
+  width: 25%;
+  height: 72%;
+  overflow: hidden;
   background: #00bfff;
   border-radius: 3px;
   box-shadow: 0 -3px 3px rgb(0 0 0 / 10%), 0 3px 3px #ececfb;
 }
 
-.logTitle {
-  position: absolute;
-  width: 165px;
-  height: 27px;
-  left: 18px;
-  top: 20px;
+.logContainer label, .logContainer input{
+  display: block !important;
+  margin-left: +5%;
+}
+
+.login-email {
+  margin-top: +30%;
+}
+
+.login-email input, .login-password input {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-email input::placeholder {
+  color: rgb(104, 100, 100);
+  font-size: small;
+}
+
+.login-password {
+  margin-top: +10%;
+}
+
+
+.login-password input::placeholder {
+  color: rgb(104, 100, 100);
+  font-size: small;
+}
+
+.login-email label, .login-password label{
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 200;
+  font-size: 18px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.logScroll {
+  position: fixed;
+}
+
+.regContainer {
+  position: absolute;
+  display: inline;
+  top: 90px;
+  right: 0;
+  z-index: 30;
+  width: 25%;
+  height: 80%;
+  overflow: hidden;
+  background: #00bfff;
+  border-radius: 3px;
+  box-shadow: 0 -3px 3px rgb(0 0 0 / 10%), 0 3px 3px #ececfb;
+}
+
+.regScroll {
+  position: fixed;
+}
+
+.registerTxt {
+  overflow: hidden;
+}
+
+.logTitle {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  left: 18px;
+  top: 18px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 200;
   font-size: 24px;
   line-height: 28px;
   color: #ffffff;
+  overflow: hidden;
 }
 
 .logLine {
@@ -255,17 +314,17 @@
 }
 .loginBtn {
   position: absolute;
-  width: 305px;
-  height: 51px;
+  width: 90%;
+  height: 40px;
   left: 18px;
   top: 269px;
   background: #ff8c00;
-  border-width: 0px;
+  border: none;
+  border-radius: 5px;
   font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 200;
   font-size: 24px;
-  line-height: 28px;
   color: #ffffff;
 }
 .signupBtn {
@@ -303,9 +362,9 @@
 .registerTxt {
   position: absolute;
   width: 218px;
-  height: 25px;
+  height: 30px;
   left: -8px;
-  top: 350px;
+  top: 345px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -327,12 +386,13 @@
 
 .agentBtn {
   position: absolute;
-  width: 305px;
-  height: 30px;
+  width: 90%;
+  height: 35px;
   left: 22px;
   top: 403px;
   background: #00bfff;
-  border-width: 0px;
+  border: none;
+  border-radius: 5px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -366,6 +426,11 @@
 }
 
 .agency a {
+  cursor: pointer;
+}
+
+.close-logo {
+  margin-left: 150px;
   cursor: pointer;
 }
 

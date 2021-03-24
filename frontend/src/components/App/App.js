@@ -79,11 +79,11 @@ export default function App() {
 		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
 		setHomes(filteredHomes);
 	};
-	console.log(isAuthenticated());
+
 	return (
 		<div>
 			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} />
-			{login === true ? <LoginPop register={register} /> : null}
+			{login === true ? <LoginPop register={register} setLog={setLog}/> : null}
 			{signup === true ? (
 				<RegisterPop register={register} backtoLogin={backtoLogin} />
 			) : null}

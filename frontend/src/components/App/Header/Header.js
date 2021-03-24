@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
 import { MdHome } from 'react-icons/md';
-import { MdSearch } from 'react-icons/md';
+import { ImSearch } from 'react-icons/im';
 import { MdPerson } from 'react-icons/md';
 import { MdMail } from 'react-icons/md';
-import { MdBookmark } from 'react-icons/md';
+import { BsHeart } from 'react-icons/bs';
 import { BiLayerPlus } from 'react-icons/bi';
 import { FaHome } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
@@ -51,7 +51,6 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 		window.addEventListener("scroll", changeClass)
 		window.addEventListener("click", changeUrl)	
 		changeUrl()
-		localStorage.setItem("token", '12345')
 	},[])
 
 	return (
@@ -66,7 +65,7 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 			</div>
 			{!isLoggedIn ? <div className="header-items">
 				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
-					<MdSearch className="search-logo"/> Search
+					<ImSearch className="search-logo"/> Search
 				</a>
 			   {shortlist.length===0 
 			   ? <a href="/shortlists" className="navbar-item">
@@ -80,9 +79,9 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 				<a href="/contact" className="navbar-item">
 					<MdMail /> Contact Us
 				</a>
-				<button href="/LoginPop" className="navbar-item" onClick={toggleLogin}>
+				<a  className="navbar-item" onClick={toggleLogin}>
 					<MdPerson /> Login
-				</button>
+				</a>
 			</div> : <div className="agency">
 				<a className="navbar-item btn" >
 					<BiLayerPlus className="search-logo"/> Add Property
