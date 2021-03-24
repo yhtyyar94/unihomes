@@ -30,7 +30,7 @@ export default function App() {
 	const [roomCount, setRoomCount] = useState([]);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-	const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	useEffect(() => {
 		axios
@@ -79,7 +79,7 @@ export default function App() {
 		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
 		setHomes(filteredHomes);
 	};
-	console.log(isAuthenticated());
+
 	return (
 		<div>
 			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} />
