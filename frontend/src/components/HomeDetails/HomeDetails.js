@@ -8,6 +8,9 @@ import { TiTickOutline } from 'react-icons/ti';
 import bill from './bills.png';
 import { useHistory } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
+import { BiLeftArrow } from "react-icons/bi";
+import { BiRightArrow } from "react-icons/bi";
+
 
 export default function HomeDetails() {
 	useLayoutEffect(() => {
@@ -18,14 +21,33 @@ export default function HomeDetails() {
 
 	const [bookViewing, setBookViewing] = useState(false);
 
+	
+	
+
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
+	const[firstImg,setFirstImg]=useState(null)
+	const[secondImg,setSecondImg]=useState(null)
+	const[thirdImg,setThirdImg]=useState(null)
+	const[fourthImg,setFourthImg]=useState(null)
+
+	// useEffect(() => {
+	// 	if(home.images.length!==0){
+	// 		setFirstImg(home.images[0].url)
+	// 	}
+		
+	// }, [])
+	
 	// const [rowsOfBedroomPrices, setRowsOfBedroomPrices] = useState([]);
 
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5000/homes/${id}`)
-			.then((res) => setHome(res.data))
+			.then((res) => {setFirstImg(res.data.images[0]); 
+				setSecondImg(res.data.images[1]);
+				setThirdImg(res.data.images[2]);
+				setFourthImg(res.data.images[3]);
+				setHome(res.data)})
 			.catch((err) => console.log(err));
 	}, [id]);
 
@@ -45,8 +67,40 @@ export default function HomeDetails() {
 	// 	console.log(rowsOfBedroomPrices);
 	// }, []);
 
+	const handleSecondImg=()=>{
+		setFirstImg(secondImg)
+		setFourthImg(firstImg)
+		setSecondImg(thirdImg)
+		setThirdImg(fourthImg)
+	}
+	const handleThirdImg=()=>{
+		setFirstImg(thirdImg)
+		setFourthImg(firstImg)
+		setSecondImg(secondImg)
+		setThirdImg(fourthImg)
+	}
+	const handleFourthImg=()=>{
+		setFirstImg(fourthImg)
+		setFourthImg(firstImg)
+		setSecondImg(secondImg)
+		setThirdImg(thirdImg)
+	}
+	const handleRightSwipe=()=>{
+		setFirstImg(secondImg)
+		setFourthImg(firstImg)
+		setSecondImg(thirdImg)
+		setThirdImg(fourthImg)
+	}
+	const handleLeftSwipe=()=>{
+		setFirstImg(fourthImg)
+		setFourthImg(thirdImg)
+		setSecondImg(firstImg)
+		setThirdImg(secondImg)
+	}
+
 	return (
 		<div>
+			
 			<div className="homedetails-back-to-search">
 				<form>
 					<button
@@ -63,9 +117,22 @@ export default function HomeDetails() {
 			</div>
 
 			<div className="homedetails-container">
+
 				<div className="homedetails-container-main">
 					<div className="homedetails-main-img">
-						<img src={home.url} alt="" />
+					
+					<div style={{position:"relative"}}>
+					<BiRightArrow onClick={handleRightSwipe} size={40} fill="white" style={{position:"absolute",top:"45%",right:"2%"}} />
+					<BiLeftArrow onClick={handleLeftSwipe} size={40} fill="white" style={{position:"absolute",top:"45%",left:"2%"}} />
+					<img  src={firstImg && firstImg} style={{borderRadius:"3px"}} alt=""/> 
+					</div>
+					   
+					   <div style={{display:"flex",justifyContent:"space-around"}}>
+							<img onClick={handleSecondImg} src={secondImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}} />
+							<img  onClick={handleThirdImg} src={thirdImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}}/>
+							<img onClick={handleFourthImg} src={fourthImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}} />
+						</div>   
+						
 					</div>
 
 					<div className="homedetails-main-key-features">

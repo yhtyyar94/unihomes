@@ -25,7 +25,7 @@ const Shortlist = () => {
             </div>
             <hr className="hr"/>
             <div className="shortlist-body">
-                {data.map(city => <City home={city}/>)}
+                {/* {data.map(city => <City home={city}/>)} */}
             </div>
             <div className="book-viewings">
                 <button> <div className="icon"><BiEnvelope/></div>Book Viewings for All</button>
