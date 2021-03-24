@@ -7,12 +7,12 @@ const PropertiesSchema = new Schema({
     keyFeatures:{type:Array},
     address:{type:Object},
     home_description:{type:String},
-    bedroom:{type:Array},
+    bedroom:{type:Number},
     deposit:{type:Number},
     availability:{type:Object},
     bathroom:{type:Number},
     type:{type:String},
-    images:{type:Array},
+    images:[Object],
     rent:{type:Number}
 },{timestamps:true})
 
