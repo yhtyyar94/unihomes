@@ -72,6 +72,7 @@
   font-size: 24px;
   text-align: center;
   font-family: Roboto;
+  cursor: pointer;
 }
 
 .shortlist-btn .add-btn {
@@ -94,6 +95,16 @@
   font-size: 24px;
   text-align: center;
   font-family: Roboto;
+  cursor: pointer;
+}
+.remove-btn {
+  flex: 6;
+  height: auto;
+  font-size: 24px;
+  text-align: center;
+  font-family: Roboto;
+  color: red;
+  cursor: pointer;
 }
 
 /* .view-btn {

@@ -1,8 +1,8 @@
-import React,{useLayoutEffect} from 'react'
+import React,{useLayoutEffect,useEffect,useState} from 'react'
 import {Link} from 'react-router-dom'
 import './City.css'
 import {FaBed,FaBath,FaHome} from "react-icons/fa";
-import { BsHeart } from "react-icons/bs";
+import { BsHeart,BsHeartFill } from "react-icons/bs";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdLocationOn } from "react-icons/md";
 
@@ -11,6 +11,34 @@ export default function City({home}) {
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
       }, []);
+      const[shortlist,setShortlist]=useState([2])
+    
+      const addToShortlist=()=>{
+            let homeId =home.id
+            if(localStorage.getItem('shortlist')===null){
+                localStorage.setItem('shortlist','[]')
+            }
+
+            let idList = JSON.parse(localStorage.getItem('shortlist'))
+            idList.push(homeId)
+            localStorage.setItem('shortlist',JSON.stringify(idList))
+      } 
+
+      useEffect(() => {
+            setShortlist(JSON.parse(localStorage.getItem('shortlist')))   
+	}, [shortlist])
+
+    const removeFromShortlist=()=>{
+        for( let i = 0; i < shortlist.length; i++){ 
+    
+            if ( shortlist[i] === home.id) { 
+        
+                shortlist.splice(i, 1); 
+            }
+       
+        localStorage.setItem('shortlist',JSON.stringify(shortlist));
+    }}
+ 
 
     return ( 
         <div className="city">
@@ -39,7 +67,9 @@ export default function City({home}) {
  
                 <div className="buttons">
                     <div className="shortlist-btn">
-                    <p> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>
+                   
+                    {shortlist.includes(home.id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
+                    : <p onClick={addToShortlist}> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>}
                     </div>
                   
                     <Link className="view-btn" to={`/homedetails/${home.id}`}><FaHome style={{fill:"white"}}/> <IoHomeOutline/> &nbsp; View Home</Link>

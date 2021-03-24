@@ -30,8 +30,8 @@ export default function App() {
 	const [roomCount, setRoomCount] = useState([]);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+	const [isLoggedIn, setIsLoggedIn] = useState(false)
+ 
 	useEffect(() => {
 		axios
 			.get('http://localhost:5000/homes')
@@ -89,7 +89,7 @@ export default function App() {
 			) : null}
 			<Router>
 				<Switch>
-					<Route
+					<Route    
 						exact
 						path="/"
 						render={() => <Search cities={cities} />}
@@ -107,68 +107,27 @@ export default function App() {
 					<Route exact path="/aboutus" component={About} />
 					<Route exact path="/terms" component={Terms} />
 					<Route exact path="/policies" component={Policies} />
+					<Route exact path="/student-accommodation" component={TopCities} />
+					<Route exact path="/agency/welcomepage"  render={(props) => {
+						const token = isAuthenticated()
+						if(token) {
+							return <WelcomePage /> 
+						} else {
+							return <Redirect to='/'/>
+						}
+					}}/>
+					<Route exact path="/agency/addproperty"  render={(props) => {
+						const token = isAuthenticated()
+						if(token) {
+							return <AddProperty /> 
+						} else {
+							return <Redirect to='/'/>
+						}
+					}}/>
 
-					<Route
-						exact
-						path="/student-accommodation"
-						component={TopCities}
-					/>
-					<Route
-						exact
-						path="/agency/welcomepage"
-						render={(props) => {
-							const token = isAuthenticated();
-							if (token) {
-								return <WelcomePage />;
-							} else {
-								return <Redirect to="/" />;
-							}
-						}}
-					/>
-					<Route
-						exact
-						path="/agency/addproperty"
-						render={(props) => {
-							const token = isAuthenticated();
-							if (token) {
-								return <AddProperty />;
-							} else {
-								return <Redirect to="/" />;
-							}
-						}}
-					/>
 
 					{/* {Authentication() ? <Route exact path='/welcomepage' component={WelcomePage}  />: null} */}
 
-					<Route
-						exact
-						path="/student-accommodation"
-						component={TopCities}
-					/>
-					<Route
-						exact
-						path="/agency/welcomepage"
-						render={(props) => {
-							const token = isAuthenticated();
-							if (token) {
-								return <WelcomePage />;
-							} else {
-								return <Redirect to="/" />;
-							}
-						}}
-					/>
-					<Route
-						exact
-						path="/agency/addproperty"
-						render={(props) => {
-							const token = isAuthenticated();
-							if (token) {
-								return <AddProperty />;
-							} else {
-								return <Redirect to="/" />;
-							}
-						}}
-					/>
 				</Switch>
 			</Router>
 			<Footer />
