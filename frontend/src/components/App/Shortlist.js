@@ -24,9 +24,9 @@ const Shortlist = () => {
                 <p>Book viewings for multiple homes in one quick message. You'll usually hear back from the letting agent or landlord within 24 hours to arrange viewings.</p>
             </div>
             <hr className="hr"/>
-            <div className="shortlist-body">
+            {/* <div className="shortlist-body">
                 {data.map(city => <City home={city}/>)}
-            </div>
+            </div> */}
             <div className="book-viewings">
                 <button> <div className="icon"><BiEnvelope/></div>Book Viewings for All</button>
             </div>

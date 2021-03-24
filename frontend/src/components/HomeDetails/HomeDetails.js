@@ -122,8 +122,8 @@ export default function HomeDetails() {
 					<div className="homedetails-main-img">
 					
 					<div style={{position:"relative"}}>
-					<BiRightArrow onClick={handleRightSwipe} size={40} fill="white" style={{position:"absolute",top:"45%",right:"2%"}} />
-					<BiLeftArrow onClick={handleLeftSwipe} size={40} fill="white" style={{position:"absolute",top:"45%",left:"2%"}} />
+					<BiRightArrow className="arrow-right" onClick={handleRightSwipe} fill="white" />
+					<BiLeftArrow className="arrow-left" onClick={handleLeftSwipe}  fill="white" />
 					<img  src={firstImg && firstImg} style={{borderRadius:"3px"}} alt=""/> 
 					</div>
 					   
@@ -131,7 +131,7 @@ export default function HomeDetails() {
 							<img onClick={handleSecondImg} src={secondImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}} />
 							<img  onClick={handleThirdImg} src={thirdImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}}/>
 							<img onClick={handleFourthImg} src={fourthImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}} />
-						</div>   
+						</div>    
 						
 					</div>
 

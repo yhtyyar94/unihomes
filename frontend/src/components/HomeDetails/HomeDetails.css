@@ -40,6 +40,27 @@
   height: auto;
 }
 
+.arrow-right {
+  position: absolute;
+  top: 45%;
+  right: 2%;
+  font-size: 2.4em;
+  cursor: pointer;
+}
+.arrow-left {
+  position: absolute;
+  top: 45%;
+  left: 2%;
+  font-size: 2.4em;
+  cursor: pointer;
+}
+.arrow-right:hover {
+  fill: #03c5f0;
+}
+.arrow-left:hover {
+  fill: #03c5f0;
+}
+
 .homedetails-main-key-features {
   font-family: Roboto;
   margin-top: 50px;
@@ -255,4 +276,34 @@ li {
   height: 55px;
   font-family: Roboto;
   font-size: 22px;
+}
+@media (max-width: 900px) {
+  .arrow-right {
+    top: 47%;
+    font-size: 1.8em;
+  }
+  .arrow-left {
+    top: 47%;
+    font-size: 1.8em;
+  }
+}
+@media (max-width: 760px) {
+  .arrow-right {
+    top: 50%;
+    font-size: 1.4em;
+  }
+  .arrow-left {
+    top: 50%;
+    font-size: 1.4em;
+  }
+}
+@media (max-width: 520px) {
+  .arrow-right {
+    top: 47%;
+    font-size: 1.4em;
+  }
+  .arrow-left {
+    top: 47%;
+    font-size: 1.4em;
+  }
 }

@@ -19,11 +19,9 @@
   margin-bottom: 2px;
 }
 
-
 .header .search-toggle input::placeholder {
   color: rgba(51, 51, 51, 0.63);
-    font-size: 14px;
-
+  font-size: 14px;
 }
 
 .scroll {
@@ -57,7 +55,7 @@
 }
 
 .scroll .search-toggle input {
- border: none;
+  border: none;
 }
 
 .home-logo {
@@ -80,6 +78,21 @@
   margin-right: 40px;
   margin-top: 20px;
   transition: all 0.5s;
+  position: relative;
+}
+
+.heart-number-zero {
+  position: absolute;
+  font-size: 12px;
+  left: 26%;
+  top: 27%;
+}
+.heart-number {
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  left: 26%;
+  top: 27%;
 }
 
 .header-items button {
@@ -352,7 +365,7 @@
   cursor: pointer;
 }
 
-.agency a{
+.agency a {
   cursor: pointer;
 }
 
@@ -402,7 +415,7 @@
     top: 0;
     width: 50%;
     margin-bottom: 30px;
-    border:none;
+    border: none;
   }
 
   .header .search-toggle input::placeholder {
