@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const PropertiesSchema = new Schema({
-    city: {type:mongoose.Types.ObjectId},
+    cityId: {type:mongoose.Types.ObjectId},
     user:{type:mongoose.Types.ObjectId},
     keyFeatures:{type:Array},
     address:{type:Object},
@@ -13,7 +13,8 @@ const PropertiesSchema = new Schema({
     bathroom:{type:Number},
     type:{type:String},
     images:[Object],
-    rent:{type:Number}
+    rent:{type:Number},
+    cityName:{type:String}
 },{timestamps:true})
 
 module.exports = mongoose.model('property', PropertiesSchema)
