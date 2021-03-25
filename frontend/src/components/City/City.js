@@ -12,7 +12,7 @@ export default function City({home}) {
         window.scrollTo(0, 0);
       }, []);
       const[shortlist,setShortlist]=useState([])
-    
+     
       const addToShortlist=()=>{     
             if(localStorage.getItem('shortlist')===null){
                 localStorage.setItem('shortlist','[]')

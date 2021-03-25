@@ -26,7 +26,7 @@ const Shortlist = ({homes}) => {
           });
       }, []);
 
-    return (
+    return ( 
         <div className="shortlist">
             <div className="shortlist-header">
                 <h1>Shortlist</h1>
@@ -43,7 +43,7 @@ const Shortlist = ({homes}) => {
             <div className="book-viewings">
                 <button> <div className="icon"><BiEnvelope/></div>Book Viewings for All</button>
             </div>
-            <ShortListModal />
+     
         </div>
     )
 }
