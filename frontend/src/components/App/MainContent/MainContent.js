@@ -34,7 +34,7 @@ import { useHistory } from "react-router";
               }} >  */}                      
            <img src={image.url}></img>
               <h3>{image.name}</h3>
-              <p> 26 properties</p>
+              <span> 26 properties</span>
              
               </div>
             ))}
