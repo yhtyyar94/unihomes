@@ -22,6 +22,8 @@ import TopCities from './TopCities';
 import isAuthenticated from './Agency/Authentication';
 import WelcomePage from './Agency/Welcome/WelcomePage';
 import AddProperty from './Agency/AddProperty/AddProperty';
+import MyProfile from './Agency/MyProfile/MyProfile';
+
 
 export default function App() {
 	const [cities, setCities] = useState([]);
@@ -30,7 +32,7 @@ export default function App() {
 	const [roomCount, setRoomCount] = useState([]);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [isLoggedIn, setIsLoggedIn] = useState(true);
 
 	useEffect(() => {
 		axios
@@ -132,6 +134,19 @@ export default function App() {
 							const token = isAuthenticated();
 							if (token) {
 								return <AddProperty />;
+							} else {
+								return <Redirect to="/" />;
+							}
+						}}
+					/>
+
+					<Route
+						exact
+						path="/agency/myprofile"
+						render={(props) => {
+							const token = isAuthenticated();
+							if (token) {
+								return <MyProfile />;
 							} else {
 								return <Redirect to="/" />;
 							}

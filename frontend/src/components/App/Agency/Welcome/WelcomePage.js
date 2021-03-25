@@ -5,7 +5,10 @@ import './WelcomePage.css'
 const WelcomePage = () => {
     return (
         <div className="welcomePage">
-            <h1>Hello World</h1>
+            <div className="welpage">
+            <h1>Welcome</h1>
+            <p>Dilek canturk</p>
+            </div>
         </div>
     )
 }
