@@ -103,7 +103,12 @@ export default function App() {
 						path="/homedetails/:id"
 						render={() => <HomeDetails />}
 					/>
-					<Route exact path="/shortlists" component={Shortlist} />
+					<Route
+						exact
+						path="/shortlists"
+						render={() => <Shortlist homes={homes}/>}
+					/>
+					{/* <Route exact path="/shortlists" component={Shortlist} /> */}
 					<Route exact path="/aboutus" component={About} />
 					<Route exact path="/terms" component={Terms} />
 					<Route exact path="/policies" component={Policies} />

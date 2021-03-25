@@ -3,16 +3,28 @@ import City from '../City/City'
 import data from '../City/Data'
 import {BiEnvelope} from 'react-icons/bi'
 import ShortListModal from '../ShortListBook'
+import axios from 'axios'
 
 
-const Shortlist = () => {
+const Shortlist = ({homes}) => {
 
-    const [shortlists, setShortlist] = useState(null)
+    const [shortlist, setShortlist] = useState(null)
+    const [homesShortlist, setHomesShortlist] = useState(homes);
 
     useEffect(() => {
         const lists = JSON.parse(localStorage.getItem('shortlist'))
         setShortlist(lists)
     },[])
+    useEffect(() => {
+        axios
+          .get("http://localhost:5000/homes")
+          .then((res) => {
+            setHomesShortlist(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }, []);
 
     return (
         <div className="shortlist">
@@ -20,13 +32,14 @@ const Shortlist = () => {
                 <h1>Shortlist</h1>
             </div>
             <div className="shortlist-counter">
-                <h3>{shortlists ? shortlists.length : 0} property shortlisted</h3>
+                <h3>{shortlist ? shortlist.length : 0} property shortlisted</h3>
                 <p>Book viewings for multiple homes in one quick message. You'll usually hear back from the letting agent or landlord within 24 hours to arrange viewings.</p>
             </div>
             <hr className="hr"/>
-            {/* <div className="shortlist-body">
-                {data.map(city => <City home={city}/>)}
-            </div> */}
+            <div className="shortlist-body">
+                {homesShortlist.filter(home => shortlist.includes(home.id)).map(item=><City home={item}/>) }
+            </div>
+
             <div className="book-viewings">
                 <button> <div className="icon"><BiEnvelope/></div>Book Viewings for All</button>
             </div>
