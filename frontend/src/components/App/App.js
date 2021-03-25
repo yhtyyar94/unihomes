@@ -23,6 +23,8 @@ import isAuthenticated from './Agency/Authentication';
 import WelcomePage from './Agency/Welcome/WelcomePage';
 import AddProperty from './Agency/AddProperty/AddProperty';
 import MyProfile from './Agency/MyProfile/MyProfile';
+import Properties from './Agency/Properties/Properties';
+
 
 
 export default function App() {
@@ -171,6 +173,18 @@ export default function App() {
 						}}
 					/>
 
+<Route
+						exact
+						path="/agency/properties"
+						render={(props) => {
+							const token = isAuthenticated();
+							if (token) {
+								return <Properties />;
+							} else {
+								return <Redirect to="/" />;
+							}
+						}}
+					/>
 					{/* {Authentication() ? <Route exact path='/welcomepage' component={WelcomePage}  />: null} */}
 
 				</Switch>
