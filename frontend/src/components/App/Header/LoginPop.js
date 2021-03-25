@@ -2,7 +2,7 @@ import React,{useEffect} from 'react'
 import {RiCloseFill} from 'react-icons/ri'
 import "./Header.css"
 
-export default function LoginPop({register}) {
+export default function LoginPop({register, setLog}) {
 
   const scrollFunctionLog = () => {
     if (window.pageYOffset > 0) {
@@ -20,7 +20,7 @@ export default function LoginPop({register}) {
   return (
     <div className="logContainer">
     <form>
-      <div className="logTitle">Agent Login <RiCloseFill /> </div>
+      <div className="logTitle">Agent Login <RiCloseFill className="close-logo" onClick={() => setLog(false)}/> </div>
       <hr className="logLine"/> 
       <div className="login-email">
       <label htmlFor="email" >Email</label>

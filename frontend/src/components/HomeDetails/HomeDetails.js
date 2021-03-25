@@ -10,6 +10,7 @@ import { useHistory } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import { BiLeftArrow } from "react-icons/bi";
 import { BiRightArrow } from "react-icons/bi";
+import { BsHeart,BsHeartFill } from "react-icons/bs";
 
 
 export default function HomeDetails() {
@@ -20,16 +21,13 @@ export default function HomeDetails() {
 	let history = useHistory();
 
 	const [bookViewing, setBookViewing] = useState(false);
-
-	
-	
-
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
 	const[firstImg,setFirstImg]=useState(null)
 	const[secondImg,setSecondImg]=useState(null)
 	const[thirdImg,setThirdImg]=useState(null)
 	const[fourthImg,setFourthImg]=useState(null)
+	const[shortlist,setShortlist]=useState([])
 
 	// useEffect(() => {
 	// 	if(home.images.length!==0){
@@ -50,7 +48,7 @@ export default function HomeDetails() {
 				setHome(res.data)})
 			.catch((err) => console.log(err));
 	}, [id]);
-
+ 
 	const showBookViewing = () => {
 		setBookViewing(!bookViewing);
 	};
@@ -58,6 +56,28 @@ export default function HomeDetails() {
 	const closeBookViewing = () => {
 		setBookViewing(false);
 	};
+	const addToShortlist=()=>{     
+		if(localStorage.getItem('shortlist')===null){
+			localStorage.setItem('shortlist','[]')
+		}
+		let idList = JSON.parse(localStorage.getItem('shortlist'))
+		idList.push(home.id)
+		localStorage.setItem('shortlist',JSON.stringify(idList))
+  } 
+
+  useEffect(() => {
+		setShortlist(JSON.parse(localStorage.getItem('shortlist')))   
+}, [shortlist]) 
+
+const removeFromShortlist=()=>{
+	for( let i = 0; i < shortlist.length; i++){ 
+
+		if ( shortlist[i] === home.id) { 
+	
+			shortlist.splice(i, 1); 
+		}
+	localStorage.setItem('shortlist',JSON.stringify(shortlist));
+}}
 
 	// useEffect(() => {
 	// 	for (let i = 1; i <= home.bedroom; i++) {
@@ -122,8 +142,8 @@ export default function HomeDetails() {
 					<div className="homedetails-main-img">
 					
 					<div style={{position:"relative"}}>
-					<BiRightArrow onClick={handleRightSwipe} size={40} fill="white" style={{position:"absolute",top:"45%",right:"2%"}} />
-					<BiLeftArrow onClick={handleLeftSwipe} size={40} fill="white" style={{position:"absolute",top:"45%",left:"2%"}} />
+					<BiRightArrow className="arrow-right" onClick={handleRightSwipe} fill="white" />
+					<BiLeftArrow className="arrow-left" onClick={handleLeftSwipe}  fill="white" />
 					<img  src={firstImg && firstImg} style={{borderRadius:"3px"}} alt=""/> 
 					</div>
 					   
@@ -131,7 +151,7 @@ export default function HomeDetails() {
 							<img onClick={handleSecondImg} src={secondImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}} />
 							<img  onClick={handleThirdImg} src={thirdImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}}/>
 							<img onClick={handleFourthImg} src={fourthImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}} />
-						</div>   
+						</div>    
 						
 					</div>
 
@@ -237,9 +257,11 @@ export default function HomeDetails() {
 							Book Viewing
 						</button>
 						<div style={{ textAlign: 'center', marginBottom: 20 }}>
-							<button className="homedetails-sidebar-btn-shortlist">
-								<FaRegHeart style={{ fill: '#03c5f0' }} />
-							</button>
+						<div className="shortlist-btn">
+                   
+				   {shortlist.includes(home.id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
+				   : <p onClick={addToShortlist}> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>}
+				   </div>
 						</div>
 						<div style={{ textAlign: 'center' }}>
 							<img

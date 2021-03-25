@@ -9,6 +9,7 @@ import { BiLayerPlus } from 'react-icons/bi';
 import { FaHome } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { RiLogoutBoxFill } from 'react-icons/ri';
+import { BsHeartFill } from "react-icons/bs";
 import Login from './LoginPop.js';
 import { useHistory} from 'react-router-dom'
 
@@ -16,6 +17,7 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 	const [visible, setVisibility] = useState(true)
 	const [history, setHistory] = useState('/')
 	const pathHistory = useHistory()
+	const [shortlist,setShortlist]=useState([])
 	const changeClass = () => {
 		if(window.location.pathname === '/') {
 			if (window.pageYOffset > 0) {
@@ -37,6 +39,15 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 	}
 
 	useEffect(() => {
+		if(localStorage.getItem('shortlist')===null){
+			localStorage.setItem('shortlist','[]')
+		}
+		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
+	}, [shortlist])
+
+
+
+	useEffect(() => {
 		window.addEventListener("scroll", changeClass)
 		window.addEventListener("click", changeUrl)	
 		changeUrl()
@@ -56,9 +67,15 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
 					<ImSearch className="search-logo"/> Search
 				</a>
-				<a href="/shortlists" className="navbar-item">
-					<BsHeart /> Shortlist
-				</a>
+			   {shortlist.length===0 
+			   ? <a href="/shortlists" className="navbar-item">
+			   <span className="heart-number-zero">{shortlist.length}</span><BsHeartFill fill="white" /> Shortlist 
+			   </a>
+			   : <a href="/shortlists" className="navbar-item">
+			   <span className="heart-number">{shortlist.length}</span><BsHeartFill fill="red" /> Shortlist 
+			   </a>
+			   }
+				
 				<a href="/contact" className="navbar-item">
 					<MdMail /> Contact Us
 				</a>
