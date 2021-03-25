@@ -157,7 +157,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
                     item.address.city === cityname &&
                     item.bedroom === bedroom * 1
                 )
-                .map((home) => <City home={home} />)}
+                .map((home) => <City home={home} key={home.id} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist} />)}
         </div>
       </div>
 

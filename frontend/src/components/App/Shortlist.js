@@ -11,6 +11,7 @@ const Shortlist = ({shortlist, setShortlist, changeShortlist}) => {
     const [homesShortlist, setHomesShortlist] = useState([]);
 
 
+
     useEffect(() => {
         setShortlistLocal(JSON.parse(localStorage.getItem('shortlist')))
         console.log(JSON.parse(localStorage.getItem('shortlist')))

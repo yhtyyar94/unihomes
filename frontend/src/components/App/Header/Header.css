@@ -91,7 +91,7 @@
   position: absolute;
   color: white;
   font-size: 12px;
-  left: 26%;
+  left: 27%;
   top: 27%;
 }
 
@@ -139,7 +139,8 @@
   box-shadow: 0 -3px 3px rgb(0 0 0 / 10%), 0 3px 3px #ececfb;
 }
 
-.logContainer label, .logContainer input{
+.logContainer label,
+.logContainer input {
   display: block !important;
   margin-left: +5%;
 }
@@ -148,7 +149,8 @@
   margin-top: +30%;
 }
 
-.login-email input, .login-password input {
+.login-email input,
+.login-password input {
   width: 90%;
   padding: 10px;
   border: none;
@@ -164,13 +166,13 @@
   margin-top: +10%;
 }
 
-
 .login-password input::placeholder {
   color: rgb(104, 100, 100);
   font-size: small;
 }
 
-.login-email label, .login-password label{
+.login-email label,
+.login-password label {
   font-family: Roboto;
   font-style: normal;
   font-weight: 200;

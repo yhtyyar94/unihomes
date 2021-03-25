@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {useHistory} from 'react-router-dom'
-
+ 
 const TopCities = () => { 
 
     const [cities, setCities] = useState(null)
@@ -15,7 +15,7 @@ const TopCities = () => {
 		window.scroll(0,0)
     },[])
 
-    console.log(cities)
+  
 	return (
 		<div className="container">
 			<div className="banner top-cities">
