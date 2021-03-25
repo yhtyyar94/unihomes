@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
     const token = req.params.token || req.body.token || req.headers['x-access-token'] || req.headers.token
 
     if (token) {
