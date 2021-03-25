@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 
 
   const MainContent = () => {
-    const [images, setImages] = useState("");
+    const [images, setImages] = useState([]);
     const history=useHistory();
     useEffect(() => {
       axios 
@@ -14,7 +14,7 @@ import { useHistory } from "react-router";
         .catch((err) => console.log(err));
     }, []);
   
-  
+  console.log(images)
     return (
         <div className="mainContent">
     <div className="main-title">
