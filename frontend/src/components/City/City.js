@@ -7,34 +7,36 @@ import { IoHomeOutline } from "react-icons/io5";
 import { MdLocationOn } from "react-icons/md";
 
  
-export default function City({home}) {
+export default function City({home, shortlist, setShortlist, changeShortlist}) {
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
       }, []);
-      const[shortlist,setShortlist]=useState([])
+
      
       const addToShortlist=()=>{     
-            if(localStorage.getItem('shortlist')===null){
-                localStorage.setItem('shortlist','[]')
-            }
             let idList = JSON.parse(localStorage.getItem('shortlist'))
             idList.push(home.id)
             localStorage.setItem('shortlist',JSON.stringify(idList))
+            setShortlist(idList)
       } 
 
-      useEffect(() => {
-            setShortlist(JSON.parse(localStorage.getItem('shortlist')))   
-	}, [shortlist]) 
 
     const removeFromShortlist=()=>{
-        for( let i = 0; i < shortlist.length; i++){ 
+
+        let newShortlist = shortlist
+
+        for( let i = 0; i < newShortlist.length; i++){ 
     
-            if ( shortlist[i] === home.id) { 
+            if ( newShortlist[i] === home.id) { 
         
-                shortlist.splice(i, 1); 
+                newShortlist.splice(i, 1); 
             }
-        localStorage.setItem('shortlist',JSON.stringify(shortlist));
-    }}
+    }
+    localStorage.setItem('shortlist',JSON.stringify(newShortlist));
+    setShortlist(newShortlist)
+    changeShortlist()
+    
+}
  
 
     return ( 

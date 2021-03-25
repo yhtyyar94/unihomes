@@ -5,7 +5,7 @@ import axios from "axios";
 import "./Cities.css";
 import { FaBed } from "react-icons/fa";
 
-export default function Cities({ homes, cities }) {
+export default function Cities({ homes, cities, shortlist, setShortlist, changeShortlist }) {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -150,7 +150,7 @@ export default function Cities({ homes, cities }) {
           {bedroom === "allbedrooms" || !bedroom
             ? homesCity
                 .filter((item) => item.address.city === cityname)
-                .map((home) => <City home={home} />)
+                .map((home) => <City home={home} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist}/>)
             : homesCity
                 .filter(
                   (item) =>

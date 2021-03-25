@@ -33,8 +33,19 @@ export default function App() {
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [shortlist ,setShortlist] = useState([])
 
-	// const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const changeShortlist = () => {
+		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
+	}
+
+	useEffect(() => {
+		if(localStorage.getItem('shortlist')===null){
+			localStorage.setItem('shortlist','[]')
+		}
+		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
+	},[])
+
  
 	useEffect(() => {
 		axios
@@ -83,10 +94,10 @@ export default function App() {
 		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
 		setHomes(filteredHomes);
 	};
-
+console.log(shortlist)
 	return (
 		<div>
-			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} />
+			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} shortlist={shortlist}/>
 			{login === true ? <LoginPop register={register} setLog={setLog}/> : null}
 			{signup === true ? (
 				<RegisterPop register={register} backtoLogin={backtoLogin} />
@@ -100,7 +111,7 @@ export default function App() {
 					/>
 					<Route
 						path={`/cities/:cityname/:bedroom?`}
-						render={() => <Cities homes={homes} cities={cities} />}
+						render={() => <Cities homes={homes} cities={cities} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist}/>}
 					/>
 					<Route
 						exact

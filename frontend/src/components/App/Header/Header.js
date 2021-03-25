@@ -11,11 +11,10 @@ import { RiLogoutBoxFill } from 'react-icons/ri';
 import { BsHeartFill } from "react-icons/bs";
 import { useHistory} from 'react-router-dom'
 
-export default function Header({ toggleLogin, isLoggedIn }) {
+export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 	const [visible, setVisibility] = useState(true)
 	const [history, setHistory] = useState('/')
 	const pathHistory = useHistory()
-	const [shortlist,setShortlist]=useState([])
 	const changeClass = () => {
 		if(window.location.pathname === '/') {
 			if (window.pageYOffset > 0) {
@@ -36,12 +35,17 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 		}
 	}
 
-	useEffect(() => {
-		if(localStorage.getItem('shortlist')===null){
-			localStorage.setItem('shortlist','[]')
-		}
-		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
-	}, [])
+	// useEffect(() => {
+	// 	// if(localStorage.getItem('shortlist')===null){
+	// 	// 	localStorage.setItem('shortlist','[]')
+	// 	// }
+
+	// 	const last = JSON.parse(localStorage.getItem('shortlist'))
+    //       if (last.length !== 0) {
+    //         setShortlist(last)  
+	// 		console.log(last)
+    //       } 
+	// }, [shortlist])
 
 
 

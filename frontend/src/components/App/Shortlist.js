@@ -7,13 +7,13 @@ import axios from 'axios'
 
 const Shortlist = ({homes}) => {
 
-    const [shortlist, setShortlist] = useState(null)
+    const [shortlist, setShortlist] = useState([])
     const [homesShortlist, setHomesShortlist] = useState(homes);
 
-    useEffect(() => {
-        const lists = JSON.parse(localStorage.getItem('shortlist'))
-        setShortlist(lists)
-    },[shortlist])
+    // useEffect(() => {
+    //     const lists = JSON.parse(localStorage.getItem('shortlist'))
+    //     setShortlist(lists)
+    // },[])
     useEffect(() => {
         axios
           .get("http://localhost:5000/homes")
@@ -36,7 +36,7 @@ const Shortlist = ({homes}) => {
             </div>
      
             <div className="shortlist-body" style={{backgroundColor:"#e5e5e5"}}>
-                {homesShortlist.filter(home => shortlist.includes(home.id)).map(item=><City home={item}/>) }
+                {/* {homesShortlist.filter(home => shortlist.includes(home.id)).map(item=><City home={item}/>) } */}
             </div>
 
             <div className="book-viewings">
