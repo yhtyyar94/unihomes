@@ -5,9 +5,8 @@ import './AddProperty.css';
 const AddProperty = () => {
 	const [ cities, setCities ] = useState(null);
 	const [ cityId, setCityId ] = useState(null);
-	const [ cityName, setCityName ] = useState('Leeds');
 	const [ rent, setRent ] = useState(null);
-	const [ images, setImages ] = useState([]);
+	const [	cityName, setCityName ] = useState(null);
 	const [ bedrooms, setBedrooms ] = useState(null);
 	const [ bathrooms, setBathrooms ] = useState(null);
 	const [ street, setStreet ] = useState(null);
@@ -38,7 +37,8 @@ const AddProperty = () => {
 
 	const onSubmit = async (e) => {
 		e.preventDefault()
-
+		setSuccessSubmit(false)
+		window.scroll(0, 0)
 		const keyFeatures = keys.split(',')
 		const formData = new FormData()
 		for (let i = 0; i < multipleFiles.length; i++) {
@@ -48,6 +48,7 @@ const AddProperty = () => {
 			formData.append('keyFeatures', keyFeatures[i])
 		}
 		formData.append('city', cityId)
+		formData.append('name', cityName)
 		formData.append('user', '6046459eeb43bf37ecf5147a')
 		formData.append('address', street)
 		formData.append('address', district)
@@ -61,13 +62,29 @@ const AddProperty = () => {
 		formData.append('bathroom', bathrooms)
 		formData.append('type', type)
 		formData.append('rent', rent)
-		axios.post('http://localhost:5001/api/createproperty', formData).then(res => console.log(res.data)).catch(err => console.log(err))
+		axios.post('http://localhost:5001/api/createproperty', formData).then(res => res.data.message && setSuccessSubmit(true)).catch(err => console.log(err))
+
+		setRent('')
+		setBedrooms('')
+		setBathrooms('')
+		setStreet('')
+		setDistrict('')
+		setTown('')
+		setPostcode('')
+		setType('')
+		setDeposit('')
+		setFrom('')
+		setTo('')
+		setKeys('')
+		setDescription('')
+
+
 	}
 	return (
 		<div className="AddProperty">
-			<div className="addproperty-succes-message">
+			{successSubmit && <div className="addproperty-succes-message">
 				Your property added successfully
-			</div>
+			</div>}
 			<form className="add-form" onSubmit={onSubmit}>
 				<div className="row row1">
 					<div>

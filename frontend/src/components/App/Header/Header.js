@@ -4,13 +4,11 @@ import { MdHome } from 'react-icons/md';
 import { ImSearch } from 'react-icons/im';
 import { MdPerson } from 'react-icons/md';
 import { MdMail } from 'react-icons/md';
-import { BsHeart } from 'react-icons/bs';
 import { BiLayerPlus } from 'react-icons/bi';
 import { FaHome } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { RiLogoutBoxFill } from 'react-icons/ri';
 import { BsHeartFill } from "react-icons/bs";
-import Login from './LoginPop.js';
 import { useHistory} from 'react-router-dom'
 
 export default function Header({ toggleLogin, isLoggedIn }) {
