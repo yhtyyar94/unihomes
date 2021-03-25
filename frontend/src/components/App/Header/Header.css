@@ -84,15 +84,15 @@
 .heart-number-zero {
   position: absolute;
   font-size: 12px;
-  left: 26%;
-  top: 27%;
+  left: 26.8%;
+  top: 20%;
 }
 .heart-number {
   position: absolute;
   color: white;
   font-size: 12px;
-  left: 27%;
-  top: 27%;
+  left: 26.8%;
+  top: 20%;
 }
 
 .header-items button {

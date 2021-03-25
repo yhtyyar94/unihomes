@@ -8,28 +8,29 @@ import { TiTickOutline } from 'react-icons/ti';
 import bill from './bills.png';
 import { useHistory } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
-import { BiLeftArrow } from 'react-icons/bi';
-import { BiRightArrow } from 'react-icons/bi';
-import { BsHeart, BsHeartFill } from 'react-icons/bs';
+import { BiLeftArrow } from "react-icons/bi";
+import { BiRightArrow } from "react-icons/bi";
+import { BsHeart,BsHeartFill } from "react-icons/bs";
+import Modal from 'react-modal'
 
-export default function HomeDetails({
-	changeShortlist,
-	shortlist,
-	setShortlist,
-}) {
+Modal.setAppElement('#root')
+export default function HomeDetails({changeShortlist,shortlist,setShortlist}) {
 	useLayoutEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+
 
 	let history = useHistory();
 
 	const [bookViewing, setBookViewing] = useState(false);
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
-	const [firstImg, setFirstImg] = useState(null);
-	const [secondImg, setSecondImg] = useState(null);
-	const [thirdImg, setThirdImg] = useState(null);
-	const [fourthImg, setFourthImg] = useState(null);
+	const[firstImg,setFirstImg]=useState(null)
+	const[secondImg,setSecondImg]=useState(null)
+	const[thirdImg,setThirdImg]=useState(null)
+	const[fourthImg,setFourthImg]=useState(null)
+	const[modalIsOpen,setModalIsOpen]=useState(false)
+
 
 	// useEffect(() => {
 	// 	if(home.images.length!==0){
@@ -125,7 +126,7 @@ export default function HomeDetails({
 		<div>
 			<div className="homedetails-back-to-search">
 				<form>
-					<button
+					<button 
 						className="homedetails-back-to-search-btn"
 						onClick={(e) => {
 							e.preventDefault();

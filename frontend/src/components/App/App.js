@@ -23,13 +23,10 @@ import isAuthenticated from './Agency/Authentication';
 import WelcomePage from './Agency/Welcome/WelcomePage';
 import AddProperty from './Agency/AddProperty/AddProperty';
 import MyProfile from './Agency/MyProfile/MyProfile';
-<<<<<<< HEAD
 import ContactUs from '../StaticPages/ContactUs';
-=======
 import Properties from './Agency/Properties/Properties';
 
 
->>>>>>> 816a7d8997d046021383f2827718d675d70b333b
 
 export default function App() {
 	const [cities, setCities] = useState([]);
@@ -103,11 +100,6 @@ export default function App() {
 		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
 		setHomes(filteredHomes);
 	};
-<<<<<<< HEAD
-	console.log(shortlist);
-=======
-
->>>>>>> 816a7d8997d046021383f2827718d675d70b333b
 	return (
 		<div>
 			<Header
@@ -154,11 +146,7 @@ export default function App() {
 					<Route
 						exact
 						path="/shortlists"
-<<<<<<< HEAD
-						render={() => <Shortlist homes={homes} />}
-=======
 						render={() => <Shortlist homes={homes} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist}/>}
->>>>>>> 816a7d8997d046021383f2827718d675d70b333b
 					/>
 					{/* <Route exact path="/shortlists" component={Shortlist} /> */}
 					<Route exact path="/aboutus" component={About} />
@@ -166,7 +154,6 @@ export default function App() {
 					<Route exact path="/policies" component={Policies} />
 					<Route exact path="/contact" component={ContactUs} />
 
-<<<<<<< HEAD
 					<Route
 						exact
 						path="/student-accommodation"
@@ -196,16 +183,6 @@ export default function App() {
 							}
 						}}
 					/>
-=======
-					<Route exact path="/agency/addproperty/:id"  render={(props) => {
-						const token = isAuthenticated()
-						if(token) {
-							return <AddProperty /> 
-						} else {
-							return <Redirect to='/'/>
-						}
-					}}/>
->>>>>>> 816a7d8997d046021383f2827718d675d70b333b
 
 					<Route
 						exact
