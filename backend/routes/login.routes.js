@@ -28,6 +28,7 @@ router.post('/login', async (req, res) => {
           const payload = {email}
           //JWT
           const token = jwt.sign(payload, req.app.get('api_secret_key'), {expiresIn:"1h" /*1 hour*/ })
+          console.log(token)
           res.json({status:true, token})
         }
       })

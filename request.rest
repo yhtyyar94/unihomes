@@ -29,8 +29,18 @@ POST http://localhost:5001/login
 Content-Type: application/json
 
 {
-    "email":"kim12@gmail.com",
-    "password":"12"
+    "email":"kim12345@gmail.com",
+    "password":"123"
+}
+
+###
+
+POST http://localhost:5001/signup
+Content-Type: application/json
+
+{
+    "email":"kim12345@gmail.com",
+    "password":"123"
 }
 
 ###

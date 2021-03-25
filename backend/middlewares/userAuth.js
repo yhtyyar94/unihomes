@@ -10,6 +10,7 @@ module.exports = (req, res, next) => {
             } else {
                 console.log(decoded)
                 req.decode = decoded
+                req.json(true)
                 next()
             }
         })
