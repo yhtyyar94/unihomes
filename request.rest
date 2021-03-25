@@ -66,11 +66,11 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/api/getcities
+GET http://localhost:5001/api
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtpbTEyM0BnbWFpbC5jb20iLCJpYXQiOjE2MTU2NjAzMTMsImV4cCI6MTYxNTY2MzkxM30.b7weMpyZQMnlRfjB1K0QMlNzvBx9N1k2Ng6GUkfXw4o"
+    "token": "eyJhbGciOiJIUzI1NiJ9.a2ltMTIzNDVAZ21haWwuY29t.TH_y1UMDAOlNc_O01neq7QcPLO8n65WGDKijHGIu26I"
 }
 
 ###
@@ -82,3 +82,7 @@ Content-Type: application/json
     "name":"Swansea1",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtpbTEyM0BnbWFpbC5jb20iLCJpYXQiOjE2MTU0OTIzMTUsImV4cCI6MTYxNTQ5NTkxNX0.DCU4OGayDW-jkB2upICy5ZGOGoGgopKb4nwHapaXXds"
 }
+
+###
+
+GET http://localhost:5001/

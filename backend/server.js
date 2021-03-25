@@ -4,11 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors')
-
-var login = require('./routes/login.routes');
-var usersRouter = require('./routes/users');
-
 var app = express();
+var login = require('./routes/login.routes');
+var frontendAuth = require('./routes/frontendAuth.route');
+
+
 
 
 //db connection
@@ -43,10 +43,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //config keys
-// const config = require('./config')
-// app.set('api_secret_key', config.api_secret_key)
+const config = require('./config')
+app.set('api_secret_key', config.api_secret_key)
 
 app.use('/', login)
+app.use('/frontend', frontendAuth)
 app.use('/signup', signup)
 // app.use('/api', userAuth)
 app.use('/api', citiesRouter)

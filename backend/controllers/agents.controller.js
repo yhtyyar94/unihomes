@@ -76,7 +76,7 @@ exports.authenticate = async (req, res) => {
             const payload = {email}
             //JWT
             const token = jwt.sign(payload, req.app.get('api_secret_key'), {expiresIn:"1h" /*1 hour*/ })
-            res.json({status:true, token})
+            res.end('hello')
           }
         })
         .catch(err => res.json(err))
