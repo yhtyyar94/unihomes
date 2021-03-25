@@ -121,7 +121,7 @@ console.log(shortlist)
 					<Route
 						exact
 						path="/shortlists"
-						render={() => <Shortlist homes={homes}/>}
+						render={() => <Shortlist homes={homes} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist}/>}
 					/>
 					{/* <Route exact path="/shortlists" component={Shortlist} /> */}
 					<Route exact path="/aboutus" component={About} />
