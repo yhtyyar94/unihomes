@@ -88,13 +88,13 @@ exports.getAllProperties = async (req, res) => {
 }
 
 exports.getSingleProperty = async (req, res) => {
-    const propertyId = req.params.propertyId
+    const propertyId = req.params.id
 
     await PropertiesModel.findById({_id:propertyId}, (err, data) => {
         if(err) {
             res.status(500).json({message:err})
         } else {
-            res.status(200).json({message: 'Property found', data})
+            res.status(200).json(data)
         }
     })
 }
@@ -115,7 +115,7 @@ exports.createProperty = async (req, res) => {
     console.log(req.files)
 
     const newProperty = await new PropertiesModel({
-        city: req.body.city,
+        cityId: req.body.cityId,
         user:req.body.user,
         keyFeatures:req.body.keyFeatures,
         address:req.body.address,
@@ -126,7 +126,8 @@ exports.createProperty = async (req, res) => {
         bathroom:req.body.bathroom,
         type:req.body.type,
         images:filesArray,
-        rent:req.body.rent
+        rent:req.body.rent,
+        cityName:req.body.cityName
     })
    
 

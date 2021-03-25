@@ -4,20 +4,17 @@ import { MdHome } from 'react-icons/md';
 import { ImSearch } from 'react-icons/im';
 import { MdPerson } from 'react-icons/md';
 import { MdMail } from 'react-icons/md';
-import { BsHeart } from 'react-icons/bs';
 import { BiLayerPlus } from 'react-icons/bi';
 import { FaHome } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { RiLogoutBoxFill } from 'react-icons/ri';
 import { BsHeartFill } from "react-icons/bs";
-import Login from './LoginPop.js';
 import { useHistory} from 'react-router-dom'
 
-export default function Header({ toggleLogin, isLoggedIn }) {
+export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 	const [visible, setVisibility] = useState(true)
 	const [history, setHistory] = useState('/')
 	const pathHistory = useHistory()
-	const [shortlist,setShortlist]=useState([])
 	const changeClass = () => {
 		if(window.location.pathname === '/') {
 			if (window.pageYOffset > 0) {
@@ -38,12 +35,17 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 		}
 	}
 
-	useEffect(() => {
-		if(localStorage.getItem('shortlist')===null){
-			localStorage.setItem('shortlist','[]')
-		}
-		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
-	}, [shortlist])
+	// useEffect(() => {
+	// 	// if(localStorage.getItem('shortlist')===null){
+	// 	// 	localStorage.setItem('shortlist','[]')
+	// 	// }
+
+	// 	const last = JSON.parse(localStorage.getItem('shortlist'))
+    //       if (last.length !== 0) {
+    //         setShortlist(last)  
+	// 		console.log(last)
+    //       } 
+	// }, [shortlist])
 
 
 
@@ -51,6 +53,7 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 		window.addEventListener("scroll", changeClass)
 		window.addEventListener("click", changeUrl)	
 		changeUrl()
+		localStorage.setItem('token', '12345')
 	},[])
 
 	return (

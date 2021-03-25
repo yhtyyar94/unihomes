@@ -3,7 +3,7 @@ import {RiCloseFill} from 'react-icons/ri'
 import "./Header.css"
 
 export default function LoginPop({register, setLog}) {
-
+ 
   const scrollFunctionLog = () => {
     if (window.pageYOffset > 0) {
       document.querySelector('.logContainer').className = 'logContainer logScroll'

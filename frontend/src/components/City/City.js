@@ -7,36 +7,39 @@ import { IoHomeOutline } from "react-icons/io5";
 import { MdLocationOn } from "react-icons/md";
 
  
-export default function City({home}) {
+export default function City({home, shortlist, setShortlist, changeShortlist}) {
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
       }, []);
-      const[shortlist,setShortlist]=useState([])
+
      
+    
+      
       const addToShortlist=()=>{     
-            if(localStorage.getItem('shortlist')===null){
-                localStorage.setItem('shortlist','[]')
-            }
             let idList = JSON.parse(localStorage.getItem('shortlist'))
             idList.push(home.id)
             localStorage.setItem('shortlist',JSON.stringify(idList))
+            setShortlist(idList)
       } 
 
-      useEffect(() => {
-            setShortlist(JSON.parse(localStorage.getItem('shortlist')))   
-	}, [shortlist]) 
 
     const removeFromShortlist=()=>{
-        for( let i = 0; i < shortlist.length; i++){ 
-    
-            if ( shortlist[i] === home.id) { 
-        
-                shortlist.splice(i, 1); 
-            }
-        localStorage.setItem('shortlist',JSON.stringify(shortlist));
-    }}
- 
 
+        let newShortlist = shortlist
+
+        for( let i = 0; i < newShortlist.length; i++){ 
+    
+            if ( newShortlist[i] === home.id) { 
+        
+                newShortlist.splice(i, 1); 
+            }
+    }
+    localStorage.setItem('shortlist',JSON.stringify(newShortlist));
+    setShortlist(newShortlist)
+    changeShortlist()
+
+}
+ console.log(shortlist)
     return ( 
         <div className="city">
                 <div className="home-img">
@@ -65,7 +68,7 @@ export default function City({home}) {
                 <div className="buttons">
                     <div className="shortlist-btn">
                    
-                    {shortlist.includes(home.id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
+                    {shortlist && shortlist.includes(home.id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
                     : <p onClick={addToShortlist}> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>}
                     </div>
                   

@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import Search from './Search/Search';
 import {
 	BrowserRouter as Router,
 	Redirect,
 	Route,
-	Switch,
+	Switch, 
 } from 'react-router-dom';
 import Cities from '../City/Cities';
 import Header from './Header/Header';
@@ -32,11 +32,22 @@ export default function App() {
 	const [homes, setHomes] = useState([]);
 	const [currentCity, setCurrentCity] = useState('');
 	const [roomCount, setRoomCount] = useState([]);
-	const [login, setLog] = useState(true);
+	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-	const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [shortlist ,setShortlist] = useState([])
 
-	// const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const changeShortlist = () => {
+		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
+	}
+
+	useEffect(() => {
+		if(localStorage.getItem('shortlist')===null){
+			localStorage.setItem('shortlist','[]')
+		}
+		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
+	},[])
+
  
 	useEffect(() => {
 		axios
@@ -58,6 +69,10 @@ export default function App() {
 			.catch((err) => {
 				console.log(err);
 			});
+			if(localStorage.getItem('shortlist')===null){
+                localStorage.setItem('shortlist','[]')
+            }
+			setShortlist(JSON.parse(localStorage.getItem('shortlist')))
 	}, []);
 
 	const toggleLogin = () => {
@@ -88,7 +103,7 @@ export default function App() {
 
 	return (
 		<div>
-			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} />
+			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} shortlist={shortlist}/>
 			{login === true ? <LoginPop register={register} setLog={setLog}/> : null}
 			{signup === true ? (
 				<RegisterPop register={register} backtoLogin={backtoLogin} />
@@ -102,17 +117,17 @@ export default function App() {
 					/>
 					<Route
 						path={`/cities/:cityname/:bedroom?`}
-						render={() => <Cities homes={homes} cities={cities} />}
+						render={() => <Cities homes={homes} cities={cities} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist}/>}
 					/>
 					<Route
 						exact
 						path="/homedetails/:id"
-						render={() => <HomeDetails />}
+						render={() => <HomeDetails changeShortlist={changeShortlist} shortlist={shortlist} setShortlist={setShortlist}/>}
 					/>
 					<Route
 						exact
 						path="/shortlists"
-						render={() => <Shortlist homes={homes}/>}
+						render={() => <Shortlist homes={homes} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist}/>}
 					/>
 					{/* <Route exact path="/shortlists" component={Shortlist} /> */}
 					<Route exact path="/aboutus" component={About} />
@@ -136,6 +151,14 @@ export default function App() {
 						}
 					}}/>
 
+					<Route exact path="/agency/addproperty/:id"  render={(props) => {
+						const token = isAuthenticated()
+						if(token) {
+							return <AddProperty /> 
+						} else {
+							return <Redirect to='/'/>
+						}
+					}}/>
 
 					<Route
 						exact
