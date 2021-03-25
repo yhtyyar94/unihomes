@@ -14,7 +14,7 @@ const Shortlist = ({homes}) => {
     useEffect(() => {
         const lists = JSON.parse(localStorage.getItem('shortlist'))
         setShortlist(lists)
-    },[])
+    },[shortlist])
     useEffect(() => {
         axios
           .get("http://localhost:5000/homes")
@@ -35,8 +35,8 @@ const Shortlist = ({homes}) => {
                 <h3>{shortlist ? shortlist.length : 0} property shortlisted</h3>
                 <p>Book viewings for multiple homes in one quick message. You'll usually hear back from the letting agent or landlord within 24 hours to arrange viewings.</p>
             </div>
-            <hr className="hr"/>
-            <div className="shortlist-body">
+     
+            <div className="shortlist-body" style={{backgroundColor:"#e5e5e5"}}>
                 {homesShortlist.filter(home => shortlist.includes(home.id)).map(item=><City home={item}/>) }
             </div>
 
