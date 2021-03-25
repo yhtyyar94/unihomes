@@ -5,7 +5,7 @@ const router = express.Router()
 const agentController = require('../controllers/agents.controller')
 
 
-router.post('/createagent', agentController.create)
+router.post('/', agentController.create)
 
 
 

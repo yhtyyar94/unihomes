@@ -37,10 +37,9 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
     localStorage.setItem('shortlist',JSON.stringify(newShortlist));
     setShortlist(newShortlist)
     changeShortlist()
-    
-}
- 
 
+}
+ console.log(shortlist)
     return ( 
         <div className="city">
                 <div className="home-img">
@@ -69,7 +68,7 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
                 <div className="buttons">
                     <div className="shortlist-btn">
                    
-                    {shortlist.includes(home.id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
+                    {shortlist && shortlist.includes(home.id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
                     : <p onClick={addToShortlist}> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>}
                     </div>
                   

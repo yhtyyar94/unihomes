@@ -34,8 +34,8 @@
     {
       "id": 2,
       "images":[ 
-        "https://i.postimg.cc/FHxCs2w3/jon-nathon-stebbe-paydk0-Jc-IOQ-unsplash.jpg",
-        "https://i.postimg.cc/FHxCs2w3/jon-nathon-stebbe-paydk0-Jc-IOQ-unsplash.jpg",
+        "https://tylko.com/r_static/basic-hp/hero/1680_1.84082473102612.webp",
+        "https://tylko.com/r_static/basic-hp/hero/1680_1.84082473102612.webp",
         "https://i.postimg.cc/90jy9f7M/sidekix-media-Wgk-A3-CSFrjc-unsplash.jpg",
         "https://i.postimg.cc/vmF42P57/deborah-cortelazzi-g-REqu-CUXQLI-unsplash.jpg"
       ], 
@@ -63,10 +63,10 @@
     },
     {
       "id": 3,
-      "images":[ 
+      "images":[
+        "https://i.postimg.cc/90jy9f7M/sidekix-media-Wgk-A3-CSFrjc-unsplash.jpg", 
         "https://i.postimg.cc/90jy9f7M/sidekix-media-Wgk-A3-CSFrjc-unsplash.jpg",
         "https://i.postimg.cc/FHxCs2w3/jon-nathon-stebbe-paydk0-Jc-IOQ-unsplash.jpg",
-        "https://i.postimg.cc/90jy9f7M/sidekix-media-Wgk-A3-CSFrjc-unsplash.jpg",
         "https://i.postimg.cc/vmF42P57/deborah-cortelazzi-g-REqu-CUXQLI-unsplash.jpg"
       ], 
       "rent": 170,
@@ -94,7 +94,7 @@
     {
       "id": 4,
       "images":[ 
-        "https://i.postimg.cc/vmF42P57/deborah-cortelazzi-g-REqu-CUXQLI-unsplash.jpg",
+        "https://tylko.com/r_static/basic-hp/hero/1680_1.84082473102612.webp",
         "https://i.postimg.cc/FHxCs2w3/jon-nathon-stebbe-paydk0-Jc-IOQ-unsplash.jpg",
         "https://i.postimg.cc/90jy9f7M/sidekix-media-Wgk-A3-CSFrjc-unsplash.jpg",
         "https://i.postimg.cc/vmF42P57/deborah-cortelazzi-g-REqu-CUXQLI-unsplash.jpg"
@@ -125,7 +125,7 @@
       "id": 5,
       "images":[ 
         "https://i.postimg.cc/Hxvt7mt8/woodendot-s-At-N5q4c-Jl-M-unsplash.jpg",
-        "https://i.postimg.cc/FHxCs2w3/jon-nathon-stebbe-paydk0-Jc-IOQ-unsplash.jpg",
+        "https://i.pinimg.com/474x/d7/d1/20/d7d1209b3681e46a963c413054a8d788.jpg",
         "https://i.postimg.cc/90jy9f7M/sidekix-media-Wgk-A3-CSFrjc-unsplash.jpg",
         "https://i.postimg.cc/vmF42P57/deborah-cortelazzi-g-REqu-CUXQLI-unsplash.jpg"
       ], 
