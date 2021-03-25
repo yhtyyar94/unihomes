@@ -30,9 +30,9 @@ export default function App() {
 	const [homes, setHomes] = useState([]);
 	const [currentCity, setCurrentCity] = useState('');
 	const [roomCount, setRoomCount] = useState([]);
-	const [login, setLog] = useState(true);
+	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-	const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	// const [isLoggedIn, setIsLoggedIn] = useState(true);
  
