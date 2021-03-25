@@ -8,7 +8,7 @@ import { useHistory } from "react-router";
     const [images, setImages] = useState("");
     const history=useHistory();
     useEffect(() => {
-      axios
+      axios 
         .get(`http://localhost:5001/api/getcities/`)
         .then((res) => setImages(res.data))
         .catch((err) => console.log(err));

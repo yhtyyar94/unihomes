@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import Search from './Search/Search';
 import {
 	BrowserRouter as Router,
 	Redirect,
 	Route,
-	Switch,
+	Switch, 
 } from 'react-router-dom';
 import Cities from '../City/Cities';
 import Header from './Header/Header';
@@ -67,6 +67,10 @@ export default function App() {
 			.catch((err) => {
 				console.log(err);
 			});
+			if(localStorage.getItem('shortlist')===null){
+                localStorage.setItem('shortlist','[]')
+            }
+			setShortlist(JSON.parse(localStorage.getItem('shortlist')))
 	}, []);
 
 	const toggleLogin = () => {
@@ -116,7 +120,7 @@ console.log(shortlist)
 					<Route
 						exact
 						path="/homedetails/:id"
-						render={() => <HomeDetails />}
+						render={() => <HomeDetails changeShortlist={changeShortlist} shortlist={shortlist} setShortlist={setShortlist}/>}
 					/>
 					<Route
 						exact

@@ -5,7 +5,7 @@ import City from '../City/City'
 import axios from 'axios'
 
 
-const Shortlist = ({homes}) => {
+const Shortlist = ({homes}) => { 
 
     const [shortlist, setShortlist] = useState([])
     const [homesShortlist, setHomesShortlist] = useState(homes);

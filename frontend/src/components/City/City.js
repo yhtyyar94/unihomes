@@ -13,6 +13,8 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
       }, []);
 
      
+    
+      
       const addToShortlist=()=>{     
             let idList = JSON.parse(localStorage.getItem('shortlist'))
             idList.push(home.id)

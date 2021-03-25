@@ -3,7 +3,7 @@ import { BsEnvelope } from 'react-icons/bs';
 import './HomeDetails.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { FaBed, FaBath, FaRegBuilding, FaRegHeart } from 'react-icons/fa';
+import { FaBed, FaBath, FaRegBuilding} from 'react-icons/fa';
 import { TiTickOutline } from 'react-icons/ti';
 import bill from './bills.png';
 import { useHistory } from 'react-router-dom';
@@ -13,7 +13,7 @@ import { BiRightArrow } from "react-icons/bi";
 import { BsHeart,BsHeartFill } from "react-icons/bs";
 
 
-export default function HomeDetails() {
+export default function HomeDetails({changeShortlist,shortlist,setShortlist}) {
 	useLayoutEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -27,7 +27,7 @@ export default function HomeDetails() {
 	const[secondImg,setSecondImg]=useState(null)
 	const[thirdImg,setThirdImg]=useState(null)
 	const[fourthImg,setFourthImg]=useState(null)
-	const[shortlist,setShortlist]=useState([])
+
 
 	// useEffect(() => {
 	// 	if(home.images.length!==0){
@@ -63,22 +63,24 @@ export default function HomeDetails() {
 		let idList = JSON.parse(localStorage.getItem('shortlist'))
 		idList.push(home.id)
 		localStorage.setItem('shortlist',JSON.stringify(idList))
+		setShortlist(idList)
   } 
 
-  useEffect(() => {
-		setShortlist(JSON.parse(localStorage.getItem('shortlist')))   
-}, [shortlist]) 
-
+ 
 const removeFromShortlist=()=>{
-	for( let i = 0; i < shortlist.length; i++){ 
+	let newShortlist = shortlist
 
-		if ( shortlist[i] === home.id) { 
+	for( let i = 0; i < newShortlist.length; i++){ 
+
+		if ( newShortlist[i] === home.id) { 
 	
-			shortlist.splice(i, 1); 
+			newShortlist.splice(i, 1); 
 		}
-	localStorage.setItem('shortlist',JSON.stringify(shortlist));
-}}
-
+}
+localStorage.setItem('shortlist',JSON.stringify(newShortlist));
+setShortlist(newShortlist)
+changeShortlist()
+}
 	// useEffect(() => {
 	// 	for (let i = 1; i <= home.bedroom; i++) {
 	// 		setRowsOfBedroomPrices([...rowsOfBedroomPrices, `row${i}`]);

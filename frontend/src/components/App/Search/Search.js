@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import MainContent from '../MainContent/MainContent'
-import {FaBed,FaBath,FaRegBuilding} from "react-icons/fa";
+
 
 
 // import {Link} from 'react'
