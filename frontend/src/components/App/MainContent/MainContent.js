@@ -1,37 +1,41 @@
 import React, { useState, useEffect } from "react";
 import './MainContent.css'
 import axios from "axios";
+import { useHistory } from "react-router";
+
 
   const MainContent = () => {
     const [images, setImages] = useState("");
+    const history=useHistory();
     useEffect(() => {
       axios
-        .get(`http://localhost:5000/api/getcities/`)
+        .get(`http://localhost:5001/api/getcities/`)
         .then((res) => setImages(res.data))
         .catch((err) => console.log(err));
     }, []);
   
-
+  
     return (
         <div className="mainContent">
     <div className="main-title">
     <p>Student accommodation in our top cities</p>
     </div>
-
+   
    
     <div className="main-image">
     {images.length !== 0 && images.slice(0, 9).map((image) => (
-              <div className="main-image-all" role="image" 
+            <div className="main-image-all">
+              {/*} role="image" aria-label="image description"
               style={{ 
                 backgroundImage: `url(${image.image})`,
                 backgroundRepeat: 'no-repeat',  
                 backgroundPosition: 'center',
                 backgroundSize: 'cover'
-              }}>                           
-             
+              }} >  */}                      
+           <img src={image.url}></img>
               <h3>{image.name}</h3>
               <p> 26 properties</p>
-              
+             
               </div>
             ))}
 
@@ -49,7 +53,7 @@ import axios from "axios";
     </div>
 
     <div className="main-allCities">
-    <button className="btn">See all cities</button>
+    <button className="btn" onClick={()=>history.push('/student-accommodation')}>See all cities</button>
     </div>
 
     <div className="main-search">
@@ -71,7 +75,7 @@ import axios from "axios";
         <p>Bills are included in all rent prices. No hidden fees.</p>
         </div>
     </div>
-    <div><button className="box-btn">Search and Compare</button></div>
+    <div><a href="#search"><button className="box-btn" >Search and Compare</button></a></div>
 
     </div>
    

@@ -11,22 +11,20 @@ export default function City({home}) {
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
       }, []);
-      const[shortlist,setShortlist]=useState([2])
-    
-      const addToShortlist=()=>{
-            let homeId =home.id
+      const[shortlist,setShortlist]=useState([])
+     
+      const addToShortlist=()=>{     
             if(localStorage.getItem('shortlist')===null){
                 localStorage.setItem('shortlist','[]')
             }
-
             let idList = JSON.parse(localStorage.getItem('shortlist'))
-            idList.push(homeId)
+            idList.push(home.id)
             localStorage.setItem('shortlist',JSON.stringify(idList))
       } 
 
       useEffect(() => {
             setShortlist(JSON.parse(localStorage.getItem('shortlist')))   
-	}, [shortlist])
+	}, [shortlist]) 
 
     const removeFromShortlist=()=>{
         for( let i = 0; i < shortlist.length; i++){ 
@@ -35,7 +33,6 @@ export default function City({home}) {
         
                 shortlist.splice(i, 1); 
             }
-       
         localStorage.setItem('shortlist',JSON.stringify(shortlist));
     }}
  
