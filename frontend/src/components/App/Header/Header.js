@@ -43,7 +43,7 @@ export default function Header({ toggleLogin, isLoggedIn }) {
 			localStorage.setItem('shortlist','[]')
 		}
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
-	}, [])
+	}, [shortlist])
 
 
 

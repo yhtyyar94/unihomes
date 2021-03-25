@@ -10,7 +10,7 @@ const Shortlist = () => {
     const [shortlists, setShortlist] = useState(null)
 
     useEffect(() => {
-        const lists = JSON.parse(localStorage.getItem('lists'))
+        const lists = JSON.parse(localStorage.getItem('shortlist'))
         setShortlist(lists)
     },[])
 

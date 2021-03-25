@@ -6,18 +6,18 @@ import axios from "axios";
     const [images, setImages] = useState("");
     useEffect(() => {
       axios
-        .get(`http://localhost:5000/api/getcities/`)
+        .get(`http://localhost:5001/api/getcities/`)
         .then((res) => setImages(res.data))
         .catch((err) => console.log(err));
     }, []);
   
-
+  
     return (
         <div className="mainContent">
     <div className="main-title">
     <p>Student accommodation in our top cities</p>
     </div>
-
+   
    
     <div className="main-image">
     {images.length !== 0 && images.slice(0, 9).map((image) => (
