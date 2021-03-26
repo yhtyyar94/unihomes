@@ -20,7 +20,7 @@ export default function LoginPop({register, setLog}) {
   return (
     <div className="logContainer">
     <form>
-      <div className="logTitle">Agent Login <RiCloseFill className="close-logo" onClick={() => setLog(false)}/> </div>
+      <div className="logTitle">Agent Login <RiCloseFill className="close-logo1" onClick={() => setLog(false)}/> </div>
       <hr className="logLine"/> 
       <div className="login-email">
       <label htmlFor="email" >Email</label>

@@ -18,7 +18,7 @@ export default function RegisterPop({backtoLogin, setSignUp}) {
   return (
     <div className="regContainer">
     <form >
-      <div className="logTitle">Agent Register <RiCloseFill className="close-logo" onClick={() => setSignUp(false)} /></div>
+      <div className="logTitle">Agent Register <RiCloseFill className="close-logo2" onClick={() => setSignUp(false)} /></div>
       <hr className="logLine"/> 
       <div className="reg-company">
       <label for="companyName" >Company name</label>

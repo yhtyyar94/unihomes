@@ -402,8 +402,11 @@
 .agency a {
   cursor: pointer;
 }
-
-.close-logo {
+.close-logo1 {
+  margin-left: 175px;
+  cursor: pointer;
+}
+.close-logo2 {
   margin-left: 150px;
   cursor: pointer;
 }
