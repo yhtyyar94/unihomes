@@ -85,14 +85,6 @@ a {
     display: flex;
 }
 
-.row2 input {
-    border: 1px solid #fff;
-    text-align: center;
-    color: #fff !important;
-    padding: 5px;
-    font-weight: 200;
-}
-
 
 .row3 {
     display: flex;
@@ -136,6 +128,7 @@ a {
     padding: 6px;
     margin-top: +5px;
     height: 33px;
+
 }
 
 .row6 {
@@ -174,11 +167,6 @@ a {
     width: 99%;
 }
 
-.row8 textarea::placeholder {
-    color: #656d6d;
-    font-size: small;
-}
-
 .row9 {
     display: flex;
     margin-top:5px;
@@ -188,25 +176,16 @@ a {
 
 .row9 input {
     background: #F49131;
-    color: #ffffff !important;
+    color: #ffffff;
     font-weight: 200;
     padding: 10px;
     border: none;
-    height: 20%;
 }
 
 .row7 label, .row7 input {
     display: block !important;
 }
 
-.row7 label {
-    width: 100%;
-}
-
 .row8 label, .row8 textarea {
     display: block !important;
-}
-
-.row select, .row input {
-    color: #656d6d;
 }

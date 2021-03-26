@@ -24,7 +24,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  position: relative;
 }
 
 .main-image-all {
@@ -40,38 +39,18 @@
 .main-image-all img{
   width: 380px;
   height: 250px;
-  /* z-index: -1;  */
+  z-index: -1; 
   transition: transform .2s ease;
-  /* overflow: hidden; */
-  z-index: 1;
+  overflow: hidden;
 } 
 .main-image-all h3{
- margin-top: -150px;
- color: #fff;
-  position: absolute;
-   z-index: 3;
-  margin-left: 140px;
-  font-size: 28px;
- 
+ margin-top: -120px;
+ color: azure;
+  z-index: 2; 
+
+
+
 } 
-.main-image-all>span{
-  
-  color:rgb(116, 116, 116);
-     position: absolute;
-margin-top: 150px; 
- margin-left: -230px;
-/* display: none; */
-
- } 
- .main-image-all:hover span{
-  
-  color: #fff;
-     position: absolute;
-margin-top: 150px; 
- margin-left: -230px;
- font-size: 30px;
-
- } 
 
 .main-image-all:hover img{
   transform: scale(1.15, 1.15);
@@ -79,16 +58,16 @@ margin-top: 150px;
       cursor: pointer;
 
 }
- .main-image-all:hover h3 {
-
-  font-size: 40px;
+.main-image-all h3 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 42px;
    color: #ffffff;
-  transition: all 0.3s;
-  
-  } 
-
-
-
+  z-index: 2;
+  transition: all 0.5s;
+  text-align: center;
+margin-top: 90px;
+  }
 .main-allCities {
   /* width: 100px; */
   height: 100px;
