@@ -104,8 +104,6 @@ const AddProperty = () => {
 		setKeys('')
 		setDescription('')
 	}
-	
-	console.log(from)
 
 	return (
 		<div className="AddProperty">
