@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/blackeagle94/studentshome#readme",
   "dependencies": {
+    "@babel/helper-builder-react-jsx-experimental": "^7.12.11",
     "axios": "^0.21.1",
     "json-server": "^0.16.3",
     "react": "^17.0.1",

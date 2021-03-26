@@ -110,7 +110,7 @@ console.log(shortlist)
 			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} shortlist={shortlist}/>
 			{login === true ? <LoginPop register={register} setLog={setLog}/> : null}
 			{signup === true ? (
-				<RegisterPop register={register} backtoLogin={backtoLogin} />
+				<RegisterPop register={register} backtoLogin={backtoLogin} setSignUp={setSignUp} />
 			) : null}
 			<Router>
 				<Switch>
