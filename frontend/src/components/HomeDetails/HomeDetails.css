@@ -246,6 +246,7 @@ li {
 	text-align: center;
 	color: #ffffff;
 	padding-top: 40px;
+	padding-bottom: 5px;
 	height: auto;
 	margin-bottom: 20px;
 }
@@ -301,6 +302,7 @@ li {
 	height: 55px;
 	font-family: Roboto;
 	font-size: 22px;
+	margin-bottom: 30px;
 }
 @media (max-width: 900px) {
 	.arrow-right {
