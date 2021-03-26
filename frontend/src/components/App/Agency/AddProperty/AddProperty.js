@@ -77,13 +77,8 @@ const AddProperty = () => {
 		setTo('')
 		setKeys('')
 		setDescription('')
-<<<<<<< Updated upstream
 	}
-=======
->>>>>>> Stashed changes
-
-
-	}
+	
 	return (
 		<div className="AddProperty">
 			{successSubmit && <div className="addproperty-succes-message">
