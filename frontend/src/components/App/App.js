@@ -160,6 +160,7 @@ export default function App() {
 					<Route exact path="/aboutus" component={About} />
 					<Route exact path="/terms" component={Terms} />
 					<Route exact path="/policies" component={Policies} />
+					<Route exact path="/contact" component={ContactUs} />
 
 					<Route
 						exact
