@@ -277,8 +277,10 @@ export default function HomeDetails({
 						</div>
 					</div>
 					<div className="homedetails-main-availability">
-						<h3>Availability</h3>
-						Till {home.availability}
+						<h3 style={{ marginBottom: '20px' }}>Availability</h3>
+						<span className="homedetails-main-availability-date">
+							From {home.availability}
+						</span>
 					</div>
 				</div>
 				<div className="homedetails-sidebar-container">
