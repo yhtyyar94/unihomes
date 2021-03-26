@@ -401,7 +401,13 @@ export default function HomeDetails({
 								</h2>
 							</div>
 							<div>
-								<h4 className="book-viewing-form-address">Address</h4>
+								<h4 className="book-viewing-form-address">
+									{home.length !== 0 && home.address.street},{' '}
+									{home.length !== 0 && home.address.district}
+									<br />
+									{home.length !== 0 && home.address.city},{' '}
+									{home.length !== 0 && home.address.postcode}
+								</h4>
 							</div>
 							<div>
 								<form className="book-viewing-form">
