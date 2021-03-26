@@ -183,6 +183,18 @@ export default function App() {
 							}
 						}}
 					/>
+						<Route
+						exact
+						path="/agency/addproperty/:id"
+						render={(props) => {
+							const token = isAuthenticated();
+							if (token) {
+								return <AddProperty />;
+							} else {
+								return <Redirect to="/" />;
+							}
+						}}
+					/>
 
 					<Route
 						exact

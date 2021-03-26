@@ -153,7 +153,7 @@ exports.updateProperty = async (req, res) => {
 }
 
 exports.deleteProperty = async (req, res) => {
-    const propertyId = req.params.propertyId
+    const propertyId = req.params.id
 
     await PropertiesModel.deleteOne({_id:propertyId}, (err, data) => {
         if(err) {
