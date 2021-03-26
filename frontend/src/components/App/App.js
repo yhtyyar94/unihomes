@@ -1,11 +1,11 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Search from './Search/Search';
 import {
 	BrowserRouter as Router,
 	Redirect,
 	Route,
-	Switch, 
+	Switch,
 } from 'react-router-dom';
 import Cities from '../City/Cities';
 import Header from './Header/Header';
@@ -27,8 +27,6 @@ import ContactUs from '../StaticPages/ContactUs';
 import Properties from './Agency/Properties/Properties';
 import NotAuth from './Agency/NotAuth';
 
-
-
 export default function App() {
 	const [cities, setCities] = useState([]);
 	const [homes, setHomes] = useState([]);
@@ -37,22 +35,20 @@ export default function App() {
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
-	const [shortlist ,setShortlist] = useState([])
-	const [jwt, setJwt] = useState()
-
+	const [shortlist, setShortlist] = useState([]);
+	const [jwt, setJwt] = useState();
 
 	const changeShortlist = () => {
-		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
-	}
+		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
+	};
 
 	useEffect(() => {
-		if(localStorage.getItem('shortlist')===null){
-			localStorage.setItem('shortlist','[]')
+		if (localStorage.getItem('shortlist') === null) {
+			localStorage.setItem('shortlist', '[]');
 		}
-		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
-	},[])
+		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
+	}, []);
 
- 
 	useEffect(() => {
 		axios
 			.get('http://localhost:5000/homes')
@@ -73,10 +69,10 @@ export default function App() {
 			.catch((err) => {
 				console.log(err);
 			});
-			if(localStorage.getItem('shortlist')===null){
-                localStorage.setItem('shortlist','[]')
-            }
-			setShortlist(JSON.parse(localStorage.getItem('shortlist')))
+		if (localStorage.getItem('shortlist') === null) {
+			localStorage.setItem('shortlist', '[]');
+		}
+		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
 	}, []);
 
 	const toggleLogin = () => {
@@ -104,102 +100,153 @@ export default function App() {
 		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
 		setHomes(filteredHomes);
 	};
-console.log(shortlist)
+	console.log(shortlist);
 	return (
 		<div>
-			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} shortlist={shortlist}/>
-			{login === true ? <LoginPop register={register} setLog={setLog}/> : null}
+			<Header
+				toggleLogin={toggleLogin}
+				isLoggedIn={isLoggedIn}
+				shortlist={shortlist}
+			/>
+			{login === true ? (
+				<LoginPop register={register} setLog={setLog} />
+			) : null}
 			{signup === true ? (
 				<RegisterPop register={register} backtoLogin={backtoLogin} />
 			) : null}
 			<Router>
 				<Switch>
-					<Route    
+					<Route
 						exact
 						path="/"
 						render={() => <Search cities={cities} />}
 					/>
 					<Route
 						path={`/cities/:cityname/:bedroom?`}
-						render={() => <Cities homes={homes} cities={cities} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist}/>}
+						render={() => (
+							<Cities
+								homes={homes}
+								cities={cities}
+								shortlist={shortlist}
+								setShortlist={setShortlist}
+								changeShortlist={changeShortlist}
+							/>
+						)}
 					/>
 					<Route
 						exact
 						path="/homedetails/:id"
-						render={() => <HomeDetails changeShortlist={changeShortlist} shortlist={shortlist} setShortlist={setShortlist}/>}
+						render={() => (
+							<HomeDetails
+								changeShortlist={changeShortlist}
+								shortlist={shortlist}
+								setShortlist={setShortlist}
+							/>
+						)}
 					/>
 					<Route
 						exact
 						path="/shortlists"
-						render={() => <Shortlist homes={homes} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist}/>}
+						render={() => (
+							<Shortlist
+								homes={homes}
+								shortlist={shortlist}
+								setShortlist={setShortlist}
+								changeShortlist={changeShortlist}
+							/>
+						)}
 					/>
 					{/* <Route exact path="/shortlists" component={Shortlist} /> */}
 					<Route exact path="/aboutus" component={About} />
 					<Route exact path="/terms" component={Terms} />
 					<Route exact path="/policies" component={Policies} />
 
-					<Route exact path="/student-accommodation" component={TopCities} />
-					<Route exact path="/agency/welcomepage"  render={(props) => {
-						const token = isAuthenticated()
-						token.then(res => {
-							setJwt(res)
-						}).catch(err => err)
-						if(jwt) {
-							return <WelcomePage /> 
-						} else {
-							return <NotAuth />
-						}
-					}}/>
-					<Route exact path="/agency/addproperty"  render={(props) => {
-						
-						const token = isAuthenticated()
-						token.then(res => {
-							setJwt(res)
-						}).catch(err => err)
-						if(jwt) {
-							return <AddProperty /> 
-						} else {
-							return <NotAuth />
-						}
-					}}/>
+					<Route
+						exact
+						path="/student-accommodation"
+						component={TopCities}
+					/>
+					<Route
+						exact
+						path="/agency/welcomepage"
+						render={(props) => {
+							const token = isAuthenticated();
+							token
+								.then((res) => {
+									setJwt(res);
+								})
+								.catch((err) => err);
+							if (jwt) {
+								return <WelcomePage />;
+							} else {
+								return <NotAuth />;
+							}
+						}}
+					/>
+					<Route
+						exact
+						path="/agency/addproperty"
+						render={(props) => {
+							const token = isAuthenticated();
+							token
+								.then((res) => {
+									setJwt(res);
+								})
+								.catch((err) => err);
+							if (jwt) {
+								return <AddProperty />;
+							} else {
+								return <NotAuth />;
+							}
+						}}
+					/>
 
-					<Route exact path="/agency/addproperty/:id"  render={(props) => {
-							const token = isAuthenticated()
-						token.then(res => {
-							setJwt(res)
-						}).catch(err => err)
-						if(jwt) {
-							return <AddProperty /> 
-						} else {
-							return <NotAuth />
-						}
-					}}/>
-
+					<Route
+						exact
+						path="/agency/addproperty/:id"
+						render={(props) => {
+							const token = isAuthenticated();
+							token
+								.then((res) => {
+									setJwt(res);
+								})
+								.catch((err) => err);
+							if (jwt) {
+								return <AddProperty />;
+							} else {
+								return <NotAuth />;
+							}
+						}}
+					/>
 
 					<Route
 						exact
 						path="/agency/myprofile"
 						render={(props) => {
-							const token = isAuthenticated()
-						token.then(res => {
-							setJwt(res)
-						}).catch(err => err)
+							const token = isAuthenticated();
+							token
+								.then((res) => {
+									setJwt(res);
+								})
+								.catch((err) => err);
 							if (jwt) {
 								return <MyProfile />;
 							} else {
-								return <NotAuth />
+								return <NotAuth />;
 							}
 						}}
 					/>
 
-<Route
+					<Route
 						exact
 						path="/agency/properties"
 						render={(props) => {
-							const token = isAuthenticated()
-						token.then(res => {
-							setJwt(res)
-						}).catch(err => err)
+							const token = isAuthenticated();
+							token
+								.then((res) => {
+									setJwt(res);
+								})
+								.catch((err) => err);
 							if (jwt) {
 								return <Properties />;
 							} else {
@@ -208,7 +255,6 @@ console.log(shortlist)
 						}}
 					/>
 					{/* {Authentication() ? <Route exact path='/welcomepage' component={WelcomePage}  />: null} */}
-
 				</Switch>
 			</Router>
 			<Footer />
