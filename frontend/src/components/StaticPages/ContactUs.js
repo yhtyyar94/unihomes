@@ -40,7 +40,7 @@ const ContactUs = () => {
 							<label>Message</label>
 							<br />
 							<textarea placeholder="Text message..." required />
-							<button className="btn-book-viewing-page-form-submit">
+							<button className="btn-contact-us-page-form-submit">
 								Submit
 							</button>
 						</form>

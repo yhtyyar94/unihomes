@@ -35,13 +35,6 @@ export default function HomeDetails({
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [rowsOfBedroomPrices, setRowsOfBedroomPrices] = useState([]);
 
-	// useEffect(() => {
-	// 	if(home.images.length!==0){
-	// 		setFirstImg(home.images[0].url)
-	// 	}
-
-	// }, [])
-
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5000/homes/${id}`)
