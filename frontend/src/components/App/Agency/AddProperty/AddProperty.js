@@ -1,39 +1,65 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import {useParams} from 'react-router-dom';
 import './AddProperty.css';
 
 const AddProperty = () => {
 	const [ cities, setCities ] = useState(null);
 	const [ cityId, setCityId ] = useState(null);
-	const [ rent, setRent ] = useState(null);
-	const [	cityName, setCityName ] = useState(null);
-	const [ bedrooms, setBedrooms ] = useState(null);
-	const [ bathrooms, setBathrooms ] = useState(null);
-	const [ street, setStreet ] = useState(null);
-	const [ district, setDistrict ] = useState(null);
-	const [ town, setTown ] = useState(null);
-	const [ postcode, setPostcode ] = useState(null);
-	const [ type, setType ] = useState(null);
-	const [ deposit, setDeposit ] = useState(null);
-	const [ from, setFrom ] = useState(null);
-	const [ to, setTo ] = useState(null);
+	const [ rent, setRent ] = useState();
+	const [	cityName, setCityName ] = useState('');
+	const [ bedrooms, setBedrooms ] = useState();
+	const [ bathrooms, setBathrooms ] = useState();
+	const [ street, setStreet ] = useState('');
+	const [ district, setDistrict ] = useState('');
+	const [ town, setTown ] = useState('');
+	const [ postcode, setPostcode ] = useState('');
+	const [ type, setType ] = useState('');
+	const [ deposit, setDeposit ] = useState();
+	const [ from, setFrom ] = useState('');
+	const [ to, setTo ] = useState('');
 	const [ keys, setKeys ] = useState('');
-	const [ description, setDescription ] = useState(null);
+	const [ description, setDescription ] = useState('');
 	const [multipleFiles, setMultipleFiles ] = useState([]);
-	const [successSubmit, setSuccessSubmit] = useState(null)
+	const [successSubmit, setSuccessSubmit] = useState()
+
+	const {id} = useParams()
+
+
 
 	useEffect(() => {
 		axios
 			.get('http://localhost:5001/api/getcities')
 			.then((res) => setCities(res.data))
 			.catch((err) => console.log(err));
+		
+		if(id) {
+			axios.get(`http://localhost:5001/api/getproperties/${id}`)
+			.then((res => {
+					console.log(res.data)
+					const {data} = res
+					setRent(data.rent)
+					setCityName(data.cityName)
+					setBathrooms(data.bathroom)
+					setBedrooms(data.bedroom)
+					setStreet(data.address[0])
+					setDistrict(data.address[1])
+					setTown(data.address[2])
+					setPostcode(data.address[3])
+					setType(data.type)
+					setDeposit(data.deposit)
+					setFrom(data.availability[0])
+					setTo(data.availability[1])
+					setKeys(data.keyFeatures.join(', '))
+					setDescription(data.home_description)
+				})).catch(err => console.log(err));
+			}
+
 	}, []);
 
 	const multipleFileChange = e => {
 		setMultipleFiles(e.target.files)
 	}
-
-
 
 	const onSubmit = async (e) => {
 		e.preventDefault()
@@ -47,8 +73,8 @@ const AddProperty = () => {
 		for (let i = 0; i < keyFeatures.length; i++) {
 			formData.append('keyFeatures', keyFeatures[i])
 		}
-		formData.append('city', cityId)
-		formData.append('name', cityName)
+		formData.append('cityId', cityId)
+		formData.append('cityName', cityName)
 		formData.append('user', '6046459eeb43bf37ecf5147a')
 		formData.append('address', street)
 		formData.append('address', district)
@@ -78,11 +104,9 @@ const AddProperty = () => {
 		setKeys('')
 		setDescription('')
 	}
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 49dd604c52ffd1eb302d42f0091ee8c899061c56
+	console.log(from)
+
 	return (
 		<div className="AddProperty">
 			{successSubmit && <div className="addproperty-succes-message">
@@ -92,7 +116,7 @@ const AddProperty = () => {
 				<div className="row row1">
 					<div>
 						<label htmlFor="cities">City Name</label>
-						<select id="cities" name="cities" onChange={(e) => {
+						<select id="cities" name="cities" value={cityName} onChange={(e) => {
 							setCityName(e.target.value); 
 							const values = e.target.children
 							for(let i = 0; i < values.length; i++) {
@@ -102,7 +126,7 @@ const AddProperty = () => {
 								}
 							}
 						}} required>
-						<option selected disabled>Select City</option>
+						<option  disabled selected>Select City</option>
 							{cities &&
 								cities.map((city) => (
 									<option value={city.name} id={city._id} key={city.name}>
@@ -115,12 +139,20 @@ const AddProperty = () => {
 						<label htmlFor="rent">Weekly Rent</label>
 						<input type="number" id="rent" placeholder="Please enter weekly price" value={rent} onChange={(e) => setRent(e.target.value)} required/>
 					</div>
+					<div>
+						<label htmlFor="bedrooms">Number of Bedrooms</label>
+						<input type="number" id="bedrooms" value={bedrooms} placeholder="Number of Bedrooms" onChange={(e)=> setBedrooms(e.target.value)} required/>
+					</div>
+					<div>
+						<label htmlFor="bathrooms">Number of Bathrooms</label>
+						<input type="number" id="bathrooms" value={bathrooms} placeholder="Number of Bathrooms" onChange={(e)=> setBathrooms(e.target.value)} required/>
+					</div>
 				</div>
-				<div className="row row2">
+				{/* <div className="row row2">
 					<label htmlFor="images">Upload Images</label>
 					<input type="file" multiple onChange={e => multipleFileChange(e)} required />
-				</div>
-				<div className="row row3">
+				</div> */}
+				{/* <div className="row row3">
 					<div>
 						<label htmlFor="bedrooms">Number of Bedrooms</label>
 						<input type="number" id="bedrooms" placeholder="Number of Bedrooms" onChange={(e)=> setBedrooms(e.target.value)} required/>
@@ -129,7 +161,7 @@ const AddProperty = () => {
 						<label htmlFor="bathrooms">Number of Bathrooms</label>
 						<input type="number" id="bathrooms" placeholder="Number of Bathrooms" onChange={(e)=> setBathrooms(e.target.value)} required/>
 					</div>
-				</div>
+				</div> */}
 				<div className="row row4">
 					<div>
 						<label htmlFor="street">Street Name</label>
@@ -151,7 +183,7 @@ const AddProperty = () => {
 				<div className="row row5">
 					<div>
 						<label htmlFor="type">Type of Property</label>
-						<select id="type" name="type" onChange={(e) => setType(e.target.value)}>
+						<select id="type" name="type" value={type} onChange={(e) => setType(e.target.value)}>
 							<option value="" disabled selected required>
 								Select Property Type
 							</option>
@@ -163,8 +195,16 @@ const AddProperty = () => {
 						<label htmlFor="deposit">Deposit</label>
 						<input type="number" id="deposit" placeholder="Deposit" value={deposit} onChange={(e) => setDeposit(e.target.value)} required/>
 					</div>
+					<div>
+						<label htmlFor="from">Available from</label>
+						<input type="date" id="from" value={from} onChange={(e) => setFrom(e.target.value)} required/>
+					</div>
+					<div>
+						<label htmlFor="to">to</label>
+						<input type="date" id="to" value={to} onChange={(e) => setTo(e.target.value)} required/>
+					</div>
 				</div>
-				<div className="row row6">
+				{/* <div className="row row6">
 					<div>
 						<label htmlFor="from">Available from</label>
 						<input type="date" id="from" onChange={(e) => setFrom(e.target.value)} required/>
@@ -173,17 +213,21 @@ const AddProperty = () => {
 						<label htmlFor="to">to</label>
 						<input type="date" id="to" onChange={(e) => setTo(e.target.value)} required/>
 					</div>
-				</div>
+				</div> */}
 				<div className="row row7">
 					<label htmlFor="keys">Key Features(Please separate features with commas)</label>
 					<input type="text" id="keys" placeholder="Key Features" value={keys} onChange={(e) => setKeys(e.target.value)} required/>
 				</div>
 				<div className="row row8">
 					<label htmlFor="description">Home Description</label>
-					<textarea name="description"type="text" id="description" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} required/>
+					<textarea name="description" type="text" id="description" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} required/>
+				</div>
+				<div className="row row2">
+					<label htmlFor="images">Upload Images</label>
+					<input type="file" multiple onChange={e => multipleFileChange(e)} required />
 				</div>
 				<div className="row row9">
-					<input type="submit" value="Submit" />
+					<input type="submit" value={id ? 'Update' : 'Submit'} />
 				</div>
 			</form>
 		</div>

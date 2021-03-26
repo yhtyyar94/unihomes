@@ -31,6 +31,7 @@ a {
     margin-left: 5px;
     margin-right: 5px;
     border: none;
+    color: #656d6d;
 }
 
 .add-form select {
@@ -52,6 +53,11 @@ a {
 
 .add-form input, .add-form label {
     display:block;
+}
+
+.add-form select {
+    color: #656d6d;
+    font-size: 12px;
 }
 
 .row7 input, .row7 label {
@@ -79,10 +85,23 @@ a {
     padding: 6px;
     margin-top: +5px;
     height: 33px;
+    color: #656d6d;
 }
 
 .row2 {
     display: flex;
+}
+
+.row2 input {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 6px;
+    color: #fff;
+}
+
+.row2 label {
+    padding: 6px;
+    color: #fff;
 }
 
 
@@ -108,12 +127,12 @@ a {
 .row4 input {
     border: 1px solid #fff;
     text-align: center;
-    color: #fff !important;
     font-weight: 200;
     width: 300px;
     padding: 6px;
     margin-top: +5px;
     height: 33px;
+    color: #656d6d;
 }
 
 .row5 {
@@ -128,6 +147,8 @@ a {
     padding: 6px;
     margin-top: +5px;
     height: 33px;
+    color: #656d6d;
+    font-size: 12px;
 
 }
 
@@ -180,6 +201,7 @@ a {
     font-weight: 200;
     padding: 10px;
     border: none;
+    width: 15%;
 }
 
 .row7 label, .row7 input {
