@@ -63,6 +63,8 @@
 	height: 42px;
 	border: solid 1px #03c5f0;
 	border-radius: 3px;
+	padding-left: 7px;
+	font-family: Roboto;
 }
 
 .contact-us-form > input::placeholder {
@@ -140,11 +142,15 @@
 	border-radius: 2px;
 	margin-bottom: 10px;
 	padding: 10px;
-	color: white;
 	font-size: 18px;
 	font-family: Roboto;
 	text-decoration: underline;
 }
+
+.contact-us-side-bar-contact-details > a {
+	color: white;
+}
+
 .contact-us-side-bar-phone {
 	display: inline-block;
 	text-align: center;

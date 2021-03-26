@@ -3,55 +3,58 @@ import { BsEnvelope } from 'react-icons/bs';
 import './HomeDetails.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { FaBed, FaBath, FaRegBuilding} from 'react-icons/fa';
+import { FaBed, FaBath, FaRegBuilding } from 'react-icons/fa';
 import { TiTickOutline } from 'react-icons/ti';
 import bill from './bills.png';
 import { useHistory } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
-import { BiLeftArrow } from "react-icons/bi";
-import { BiRightArrow } from "react-icons/bi";
-import { BsHeart,BsHeartFill } from "react-icons/bs";
-import Modal from 'react-modal'
+import { BiLeftArrow } from 'react-icons/bi';
+import { BiRightArrow } from 'react-icons/bi';
+import { BsHeart, BsHeartFill } from 'react-icons/bs';
+import Modal from 'react-modal';
 
-Modal.setAppElement('#root')
-export default function HomeDetails({changeShortlist,shortlist,setShortlist}) {
+Modal.setAppElement('#root');
+export default function HomeDetails({
+	changeShortlist,
+	shortlist,
+	setShortlist,
+}) {
 	useLayoutEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
-
 
 	let history = useHistory();
 
 	const [bookViewing, setBookViewing] = useState(false);
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
-	const[firstImg,setFirstImg]=useState(null)
-	const[secondImg,setSecondImg]=useState(null)
-	const[thirdImg,setThirdImg]=useState(null)
-	const[fourthImg,setFourthImg]=useState(null)
-	const[modalIsOpen,setModalIsOpen]=useState(false)
-
+	const [firstImg, setFirstImg] = useState(null);
+	const [secondImg, setSecondImg] = useState(null);
+	const [thirdImg, setThirdImg] = useState(null);
+	const [fourthImg, setFourthImg] = useState(null);
+	const [modalIsOpen, setModalIsOpen] = useState(false);
+	const [rowsOfBedroomPrices, setRowsOfBedroomPrices] = useState([]);
 
 	// useEffect(() => {
 	// 	if(home.images.length!==0){
 	// 		setFirstImg(home.images[0].url)
 	// 	}
-		
+
 	// }, [])
-	
-	// const [rowsOfBedroomPrices, setRowsOfBedroomPrices] = useState([]);
 
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5000/homes/${id}`)
-			.then((res) => {setFirstImg(res.data.images[0]); 
+			.then((res) => {
+				setFirstImg(res.data.images[0]);
 				setSecondImg(res.data.images[1]);
 				setThirdImg(res.data.images[2]);
 				setFourthImg(res.data.images[3]);
-				setHome(res.data)})
+				setHome(res.data);
+			})
 			.catch((err) => console.log(err));
 	}, [id]);
- 
+
 	const showBookViewing = () => {
 		setBookViewing(!bookViewing);
 	};
@@ -59,94 +62,107 @@ export default function HomeDetails({changeShortlist,shortlist,setShortlist}) {
 	const closeBookViewing = () => {
 		setBookViewing(false);
 	};
-	const addToShortlist=()=>{     
-		if(localStorage.getItem('shortlist')===null){
-			localStorage.setItem('shortlist','[]')
+	const addToShortlist = () => {
+		if (localStorage.getItem('shortlist') === null) {
+			localStorage.setItem('shortlist', '[]');
 		}
-		let idList = JSON.parse(localStorage.getItem('shortlist'))
-		idList.push(home.id)
-		localStorage.setItem('shortlist',JSON.stringify(idList))
-		setShortlist(idList)
-  } 
+		let idList = JSON.parse(localStorage.getItem('shortlist'));
+		idList.push(home.id);
+		localStorage.setItem('shortlist', JSON.stringify(idList));
+		setShortlist(idList);
+	};
 
- 
-const removeFromShortlist=()=>{
-	let newShortlist = shortlist
+	const removeFromShortlist = () => {
+		let newShortlist = shortlist;
 
-	for( let i = 0; i < newShortlist.length; i++){ 
-
-		if ( newShortlist[i] === home.id) { 
-	
-			newShortlist.splice(i, 1); 
+		for (let i = 0; i < newShortlist.length; i++) {
+			if (newShortlist[i] === home.id) {
+				newShortlist.splice(i, 1);
+			}
 		}
-}
-localStorage.setItem('shortlist',JSON.stringify(newShortlist));
-setShortlist(newShortlist)
-changeShortlist()
-}
-	// useEffect(() => {
-	// 	for (let i = 1; i <= home.bedroom; i++) {
-	// 		setRowsOfBedroomPrices([...rowsOfBedroomPrices, `row${i}`]);
-	// 	}
+		localStorage.setItem('shortlist', JSON.stringify(newShortlist));
+		setShortlist(newShortlist);
+		changeShortlist();
+	};
 
-	// 	console.log(rowsOfBedroomPrices);
-	// }, []);
+	useEffect(() => {
+		let rooms = [];
+		for (let i = 1; i <= home.bedroom; i++) {
+			rooms.push(i);
+		}
+		setRowsOfBedroomPrices([...rooms]);
+	}, [home.bedroom]);
 
-	const handleSecondImg=()=>{
-		setFirstImg(secondImg)
-		setFourthImg(firstImg)
-		setSecondImg(thirdImg)
-		setThirdImg(fourthImg)
-	}
-	const handleThirdImg=()=>{
-		setFirstImg(thirdImg)
-		setFourthImg(firstImg)
-		setSecondImg(secondImg)
-		setThirdImg(fourthImg)
-	}
-	const handleFourthImg=()=>{
-		setFirstImg(fourthImg)
-		setFourthImg(firstImg)
-		setSecondImg(secondImg)
-		setThirdImg(thirdImg)
-	}
-	const handleRightSwipe=()=>{
-		setFirstImg(secondImg)
-		setFourthImg(firstImg)
-		setSecondImg(thirdImg)
-		setThirdImg(fourthImg)
-	}
-	const handleLeftSwipe=()=>{
-		setFirstImg(fourthImg)
-		setFourthImg(thirdImg)
-		setSecondImg(firstImg)
-		setThirdImg(secondImg)
-	}
+	const handleSecondImg = () => {
+		setFirstImg(secondImg);
+		setFourthImg(firstImg);
+		setSecondImg(thirdImg);
+		setThirdImg(fourthImg);
+	};
+	const handleThirdImg = () => {
+		setFirstImg(thirdImg);
+		setFourthImg(firstImg);
+		setSecondImg(secondImg);
+		setThirdImg(fourthImg);
+	};
+	const handleFourthImg = () => {
+		setFirstImg(fourthImg);
+		setFourthImg(firstImg);
+		setSecondImg(secondImg);
+		setThirdImg(thirdImg);
+	};
+	const handleRightSwipe = () => {
+		setFirstImg(secondImg);
+		setFourthImg(firstImg);
+		setSecondImg(thirdImg);
+		setThirdImg(fourthImg);
+	};
+	const handleLeftSwipe = () => {
+		setFirstImg(fourthImg);
+		setFourthImg(thirdImg);
+		setSecondImg(firstImg);
+		setThirdImg(secondImg);
+	};
 
 	return (
 		<div>
-
-			<Modal 
-			isOpen={modalIsOpen} onRequestClose={()=>setModalIsOpen(false)}
-			style={{
-				overlay:{
-					top: 35,
-					backgroundColor:'rgba(211, 211, 211, 0.60)'
-				},
-				content:{
-					padding:2,
-					height:700
-			
-				}
-			}}
-			
+			<Modal
+				isOpen={modalIsOpen}
+				onRequestClose={() => setModalIsOpen(false)}
+				style={{
+					overlay: {
+						top: 35,
+						backgroundColor: 'rgba(211, 211, 211, 0.60)',
+					},
+					content: {
+						padding: 2,
+						height: 700,
+					},
+				}}
 			>
 				{/* <button onClick={()=>setModalIsOpen(false)}>X</button> */}
-				<img  src={firstImg && firstImg} style={{borderRadius:"3px",height:"99%",width:"auto",marginLeft:"17%"}} alt=""/>
-				<BiRightArrow className="arrow-right" onClick={handleRightSwipe} fill="#03c5f0" />
-				<BiLeftArrow className="arrow-left" onClick={handleLeftSwipe}  fill="#03c5f0" />
+				<img
+					src={firstImg && firstImg}
+					style={{
+						borderRadius: '3px',
+						height: '99%',
+						width: 'auto',
+						marginLeft: '17%',
+					}}
+					alt=""
+				/>
+				<BiRightArrow
+					className="arrow-right"
+					onClick={handleRightSwipe}
+					fill="#03c5f0"
+				/>
+				<BiLeftArrow
+					className="arrow-left"
+					onClick={handleLeftSwipe}
+					fill="#03c5f0"
+				/>
 			</Modal>
-			
+
 			<div className="homedetails-back-to-search">
 				<form>
 					<button
@@ -163,22 +179,67 @@ changeShortlist()
 			</div>
 
 			<div className="homedetails-container">
-
 				<div className="homedetails-container-main">
-					<div className="homedetails-main-img" >
-					
-					<div style={{position:"relative"}}>
-					<BiRightArrow className="arrow-right" onClick={handleRightSwipe} fill="white" />
-					<BiLeftArrow className="arrow-left" onClick={handleLeftSwipe}  fill="white" />
-					<img onDoubleClick={()=>setModalIsOpen(true)} src={firstImg && firstImg} style={{borderRadius:"3px"}} alt=""/> 
-					</div>
-					   
-					   <div style={{display:"flex",justifyContent:"space-around"}}>
-							<img onClick={handleSecondImg} src={secondImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}} />
-							<img  onClick={handleThirdImg} src={thirdImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}}/>
-							<img onClick={handleFourthImg} src={fourthImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}} />
-						</div>    
-						
+					<div className="homedetails-main-img">
+						<div style={{ position: 'relative' }}>
+							<BiRightArrow
+								className="arrow-right"
+								onClick={handleRightSwipe}
+								fill="white"
+							/>
+							<BiLeftArrow
+								className="arrow-left"
+								onClick={handleLeftSwipe}
+								fill="white"
+							/>
+							<img
+								onDoubleClick={() => setModalIsOpen(true)}
+								src={firstImg && firstImg}
+								style={{ borderRadius: '3px' }}
+								alt=""
+							/>
+						</div>
+
+						<div
+							style={{ display: 'flex', justifyContent: 'space-around' }}
+						>
+							<img
+								onClick={handleSecondImg}
+								src={secondImg}
+								alt=""
+								style={{
+									height: 'auto',
+									width: '30%',
+									margin: '1%',
+									flex: 4,
+									borderRadius: '3px',
+								}}
+							/>
+							<img
+								onClick={handleThirdImg}
+								src={thirdImg}
+								alt=""
+								style={{
+									height: 'auto',
+									width: '30%',
+									margin: '1%',
+									flex: 4,
+									borderRadius: '3px',
+								}}
+							/>
+							<img
+								onClick={handleFourthImg}
+								src={fourthImg}
+								alt=""
+								style={{
+									height: 'auto',
+									width: '30%',
+									margin: '1%',
+									flex: 4,
+									borderRadius: '3px',
+								}}
+							/>
+						</div>
 					</div>
 
 					<div className="homedetails-main-key-features">
@@ -194,13 +255,26 @@ changeShortlist()
 							))}
 					</div>
 					<div className="homedetails-main-bedroom-prices">
-						<h3>Bedroom Prices</h3>
-						{/* {rowsOfBedroomPrices.length !== 0 &&
-							rowsOfBedroomPrices.map((index) => (
-								<div key={index} style={{ border: 'solid 1px black' }}>
-									{`Bedroom ${index + 1}`} {home.rent}
+						<h3 style={{ marginBottom: '20px' }}>Bedroom Prices</h3>
+						{rowsOfBedroomPrices.length !== 0 &&
+							rowsOfBedroomPrices.map((room, index) => (
+								<div
+									className="homedetails-main-bedroom-prices-table"
+									key={index}
+								>
+									<span
+										style={{ marginLeft: '20px' }}
+									>{`Bedroom ${room}`}</span>
+									<span
+										style={{ marginLeft: '70%', marginRight: '20px' }}
+									>
+										{home.rent} per week
+									</span>
 								</div>
-							))} */}
+							))}
+						<div className="homedetails-main-bedroom-prices-deposit">
+							Deposit: {home.deposit}
+						</div>
 					</div>
 					<div className="homedetails-main-availability">
 						<h3>Availability</h3>
@@ -283,11 +357,22 @@ changeShortlist()
 							Book Viewing
 						</button>
 						<div style={{ textAlign: 'center', marginBottom: 20 }}>
-						<div className="shortlist-btn">
-                   
-				   {shortlist.includes(home.id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
-				   : <p onClick={addToShortlist}> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>}
-				   </div>
+							<div className="shortlist-btn">
+								{shortlist.includes(home.id) ? (
+									<p onClick={removeFromShortlist}>
+										{' '}
+										<BsHeartFill fill="red" /> &nbsp;{' '}
+										<span className="remove-btn">Remove</span>
+									</p>
+								) : (
+									<p onClick={addToShortlist}>
+										{' '}
+										<BsHeart className="heart-icon" /> &nbsp;{' '}
+										<span className="short-btn">Shortlist</span>
+										<span className="add-btn">Add</span>
+									</p>
+								)}
+							</div>
 						</div>
 						<div style={{ textAlign: 'center' }}>
 							<img

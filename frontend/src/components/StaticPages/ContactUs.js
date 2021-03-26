@@ -51,7 +51,9 @@ const ContactUs = () => {
 					<div className="contact-us-side-bar-email">
 						<BiEnvelope style={{ fill: 'white' }} />
 						<span className="contact-us-side-bar-contact-details">
-							hello@unihomes.co.uk
+							<a href="mailto:hello@unihomes.co.uk" target="_blank">
+								hello@unihomes.co.uk
+							</a>
 						</span>
 					</div>
 					<div className="contact-us-side-bar-phone">
