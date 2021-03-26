@@ -24,6 +24,7 @@ import WelcomePage from './Agency/Welcome/WelcomePage';
 import AddProperty from './Agency/AddProperty/AddProperty';
 import MyProfile from './Agency/MyProfile/MyProfile';
 import Properties from './Agency/Properties/Properties';
+import NotAuth from './Agency/NotAuth';
 
 
 
@@ -36,6 +37,7 @@ export default function App() {
 	const [signup, setSignUp] = useState();
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [shortlist ,setShortlist] = useState([])
+	const [jwt, setJwt] = useState()
 
 	const changeShortlist = () => {
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
@@ -136,27 +138,37 @@ export default function App() {
 					<Route exact path="/student-accommodation" component={TopCities} />
 					<Route exact path="/agency/welcomepage"  render={(props) => {
 						const token = isAuthenticated()
-						if(token) {
+						token.then(res => {
+							setJwt(res)
+						}).catch(err => err)
+						if(jwt) {
 							return <WelcomePage /> 
 						} else {
-							return <Redirect to='/'/>
+							return <NotAuth />
 						}
 					}}/>
 					<Route exact path="/agency/addproperty"  render={(props) => {
+						
 						const token = isAuthenticated()
-						if(token) {
+						token.then(res => {
+							setJwt(res)
+						}).catch(err => err)
+						if(jwt) {
 							return <AddProperty /> 
 						} else {
-							return <Redirect to='/'/>
+							return <NotAuth />
 						}
 					}}/>
 
 					<Route exact path="/agency/addproperty/:id"  render={(props) => {
-						const token = isAuthenticated()
-						if(token) {
+							const token = isAuthenticated()
+						token.then(res => {
+							setJwt(res)
+						}).catch(err => err)
+						if(jwt) {
 							return <AddProperty /> 
 						} else {
-							return <Redirect to='/'/>
+							return <NotAuth />
 						}
 					}}/>
 
@@ -164,11 +176,14 @@ export default function App() {
 						exact
 						path="/agency/myprofile"
 						render={(props) => {
-							const token = isAuthenticated();
-							if (token) {
+							const token = isAuthenticated()
+						token.then(res => {
+							setJwt(res)
+						}).catch(err => err)
+							if (jwt) {
 								return <MyProfile />;
 							} else {
-								return <Redirect to="/" />;
+								return <NotAuth />
 							}
 						}}
 					/>
@@ -177,11 +192,14 @@ export default function App() {
 						exact
 						path="/agency/properties"
 						render={(props) => {
-							const token = isAuthenticated();
-							if (token) {
+							const token = isAuthenticated()
+						token.then(res => {
+							setJwt(res)
+						}).catch(err => err)
+							if (jwt) {
 								return <Properties />;
 							} else {
-								return <Redirect to="/" />;
+								return <NotAuth />;
 							}
 						}}
 					/>
