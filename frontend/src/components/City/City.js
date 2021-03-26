@@ -39,7 +39,7 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
     changeShortlist()
 
 }
- 
+ console.log(shortlist)
     return ( 
         <div className="city">
                 <div className="home-img">
@@ -74,7 +74,7 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
                   
                     <Link className="view-btn" to={`/homedetails/${home.id}`}><FaHome style={{fill:"white"}}/> <IoHomeOutline/> &nbsp; View Home</Link>
                
-                </div>         
+                </div>          
         </div>
     ) 
 }
