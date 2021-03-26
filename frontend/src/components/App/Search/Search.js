@@ -11,18 +11,12 @@ import './Search.css'
 export default function Search({cities}) {
 
 
-    const [cityName,setCityName]=useState([])
+    const [cityName,setCityName]=useState('search')
     const [roomNum,setRoomNum]=useState([])
     const [isButtonActive,setIsButtonActive]=useState(true)
     const numbers = [1,2,3,4,5,6,7,8,9,10]
 
-    useEffect(() => {
-        setCityName('search')
-      
-    }, [])
-   
- 
-
+  
     
     return (   
      
@@ -49,8 +43,8 @@ export default function Search({cities}) {
                                      </select>
 
                                      {cityName==='search'
-                                     ? <Link to={`/`} ><button  type="submit" className="btn-search">Find Homes</button></Link> 
-                                     : <Link to={`/cities/${cityName}/${roomNum}`} ><button  type="submit" className="btn-search">Find Homes</button></Link> 
+                                     ? <Link to={`/`}  ><button  type="submit" className="btn-search">Find Homes</button></Link> 
+                                     : <Link to={`/cities/${cityName}/${roomNum}`} className="btn-search" ><button  type="submit" >Find Homes</button></Link> 
                                      }
                                      
                                
