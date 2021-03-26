@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 .AddProperty {
     margin-top: 75px;
     margin-bottom: +5px;
@@ -27,6 +31,7 @@
     margin-left: 5px;
     margin-right: 5px;
     border: none;
+    color: #656d6d;
 }
 
 .add-form select {
@@ -48,6 +53,11 @@
 
 .add-form input, .add-form label {
     display:block;
+}
+
+.add-form select {
+    color: #656d6d;
+    font-size: 12px;
 }
 
 .row7 input, .row7 label {
@@ -74,6 +84,8 @@
     width: 300px;
     padding: 6px;
     margin-top: +5px;
+    height: 33px;
+    color: #656d6d;
 }
 
 .row2 {
@@ -82,10 +94,14 @@
 
 .row2 input {
     border: 1px solid #fff;
-    text-align: center;
-    color: #fff !important;
-    padding: 5px;
-    font-weight: 200;
+    border-radius: 5px;
+    padding: 6px;
+    color: #fff;
+}
+
+.row2 label {
+    padding: 6px;
+    color: #fff;
 }
 
 
@@ -109,7 +125,14 @@
 }
 
 .row4 input {
-    padding: 10px;
+    border: 1px solid #fff;
+    text-align: center;
+    font-weight: 200;
+    width: 300px;
+    padding: 6px;
+    margin-top: +5px;
+    height: 33px;
+    color: #656d6d;
 }
 
 .row5 {
@@ -123,6 +146,10 @@
     width: 300px;
     padding: 6px;
     margin-top: +5px;
+    height: 33px;
+    color: #656d6d;
+    font-size: 12px;
+
 }
 
 .row6 {
@@ -161,11 +188,6 @@
     width: 99%;
 }
 
-.row8 textarea::placeholder {
-    color: #656d6d;
-    font-size: small;
-}
-
 .row9 {
     display: flex;
     margin-top:5px;
@@ -175,25 +197,17 @@
 
 .row9 input {
     background: #F49131;
-    color: #ffffff !important;
+    color: #ffffff;
     font-weight: 200;
     padding: 10px;
     border: none;
-    height: 20%;
+    width: 15%;
 }
 
 .row7 label, .row7 input {
     display: block !important;
 }
 
-.row7 label {
-    width: 100%;
-}
-
 .row8 label, .row8 textarea {
     display: block !important;
-}
-
-.row select, .row input {
-    color: #656d6d;
 }

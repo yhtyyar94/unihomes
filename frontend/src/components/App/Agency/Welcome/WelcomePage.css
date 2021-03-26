@@ -1,9 +1,4 @@
-*{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-     height: auto;
-}
+
 .welcomePage {
     margin-top: 60px;
     margin-bottom: 0px;
@@ -12,22 +7,24 @@
      no-repeat;
     height: 600px;
     width: 100%;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize; 
  
 
 }
 
 .welpage{
-    /* background: rgba( 3,197,240,0.3); */
-    background: rgba(9, 0, 0, 0.6);
+    background: rgba( 3,197,240,0.3);
+    /* background: rgba(9, 0, 0, 0.6); */
 
     height: 600px;
     width: 100%;
     text-align: center;
  
 }
-.welpage h1{
-
+.welpage> h1{
+font-size: 50px;
 margin-top: 15%;
-text-transform: capitalize; 
  
 }

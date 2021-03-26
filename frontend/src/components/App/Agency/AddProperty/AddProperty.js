@@ -34,7 +34,7 @@ const AddProperty = () => {
 			.catch((err) => console.log(err));
 		
 		if(id) {
-			axios.get(`http://localhost:5001/api/getproperties/605bb127d8baa14be4f4b332`)
+			axios.get(`http://localhost:5001/api/getproperties/${id}`)
 			.then((res => {
 					console.log(res.data)
 					const {data} = res
@@ -104,8 +104,6 @@ const AddProperty = () => {
 		setKeys('')
 		setDescription('')
 	}
-	
-	console.log(from)
 
 	return (
 		<div className="AddProperty">

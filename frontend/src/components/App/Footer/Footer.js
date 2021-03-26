@@ -28,7 +28,6 @@ const Footer = () => {
 							rel="noreferrer"
 						>
 							<AiOutlineFacebook
-								size={32}
 								style={{ fill: 'white', marginRight: 20 }}
 							/>
 						</a>
@@ -38,7 +37,6 @@ const Footer = () => {
 							rel="noreferrer"
 						>
 							<AiOutlineInstagram
-								size={32}
 								style={{ fill: 'white', marginRight: 20 }}
 							/>
 						</a>
@@ -47,12 +45,12 @@ const Footer = () => {
 							target="_blank"
 							rel="noreferrer"
 						>
-							<AiFillTwitterCircle size={32} style={{ fill: 'white' }} />
+							<AiFillTwitterCircle style={{ fill: 'white' }} />
 						</a>
 					</div>
 				</div>
 			</div>
-			<div className="nav-footer">
+			<div id="nav-footer">
 				<nav>
 					<ul>
 						<li>

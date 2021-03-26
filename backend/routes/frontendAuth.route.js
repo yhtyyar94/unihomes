@@ -8,16 +8,17 @@ router.post('/', (req, res) => {
     if (token) {
         jwt.verify(token, req.app.get('api_secret_key'), (err, decoded) => {
             if (err) {
-                res.end('Token authentication failed.')
+                res.json({status:false, message:'Token authentication failed.'})
                 return false
             } else {
                 console.log(decoded)
                 req.decode = decoded
                 res.json({status:true})
+                return true
             }
         })
     } else {
-        res.end('Token not provided.')
+        res.json({status:false, message:'Token not provided.'})
         return false
     }
 })
