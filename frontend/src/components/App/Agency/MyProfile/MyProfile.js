@@ -12,7 +12,7 @@ const MyProfile = () => {
             </div>
            <p>change your photo  <button>change</button></p>
         </div>
-        <div id="profile-right">
+        <form id="profile-right">
             <div className="profile-right">
            <p>
             <label for="fname">First name :</label>
@@ -38,7 +38,7 @@ const MyProfile = () => {
 
             <button>Update</button>
             </div>
-        </div>
+        </form>
       </div>
     </div>
   );

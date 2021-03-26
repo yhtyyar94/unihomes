@@ -39,17 +39,6 @@ import { useHistory } from "react-router";
               </div>
             ))}
 
-
-
-        {/* <div className="main-image-all"></div>
-        <div className="main-image-all"></div>
-        <div className="main-image-all"></div>
-        <div className="main-image-all"></div>
-        <div className="main-image-all"></div>
-        <div className="main-image-all"></div>
-        <div className="main-image-all"></div>
-        <div className="main-image-all"></div>
-        <div className="main-image-all"></div>  */}
     </div>
 
     <div className="main-allCities">

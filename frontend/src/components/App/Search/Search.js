@@ -15,7 +15,13 @@ export default function Search({cities}) {
     const [roomNum,setRoomNum]=useState([])
     const [isButtonActive,setIsButtonActive]=useState(true)
     const numbers = [1,2,3,4,5,6,7,8,9,10]
-
+   
+    // const submit = (e)=>{
+    //     if(cityName===[]){
+    //         e.preventDefault()
+    //     }
+    // }
+   
     
     return (   
      
@@ -29,8 +35,8 @@ export default function Search({cities}) {
                     <div className="overlay"></div> 
                     <div className='form-container'>
                             <form className="form-search">
-                                    <select  className="select-search" onChange={(e)=>setCityName(e.target.value)} required>
-                                    <option>Search by city</option>
+                                    <select  className="select-search" onChange={(e)=>setCityName(e.target.value)} >
+                                    <option value="2">Search by city</option>
                                         {cities.map(city=>
                                             <option value={city.name}>{city.name}</option>
                                             )}
@@ -40,11 +46,13 @@ export default function Search({cities}) {
                                             <option value="">Any bedroom</option>
                                             {numbers.map(number=><option value={number}>{number}</option>)}
                                      </select>
-
-                                     
-                                    <Link to={`/cities/${cityName}/${roomNum}`} ><button  type="submit" className="btn-search">Find Homes</button></Link>  
-                               
-                            </form>    
+                                     {cityName ===2  ?
+                                   <Link className='disabled-link' >Find Homes</Link> 
+                                  : <Link   to={`/cities/${cityName}/${roomNum}`}>Find Homes</Link> 
+                                } 
+             
+                            </form>  
+                             
                     </div> 
                 </div> 
                 <MainContent />

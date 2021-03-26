@@ -9,10 +9,11 @@ import { useHistory } from "react-router";
 const Properties = () => {
 
     const [properties,setProperties] = useState([]);
+    
     const history=useHistory();
     useEffect(() => {
         axios
-          .get(`http://localhost:5000/homes`)
+          .get(`http://localhost:5001/api/getproperties`)
           .then((res) => setProperties(res.data))
           .catch((err) => console.log(err));
       }, []);
@@ -40,7 +41,7 @@ const deleteProperty =(index)=>{
       <div style={{fontSize:"22px"}}><FaBath size={17}  style={{fill:"white",paddingBottom:"1px"}}/>  &nbsp; {property.bathroom}</div> 
   </div>
   <div className="property-btn">
-      <button className="property-btn-edit" onClick={()=>history.push(`/agency/addproperty`)} ><AiFillEdit/>&nbsp; Edit</button>
+      <button className="property-btn-edit" onClick={()=>history.push(`/agency/addproperty/${property._id}`)} ><AiFillEdit/>&nbsp; Edit</button>
       <button className="property-btn-del" onClick={()=>deleteProperty(index)}><AiOutlineDelete  /> &nbsp; Delete</button>
 
   </div>

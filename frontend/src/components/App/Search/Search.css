@@ -1,6 +1,9 @@
 .container {
 }
-
+.disabled-link {
+  pointer-events: none;
+  color: pink;
+}
 .banner {
   color: white;
   background: url("https://i.postimg.cc/tTD20Kn4/Group-65.png") top left/cover

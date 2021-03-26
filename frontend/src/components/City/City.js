@@ -39,7 +39,7 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
     changeShortlist()
 
 }
- console.log(shortlist)
+ 
     return ( 
         <div className="city">
                 <div className="home-img">
