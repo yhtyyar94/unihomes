@@ -146,7 +146,7 @@
 }
 
 .login-email {
-  margin-top: +30%;
+  margin-top: +20%;
 }
 
 .login-email input,
@@ -158,21 +158,22 @@
 }
 
 .login-email input::placeholder {
-  color: rgb(104, 100, 100);
+  color: rgb(179, 177, 177);
   font-size: small;
 }
 
 .login-password {
-  margin-top: +10%;
+  margin-top: +9%;
 }
 
 .login-password input::placeholder {
-  color: rgb(104, 100, 100);
+  color: rgb(179, 177, 177);
   font-size: small;
 }
 
 .login-email label,
 .login-password label {
+  margin-bottom: +2%;
   font-family: Roboto;
   font-style: normal;
   font-weight: 200;
@@ -182,6 +183,9 @@
 }
 
 .logScroll {
+  position: fixed;
+}
+.regScroll {
   position: fixed;
 }
 
@@ -232,87 +236,53 @@
   transform: rotate(-0.33deg);
   border-width: 0px;
 }
-.logTitleOne {
-  position: absolute;
-  width: 165px;
-  height: 27px;
-  left: 18px;
-  top: 20px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 28px;
-  color: #ffffff;
-}
 
-.logTitleTwo {
-  position: absolute;
-  height: 18px;
-  width: 106px;
-  left: 18px;
-  top: 175px;
+.regContainer label,
+.regContainer input {
+  display: block !important;
+  margin-left: +5%;
+}
+.reg-company {
+  margin-top: +18%;
+}
+.reg-email {
+  margin-top: 5px;
+}
+.reg-password {
+  margin-top: 5px;
+}
+.reg-repassword {
+  margin-top: 5px;
+}
+.reg-company input,
+.reg-email input,
+.reg-password input,
+.reg-repassword input {
+  width: 90%;
+  padding: 10px;
+  padding-top: 8px;
+  margin-top: 7px;
+  border: none;
+  border-radius: 5px;
+}
+.reg-company label,
+.reg-email label,
+.reg-password label,
+.reg-repassword label {
+  margin-top: 3px;
   font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 200;
   font-size: 18px;
-  line-height: 21px;
   color: #ffffff;
+  overflow: hidden;
 }
-
-.inputOne {
-  position: absolute;
-  width: 300px;
-  height: 25px;
-  left: 18px;
-  top: 125px;
-  background: #ffffff;
-  border-width: 0px;
-}
-
-.logTitleThree {
-  position: absolute;
-  width: 106px;
-  height: 18px;
-  left: 18px;
-  top: 250px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-  color: #ffffff;
-}
-.inputTwo {
-  position: absolute;
-  width: 300px;
-  height: 25px;
-  left: 18px;
-  top: 200px;
-  background: #ffffff;
-  border-width: 0px;
-}
-.logTitleFour {
-  position: absolute;
-  width: 200px;
-  height: 18px;
-  left: 18px;
-  top: 325px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-  color: #ffffff;
-}
-.inputThree {
-  position: absolute;
-  width: 300px;
-  height: 25px;
-  left: 18px;
-  top: 275px;
-  background: #ffffff;
-  border-width: 0px;
+.reg-company input::placeholder,
+.reg-email input::placeholder,
+.reg-password input::placeholder,
+.reg-repassword input::placeholder {
+  color: rgb(179, 177, 177);
+  font-size: small;
 }
 .loginBtn {
   position: absolute;
@@ -331,10 +301,10 @@
 }
 .signupBtn {
   position: absolute;
-  width: 305px;
+  width: 90%;
   height: 51px;
   left: 18px;
-  top: 350px;
+  top: 360px;
   background: #ff8c00;
   border-width: 0px;
   font-family: Roboto;
@@ -343,11 +313,12 @@
   font-size: 24px;
   line-height: 28px;
   color: #ffffff;
+  border-radius: 5px;
 }
 
 .registerPlc {
   position: absolute;
-  width: 374px;
+  width: 100%;
   height: 117px;
   left: 0px;
   top: 333px;
@@ -355,7 +326,7 @@
 }
 .loginPlc {
   position: absolute;
-  width: 374px;
+  width: 100%;
   height: 117px;
   left: 0px;
   top: 425px;
@@ -405,7 +376,7 @@
 }
 .loginBtn2 {
   position: absolute;
-  width: 305px;
+  width: 90%;
   height: 40px;
   left: 22px;
   top: 470px;
@@ -418,6 +389,7 @@
   line-height: 21px;
   text-align: center;
   color: #ffffff;
+  border-radius: 5px;
 }
 
 #PopoverLegacy {
