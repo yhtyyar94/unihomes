@@ -38,15 +38,7 @@ const ContactUs = () => {
 							<br />
 							<label>Message</label>
 							<br />
-							<textarea
-								style={{
-									height: '72px',
-									border: 'none',
-									borderRadius: '3px',
-								}}
-								placeholder="Text message..."
-								required
-							/>
+							<textarea placeholder="Text message..." required />
 							<button className="btn-book-viewing-page-form-submit">
 								Submit
 							</button>
