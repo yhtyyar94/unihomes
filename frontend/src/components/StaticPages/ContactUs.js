@@ -1,5 +1,6 @@
 import React from 'react';
 import './ContactUs.css';
+import { BiEnvelope, BiPhoneCall } from 'react-icons/bi';
 
 const ContactUs = () => {
 	return (
@@ -45,7 +46,21 @@ const ContactUs = () => {
 						</form>
 					</div>
 				</div>
-				<div className="contact-us-side-bar"></div>
+				<div className="contact-us-side-bar">
+					<h3 className="contact-us-side-bar-title">Need Help?</h3>
+					<div className="contact-us-side-bar-email">
+						<BiEnvelope style={{ fill: 'white' }} />
+						<span className="contact-us-side-bar-contact-details">
+							hello@unihomes.co.uk
+						</span>
+					</div>
+					<div className="contact-us-side-bar-phone">
+						<BiPhoneCall style={{ fill: 'white' }} />
+						<span className="contact-us-side-bar-contact-details">
+							Call: 12345 678 90
+						</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

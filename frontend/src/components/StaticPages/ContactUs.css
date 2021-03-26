@@ -7,7 +7,7 @@
 	background-color: #f6f6f6;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .contact-us-header {
@@ -46,8 +46,8 @@
 	align-items: left;
 	margin-top: 50px;
 	margin-bottom: 70px;
-	margin-left: 50px;
-	width: 80%;
+	margin-left: 60px;
+	width: 85%;
 	padding: 30px;
 	font-family: Roboto;
 	font-style: normal;
@@ -109,5 +109,54 @@
 }
 
 .contact-us-side-bar {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 	flex: 4;
+	background-color: #03c5f0;
+	margin-top: 50px;
+	margin-bottom: 70px;
+	margin-right: 60px;
+	width: 85%;
+	border-radius: 5px;
+	padding-bottom: 30px;
+}
+
+.contact-us-side-bar-title {
+	text-align: center;
+	color: #fff;
+	font-family: Roboto;
+	height: auto;
+	padding: 20px;
+	font-size: 24px;
+}
+
+.contact-us-side-bar-email {
+	display: inline-block;
+	text-align: center;
+	width: 80%;
+	border: solid 1px #fff;
+	border-radius: 2px;
+	margin-bottom: 10px;
+	padding: 10px;
+	color: white;
+	font-size: 18px;
+	font-family: Roboto;
+	text-decoration: underline;
+}
+.contact-us-side-bar-phone {
+	display: inline-block;
+	text-align: center;
+	width: 80%;
+	border: solid 1px #fff;
+	border-radius: 2px;
+	padding: 10px;
+	color: white;
+	font-size: 18px;
+	font-family: Roboto;
+}
+
+.contact-us-side-bar-contact-details {
+	margin-left: 5px;
 }
