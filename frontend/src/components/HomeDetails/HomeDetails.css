@@ -9,7 +9,7 @@
 }
 
 .homedetails-back-to-search {
-  margin-top: 110px;
+  margin-top: 80px;
   margin-left: 30px;
   margin-right: 30px;
 }
@@ -66,7 +66,7 @@
   margin-top: 50px;
 }
 
-.homedetails-main-key-features ul,
+.homedetails-main-key-features > ul,
 li {
   font-family: Roboto;
   font-size: 16px;
@@ -77,10 +77,40 @@ li {
   font-family: Roboto;
   margin-top: 50px;
 }
+
+.homedetails-main-bedroom-prices-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: solid 1px lightgray;
+}
+
+.homedetails-main-bedroom-prices-deposit {
+  margin-top: 30px;
+  border: solid 1px lightgray;
+  background-color: #f3f3f3;
+  font-weight: 800;
+  padding: 10px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
 .homedetails-main-availability {
   font-family: Roboto;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
+  height: auto;
+  padding: 30px 0;
+}
+
+.homedetails-main-availability-date {
+  border: solid 1px lightgray;
+  background-color: #f3f3f3;
+  font-weight: 800;
+  padding: 10px;
+  border-radius: 2px;
+  height: auto;
 }
 
 .homedetails-sidebar-container {
@@ -165,22 +195,14 @@ li {
 .book-viewing-container {
   position: absolute;
   width: 560px;
-  height: 750px;
+  height: auto;
   background: #03c5f0;
   border: 1px solid #000000;
   box-sizing: border-box;
-  top: 20px;
+  /* top: -120px; */
   border-radius: 10px;
   border: none;
   z-index: 505;
-}
-
-.book-viewing-container-background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #f3f3f3;
-  z-index: 11;
 }
 
 .btn-book-viewing-page-close {
@@ -226,30 +248,32 @@ li {
   color: #ffffff;
   padding-top: 40px;
   height: auto;
+  margin-bottom: 20px;
 }
 .book-viewing-form-address {
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
-  line-height: 56px;
+  font-size: 18px;
+  line-height: 30px;
   text-align: center;
   color: #ffffff;
 }
 
-.book-viewing-form input {
+.book-viewing-form ~ input {
+  width: 90%;
   height: 33px;
   padding-left: 10px;
   font-family: Roboto;
 }
-.book-viewing-form input::placeholder {
+.book-viewing-form ~ input::placeholder {
   height: 18px;
   font-family: Roboto;
   color: lightgray;
   font-size: 14px;
 }
 
-.book-viewing-form textarea::placeholder {
+.book-viewing-form ~ textarea::placeholder {
   height: 18px;
   font-family: Roboto;
   color: lightgray;
@@ -276,6 +300,7 @@ li {
   height: 55px;
   font-family: Roboto;
   font-size: 22px;
+  margin-bottom: 30px;
 }
 @media (max-width: 900px) {
   .arrow-right {

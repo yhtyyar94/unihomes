@@ -3,7 +3,7 @@ import { BsEnvelope } from 'react-icons/bs';
 import './HomeDetails.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { FaBed, FaBath, FaRegBuilding} from 'react-icons/fa';
+import { FaBed, FaBath, FaRegBuilding } from 'react-icons/fa';
 import { TiTickOutline } from 'react-icons/ti';
 import bill from './bills.png';
 import { useHistory } from 'react-router-dom';
@@ -11,12 +11,14 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { BiLeftArrow } from "react-icons/bi";
 import { BiRightArrow } from "react-icons/bi";
 import { BsHeart,BsHeartFill } from "react-icons/bs";
+import Modal from 'react-modal'
 
-
+Modal.setAppElement('#root')
 export default function HomeDetails({changeShortlist,shortlist,setShortlist}) {
 	useLayoutEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+
 
 	let history = useHistory();
 
@@ -27,28 +29,31 @@ export default function HomeDetails({changeShortlist,shortlist,setShortlist}) {
 	const[secondImg,setSecondImg]=useState(null)
 	const[thirdImg,setThirdImg]=useState(null)
 	const[fourthImg,setFourthImg]=useState(null)
+	const[modalIsOpen,setModalIsOpen]=useState(false)
 
 
 	// useEffect(() => {
 	// 	if(home.images.length!==0){
 	// 		setFirstImg(home.images[0].url)
 	// 	}
-		
+
 	// }, [])
-	
+
 	// const [rowsOfBedroomPrices, setRowsOfBedroomPrices] = useState([]);
 
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5000/homes/${id}`)
-			.then((res) => {setFirstImg(res.data.images[0]); 
+			.then((res) => {
+				setFirstImg(res.data.images[0]);
 				setSecondImg(res.data.images[1]);
 				setThirdImg(res.data.images[2]);
 				setFourthImg(res.data.images[3]);
-				setHome(res.data)})
+				setHome(res.data);
+			})
 			.catch((err) => console.log(err));
 	}, [id]);
- 
+
 	const showBookViewing = () => {
 		setBookViewing(!bookViewing);
 	};
@@ -56,31 +61,28 @@ export default function HomeDetails({changeShortlist,shortlist,setShortlist}) {
 	const closeBookViewing = () => {
 		setBookViewing(false);
 	};
-	const addToShortlist=()=>{     
-		if(localStorage.getItem('shortlist')===null){
-			localStorage.setItem('shortlist','[]')
+	const addToShortlist = () => {
+		if (localStorage.getItem('shortlist') === null) {
+			localStorage.setItem('shortlist', '[]');
 		}
-		let idList = JSON.parse(localStorage.getItem('shortlist'))
-		idList.push(home.id)
-		localStorage.setItem('shortlist',JSON.stringify(idList))
-		setShortlist(idList)
-  } 
+		let idList = JSON.parse(localStorage.getItem('shortlist'));
+		idList.push(home.id);
+		localStorage.setItem('shortlist', JSON.stringify(idList));
+		setShortlist(idList);
+	};
 
- 
-const removeFromShortlist=()=>{
-	let newShortlist = shortlist
+	const removeFromShortlist = () => {
+		let newShortlist = shortlist;
 
-	for( let i = 0; i < newShortlist.length; i++){ 
-
-		if ( newShortlist[i] === home.id) { 
-	
-			newShortlist.splice(i, 1); 
+		for (let i = 0; i < newShortlist.length; i++) {
+			if (newShortlist[i] === home.id) {
+				newShortlist.splice(i, 1);
+			}
 		}
-}
-localStorage.setItem('shortlist',JSON.stringify(newShortlist));
-setShortlist(newShortlist)
-changeShortlist()
-}
+		localStorage.setItem('shortlist', JSON.stringify(newShortlist));
+		setShortlist(newShortlist);
+		changeShortlist();
+	};
 	// useEffect(() => {
 	// 	for (let i = 1; i <= home.bedroom; i++) {
 	// 		setRowsOfBedroomPrices([...rowsOfBedroomPrices, `row${i}`]);
@@ -89,43 +91,42 @@ changeShortlist()
 	// 	console.log(rowsOfBedroomPrices);
 	// }, []);
 
-	const handleSecondImg=()=>{
-		setFirstImg(secondImg)
-		setFourthImg(firstImg)
-		setSecondImg(thirdImg)
-		setThirdImg(fourthImg)
-	}
-	const handleThirdImg=()=>{
-		setFirstImg(thirdImg)
-		setFourthImg(firstImg)
-		setSecondImg(secondImg)
-		setThirdImg(fourthImg)
-	}
-	const handleFourthImg=()=>{
-		setFirstImg(fourthImg)
-		setFourthImg(firstImg)
-		setSecondImg(secondImg)
-		setThirdImg(thirdImg)
-	}
-	const handleRightSwipe=()=>{
-		setFirstImg(secondImg)
-		setFourthImg(firstImg)
-		setSecondImg(thirdImg)
-		setThirdImg(fourthImg)
-	}
-	const handleLeftSwipe=()=>{
-		setFirstImg(fourthImg)
-		setFourthImg(thirdImg)
-		setSecondImg(firstImg)
-		setThirdImg(secondImg)
-	}
+	const handleSecondImg = () => {
+		setFirstImg(secondImg);
+		setFourthImg(firstImg);
+		setSecondImg(thirdImg);
+		setThirdImg(fourthImg);
+	};
+	const handleThirdImg = () => {
+		setFirstImg(thirdImg);
+		setFourthImg(firstImg);
+		setSecondImg(secondImg);
+		setThirdImg(fourthImg);
+	};
+	const handleFourthImg = () => {
+		setFirstImg(fourthImg);
+		setFourthImg(firstImg);
+		setSecondImg(secondImg);
+		setThirdImg(thirdImg);
+	};
+	const handleRightSwipe = () => {
+		setFirstImg(secondImg);
+		setFourthImg(firstImg);
+		setSecondImg(thirdImg);
+		setThirdImg(fourthImg);
+	};
+	const handleLeftSwipe = () => {
+		setFirstImg(fourthImg);
+		setFourthImg(thirdImg);
+		setSecondImg(firstImg);
+		setThirdImg(secondImg);
+	};
 
 	return (
 		<div>
-			
 			<div className="homedetails-back-to-search">
 				<form>
-					<button
+					<button 
 						className="homedetails-back-to-search-btn"
 						onClick={(e) => {
 							e.preventDefault();
@@ -139,22 +140,66 @@ changeShortlist()
 			</div>
 
 			<div className="homedetails-container">
-
 				<div className="homedetails-container-main">
 					<div className="homedetails-main-img">
-					
-					<div style={{position:"relative"}}>
-					<BiRightArrow className="arrow-right" onClick={handleRightSwipe} fill="white" />
-					<BiLeftArrow className="arrow-left" onClick={handleLeftSwipe}  fill="white" />
-					<img  src={firstImg && firstImg} style={{borderRadius:"3px"}} alt=""/> 
-					</div>
-					   
-					   <div style={{display:"flex",justifyContent:"space-around"}}>
-							<img onClick={handleSecondImg} src={secondImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}} />
-							<img  onClick={handleThirdImg} src={thirdImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}}/>
-							<img onClick={handleFourthImg} src={fourthImg} alt="" style={{height:"auto",width:"30%",margin:"1%",flex:4,borderRadius:"3px"}} />
-						</div>    
-						
+						<div style={{ position: 'relative' }}>
+							<BiRightArrow
+								className="arrow-right"
+								onClick={handleRightSwipe}
+								fill="white"
+							/>
+							<BiLeftArrow
+								className="arrow-left"
+								onClick={handleLeftSwipe}
+								fill="white"
+							/>
+							<img
+								src={firstImg && firstImg}
+								style={{ borderRadius: '3px' }}
+								alt=""
+							/>
+						</div>
+
+						<div
+							style={{ display: 'flex', justifyContent: 'space-around' }}
+						>
+							<img
+								onClick={handleSecondImg}
+								src={secondImg}
+								alt=""
+								style={{
+									height: 'auto',
+									width: '30%',
+									margin: '1%',
+									flex: 4,
+									borderRadius: '3px',
+								}}
+							/>
+							<img
+								onClick={handleThirdImg}
+								src={thirdImg}
+								alt=""
+								style={{
+									height: 'auto',
+									width: '30%',
+									margin: '1%',
+									flex: 4,
+									borderRadius: '3px',
+								}}
+							/>
+							<img
+								onClick={handleFourthImg}
+								src={fourthImg}
+								alt=""
+								style={{
+									height: 'auto',
+									width: '30%',
+									margin: '1%',
+									flex: 4,
+									borderRadius: '3px',
+								}}
+							/>
+						</div>
 					</div>
 
 					<div className="homedetails-main-key-features">
@@ -259,11 +304,22 @@ changeShortlist()
 							Book Viewing
 						</button>
 						<div style={{ textAlign: 'center', marginBottom: 20 }}>
-						<div className="shortlist-btn">
-                   
-				   {shortlist.includes(home.id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
-				   : <p onClick={addToShortlist}> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>}
-				   </div>
+							<div className="shortlist-btn">
+								{shortlist.includes(home.id) ? (
+									<p onClick={removeFromShortlist}>
+										{' '}
+										<BsHeartFill fill="red" /> &nbsp;{' '}
+										<span className="remove-btn">Remove</span>
+									</p>
+								) : (
+									<p onClick={addToShortlist}>
+										{' '}
+										<BsHeart className="heart-icon" /> &nbsp;{' '}
+										<span className="short-btn">Shortlist</span>
+										<span className="add-btn">Add</span>
+									</p>
+								)}
+							</div>
 						</div>
 						<div style={{ textAlign: 'center' }}>
 							<img
