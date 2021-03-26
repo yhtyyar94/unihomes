@@ -78,7 +78,11 @@ const AddProperty = () => {
 		setKeys('')
 		setDescription('')
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 49dd604c52ffd1eb302d42f0091ee8c899061c56
 	return (
 		<div className="AddProperty">
 			{successSubmit && <div className="addproperty-succes-message">
