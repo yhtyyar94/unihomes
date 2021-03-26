@@ -1,9 +1,4 @@
-*{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-     height: auto;
-}
+
 .welcomePage {
     margin-top: 60px;
     margin-bottom: 0px;
@@ -12,6 +7,9 @@
      no-repeat;
     height: 600px;
     width: 100%;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize; 
  
 
 }
@@ -25,9 +23,8 @@
     text-align: center;
  
 }
-.welpage h1{
-
+.welpage> h1{
+font-size: 50px;
 margin-top: 15%;
-text-transform: capitalize; 
  
 }
