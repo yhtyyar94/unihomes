@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import MainContent from '../MainContent/MainContent'
 
@@ -16,6 +16,13 @@ export default function Search({cities}) {
     const [isButtonActive,setIsButtonActive]=useState(true)
     const numbers = [1,2,3,4,5,6,7,8,9,10]
 
+    useEffect(() => {
+        setCityName('search')
+      
+    }, [])
+   
+ 
+
     
     return (   
      
@@ -30,7 +37,7 @@ export default function Search({cities}) {
                     <div className='form-container'>
                             <form className="form-search">
                                     <select  className="select-search" onChange={(e)=>setCityName(e.target.value)} required>
-                                    <option>Search by city</option>
+                                    <option value="search">Search by city</option>
                                         {cities.map(city=>
                                             <option value={city.name}>{city.name}</option>
                                             )}
@@ -41,10 +48,13 @@ export default function Search({cities}) {
                                             {numbers.map(number=><option value={number}>{number}</option>)}
                                      </select>
 
+                                     {cityName==='search'
+                                     ? <Link to={`/`} ><p  type="submit" className="btn-search-disabled">Find Homes</p></Link> 
+                                     : <Link to={`/cities/${cityName}/${roomNum}`} ><button  type="submit" className="btn-search">Find Homes</button></Link> 
+                                     }
                                      
-                                    <Link to={`/cities/${cityName}/${roomNum}`} ><button  type="submit" className="btn-search">Find Homes</button></Link>  
                                
-                            </form>    
+                            </form>     
                     </div> 
                 </div> 
                 <MainContent />
