@@ -141,7 +141,7 @@ exports.createProperty = async (req, res) => {
 }
 
 exports.updateProperty = async (req, res) => {
-    const propertyId = req.params.propertyId
+    const propertyId = req.params.id
 
     await PropertiesModel.findByIdAndUpdate({_id: propertyId}, {$set: req.body}, (err, data) => {
         if(err) {
