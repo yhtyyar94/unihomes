@@ -31,11 +31,13 @@ import { useHistory } from "react-router";
                 backgroundRepeat: 'no-repeat',  
                 backgroundPosition: 'center',
                 backgroundSize: 'cover'
-              }} >  */}                      
+              }} >  */}   
+
            <img src={image.url}></img>
+           <div  className="top-text">
               <h3>{image.name}</h3>
-              <p> 26 properties</p>
-             
+              <p > 26 properties</p>
+              </div>
               </div>
             ))}
 

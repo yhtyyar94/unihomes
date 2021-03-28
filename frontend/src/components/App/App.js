@@ -100,7 +100,7 @@ export default function App() {
 		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
 		setHomes(filteredHomes);
 	};
-	console.log(shortlist);
+	
 	return (
 		<div>
 			<Header

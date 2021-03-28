@@ -3,6 +3,21 @@ const Schema = mongoose.Schema
 const {isEmail} = require('validator')
 
 const UserSchema = new Schema({
+    firstName: {
+        type: String,
+        lowercase:true
+   },   
+     lastName: {
+        type: String,
+        lowercase:true
+        
+    },
+    company: {
+        type: String,
+        require: [true, 'Please enter a company name...'],
+        lowercase:true,
+     
+    },
     email: {
         type: String,
         require: [true, 'Please enter an email'],
@@ -15,17 +30,12 @@ const UserSchema = new Schema({
         require:[true, 'Please enter a password'],
         minLength:[6, 'Minimum password length is 6 characters.']
     },
-    name:{
-        type: String,
-        require: [true, 'Please enter your name']
-    },
+ 
     contactNumber:{
         type: Number,
         require: [true, 'Please enter your phone number']
     },
-    company:{
-        type: String
-   },
+
    city:{
     type: String,
     require: [true, 'Please choose a city ']
