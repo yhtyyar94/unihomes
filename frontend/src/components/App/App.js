@@ -39,11 +39,18 @@ export default function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [shortlist ,setShortlist] = useState([])
 	const [jwt, setJwt] = useState()
+	const [userInfo, setUserInfo] = useState()
 
 
 	const changeShortlist = () => {
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')))
 	}
+
+	useEffect(() => {
+		if(window.location.pathname === '/agency/welcomepage' || window.location.pathname === '/agency/properties' || window.location.pathname === '/agency/addproperty' || window.location.pathname === '/agency/myprofile') {
+			setIsLoggedIn(true)
+		}
+	}, [])
 
 	useEffect(() => {
 		if(localStorage.getItem('shortlist')===null){
@@ -107,13 +114,15 @@ export default function App() {
 console.log(shortlist)
 	return (
 		<div>
+		
+			<Router>
 			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} shortlist={shortlist}/>
-			{login === true ? <LoginPop register={register} setLog={setLog}/> : null}
+			{/* {login === true ? <LoginPop register={register} setLog={setLog} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/> : null}
 			{signup === true ? (
 				<RegisterPop register={register} backtoLogin={backtoLogin} />
-			) : null}
-			<Router>
+			) : null} */}
 				<Switch>
+				<Route to='/login' render={() => <LoginPop register={register} setLog={setLog} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />} />
 					<Route    
 						exact
 						path="/"
