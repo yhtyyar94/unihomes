@@ -93,7 +93,7 @@
   height: 40px;
   font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bolder;
   font-size: 24px;
   color: #ffffff;
   background: #ff8c00;
@@ -104,6 +104,42 @@
 }
 .btn-search:hover {
   background: #03c5f0;
+}
+.btn-search-disabled {
+  flex: 2;
+  margin-left: 2px;
+  width: 145px;
+  height: 40px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  color: #e5e5e5;
+  background: #ff8c00;
+  border: none;
+  border-radius: 7px;
+  text-align: center;
+  justify-content: center;
+  /* padding: 0; */
+  /* padding-top: 4.5%; */
+  cursor: no-drop;
+}
+
+@media (max-width: 1150px) {
+  .btn-search-disabled {
+    font-size: 20px;
+  }
+  .btn-search {
+    font-size: 20px;
+  }
+}
+@media (max-width: 960px) {
+  .btn-search-disabled {
+    font-size: 17px;
+  }
+  .btn-search {
+    font-size: 17px;
+  }
 }
 
 /* IPAD SCREEN */
@@ -127,6 +163,12 @@
   }
   .btn-search {
     font-size: 20px;
+  }
+  .btn-search-disabled {
+    font-size: 17px;
+  }
+  .btn-search {
+    font-size: 17px;
   }
 }
 @media (max-width: 623px) {

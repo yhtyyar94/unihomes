@@ -27,6 +27,7 @@
 }
 
 .main-image-all {
+  position: relative;
   width: 380px;
   height: 250px;
   border-radius: 10px;
@@ -39,35 +40,59 @@
 .main-image-all img{
   width: 380px;
   height: 250px;
-  z-index: -1; 
+  /* z-index: 1;  */
   transition: transform .2s ease;
   overflow: hidden;
-} 
-.main-image-all h3{
- margin-top: -120px;
- color: azure;
-  z-index: 2; 
-
-
-
 } 
 
 .main-image-all:hover img{
   transform: scale(1.15, 1.15);
   opacity: 0.7;
-      cursor: pointer;
+  cursor: pointer;
 
 }
-.main-image-all h3 {
+.main-image-all .top-text h3{
+  position: absolute;
+   top:90px;
+  left:120px; 
   font-weight: bold;
   font-size: 32px;
   line-height: 42px;
    color: #ffffff;
-  z-index: 2;
-  transition: all 0.5s;
-  text-align: center;
-margin-top: 90px;
+   transition: transform .2s ease;
+}
+
+.main-image-all .top-text p {
+  position: absolute;
+  top:120px;
+  left:95px; 
+  font-size: 26px;
+  line-height: 28px;
+  /* color:none; */
+   color: #ffffff;
+   display:none;
+  transition: transform .2s ease;
+
   }
+  .main-image-all .top-text:hover h3{
+
+    font-size: 36px;
+    line-height: 42px;
+    transform: scale(1.15, 1.15);
+   
+  }
+  .main-image-all .top-text:hover p  {
+   
+    font-size: 26px;
+    line-height: 28px;
+     color: #ffffff;
+     display: block;
+     transform: scale(1.15, 1.15);
+     
+ 
+    }
+
+
 .main-allCities {
   /* width: 100px; */
   height: 100px;

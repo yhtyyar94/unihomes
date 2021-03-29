@@ -4,6 +4,8 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "@babel/helper-builder-react-jsx-experimental": "^7.12.11",
+    "@babel/helper-define-map": "^7.13.12",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
@@ -21,6 +23,7 @@
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "react-modal": "^3.12.1",
+    "react-model": "^4.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-select": "^4.3.0",
