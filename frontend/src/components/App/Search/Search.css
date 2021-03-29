@@ -120,9 +120,26 @@
   border-radius: 7px;
   text-align: center;
   justify-content: center;
-  padding: 0;
+  /* padding: 0; */
   /* padding-top: 4.5%; */
   cursor: no-drop;
+}
+
+@media (max-width: 1150px) {
+  .btn-search-disabled {
+    font-size: 20px;
+  }
+  .btn-search {
+    font-size: 20px;
+  }
+}
+@media (max-width: 960px) {
+  .btn-search-disabled {
+    font-size: 17px;
+  }
+  .btn-search {
+    font-size: 17px;
+  }
 }
 
 /* IPAD SCREEN */
@@ -146,6 +163,12 @@
   }
   .btn-search {
     font-size: 20px;
+  }
+  .btn-search-disabled {
+    font-size: 17px;
+  }
+  .btn-search {
+    font-size: 17px;
   }
 }
 @media (max-width: 623px) {
