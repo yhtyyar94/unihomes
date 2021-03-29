@@ -9,18 +9,19 @@ import { FaHome } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { RiLogoutBoxFill } from 'react-icons/ri';
 import { BsHeartFill } from "react-icons/bs";
-import { useHistory} from 'react-router-dom'
+import { Link, useHistory, useParams, Redirect} from 'react-router-dom'
 
 export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 	const [visible, setVisibility] = useState(true)
-	const [history, setHistory] = useState('/')
-	const pathHistory = useHistory()
+	const [history1, setHistory] = useState('/')
+
+
 	const changeClass = () => {
 		if(window.location.pathname === '/') {
 			if (window.pageYOffset > 0) {
-				document.querySelector(".header").className = "header scroll"
+				document.querySelector("#header").className = "header scroll"
 			  } else {
-				document.querySelector(".header").className = "header";
+				document.querySelector("#header").className = "header";
 			  }
 		}
 	}
@@ -30,22 +31,10 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 	}
 
 	const changeUrl = () => {
-		if(history !== window.location.pathname){
+		if(history1 !== window.location.pathname){
 			setHistory(window.location.pathname)
 		}
 	}
-
-	// useEffect(() => {
-	// 	// if(localStorage.getItem('shortlist')===null){
-	// 	// 	localStorage.setItem('shortlist','[]')
-	// 	// }
-
-	// 	const last = JSON.parse(localStorage.getItem('shortlist'))
-    //       if (last.length !== 0) {
-    //         setShortlist(last)  
-	// 		console.log(last)
-    //       } 
-	// }, [shortlist])
 
 
 
@@ -53,11 +42,10 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 		window.addEventListener("scroll", changeClass)
 		window.addEventListener("click", changeUrl)	
 		changeUrl()
-		localStorage.setItem('token', '12345')
 	},[])
 
 	return (
-		<div className={history === '/' ? 'header' : 'scroll'} id="header">
+		<div className={history1 === '/' || history1 === '' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
 				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
 					<MdHome className="home-logo"/>Unihomes
@@ -86,7 +74,7 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 					<MdPerson /> Login
 				</a>
 			</div> : <div className="agency">
-				<a className="navbar-item btn" >
+				<a className="navbar-item btn" onClick={() => window.location.href = '/agency/addproperty'}>
 					<BiLayerPlus className="search-logo"/> Add Property
 				</a>
 				<a className="navbar-item">

@@ -2,7 +2,16 @@ const mongoose = require('mongoose')
 const CitiesModel = require('../models/Cities.model')
 
 exports.getAllCities = async (req, res, next) => {
-    const cities = await CitiesModel.find()
+    const cities = await CitiesModel.aggregate([
+        {
+			$lookup: {
+				from: 'properties',
+				localField: '_id',
+				foreignField: 'cityId',
+				as: 'properties'
+			}
+		}
+    ])
     res.json(cities)
 }
 

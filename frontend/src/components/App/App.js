@@ -35,16 +35,34 @@ export default function App() {
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
+<<<<<<< HEAD
+	const [shortlist ,setShortlist] = useState([])
+	const [jwt, setJwt] = useState()
+	const [userInfo, setUserInfo] = useState()
+
+=======
 	const [shortlist, setShortlist] = useState([]);
 	const [jwt, setJwt] = useState();
+>>>>>>> 5c998f4af657a7da133dc886b2690d0545d6303a
 
 	const changeShortlist = () => {
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
 	};
 
 	useEffect(() => {
+<<<<<<< HEAD
+		if(window.location.pathname === '/agency/welcomepage' || window.location.pathname === '/agency/properties' || window.location.pathname === '/agency/addproperty' || window.location.pathname === '/agency/myprofile') {
+			setIsLoggedIn(true)
+		}
+	}, [])
+
+	useEffect(() => {
+		if(localStorage.getItem('shortlist')===null){
+			localStorage.setItem('shortlist','[]')
+=======
 		if (localStorage.getItem('shortlist') === null) {
 			localStorage.setItem('shortlist', '[]');
+>>>>>>> 5c998f4af657a7da133dc886b2690d0545d6303a
 		}
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
 	}, []);
@@ -103,6 +121,18 @@ export default function App() {
 	
 	return (
 		<div>
+<<<<<<< HEAD
+		
+			<Router>
+			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} shortlist={shortlist}/>
+			{/* {login === true ? <LoginPop register={register} setLog={setLog} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/> : null}
+			{signup === true ? (
+				<RegisterPop register={register} backtoLogin={backtoLogin} />
+			) : null} */}
+				<Switch>
+				<Route to='/login' render={() => <LoginPop register={register} setLog={setLog} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />} />
+					<Route    
+=======
 			<Header
 				toggleLogin={toggleLogin}
 				isLoggedIn={isLoggedIn}
@@ -117,6 +147,7 @@ export default function App() {
 			<Router>
 				<Switch>
 					<Route
+>>>>>>> 5c998f4af657a7da133dc886b2690d0545d6303a
 						exact
 						path="/"
 						render={() => <Search cities={cities} />}
