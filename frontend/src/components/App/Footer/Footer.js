@@ -62,9 +62,7 @@ const Footer = () => {
 						<li>
 							<a href="/policies">Privacy & Cookie Policies</a>
 						</li>
-						<li style={{ float: 'right' }}>
-							2021 &copy; SoftwareChasers
-						</li>
+						<li>2021 &copy; SoftwareChasers</li>
 					</ul>
 				</nav>
 			</div>

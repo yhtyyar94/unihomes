@@ -1,6 +1,6 @@
 .about-header {
 	height: 153px;
-	background-color: #03c5f0;
+	background-color: rgb(0, 191, 255);
 	text-align: center;
 	width: 100%;
 	padding-top: 50px;
@@ -23,29 +23,37 @@
 }
 
 .aboutus-content-title {
-	display: flex;
-	flex-wrap: wrap;
-	width: 871px;
+	text-align: center;
+	width: 80%;
 	margin-top: 78px;
-	margin-left: 20%;
+	margin-right: auto;
+	margin-left: auto;
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 28px;
 	line-height: 30px;
 	color: #000000;
+	overflow: hidden;
+}
+
+.aboutus-content-text-container {
+	height: auto;
+	flex-wrap: wrap;
 }
 
 .aboutus-content-text {
-	width: 971px;
+	width: 80%;
 	margin-top: 28px;
-	margin-left: 15%;
+	margin-left: auto;
+	margin-right: auto;
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
 	line-height: 30px;
 	color: #000000;
+	height: auto;
 }
 
 .btn-search-compare-container {
@@ -71,4 +79,13 @@
 	color: #ffffff;
 	border: none;
 	margin-bottom: 100px;
+}
+
+@media (max-width: 1366px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 360px) {
 }
