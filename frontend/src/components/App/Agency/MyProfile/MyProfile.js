@@ -32,11 +32,11 @@ const MyProfile = () => {
 
   <div className="profile-right">
   <p>
-   <label for="fname">First Name :</label>
-   <input type="text" id="fname" name="fname"/></p>
+   <label for="firstName">First Name :</label>
+   <input type="text" id="firstName" name="firstName"/></p>
    <p>
-   <label for="lname">Last Name :</label>
-   <input type="text" id="lname" name="lname"/></p>
+   <label for="lastName">Last Name :</label>
+   <input type="text" id="lastName" name="lastName"/></p>
    <p>
    <label for="company">Company :</label>
    <input type="text" id="company" name="company"/></p>
@@ -45,14 +45,14 @@ const MyProfile = () => {
    <input type="email" id="email" name="email"  /></p>
    <p>
   
-   <label for="epassword">Existing Password :</label>
-   <input type="password" id="epassword" name="epassword"/></p>
+   <label for="password">Existing Password :</label>
+   <input type="password" id="password" name="password"/></p>
    <p>
-   <label for="npassword">New Password :</label>
-   <input type="password" id="npassword" name="npassword"/></p>
+   <label for="newpassword">New Password :</label>
+   <input type="password" id="newpassword" name="newpassword"/></p>
    <p>
-   <label for="cpassword">Confirm New Password :</label>
-   <input type="password" id="cpassword" name="cpassword"/></p>
+   <label for="confirmpassword">Confirm New Password :</label>
+   <input type="password" id="confirmpassword" name="confirmpassword"/></p>
    <button>Update</button>
    </div>
 
