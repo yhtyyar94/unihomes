@@ -34,7 +34,6 @@
 	font-size: 28px;
 	line-height: 30px;
 	color: #000000;
-	overflow: hidden;
 }
 
 .aboutus-content-text-container {
@@ -85,7 +84,45 @@
 }
 
 @media (max-width: 768px) {
+	.aboutus-title {
+		font-size: 38px;
+	}
+
+	.aboutus-content-title {
+		font-size: 24px;
+		font-weight: bold;
+	}
+
+	.btn-search-compare {
+		width: 360px;
+		height: 60px;
+		border-radius: 10px;
+		font-size: 24px;
+		line-height: 35px;
+		text-align: center;
+		color: #ffffff;
+		border: none;
+		margin-bottom: 100px;
+	}
 }
 
 @media (max-width: 360px) {
+	.aboutus-title {
+		font-size: 28px;
+	}
+	.aboutus-content-title {
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.btn-search-compare {
+		width: 200px;
+		height: 40px;
+		font-size: 16px;
+	}
+
+	.aboutus-content-text {
+		text-align: justify;
+		font-size: 14px;
+		line-height: 25px;
+	}
 }
