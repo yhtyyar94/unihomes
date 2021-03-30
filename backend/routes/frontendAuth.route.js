@@ -11,7 +11,6 @@ router.post('/', (req, res) => {
                 res.json({status:false, message:'Token authentication failed.'})
                 return false
             } else {
-                console.log(decoded)
                 req.decode = decoded
                 res.json({status:true})
                 return true

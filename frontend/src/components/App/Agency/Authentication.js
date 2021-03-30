@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const isAuthenticated = async () => { 
 
-  const token = JSON.parse(localStorage.getItem('token'))
+  const token = JSON.parse(sessionStorage.getItem('token'))
 
  return new Promise((resolve, reject) => {
   axios.post('http://localhost:5001/frontend', { 

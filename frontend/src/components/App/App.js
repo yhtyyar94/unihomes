@@ -34,35 +34,27 @@ export default function App() {
 	const [roomCount, setRoomCount] = useState([]);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
-<<<<<<< HEAD
+	const [isLoggedIn, setIsLoggedIn] = useState(false);	
 	const [shortlist ,setShortlist] = useState([])
 	const [jwt, setJwt] = useState()
 	const [userInfo, setUserInfo] = useState()
-
-=======
-	const [shortlist, setShortlist] = useState([]);
-	const [jwt, setJwt] = useState();
->>>>>>> 5c998f4af657a7da133dc886b2690d0545d6303a
 
 	const changeShortlist = () => {
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
 	};
 
 	useEffect(() => {
-<<<<<<< HEAD
-		if(window.location.pathname === '/agency/welcomepage' || window.location.pathname === '/agency/properties' || window.location.pathname === '/agency/addproperty' || window.location.pathname === '/agency/myprofile') {
+		if(window.location.pathname === '/agency/welcomepage' || window.location.pathname === '/agency/properties' || window.location.pathname === '/agency/addproperty' || window.location.pathname === '/agency/myprofile' || window.location.pathname.startsWith === '/agency') {
 			setIsLoggedIn(true)
+			document.querySelector("#header").className = "scroll";
 		}
+		setUserInfo(JSON.parse(sessionStorage.getItem('userInfo')))
+	
 	}, [])
 
 	useEffect(() => {
 		if(localStorage.getItem('shortlist')===null){
 			localStorage.setItem('shortlist','[]')
-=======
-		if (localStorage.getItem('shortlist') === null) {
-			localStorage.setItem('shortlist', '[]');
->>>>>>> 5c998f4af657a7da133dc886b2690d0545d6303a
 		}
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
 	}, []);
@@ -121,33 +113,23 @@ export default function App() {
 	
 	return (
 		<div>
-<<<<<<< HEAD
-		
-			<Router>
-			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} shortlist={shortlist}/>
-			{/* {login === true ? <LoginPop register={register} setLog={setLog} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/> : null}
-			{signup === true ? (
-				<RegisterPop register={register} backtoLogin={backtoLogin} />
-			) : null} */}
-				<Switch>
-				<Route to='/login' render={() => <LoginPop register={register} setLog={setLog} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />} />
-					<Route    
-=======
+<Router>
 			<Header
 				toggleLogin={toggleLogin}
 				isLoggedIn={isLoggedIn}
 				shortlist={shortlist}
+				setUserInfo={setUserInfo}
+				setIsLoggedIn={setIsLoggedIn}
 			/>
 			{login === true ? (
-				<LoginPop register={register} setLog={setLog} />
+				<LoginPop  setSignUp={setSignUp} register={register} setLog={setLog} setIsLoggedIn={setIsLoggedIn} setUserInfo={setUserInfo}/>
 			) : null}
 			{signup === true ? (
-				<RegisterPop register={register} backtoLogin={backtoLogin} setSignUp={setSignUp} />
+				<RegisterPop setUserInfo={setUserInfo} register={register} backtoLogin={backtoLogin} setSignUp={setSignUp} setIsLoggedIn={setIsLoggedIn}/>
 			) : null}
-			<Router>
+			
 				<Switch>
 					<Route
->>>>>>> 5c998f4af657a7da133dc886b2690d0545d6303a
 						exact
 						path="/"
 						render={() => <Search cities={cities} />}
@@ -209,7 +191,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <WelcomePage />;
+								return <WelcomePage userInfo={userInfo}/>;
 							} else {
 								return <NotAuth />;
 							}
@@ -226,7 +208,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <AddProperty />;
+								return <AddProperty userInfo={userInfo}/>;
 							} else {
 								return <NotAuth />;
 							}
@@ -244,7 +226,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <AddProperty />;
+								return <AddProperty userInfo={userInfo}/>;
 							} else {
 								return <NotAuth />;
 							}
@@ -262,7 +244,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <MyProfile />;
+								return <MyProfile userInfo={userInfo}/>;
 							} else {
 								return <NotAuth />;
 							}
@@ -280,7 +262,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <Properties />;
+								return <Properties userInfo={userInfo}/>;
 							} else {
 								return <NotAuth />;
 							}

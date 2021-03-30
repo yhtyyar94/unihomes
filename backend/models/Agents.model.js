@@ -32,22 +32,13 @@ const UserSchema = new Schema({
     },
  
     contactNumber:{
-        type: Number,
-        require: [true, 'Please enter your phone number']
+        type: Number
     },
 
    city:{
-    type: String,
-    require: [true, 'Please choose a city ']
-   },
-   meetingdate:{
-       type:Array,
-       required:true
-   },
-   createdAt:{
-    type:Date,default: Date.now
-}
+    type: String
+   }
 
-})
+}, {timestamps:true})
 
 module.exports = mongoose.model('user', UserSchema)

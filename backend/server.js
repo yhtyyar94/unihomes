@@ -54,6 +54,7 @@ app.use('/api', citiesRouter)
 app.use('/api', agentsRouter)
 app.use('/api', propertiesRouter)
 app.use('/api', booksRouter)
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

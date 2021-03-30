@@ -4,11 +4,11 @@ import axios from 'axios'
 import "./Header.css"
 import { Redirect, useHistory } from 'react-router'
 
-export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn}) {
+export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, setUserInfo, setSignUp}) {
 
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  const history1 = useHistory()
+  const history = useHistory()
 
   
   const Login = async (e) => {
@@ -18,11 +18,21 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn}) 
         password:password
       }).then(res => res.data).catch(err => console.log(err))
 
-      localStorage.setItem('token', JSON.stringify(promise.token))
+      sessionStorage.setItem('token', JSON.stringify(promise.token))
+      
       if(promise.status) {
         // window.location.href = '/agency/welcomepage'
+        history.push('/agency/welcomepage')
+        document.querySelector("#header").className = "scroll";
         setIsLoggedIn(true)
+        setLog(false)
+      } else {
+        alert('Wrong email or password')
       }
+      delete promise.data.password
+      
+      sessionStorage.setItem('userInfo', JSON.stringify(promise))
+      setUserInfo(promise)
   }
  
   const scrollFunctionLog = () => {

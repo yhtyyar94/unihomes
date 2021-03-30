@@ -9,11 +9,13 @@ import { FaHome } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { RiLogoutBoxFill } from 'react-icons/ri';
 import { BsHeartFill } from "react-icons/bs";
-import { Link, useHistory, useParams, Redirect} from 'react-router-dom'
+import {  useHistory} from 'react-router'
 
-export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
+export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo,setIsLoggedIn}) {
 	const [visible, setVisibility] = useState(true)
 	const [history1, setHistory] = useState('/')
+	const [search, setSearch] = useState('')
+	const history = useHistory()
 
 
 	const changeClass = () => {
@@ -44,6 +46,22 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 		changeUrl()
 	},[])
 
+	const logout = () => {
+		const token = []
+		localStorage.setItem('token', JSON.stringify(token))
+		setUserInfo()
+		setIsLoggedIn(false)
+		sessionStorage.removeItem('userInfo')
+		sessionStorage.removeItem('token')
+
+		history.push('/')
+	}
+
+	const onSearch = (e) => {
+		setSearch(e.target.value)
+
+	}
+
 	return (
 		<div className={history1 === '/' || history1 === '' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
@@ -52,7 +70,7 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 				</a>
 			</div>
 			<div className="search-toggle" style={styles}>
-				<input type="text" placeholder="Search accommodation by cities..."/>
+				<input type="search" placeholder="Search accommodation by cities..." value={search} onChange={onSearch} data-list='list'/>
 			</div>
 			{!isLoggedIn ? <div className="header-items">
 				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
@@ -74,16 +92,16 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 					<MdPerson /> Login
 				</a>
 			</div> : <div className="agency">
-				<a className="navbar-item btn" onClick={() => window.location.href = '/agency/addproperty'}>
+				<a className="navbar-item btn" onClick={() => history.push('/agency/addproperty')}>
 					<BiLayerPlus className="search-logo"/> Add Property
 				</a>
-				<a className="navbar-item">
+				<a className="navbar-item" onClick={() => history.push('/agency/properties')}>
 					<FaHome /> Properties
 				</a>
-				<a className="navbar-item">
+				<a className="navbar-item" onClick={() => history.push('/agency/myprofile')}>
 					<CgProfile /> My Profile
 				</a>
-				<a className="navbar-item" >
+				<a className="navbar-item" onClick={logout}>
 					<RiLogoutBoxFill /> Log out
 				</a>
 			</div>}
