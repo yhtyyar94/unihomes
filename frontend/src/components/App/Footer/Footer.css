@@ -61,8 +61,8 @@
 }
 
 .sm-icons {
+	text-align: center;
 	margin-top: 20px;
-	margin-left: 38px;
 }
 
 #nav-footer {
@@ -107,7 +107,7 @@
 	#input-keepintouch {
 		margin: 5px;
 		width: 150px;
-		height: 28px;
+		height: 32px;
 		padding-left: 8px;
 		font-size: 10px;
 	}
@@ -124,8 +124,8 @@
 	}
 	.sm-icons {
 		display: flex;
-		margin-top: 5px;
-		margin-left: 16px;
+		margin-top: 15px;
+		margin-left: 0px;
 		height: 34px;
 	}
 
@@ -134,7 +134,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin: 5px 0 5px 0;
+		margin-right: 10px;
 	}
 
 	#nav-footer {

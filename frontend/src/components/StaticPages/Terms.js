@@ -3,15 +3,15 @@ import './Terms.css';
 
 const Terms = () => {
 	return (
-		<div>
+		<div className="terms-content-container">
 			<div className="terms-header">
 				<span className="terms-title">Terms & Conditions</span>
 			</div>
 
-			<h2 className="policies-content-subtitle">
+			<h2 className="terms-content-subtitle">
 				1. THESE TERMS AND CONDITIONS
 			</h2>
-			<p className="policies-content-text">
+			<p className="terms-content-text">
 				1.1. What these terms cover. These are the terms and conditions on
 				which we supply goods and services to you in relation to your
 				utility package. <br />
@@ -22,10 +22,10 @@ const Terms = () => {
 				change or end the contract, what to do if there is a problem and
 				other important information.
 			</p>
-			<h2 className="policies-content-subtitle">
+			<h2 className="terms-content-subtitle">
 				2. INFORMATION ABOUT US AND HOW TO CONTACT US
 			</h2>
-			<p className="policies-content-text">
+			<p className="terms-content-text">
 				2.1. Who we are. We are UniHomes and Bills Limited, a company
 				registered in England and Wales. Our company registration number is
 				09618272 and our registered office is at Daisy Spring Works, 3 Dun
@@ -45,8 +45,8 @@ const Terms = () => {
 				2.4. "Writing" includes emails. When we use the words "writing" or
 				"written" in these terms, this includes emails.
 			</p>
-			<h2 className="policies-content-subtitle">3. OUR CONTRACT WITH YOU</h2>
-			<p className="policies-content-text">
+			<h2 className="terms-content-subtitle">3. OUR CONTRACT WITH YOU</h2>
+			<p className="terms-content-text">
 				3.1. How we will accept your order. Our acceptance of your order
 				will take place when we email you to accept it.
 				<br />
