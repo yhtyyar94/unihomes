@@ -6,18 +6,7 @@ import axios from "axios";
 
 const MyProfile = () => {
  
-  // const [users,setUsers] = useState([]);
-  // const [update,setUpdate] = useState("id");
-
- 
-  // useEffect(() => {
-  //     axios
-  //       .get(`http://localhost:5001/api/getagents/${id}`)
-  //       .then((res) => setUsers(res.data))
-     
-  //       .catch((err) => console.log(err));
-  //   }, []);
-
+  
   return (
     <div id="myprofile">
       <div className="myprofile">
