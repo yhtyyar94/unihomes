@@ -61,7 +61,7 @@ export default function App() {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:5000/homes')
+			.get('http://localhost:5001/api/getproperties')
 			.then((res) => {
 				setHomes(res.data);
 			})
@@ -72,7 +72,7 @@ export default function App() {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:5000/cities')
+			.get('http://localhost:5001/api/getcities')
 			.then((res) => {
 				setCities(res.data);
 			})
