@@ -55,8 +55,10 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
 
   return (
     <div className="logContainer">
+
     <form onSubmit={Login}>
       <div className="logTitle">Agent Login <RiCloseFill className="close-logo" onClick={() => setLog(false)}/> </div>
+
       <hr className="logLine"/> 
       <div className="login-email">
       <label htmlFor="email" >Email</label>

@@ -72,6 +72,7 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
 
   return (
     <div className="regContainer">
+
     {seccessMessage && <SuccessMessage />}
     <form onSubmit={signup}>
       <div className="logTitle">Agent Register <RiCloseFill className="close-logo" onClick={() => setSignUp(false)} /></div>
