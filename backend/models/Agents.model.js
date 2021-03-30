@@ -30,10 +30,20 @@ const UserSchema = new Schema({
         require:[true, 'Please enter a password'],
         minLength:[6, 'Minimum password length is 6 characters.']
     },
- 
+    newpassword:{
+        type: String,
+        require:[true, 'Please enter a password'],
+        minLength:[6, 'Minimum password length is 6 characters.']
+    },
+    confirmpassword:{
+        type: String,
+        require:[true, 'Please enter a password'],
+        minLength:[6, 'Minimum password length is 6 characters.']
+    },
     contactNumber:{
         type: Number
     },
+ 
 
    city:{
     type: String

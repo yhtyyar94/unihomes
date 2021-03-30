@@ -10,6 +10,7 @@ import { CgProfile } from 'react-icons/cg';
 import { RiLogoutBoxFill } from 'react-icons/ri';
 import { BsHeartFill } from "react-icons/bs";
 import {  useHistory} from 'react-router'
+import logo from './logo.png'
 
 export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo,setIsLoggedIn}) {
 	const [visible, setVisibility] = useState(true)
@@ -66,9 +67,10 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 		<div className={history1 === '/' || history1 === '' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
 				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
-					<MdHome className="home-logo"/>Unihomes
+				<img src={logo} alt="" style={{height:"40px"}}></img> UniLive
 				</a>
 			</div>
+			
 			<div className="search-toggle" style={styles}>
 				<input type="search" placeholder="Search accommodation by cities..." value={search} onChange={onSearch} data-list='list'/>
 			</div>
