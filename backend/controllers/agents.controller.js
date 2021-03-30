@@ -23,7 +23,7 @@ exports.getOneAgent = async (req, res) => {
     })
 }
 
-exports.create = async (req, res) => {
+exports.create = async (req, res, next) => {
     /*
     const newAgent = new AgentModel(req.body)
 
@@ -39,19 +39,20 @@ exports.create = async (req, res) => {
     }) 
 */
 //hashed pass
-const {email, password} = req.body
+const {email, password, companyName} = req.body
 
   bcrypt.hash(password, 10)
   .then(hashedPassword => {
     const agent = new AgentModel({
-      email,
-      password:hashedPassword
+      email:email,
+      password:hashedPassword,
+      company:companyName
      
     })
-  
+    
     agent.save((err, data) => {
       if(err) {
-        next({message:err})
+        // next({message:err})
         res.json(err)
       } else {
         res.json(data)

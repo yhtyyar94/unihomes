@@ -248,6 +248,10 @@
 .reg-email {
   margin-top: 5px;
 }
+
+.reg-email label {
+  display: block;
+}
 .reg-password {
   margin-top: 5px;
 }
@@ -379,7 +383,7 @@
   width: 90%;
   height: 40px;
   left: 22px;
-  top: 470px;
+  top: 450px;
   background: #00bfff;
   border-width: 0px;
   font-family: Roboto;
@@ -404,9 +408,12 @@
 }
 
 .close-logo {
-  margin-left: 150px;
+  float: right;
+  margin-right: 20px;
   cursor: pointer;
 }
+
+
 
 @media only screen and (max-width: 768px) {
   .header {

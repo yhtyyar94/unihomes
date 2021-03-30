@@ -37,7 +37,7 @@ const deleteProperty = (id) =>{
 
 
   <div className="properties">
-  <div className="properties-img"><img src={property.images[1]}/></div>
+  <div className="properties-img"><img src={`http://localhost:5001/${property.images[0].filePath}`} alt=""/></div>
       <div className="property-content">
       <div style={{marginLeft:"-5%"}}><p style={{fontSize:"18px",padding:0,paddingLeft:20}}><span style={{fontSize:"20px"}}>£{property.rent} </span>pppw including bills</p></div>
        <div style={{fontSize:"22px"}}><FaBed size={22}  style={{fill:"white",paddingTop:"2px",marginLeft:"20px"}}/>  &nbsp; {property.bedroom}</div>

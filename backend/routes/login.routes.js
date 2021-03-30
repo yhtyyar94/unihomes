@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
             if (err) {
               console.log(err)
             } else {
-              res.json({status:true, token})
+              res.json({status:true, token, data:result})
             }
           })
         }

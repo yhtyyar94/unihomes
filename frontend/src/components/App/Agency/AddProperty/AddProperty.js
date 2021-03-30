@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 import './AddProperty.css';
 
-const AddProperty = () => {
+const AddProperty = ({userInfo}) => {
 	const [ cities, setCities ] = useState(null);
 	const [ cityId, setCityId ] = useState(null);
 	const [ rent, setRent ] = useState();
@@ -25,9 +25,23 @@ const AddProperty = () => {
 
 	const {id} = useParams()
 
-
-
 	useEffect(() => {
+		if(!id) {
+			setRent('')
+		setBedrooms('')
+		setBathrooms('')
+		setStreet('')
+		setDistrict('')
+		setTown('')
+		setPostcode('')
+		setType('')
+		setDeposit('')
+		setFrom('')
+		setTo('')
+		setKeys('')
+		setDescription('')
+		setCityName('Select City')
+		}
 		axios
 			.get('http://localhost:5001/api/getcities')
 			.then((res) => setCities(res.data))
@@ -36,7 +50,6 @@ const AddProperty = () => {
 		if(id) {
 			axios.get(`http://localhost:5001/api/getproperties/${id}`)
 			.then((res => {
-					console.log(res.data)
 					const {data} = res
 					setRent(data.rent)
 					setCityName(data.cityName)
@@ -52,18 +65,18 @@ const AddProperty = () => {
 					setTo(data.availability[1])
 					setKeys(data.keyFeatures.join(', '))
 					setDescription(data.home_description)
+					setCityId(data._id)
 				})).catch(err => console.log(err));
 			}
 
-	}, []);
-
+	}, [id]);
 	const multipleFileChange = e => {
 		setMultipleFiles(e.target.files)
 	}
 
 	const onSubmit = async (e) => {
 		e.preventDefault()
-		setSuccessSubmit(false)
+		setSuccessSubmit(true)
 		window.scroll(0, 0)
 		const keyFeatures = keys.split(',')
 		const formData = new FormData()
@@ -75,7 +88,6 @@ const AddProperty = () => {
 		}
 		formData.append('cityId', cityId)
 		formData.append('cityName', cityName)
-		formData.append('user', '6046459eeb43bf37ecf5147a')
 		formData.append('address', street)
 		formData.append('address', district)
 		formData.append('address', town)
@@ -88,8 +100,19 @@ const AddProperty = () => {
 		formData.append('bathroom', bathrooms)
 		formData.append('type', type)
 		formData.append('rent', rent)
-		axios.post('http://localhost:5001/api/createproperty', formData).then(res => res.data.message && setSuccessSubmit(true)).catch(err => console.log(err))
+		formData.append('user', userInfo.data._id)
+		if (id) {
+			axios.put(`http://localhost:5001/api/properties/update/${id}`, formData).then(res => {
+				res.data.message && setSuccessSubmit(true);
+			}).catch(err => console.log(err))
+		} else {
+			axios.post('http://localhost:5001/api/createproperty', formData).then(res => {
+				res.data.message && setSuccessSubmit(true);
+				console.log(res.data)
+			}).catch(err => console.log(err))
+		}
 
+	if(!id) {
 		setRent('')
 		setBedrooms('')
 		setBathrooms('')
@@ -103,12 +126,17 @@ const AddProperty = () => {
 		setTo('')
 		setKeys('')
 		setDescription('')
+		setCityName('Select City')
+	}
+	setTimeout(() => {
+		setSuccessSubmit(false)
+	}, 2000)
 	}
 
 	return (
 		<div className="AddProperty">
 			{successSubmit && <div className="addproperty-succes-message">
-				Your property added successfully
+				Your property {id ? 'added' : 'updated'} successfully
 			</div>}
 			<form className="add-form" onSubmit={onSubmit}>
 				<div className="row row1">
@@ -221,8 +249,8 @@ const AddProperty = () => {
 					<textarea name="description" type="text" id="description" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} required/>
 				</div>
 				<div className="row row2">
-					<label htmlFor="images">Upload Images</label>
-					<input type="file" multiple onChange={e => multipleFileChange(e)} required />
+					<label htmlFor="images">Upload Images {id && '(If you upload image(s) your old images will be removed)'}</label>
+					{id ? <input type="file" multiple onChange={e => multipleFileChange(e)} /> : <input type="file" multiple onChange={e => multipleFileChange(e)} required />}
 				</div>
 				<div className="row row9">
 					<input type="submit" value={id ? 'Update' : 'Submit'} />

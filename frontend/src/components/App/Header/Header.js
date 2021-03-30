@@ -9,18 +9,21 @@ import { FaHome } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { RiLogoutBoxFill } from 'react-icons/ri';
 import { BsHeartFill } from "react-icons/bs";
-import { useHistory} from 'react-router-dom'
+import {  useHistory} from 'react-router'
 
-export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
+export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo,setIsLoggedIn}) {
 	const [visible, setVisibility] = useState(true)
-	const [history, setHistory] = useState('/')
-	const pathHistory = useHistory()
+	const [history1, setHistory] = useState('/')
+	const [search, setSearch] = useState('')
+	const history = useHistory()
+
+
 	const changeClass = () => {
 		if(window.location.pathname === '/') {
 			if (window.pageYOffset > 0) {
-				document.querySelector(".header").className = "header scroll"
+				document.querySelector("#header").className = "header scroll"
 			  } else {
-				document.querySelector(".header").className = "header";
+				document.querySelector("#header").className = "header";
 			  }
 		}
 	}
@@ -30,22 +33,10 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 	}
 
 	const changeUrl = () => {
-		if(history !== window.location.pathname){
+		if(history1 !== window.location.pathname){
 			setHistory(window.location.pathname)
 		}
 	}
-
-	// useEffect(() => {
-	// 	// if(localStorage.getItem('shortlist')===null){
-	// 	// 	localStorage.setItem('shortlist','[]')
-	// 	// }
-
-	// 	const last = JSON.parse(localStorage.getItem('shortlist'))
-    //       if (last.length !== 0) {
-    //         setShortlist(last)  
-	// 		console.log(last)
-    //       } 
-	// }, [shortlist])
 
 
 
@@ -53,18 +44,33 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 		window.addEventListener("scroll", changeClass)
 		window.addEventListener("click", changeUrl)	
 		changeUrl()
-		localStorage.setItem('token', '12345')
 	},[])
 
+	const logout = () => {
+		const token = []
+		localStorage.setItem('token', JSON.stringify(token))
+		setUserInfo()
+		setIsLoggedIn(false)
+		sessionStorage.removeItem('userInfo')
+		sessionStorage.removeItem('token')
+
+		history.push('/')
+	}
+
+	const onSearch = (e) => {
+		setSearch(e.target.value)
+
+	}
+
 	return (
-		<div className={history === '/' ? 'header' : 'scroll'} id="header">
+		<div className={history1 === '/' || history1 === '' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
 				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
 					<MdHome className="home-logo"/>Unihomes
 				</a>
 			</div>
 			<div className="search-toggle" style={styles}>
-				<input type="text" placeholder="Search accommodation by cities..."/>
+				<input type="search" placeholder="Search accommodation by cities..." value={search} onChange={onSearch} data-list='list'/>
 			</div>
 			{!isLoggedIn ? <div className="header-items">
 				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
@@ -86,16 +92,16 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist }) {
 					<MdPerson /> Login
 				</a>
 			</div> : <div className="agency">
-				<a className="navbar-item btn" >
+				<a className="navbar-item btn" onClick={() => history.push('/agency/addproperty')}>
 					<BiLayerPlus className="search-logo"/> Add Property
 				</a>
-				<a className="navbar-item">
+				<a className="navbar-item" onClick={() => history.push('/agency/properties')}>
 					<FaHome /> Properties
 				</a>
-				<a className="navbar-item">
+				<a className="navbar-item" onClick={() => history.push('/agency/myprofile')}>
 					<CgProfile /> My Profile
 				</a>
-				<a className="navbar-item" >
+				<a className="navbar-item" onClick={logout}>
 					<RiLogoutBoxFill /> Log out
 				</a>
 			</div>}
