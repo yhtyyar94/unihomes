@@ -44,7 +44,6 @@ export default function HomeDetails({
 				setThirdImg(res.data.images[2]);
 				setFourthImg(res.data.images[3]);
 				setHome(res.data);
-			
 			})
 			.catch((err) => console.log(err));
 	}, [id]);
