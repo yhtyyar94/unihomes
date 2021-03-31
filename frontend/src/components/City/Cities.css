@@ -71,7 +71,7 @@ p {
   font-size: 54px;
   line-height: 60px;
 }
-@media (max-width: 1366px) {
+@media (max-width: 1360px) {
   .home-number {
     font-size: 27px;
   }
@@ -85,7 +85,7 @@ p {
     font-size: 100px;
   }
   .text h5 {
-    font-size: 43px;
+    font-size: 30px;
   }
 }
 
