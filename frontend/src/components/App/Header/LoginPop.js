@@ -28,8 +28,11 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
         document.querySelector("#header").className = "scroll";
         setIsLoggedIn(true)
         setLog(false)
+        sessionStorage.setItem('userInfo', JSON.stringify(promise))
+      setUserInfo(promise)
       } else {
         alert('Wrong email or password')
+        return
       }
       delete promise.data.password
       

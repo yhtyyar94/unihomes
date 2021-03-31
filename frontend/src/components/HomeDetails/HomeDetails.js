@@ -187,7 +187,10 @@ export default function HomeDetails({
 							/>
 							<img
 								onDoubleClick={() => setModalIsOpen(true)}
-								src={firstImg && firstImg}
+								src={
+									home.length !== 0 &&
+									`http://localhost:5001/${home.images[0].filePath}`
+								}
 								style={{ borderRadius: '3px' }}
 								alt=""
 							/>
@@ -270,8 +273,8 @@ export default function HomeDetails({
 					<div className="homedetails-main-availability">
 						<h3 style={{ marginBottom: '20px' }}>Availability</h3>
 						<span className="homedetails-main-availability-date">
-							{/* From {home.availability[0]} {'     '}to{' '}
-							{home.availability[1]} */}
+							From {home.length !== 0 && home.availability[0]} {'     '}
+							to {home.length !== 0 && home.availability[1]}
 						</span>
 					</div>
 				</div>
@@ -323,10 +326,7 @@ export default function HomeDetails({
 											marginLeft: 8,
 										}}
 									/>
-									<span
-										className="homedetails-rooms-type-type"
-										style={{ fontSize: 12 }}
-									>
+									<span className="homedetails-rooms-type-type">
 										{home.length !== 0 && home.type}
 									</span>
 								</div>

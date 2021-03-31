@@ -174,20 +174,6 @@ const AddProperty = ({userInfo}) => {
 						<input type="number" id="bathrooms" value={bathrooms} placeholder="Number of Bathrooms" onChange={(e)=> setBathrooms(e.target.value)} required/>
 					</div>
 				</div>
-				{/* <div className="row row2">
-					<label htmlFor="images">Upload Images</label>
-					<input type="file" multiple onChange={e => multipleFileChange(e)} required />
-				</div> */}
-				{/* <div className="row row3">
-					<div>
-						<label htmlFor="bedrooms">Number of Bedrooms</label>
-						<input type="number" id="bedrooms" placeholder="Number of Bedrooms" onChange={(e)=> setBedrooms(e.target.value)} required/>
-					</div>
-					<div>
-						<label htmlFor="bathrooms">Number of Bathrooms</label>
-						<input type="number" id="bathrooms" placeholder="Number of Bathrooms" onChange={(e)=> setBathrooms(e.target.value)} required/>
-					</div>
-				</div> */}
 				<div className="row row4">
 					<div>
 						<label htmlFor="street">Street Name</label>
@@ -230,16 +216,6 @@ const AddProperty = ({userInfo}) => {
 						<input type="date" id="to" value={to} onChange={(e) => setTo(e.target.value)} required/>
 					</div>
 				</div>
-				{/* <div className="row row6">
-					<div>
-						<label htmlFor="from">Available from</label>
-						<input type="date" id="from" onChange={(e) => setFrom(e.target.value)} required/>
-					</div>
-					<div>
-						<label htmlFor="to">to</label>
-						<input type="date" id="to" onChange={(e) => setTo(e.target.value)} required/>
-					</div>
-				</div> */}
 				<div className="row row7">
 					<label htmlFor="keys">Key Features(Please separate features with commas)</label>
 					<input type="text" id="keys" placeholder="Key Features" value={keys} onChange={(e) => setKeys(e.target.value)} required/>

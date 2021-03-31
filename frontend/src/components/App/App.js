@@ -34,28 +34,37 @@ export default function App() {
 	const [roomCount, setRoomCount] = useState([]);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
-	const [shortlist, setShortlist] = useState([]);
-	const [jwt, setJwt] = useState();
-	const [userInfo, setUserInfo] = useState();
+	const [isLoggedIn, setIsLoggedIn] = useState(false);	
+	const [shortlist ,setShortlist] = useState([])
+	const [jwt, setJwt] = useState()
+	const [userInfo, setUserInfo] = useState()
 
 	const changeShortlist = () => {
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
 	};
 
 	useEffect(() => {
-		if (
-			window.location.pathname === '/agency/welcomepage' ||
-			window.location.pathname === '/agency/properties' ||
-			window.location.pathname === '/agency/addproperty' ||
-			window.location.pathname === '/agency/myprofile' ||
-			window.location.pathname.startsWith === '/agency'
-		) {
-			setIsLoggedIn(true);
-			document.querySelector('#header').className = 'scroll';
+		if(window.location.pathname !== '/') {
+			document.querySelector("#header").className = "scroll";
 		}
-		setUserInfo(JSON.parse(sessionStorage.getItem('userInfo')));
-	}, []);
+	},[])
+
+	useEffect(() => {
+		if(window.location.pathname.startsWith === '/agency') {
+			setIsLoggedIn(true)
+			document.querySelector("#header").className = "scroll";
+		}
+
+		if(window.location.pathname !== '/') {
+			document.querySelector("#header").className = "scroll";
+		}
+		if(JSON.parse(sessionStorage.getItem('userInfo'))) {
+			setIsLoggedIn(true)
+		}
+		setUserInfo(JSON.parse(sessionStorage.getItem('userInfo')))
+	
+	}, [])
+
 
 	console.log(userInfo)
 	useEffect(() => {
@@ -119,33 +128,20 @@ export default function App() {
 
 	return (
 		<div>
-			<Router>
-				<Header
-					toggleLogin={toggleLogin}
-					isLoggedIn={isLoggedIn}
-					shortlist={shortlist}
-					setUserInfo={setUserInfo}
-					setIsLoggedIn={setIsLoggedIn}
-				/>
-				{login === true ? (
-					<LoginPop
-						setSignUp={setSignUp}
-						register={register}
-						setLog={setLog}
-						setIsLoggedIn={setIsLoggedIn}
-						setUserInfo={setUserInfo}
-					/>
-				) : null}
-				{signup === true ? (
-					<RegisterPop
-						setUserInfo={setUserInfo}
-						register={register}
-						backtoLogin={backtoLogin}
-						setSignUp={setSignUp}
-						setIsLoggedIn={setIsLoggedIn}
-					/>
-				) : null}
-
+<Router>
+			<Header
+				toggleLogin={toggleLogin}
+				isLoggedIn={isLoggedIn}
+				shortlist={shortlist}
+				setUserInfo={setUserInfo}
+				setIsLoggedIn={setIsLoggedIn}
+			/>
+			{login === true ? (
+				<LoginPop  setSignUp={setSignUp} register={register} setLog={setLog} setIsLoggedIn={setIsLoggedIn} setUserInfo={setUserInfo}/>
+			) : null}
+			{signup === true ? (
+				<RegisterPop setUserInfo={setUserInfo} setLog={setLog} register={register} backtoLogin={backtoLogin} setSignUp={setSignUp} setIsLoggedIn={setIsLoggedIn}/>
+			) : null}
 				<Switch>
 					<Route
 						exact

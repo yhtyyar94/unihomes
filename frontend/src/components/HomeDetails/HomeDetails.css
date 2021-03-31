@@ -147,6 +147,10 @@ li {
 	font-family: Roboto;
 }
 
+.homedetails-rooms-type-type {
+	font-size: 12px;
+}
+
 .homedetails-sidebar-btn-shortlist {
 	background-color: #fff;
 	font-family: Roboto;
@@ -352,6 +356,7 @@ li {
 	.homedetails-main-bedroom-prices-table {
 		font-size: 12px;
 		width: 90%;
+		padding: 5px 0px;
 	}
 }
 
@@ -385,6 +390,11 @@ li {
 	.homedetails-main-availability {
 		margin-top: 20px;
 		padding: 15px 0px;
+		font-size: 9px;
+	}
+
+	.homedetails-main-availability-date {
+		padding: 7px;
 	}
 
 	.homedetails-main-availability > h3 {
@@ -424,7 +434,7 @@ li {
 	}
 
 	.homedetails-rooms-type-type {
-		font-size: 9px;
+		font-size: 8px;
 	}
 
 	.homedetails-sidebar-bills {
