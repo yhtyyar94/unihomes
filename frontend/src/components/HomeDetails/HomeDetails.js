@@ -37,9 +37,9 @@ export default function HomeDetails({
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:5000/homes/${id}`)
+			.get(`http://localhost:5001/api/getproperties/${id}`)
 			.then((res) => {
-				setFirstImg(res.data.images[0]);
+				// setFirstImg(`http://localhost:5001/${home.images[0].filePath}`);
 				setSecondImg(res.data.images[1]);
 				setThirdImg(res.data.images[2]);
 				setFourthImg(res.data.images[3]);
@@ -60,7 +60,7 @@ export default function HomeDetails({
 			localStorage.setItem('shortlist', '[]');
 		}
 		let idList = JSON.parse(localStorage.getItem('shortlist'));
-		idList.push(home.id);
+		idList.push(home._id);
 		localStorage.setItem('shortlist', JSON.stringify(idList));
 		setShortlist(idList);
 	};
@@ -69,7 +69,7 @@ export default function HomeDetails({
 		let newShortlist = shortlist;
 
 		for (let i = 0; i < newShortlist.length; i++) {
-			if (newShortlist[i] === home.id) {
+			if (newShortlist[i] === home._id) {
 				newShortlist.splice(i, 1);
 			}
 		}
@@ -258,9 +258,7 @@ export default function HomeDetails({
 									<span
 										style={{ marginLeft: '20px' }}
 									>{`Bedroom ${room}`}</span>
-									<span
-										style={{ marginLeft: '70%', marginRight: '20px' }}
-									>
+									<span style={{ marginRight: '20px' }}>
 										{home.rent} per week
 									</span>
 								</div>
@@ -272,20 +270,21 @@ export default function HomeDetails({
 					<div className="homedetails-main-availability">
 						<h3 style={{ marginBottom: '20px' }}>Availability</h3>
 						<span className="homedetails-main-availability-date">
-							From {home.availability}
+							{/* From {home.availability[0]} {'     '}to{' '}
+							{home.availability[1]} */}
 						</span>
 					</div>
 				</div>
 				<div className="homedetails-sidebar-container">
 					<div className="btn-book-viewing-container">
-						<h3>
-							{home.length !== 0 && home.address.street},{' '}
-							{home.length !== 0 && home.address.district}
+						<h3 className="homedetails-sidebar-address">
+							{home.length !== 0 && home.address[0]},{' '}
+							{home.length !== 0 && home.address[1]}
 						</h3>
 						<br />
-						<h3>
-							{home.length !== 0 && home.address.city},{' '}
-							{home.length !== 0 && home.address.postcode}
+						<h3 className="homedetails-sidebar-address">
+							{home.length !== 0 && home.cityName},{' '}
+							{home.length !== 0 && home.address[3]}
 						</h3>
 						<div className="homedetails-rooms-count-type-container">
 							<div className="homedetails-rooms-count-bedroom">
@@ -324,7 +323,10 @@ export default function HomeDetails({
 											marginLeft: 8,
 										}}
 									/>
-									<span style={{ fontSize: 12 }}>
+									<span
+										className="homedetails-rooms-type-type"
+										style={{ fontSize: 12 }}
+									>
 										{home.length !== 0 && home.type}
 									</span>
 								</div>
@@ -333,6 +335,7 @@ export default function HomeDetails({
 						<br />
 						<hr />
 						<h4
+							className="homedetails-sidebar-pppw"
 							style={{
 								textAlign: 'center',
 								paddingTop: 8,
@@ -353,7 +356,7 @@ export default function HomeDetails({
 						</button>
 						<div style={{ textAlign: 'center', marginBottom: 20 }}>
 							<div className="shortlist-btn">
-								{shortlist.includes(home.id) ? (
+								{shortlist.includes(home._id) ? (
 									<p onClick={removeFromShortlist}>
 										{' '}
 										<BsHeartFill fill="red" /> &nbsp;{' '}
@@ -362,14 +365,17 @@ export default function HomeDetails({
 								) : (
 									<p onClick={addToShortlist}>
 										{' '}
-										<BsHeart className="heart-icon" /> &nbsp;{' '}
+										<BsHeart className="heart-icon" /> &nbsp;
 										<span className="short-btn">Shortlist</span>
 										<span className="add-btn">Add</span>
 									</p>
 								)}
 							</div>
 						</div>
-						<div style={{ textAlign: 'center' }}>
+						<div
+							className="homedetails-sidebar-bills"
+							style={{ textAlign: 'center' }}
+						>
 							<img
 								src={bill}
 								alt="bills"
@@ -395,11 +401,12 @@ export default function HomeDetails({
 							</div>
 							<div>
 								<h4 className="book-viewing-form-address">
-									{home.length !== 0 && home.address.street},{' '}
-									{home.length !== 0 && home.address.district}
+									{home.length !== 0 && home.address[0]},{' '}
+									{home.length !== 0 && home.address[1]},
+									{home.length !== 0 && home.address[2]}
 									<br />
-									{home.length !== 0 && home.address.city},{' '}
-									{home.length !== 0 && home.address.postcode}
+									{home.length !== 0 && home.cityName},{' '}
+									{home.length !== 0 && home.address[3]}
 								</h4>
 							</div>
 							<div>

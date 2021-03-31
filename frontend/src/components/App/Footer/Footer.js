@@ -28,6 +28,7 @@ const Footer = () => {
 							rel="noreferrer"
 						>
 							<AiOutlineFacebook
+								size={30}
 								style={{ fill: 'white', marginRight: 20 }}
 							/>
 						</a>
@@ -37,6 +38,7 @@ const Footer = () => {
 							rel="noreferrer"
 						>
 							<AiOutlineInstagram
+								size={30}
 								style={{ fill: 'white', marginRight: 20 }}
 							/>
 						</a>
@@ -45,7 +47,7 @@ const Footer = () => {
 							target="_blank"
 							rel="noreferrer"
 						>
-							<AiFillTwitterCircle style={{ fill: 'white' }} />
+							<AiFillTwitterCircle size={30} style={{ fill: 'white' }} />
 						</a>
 					</div>
 				</div>
@@ -62,9 +64,7 @@ const Footer = () => {
 						<li>
 							<a href="/policies">Privacy & Cookie Policies</a>
 						</li>
-						<li style={{ float: 'right' }}>
-							2021 &copy; SoftwareChasers
-						</li>
+						<li>2021 &copy; SoftwareChasers</li>
 					</ul>
 				</nav>
 			</div>

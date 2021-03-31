@@ -10,7 +10,8 @@
   display: flex;
   flex-direction: column;
   margin: 30px;
-  width: 140px;
+  width: 400px;
+  font-size: 20px;
 }
 
 .form-option {
@@ -21,12 +22,17 @@
   font-family: Roboto;
   width: 95%;
   height: auto;
+  font-size: 20px;
 }
 .title-text {
   margin: 10px;
   padding: 10px;
   font-weight: 20;
   font-family: Roboto;
+  font-size: 24px;
+}
+.home-number {
+  font-size: 30px;
 }
 .homes {
   background: #e5e5e5;
@@ -41,7 +47,7 @@ p {
   background: url("https://i.postimg.cc/ZqhM0RDw/naassom-azevedo-Q-Sei-Tq-Slc-unsplash-1.png")
     no-repeat;
   width: 100%;
-  height: 900px;
+  height: 1500px;
   background-size: 100% 100%;
 }
 
@@ -53,8 +59,7 @@ p {
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
-  font-size: 64px;
-  line-height: 90px;
+  font-size: 120px;
 }
 .text h5 {
   margin-top: 2%;
@@ -63,8 +68,25 @@ p {
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
-  line-height: 35px;
+  font-size: 54px;
+  line-height: 60px;
+}
+@media (max-width: 1360px) {
+  .home-number {
+    font-size: 27px;
+  }
+  .form-select {
+    font-size: 18px;
+  }
+  .form-option {
+    font-size: 18px;
+  }
+  .text h1 {
+    font-size: 100px;
+  }
+  .text h5 {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -75,7 +97,7 @@ p {
     width: 230px;
   }
 }
-@media (max-width: 780px) {
+@media (max-width: 768px) {
   .form-select {
     display: flex;
     flex-direction: column;
@@ -87,6 +109,12 @@ p {
   }
   .form-option {
     font-size: 14px;
+  }
+  .text h5 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
   }
 }
 
@@ -112,20 +140,39 @@ p {
   }
 
   .form-select {
-    width: 140px;
+    width: 190px;
     font-size: 7px;
   }
 
   .form-option {
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0;
-    font-family: Roboto;
-    width: 100%;
+    width: 88%;
     height: auto;
     font-size: 7px;
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
   }
+
   .title-text {
-    font-size: 13px;
+    font-size: 10px;
+    margin: -2px;
+  }
+  .text {
+    margin-top: 2%;
+    text-align: center;
+  }
+  .text h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .text h5 {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .banner-bottom {
+    height: 500px;
+  }
+  .home-number {
+    font-size: 20px;
   }
 }

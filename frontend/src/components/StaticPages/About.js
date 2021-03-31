@@ -5,7 +5,7 @@ const About = () => {
 	return (
 		<div>
 			<div className="about-header">
-				<span className="aboutus-title">About</span>
+				<span className="aboutus-title">About Us</span>
 			</div>
 			<div className="aboutus-content">
 				<div>
@@ -13,7 +13,7 @@ const About = () => {
 						We make finding your perfect student home a whole lot simpler.
 					</h2>
 				</div>
-				<div>
+				<div className="aboutus-content-text-container">
 					<p className="aboutus-content-text">
 						Founded in 2015, UniHomes is a trusted platform where students
 						can find university accommodation with one unique,

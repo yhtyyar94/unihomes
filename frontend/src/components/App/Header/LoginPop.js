@@ -16,7 +16,9 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
      const promise = await axios.post(`http://localhost:5001/login`, {
         email:email,
         password:password
-      }).then(res => res.data).catch(err => console.log(err))
+      }).then(res => {console.log(res.data) 
+      return res.data}).catch(err => console.log(err))
+      
 
       sessionStorage.setItem('token', JSON.stringify(promise.token))
       

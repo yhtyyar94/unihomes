@@ -1,11 +1,48 @@
 import React, { useState, useEffect } from "react";
 import "./MyProfile.css";
 import axios from "axios";
+import {useForm} from 'react-hook-form';
+
+
+const MyProfile = ({userInfo}) => {
+  const {register, handleSubmit}=useForm();
+const[ fullname, setFullName] = useState('');
+const[ lastname, setLastName] = useState('');
+const[ company, setCompany] = useState('');
+const[ email, setEmail] = useState('');
+const[password, setPassword] =useState('');
+const[newpassword, setNewpassword] =useState('');
+const[confirmpassword, setConfirmpassword] =useState('');
 
 
 
-const MyProfile = () => {
- 
+
+useEffect(() => {
+  setEmail(userInfo.data.email)
+},[])
+
+useEffect(() => {
+  setFullName(userInfo.data.fullname)
+},[])
+
+useEffect(() => {
+  setLastName(userInfo.data.lastname)
+},[])
+useEffect(() => {
+  setCompany(userInfo.data.company)
+},[])
+
+useEffect(() => {
+  setPassword(userInfo.data.password)
+},[])
+useEffect(() => {
+  setNewpassword(userInfo.data.password)
+},[])
+
+useEffect(() => {
+  setConfirmpassword(userInfo.data.password)
+},[])
+ const onSubmit =data=> console.log(data)
   
   return (
     <div id="myprofile">
@@ -17,31 +54,31 @@ const MyProfile = () => {
             </div>
            <p>change your photo  <button>change</button></p>
         </div>
-        <form id="profile-right">
+        <form onSubmit={handleSubmit(onSubmit)} id="profile-right">
 
   <div className="profile-right">
   <p>
    <label for="firstName">First Name :</label>
-   <input type="text" id="firstName" name="firstName"/></p>
+   <input ref={register}  type="text" id="firstName" name="firstName"/></p>
    <p>
    <label for="lastName">Last Name :</label>
-   <input type="text" id="lastName" name="lastName"/></p>
+   <input ref={register}  type="text" id="lastName" name="lastName"/></p>
    <p>
    <label for="company">Company :</label>
-   <input type="text" id="company" name="company"/></p>
+   <input value={company}  type="text" id="company" name="company"/></p>
    <p>
    <label for="email">Email :</label>
-   <input type="email" id="email" name="email"  /></p>
+   <input   value={email} type="email" id="email" name="email"  /></p>
    <p>
   
    <label for="password">Existing Password :</label>
-   <input type="password" id="password" name="password"/></p>
+   <input value={password}  type="password" id="password" name="password"/></p>
    <p>
    <label for="newpassword">New Password :</label>
-   <input type="password" id="newpassword" name="newpassword"/></p>
+   <input value={newpassword}  type="password" id="newpassword" name="newpassword"/></p>
    <p>
    <label for="confirmpassword">Confirm New Password :</label>
-   <input type="password" id="confirmpassword" name="confirmpassword"/></p>
+   <input value={confirmpassword} type="password" id="confirmpassword" name="confirmpassword"/></p>
    <button>Update</button>
    </div>
 
