@@ -52,6 +52,7 @@ export default function App() {
 	
 	}, [])
 
+	console.log(userInfo)
 	useEffect(() => {
 		if(localStorage.getItem('shortlist')===null){
 			localStorage.setItem('shortlist','[]')

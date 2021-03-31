@@ -11,6 +11,7 @@ var frontendAuth = require('./routes/frontendAuth.route');
 
 
 
+
 //db connection
 require('./config/db.config')();
 
@@ -42,8 +43,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 //config keys
-const config = require('./config')
+const config = require('./config');
+const { get } = require('./routes/login.routes');
 app.set('api_secret_key', config.api_secret_key)
 
 app.use('/', login)
@@ -55,6 +58,7 @@ app.use('/api', agentsRouter)
 app.use('/api', propertiesRouter)
 app.use('/api', booksRouter)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
