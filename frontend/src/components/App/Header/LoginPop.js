@@ -16,7 +16,9 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
      const promise = await axios.post(`http://localhost:5001/login`, {
         email:email,
         password:password
-      }).then(res => res.data).catch(err => console.log(err))
+      }).then(res => {console.log(res.data) 
+      return res.data}).catch(err => console.log(err))
+      
 
       sessionStorage.setItem('token', JSON.stringify(promise.token))
       
@@ -65,7 +67,7 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
       <hr className="logLine"/> 
       <div className="login-email">
       <label htmlFor="email" >Email</label>
-      <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email address" required/>
+      <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email address" required/>
       </div>
       <div className="login-password">
       <label htmlFor="password" >Password</label>

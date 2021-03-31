@@ -38,14 +38,12 @@ export default function App() {
 	const [shortlist ,setShortlist] = useState([])
 	const [jwt, setJwt] = useState()
 	const [userInfo, setUserInfo] = useState()
-	console.log(userInfo)
 
 	const changeShortlist = () => {
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
 	};
 
 	useEffect(() => {
-		
 		if(window.location.pathname !== '/') {
 			document.querySelector("#header").className = "scroll";
 		}
@@ -67,16 +65,18 @@ export default function App() {
 	
 	}, [])
 
+
+	console.log(userInfo)
 	useEffect(() => {
-		if(localStorage.getItem('shortlist')===null){
-			localStorage.setItem('shortlist','[]')
+		if (localStorage.getItem('shortlist') === null) {
+			localStorage.setItem('shortlist', '[]');
 		}
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
 	}, []);
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:5000/homes')
+			.get('http://localhost:5001/api/getproperties')
 			.then((res) => {
 				setHomes(res.data);
 			})
@@ -87,7 +87,7 @@ export default function App() {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:5000/cities')
+			.get('http://localhost:5001/api/getcities')
 			.then((res) => {
 				setCities(res.data);
 			})
@@ -125,7 +125,7 @@ export default function App() {
 		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
 		setHomes(filteredHomes);
 	};
-	
+
 	return (
 		<div>
 <Router>
@@ -142,7 +142,6 @@ export default function App() {
 			{signup === true ? (
 				<RegisterPop setUserInfo={setUserInfo} setLog={setLog} register={register} backtoLogin={backtoLogin} setSignUp={setSignUp} setIsLoggedIn={setIsLoggedIn}/>
 			) : null}
-			
 				<Switch>
 					<Route
 						exact
@@ -206,7 +205,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <WelcomePage userInfo={userInfo}/>;
+								return <WelcomePage userInfo={userInfo} />;
 							} else {
 								return <NotAuth />;
 							}
@@ -223,7 +222,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <AddProperty userInfo={userInfo}/>;
+								return <AddProperty userInfo={userInfo} />;
 							} else {
 								return <NotAuth />;
 							}
@@ -241,7 +240,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <AddProperty userInfo={userInfo}/>;
+								return <AddProperty userInfo={userInfo} />;
 							} else {
 								return <NotAuth />;
 							}
@@ -259,7 +258,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <MyProfile userInfo={userInfo}/>;
+								return <MyProfile userInfo={userInfo} />;
 							} else {
 								return <NotAuth />;
 							}
@@ -277,7 +276,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <Properties userInfo={userInfo}/>;
+								return <Properties userInfo={userInfo} />;
 							} else {
 								return <NotAuth />;
 							}

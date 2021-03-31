@@ -26,7 +26,6 @@ exports.getOneAgent = async (req, res) => {
 exports.create = async (req, res, next) => {
     /*
     const newAgent = new AgentModel(req.body)
-
     newAgent.save((err, data) => {
         if(err) {
             res.status(500).json({message: err})

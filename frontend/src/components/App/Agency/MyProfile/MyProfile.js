@@ -1,23 +1,49 @@
 import React, { useState, useEffect } from "react";
 import "./MyProfile.css";
 import axios from "axios";
+import {useForm} from 'react-hook-form';
+
+
+const MyProfile = ({userInfo}) => {
+  const {register, handleSubmit}=useForm();
+const[ fullname, setFullName] = useState('');
+const[ lastname, setLastName] = useState('');
+const[ company, setCompany] = useState('');
+const[ email, setEmail] = useState('');
+const[password, setPassword] =useState('');
+const[newpassword, setNewpassword] =useState('');
+const[confirmpassword, setConfirmpassword] =useState('');
 
 
 
-const MyProfile = () => {
- 
-  // const [users,setUsers] = useState([]);
-  // const [update,setUpdate] = useState("id");
 
- 
-  // useEffect(() => {
-  //     axios
-  //       .get(`http://localhost:5001/api/getagents/${id}`)
-  //       .then((res) => setUsers(res.data))
-     
-  //       .catch((err) => console.log(err));
-  //   }, []);
+useEffect(() => {
+  setEmail(userInfo.data.email)
+},[])
 
+useEffect(() => {
+  setFullName(userInfo.data.fullname)
+},[])
+
+useEffect(() => {
+  setLastName(userInfo.data.lastname)
+},[])
+useEffect(() => {
+  setCompany(userInfo.data.company)
+},[])
+
+useEffect(() => {
+  setPassword(userInfo.data.password)
+},[])
+useEffect(() => {
+  setNewpassword(userInfo.data.password)
+},[])
+
+useEffect(() => {
+  setConfirmpassword(userInfo.data.password)
+},[])
+ const onSubmit =data=> console.log(data)
+  
   return (
     <div id="myprofile">
       <div className="myprofile">
@@ -28,31 +54,31 @@ const MyProfile = () => {
             </div>
            <p>change your photo  <button>change</button></p>
         </div>
-        <form id="profile-right">
+        <form onSubmit={handleSubmit(onSubmit)} id="profile-right">
 
   <div className="profile-right">
   <p>
-   <label for="fname">First Name :</label>
-   <input type="text" id="fname" name="fname"/></p>
+   <label for="firstName">First Name :</label>
+   <input ref={register}  type="text" id="firstName" name="firstName"/></p>
    <p>
-   <label for="lname">Last Name :</label>
-   <input type="text" id="lname" name="lname"/></p>
+   <label for="lastName">Last Name :</label>
+   <input ref={register}  type="text" id="lastName" name="lastName"/></p>
    <p>
    <label for="company">Company :</label>
-   <input type="text" id="company" name="company"/></p>
+   <input value={company}  type="text" id="company" name="company"/></p>
    <p>
    <label for="email">Email :</label>
-   <input type="email" id="email" name="email"  /></p>
+   <input   value={email} type="email" id="email" name="email"  /></p>
    <p>
   
-   <label for="epassword">Existing Password :</label>
-   <input type="password" id="epassword" name="epassword"/></p>
+   <label for="password">Existing Password :</label>
+   <input value={password}  type="password" id="password" name="password"/></p>
    <p>
-   <label for="npassword">New Password :</label>
-   <input type="password" id="npassword" name="npassword"/></p>
+   <label for="newpassword">New Password :</label>
+   <input value={newpassword}  type="password" id="newpassword" name="newpassword"/></p>
    <p>
-   <label for="cpassword">Confirm New Password :</label>
-   <input type="password" id="cpassword" name="cpassword"/></p>
+   <label for="confirmpassword">Confirm New Password :</label>
+   <input value={confirmpassword} type="password" id="confirmpassword" name="confirmpassword"/></p>
    <button>Update</button>
    </div>
 

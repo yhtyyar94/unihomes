@@ -16,10 +16,12 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
   const [homesCity, setHomesCity] = useState(homes);
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const maxPrice = [65, 80, 100, 120, 140, 160, 180, 200];
+  
 
   const filterHomeTypes = (homeType) => {
     if (homeType === "Any") {
       setHomesCity(homes);
+    
     } else {
       setHomesCity(homes.filter((home) => home.type === homeType));
     }
@@ -47,17 +49,18 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/homes")
+      .get(`http://localhost:5001/api/getproperties/name/${cityname}`)
       .then((res) => {
         setHomesCity(res.data);
+        console.log(res.data)
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [cityname]);
 
   return (
-    <div style={{ paddingTop: "100px" }}>
+    <div style={{ paddingTop: "80px" }}>
       <div className="filter">
       
 
@@ -67,7 +70,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
           ) : null
         )}
 
-        <form style={{ display: "flex" }}>
+        <form style={{ display: "flex"}}>
           <div className="form-select">
             <label>Bedroom</label>
             <select
@@ -103,7 +106,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
                 <option value={number}>£{number}</option>
               ))}
             </select>
-          </div>
+          </div> 
           <div className="form-select">
             <label>Home Type</label>
             <select
@@ -120,9 +123,9 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
       <div>
         <div style={{ backgroundColor: "#e5e5e5", padding: "20px" }}>
           {bedroom === "allbedrooms" || !bedroom ? (
-            <h3>
+            <h3 className="home-number">
               {
-                homesCity.filter((home) => home.address.city === cityname)
+                homesCity.filter((home) => home.cityName === cityname)
                   .length
               }{" "}
               homes in{" "}
@@ -135,7 +138,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
               {
                 homesCity.filter(
                   (home) =>
-                    home.address.city === cityname &&
+                  home.cityName === cityname &&
                     home.bedroom === bedroom * 1
                 ).length
               }{" "}
@@ -149,12 +152,12 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
         <div className="homes">
           {bedroom === "allbedrooms" || !bedroom
             ? homesCity
-                .filter((item) => item.address.city === cityname)
+                .filter((item) => item.cityName === cityname)
                 .map((home) => <City home={home} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist}/>)
             : homesCity
                 .filter(
                   (item) =>
-                    item.address.city === cityname &&
+                  item.cityName === cityname &&
                     item.bedroom === bedroom * 1
                 )
                 .map((home) => <City home={home} key={home.id} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist} />)}

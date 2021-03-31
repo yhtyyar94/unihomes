@@ -12,6 +12,7 @@ import { BsHeartFill } from "react-icons/bs";
 import {  useHistory} from 'react-router'
 import axios from 'axios'
 import { pascalCase } from "pascal-case";
+import logo from './logo.png'
 
 export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo,setIsLoggedIn}) {
 	const [visible, setVisibility] = useState(true)
@@ -105,10 +106,12 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 	return (
 		<div className={history1 === '/' || history1 === '' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
-				<a href="/" id="unihomes">
-					<MdHome className="home-logo"/>Unihomes
+
+				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
+				<img src={logo} alt="" style={{height:"40px"}}></img> UniLive
 				</a>
 			</div>
+			
 			<div className="search-toggle" style={styles}>
 				<input type="search" placeholder="Search homes by cities..." value={search} onChange={e => setSearch(e.target.value)} onKeyPress={onSearch} list='browsers'/>
 			</div>

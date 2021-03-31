@@ -85,7 +85,7 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
       </div>
       <div className="reg-email">
       <label for="email" >Email</label>
-      <input value={email} onChange={e => setEmail(e.target.value)} type="email" id="email" placeholder="Enter Email adress" name="email" required/>
+      <input value={email} onChange={e => setEmail(e.target.value)} type="email" id="email" placeholder="Enter Email address" name="email" required/>
       </div>
       <div className="reg-password">
       <label for="reg-password" >Password</label>

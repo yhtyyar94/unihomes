@@ -12,7 +12,7 @@
 
 .contact-us-header {
 	height: 153px;
-	background-color: #03c5f0;
+	background-color: rgb(0, 191, 255);
 	text-align: center;
 	width: 100%;
 	padding-top: 50px;
@@ -54,14 +54,14 @@
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 20px;
-	color: #03c5f0;
+	color: rgb(0, 191, 255);
 	background-color: #fff;
 	border-radius: 5px;
 }
 
 .contact-us-form > input {
 	height: 42px;
-	border: solid 1px #03c5f0;
+	border: solid 1px rgb(0, 191, 255);
 	border-radius: 3px;
 	padding-left: 7px;
 	font-family: Roboto;
@@ -73,10 +73,10 @@
 }
 
 .contact-us-form > textarea {
-	border: solid 1px #03c5f0;
+	border: solid 1px rgb(0, 191, 255);
 	border-radius: 3px;
 	height: 112px;
-	border-radius: '3px';
+	border-radius: 3px;
 	margin-bottom: 20px;
 	font-family: Roboto;
 	padding: 5px;
@@ -91,7 +91,7 @@
 }
 
 .contact-us-form > select {
-	border: solid 1px #03c5f0;
+	border: solid 1px rgb(0, 191, 255);
 	border-radius: 3px;
 	height: 42px;
 	font-family: Roboto;
@@ -116,7 +116,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	flex: 4;
-	background-color: #03c5f0;
+	background-color: rgb(0, 191, 255);
 	margin-top: 50px;
 	margin-bottom: 70px;
 	margin-right: 60px;
@@ -165,4 +165,93 @@
 
 .contact-us-side-bar-contact-details {
 	margin-left: 5px;
+}
+
+@media (max-width: 1366px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 360px) {
+	.contact-us-header {
+		height: 100px;
+	}
+	.contact-us-title {
+		font-size: 28px;
+	}
+	.contact-us-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.contact-us-main-side {
+		flex: none;
+	}
+	.contact-us-form {
+		margin-bottom: 30px;
+		margin-left: 0px;
+		width: 300px;
+		padding: 30px;
+		font-size: 14px;
+		line-height: 15px;
+	}
+	.contact-us-form > input {
+		height: 26px;
+	}
+
+	.contact-us-form > input::placeholder {
+		font-size: 12px;
+	}
+
+	.contact-us-form > textarea {
+		height: 100px;
+		margin-bottom: 30px;
+	}
+
+	.contact-us-form > textarea::placeholder {
+		font-size: 12px;
+	}
+
+	.contact-us-form > select {
+		height: 26px;
+		padding-left: 5px;
+		font-size: 12px;
+	}
+
+	.btn-contact-us-page-form-submit {
+		height: 38px;
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+
+	.contact-us-side-bar {
+		flex: none;
+		margin-top: 20px;
+		margin-bottom: 50px;
+		margin-right: 0px;
+		width: 300px;
+		padding-bottom: 20px;
+	}
+
+	.contact-us-side-bar-title {
+		padding: 15px;
+		font-size: 18px;
+	}
+
+	.contact-us-side-bar-email {
+		margin-bottom: 10px;
+		padding: 5px;
+		font-size: 13px;
+	}
+
+	.contact-us-side-bar-phone {
+		padding: 5px;
+		font-size: 13px;
+	}
+
+	.contact-us-side-bar-contact-details {
+		margin-left: 5px;
+	}
 }

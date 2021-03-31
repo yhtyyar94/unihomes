@@ -85,13 +85,7 @@
   border-radius: 5px;
 }
 
-.search-toggle input::placeholder {
 
-}
-
-.heart-number-zero {
-
-}
 .heart-number {
   position: absolute;
   margin-left: +0.2%;
@@ -105,7 +99,7 @@
   right: 0;
   z-index: 30;
   width: 25%;
-  height: 72%;
+  height: 59%;
   overflow: hidden;
   background: #00bfff;
   border-radius: 3px;
@@ -169,7 +163,7 @@
   right: 0;
   z-index: 30;
   width: 25%;
-  height: 80%;
+  height: 70%;
   overflow: hidden;
   background: #00bfff;
   border-radius: 3px;
@@ -178,10 +172,6 @@
 
 .regScroll {
   position: fixed;
-}
-
-.registerTxt {
-  overflow: hidden;
 }
 
 .logTitle {
@@ -296,7 +286,7 @@
 .registerPlc {
   position: absolute;
   width: 100%;
-  height: 117px;
+  height: 120px;
   left: 0px;
   top: 333px;
   background: #ffffff;
@@ -310,6 +300,7 @@
   background: #ffffff;
 }
 .registerTxt {
+  overflow: hidden;
   position: absolute;
   width: 218px;
   height: 30px;
@@ -382,9 +373,10 @@
 
 .close-logo {
   float: right;
-  margin-right: 20px;
+  margin-right: 45px;
   cursor: pointer;
 }
+
 
 @media only screen and (min-width: 772px) {
 
@@ -393,6 +385,7 @@
     height: 30px;
     border: 2px solid #333;
     border-radius: 5px;
+
   }
 }
 
@@ -438,6 +431,87 @@
     position: absolute;
     margin-left: +0.9%;
     font-size: 12px;
+  }
+  .logContainer {
+    height: 44%;
+  }
+  .login-email {
+    margin-top: 45%;
+  }
+  .loginBtn {
+    height: 35px;
+    left: 10px;
+    font-size: 18px;
+  }
+  .agentBtn {
+    height: 30px;
+    left: 10px;
+    font-size: 15px;
+  }
+  .registerTxt {
+    font-size: 20px;
+  }
+  .close-logo {
+    float: right;
+    margin-right: 20px;
+    cursor: pointer;
+    margin-top: 3px;
+  }
+  .logTitle {
+    font-size: 20px;
+  }
+  .reg-company {
+    margin-top: +37%;
+  }
+  .regContainer {
+    height: 49%;
+  }
+  .reg-company label,
+  .reg-email label,
+  .reg-password label,
+  .reg-repassword label {
+    margin-top: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14px;
+    color: #ffffff;
+    overflow: hidden;
+  }
+  .login-email label,
+  .login-password label {
+    font-size: 14px;
+  }
+  .login-email input,
+  .login-password input,
+  .reg-company input,
+  .reg-email input,
+  .reg-password input,
+  .reg-repassword input {
+    padding: 7px;
+  }
+  .signupBtn {
+    height: 40px;
+    left: 10px;
+    font-size: 18px;
+  }
+  .loginBtn2 {
+    height: 30px;
+    left: 10px;
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .logContainer {
+    width: 50%;
+    height: 70%;
+  }
+  .login-email {
+    margin-top: 45%;
+  }
+  .regContainer {
+    width: 50%;
+    height: 80%;
   }
 }
 
