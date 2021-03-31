@@ -292,7 +292,9 @@ export default function HomeDetails({
 						<div className="homedetails-rooms-count-type-container">
 							<div className="homedetails-rooms-count-bedroom">
 								<p>Bedrooms</p>
-								<div style={{ textAlign: 'center' }}>
+								<div
+									style={{ textAlign: 'center', padding: '2px 0px' }}
+								>
 									<FaBed
 										style={{
 											fill: '#03c5f0',
