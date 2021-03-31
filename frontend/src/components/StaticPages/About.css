@@ -107,6 +107,9 @@
 }
 
 @media (max-width: 360px) {
+	.about-header {
+		height: 100px;
+	}
 	.aboutus-title {
 		font-size: 28px;
 	}

@@ -69,6 +69,9 @@
 }
 
 @media (max-width: 360px) {
+	.policies-header {
+		height: 100px;
+	}
 	.policies-title {
 		font-size: 28px;
 	}

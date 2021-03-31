@@ -58,6 +58,7 @@
 @media (max-width: 360px) {
 	.terms-header {
 		margin-bottom: 48px;
+		height: 100px;
 	}
 
 	.terms-title {
