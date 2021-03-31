@@ -72,6 +72,10 @@
 	font-size: 16px;
 }
 
+.contact-us-form > label {
+	padding: 5px 0px;
+}
+
 .contact-us-form > textarea {
 	border: solid 1px rgb(0, 191, 255);
 	border-radius: 3px;
