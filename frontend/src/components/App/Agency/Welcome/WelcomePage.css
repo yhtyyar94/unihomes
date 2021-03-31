@@ -1,30 +1,71 @@
-
 .welcomePage {
+  margin-top: 70px;
+  margin-bottom: 0px;
+  color: white;
+  background: url("https://i.postimg.cc/7Lwx6b4Y/hom.jpg") center/cover
+    no-repeat;
+  height: 750px;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.welpage {
+  /* background: rgba( 3,197,240,0.3); */
+  background: rgba(9, 0, 0, 0.4);
+  height: 750px;
+  width: 100%;
+  text-align: center;
+}
+.welpage > h1 {
+  font-size: 60px;
+  margin-top: 15%;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 768px) {
+  .welpage {
+    /* background: rgba( 3,197,240,0.3); */
+    background: rgba(9, 0, 0, 0.4);
+    height: 600px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+  }
+  .welpage > h1 {
+    font-size: 50px;
+    margin-top: 30%;
+    font-weight: bolder;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .welcomePage {
     margin-top: 60px;
     margin-bottom: 0px;
     color: white;
-    background:  url("https://i.postimg.cc/7Lwx6b4Y/hom.jpg") center/cover
-     no-repeat;
-    height: 600px;
+    background: url("https://i.postimg.cc/7Lwx6b4Y/hom.jpg") center/cover
+      no-repeat;
+    height: 400px;
     width: 100%;
-    font-size: 20px;
+    font-size: 14px;
     text-align: center;
-    text-transform: capitalize; 
- 
+    text-transform: capitalize;
+  }
 
-}
-
-.welpage{
-    background: rgba( 3,197,240,0.3);
-    /* background: rgba(9, 0, 0, 0.6); */
-
-    height: 600px;
+  .welpage {
+    /* background: rgba( 3,197,240,0.3); */
+    background: rgba(9, 0, 0, 0.4);
+    height: 400px;
     width: 100%;
     text-align: center;
- 
-}
-.welpage> h1{
-font-size: 50px;
-margin-top: 15%;
- 
+  }
+  .welpage > h1 {
+    font-size: 40px;
+    margin-top: 40%;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    line-height: 35px;
+  }
 }
