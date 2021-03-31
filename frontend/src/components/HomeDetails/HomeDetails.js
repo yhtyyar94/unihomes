@@ -37,7 +37,7 @@ export default function HomeDetails({
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:5000/homes/${id}`)
+			.get(`http://localhost:5001/api/getproperties/${id}`)
 			.then((res) => {
 				setFirstImg(res.data.images[0]);
 				setSecondImg(res.data.images[1]);
@@ -60,7 +60,7 @@ export default function HomeDetails({
 			localStorage.setItem('shortlist', '[]');
 		}
 		let idList = JSON.parse(localStorage.getItem('shortlist'));
-		idList.push(home.id);
+		idList.push(home._id);
 		localStorage.setItem('shortlist', JSON.stringify(idList));
 		setShortlist(idList);
 	};
@@ -69,7 +69,7 @@ export default function HomeDetails({
 		let newShortlist = shortlist;
 
 		for (let i = 0; i < newShortlist.length; i++) {
-			if (newShortlist[i] === home.id) {
+			if (newShortlist[i] === home._id) {
 				newShortlist.splice(i, 1);
 			}
 		}
@@ -353,7 +353,7 @@ export default function HomeDetails({
 						</button>
 						<div style={{ textAlign: 'center', marginBottom: 20 }}>
 							<div className="shortlist-btn">
-								{shortlist.includes(home.id) ? (
+								{shortlist.includes(home._id) ? (
 									<p onClick={removeFromShortlist}>
 										{' '}
 										<BsHeartFill fill="red" /> &nbsp;{' '}

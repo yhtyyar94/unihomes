@@ -98,6 +98,17 @@ exports.getSingleProperty = async (req, res) => {
         }
     })
 }
+exports.getSingleCity = async (req, res) => {
+    const propertyId = req.params.name
+
+    await PropertiesModel.find({cityName:propertyId}, (err, data) => {
+        if(err) {
+            res.status(500).json({message:err})
+        } else {
+            res.status(200).json(data)
+        }
+    })
+}
 
 exports.createProperty = async (req, res) => {
 
