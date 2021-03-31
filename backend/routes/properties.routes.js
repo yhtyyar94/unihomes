@@ -7,6 +7,7 @@ const propertyController = require('../controllers/property.controller')
 
 router.get('/getproperties', propertyController.getAllProperties)
 router.get('/getproperties/:id', propertyController.getSingleProperty)
+router.get('/getpropertiesbyuser/:userId', propertyController.getAllPropertiesByUser)
 router.get('/getproperties/name/:name', propertyController.getSingleCity)
 router.post('/createproperty', upload.array('images'), propertyController.createProperty)
 router.put('/properties/update/:id', upload.array('images'), propertyController.updateProperty)
