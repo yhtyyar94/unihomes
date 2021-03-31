@@ -7,14 +7,14 @@ import { useHistory  } from "react-router-dom";
 
 
 
-const Properties = () => {
+const Properties = ({userInfo}) => {
 
     const [properties,setProperties] = useState([]);
-    
+ 
     const history=useHistory();
     useEffect(() => {
         axios
-          .get(`http://localhost:5001/api/getproperties`)
+          .get(`http://localhost:5001/api/getpropertiesbyuser/${userInfo.data._id}`)
           .then((res) => setProperties(res.data))
           .catch((err) => console.log(err));
       }, []);

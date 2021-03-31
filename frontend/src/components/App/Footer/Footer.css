@@ -118,10 +118,7 @@
 	.footer-title {
 		font-size: 19px;
 	}
-	#nav-footer > nav > ul > li {
-		margin-right: 30px;
-		font-size: 16px;
-	}
+
 	.sm-icons {
 		display: flex;
 		margin-top: 15px;
@@ -148,6 +145,6 @@
 
 	#nav-footer > nav > ul > li {
 		margin-right: 8px;
-		font-size: 8px;
+		font-size: 7px;
 	}
 }

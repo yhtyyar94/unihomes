@@ -48,12 +48,12 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
                 </div>    
                 <div className="rent-area">
                         <div style={{marginLeft:"-5%"}}>
-                            <p style={{fontSize:"20px",padding:0,paddingLeft:20}}><span style={{fontSize:"27px"}}>£{home.rent} </span>pppw including bills</p>
+                            <p className="rent-text"><span className="rent-span">£{home.rent} </span>pppw including bills</p>
                         </div>
 
-                        <div style={{fontSize:"22px"}}><FaBed size={22}  style={{fill:"white",paddingTop:"6px",marginLeft:"70px"}}/>  &nbsp; {home.bedroom}</div>
-
-                        <div style={{fontSize:"22px"}}><FaBath size={17}  style={{fill:"white",paddingBottom:"1px"}}/>  &nbsp; {home.bathroom}</div> 
+                        <div style={{fontSize:"22px",marginRight:"10px"}}><FaBed  className="bed-icon" size={22} />  &nbsp; {home.bedroom}</div>
+                       
+                        <div style={{fontSize:"22px",marginRight:"8px"}}><FaBath size={17}  style={{fill:"white",paddingBottom:"1px"}}/>  &nbsp; {home.bathroom}</div> 
                       
                 </div>
                
@@ -72,7 +72,7 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
                     {shortlist && shortlist.includes(home._id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
                     : <p onClick={addToShortlist}> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>}
                     </div>
-                  
+                   
                     <Link className="view-btn" to={`/homedetails/${home._id}`}><FaHome style={{fill:"white"}}/> <IoHomeOutline/> &nbsp; View Home</Link>
                
                 </div>          

@@ -10,13 +10,22 @@ import { CgProfile } from 'react-icons/cg';
 import { RiLogoutBoxFill } from 'react-icons/ri';
 import { BsHeartFill } from "react-icons/bs";
 import {  useHistory} from 'react-router'
+import axios from 'axios'
+import { pascalCase } from "pascal-case";
 import logo from './logo.png'
 
 export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo,setIsLoggedIn}) {
 	const [visible, setVisibility] = useState(true)
 	const [history1, setHistory] = useState('/')
 	const [search, setSearch] = useState('')
+	const [cities, setCities] = useState([])
 	const history = useHistory()
+
+	useEffect(() => {
+		if(window.location.pathname !== '/') {
+			document.querySelector("#header").className = "scroll";
+		}
+	},[])
 
 
 	const changeClass = () => {
@@ -45,6 +54,8 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 		window.addEventListener("scroll", changeClass)
 		window.addEventListener("click", changeUrl)	
 		changeUrl()
+		axios.get('http://localhost:5001/api/getcities').then(res => setCities(res.data)).catch(err => console.log(err))
+		cities && document.querySelector('input[list="browsers"]').addEventListener('input', onInput);
 	},[])
 
 	const logout = () => {
@@ -59,20 +70,50 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 	}
 
 	const onSearch = (e) => {
-		setSearch(e.target.value)
-
+		if(cities.length === 0) return
+		if(e.key === 'Enter') {
+			for (let i = 0; i < document.querySelector('#browsers').children.length; i++) {
+				if(document.querySelector('#browsers').children[i].label.toLowerCase() === search.toLowerCase()) {
+					history.push(`/cities/${pascalCase(search)}/`)
+					document.querySelector("#header").className = "scroll";
+				} else {
+					setSearch('')
+				}
+				
+			}
+		}
 	}
 
+	
+
+	
+
+	function onInput(e) {
+   var input = e.target
+     var  val = input.value;
+      var list = input.getAttribute('list')
+     var  options = document.getElementById(list).childNodes;
+
+  for(var i = 0; i < options.length; i++) {
+    if(options[i].innerText === val) {
+		history.push(`/cities/${val}`)
+		document.querySelector("#header").className = "scroll";
+      break;
+    }
+  }
+}
+	
 	return (
 		<div className={history1 === '/' || history1 === '' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
+
 				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
 				<img src={logo} alt="" style={{height:"40px"}}></img> UniLive
 				</a>
 			</div>
 			
 			<div className="search-toggle" style={styles}>
-				<input type="search" placeholder="Search accommodation by cities..." value={search} onChange={onSearch} data-list='list'/>
+				<input type="search" placeholder="Search homes by cities..." value={search} onChange={e => setSearch(e.target.value)} onKeyPress={onSearch} list='browsers'/>
 			</div>
 			{!isLoggedIn ? <div className="header-items">
 				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
@@ -80,7 +121,7 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 				</a>
 			   {shortlist.length===0 
 			   ? <a href="/shortlists" className="navbar-item">
-			   <span className="heart-number-zero">{shortlist.length}</span><BsHeartFill fill="white" /> Shortlist 
+			   <span className="heart-number-zero"></span><BsHeartFill fill="white" /> Shortlist 
 			   </a>
 			   : <a href="/shortlists" className="navbar-item">
 			   <span className="heart-number">{shortlist.length}</span><BsHeartFill fill="red" /> Shortlist 
@@ -93,7 +134,7 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 				<a  className="navbar-item" onClick={toggleLogin}>
 					<MdPerson /> Login
 				</a>
-			</div> : <div className="agency">
+			</div> : <div className="header-items">
 				<a className="navbar-item btn" onClick={() => history.push('/agency/addproperty')}>
 					<BiLayerPlus className="search-logo"/> Add Property
 				</a>
@@ -107,6 +148,9 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 					<RiLogoutBoxFill /> Log out
 				</a>
 			</div>}
+			<datalist id="browsers">
+				{cities && cities.map((city, index) => <option key={index} id={city._id} value={city.name} >{city.name}</option>)}
+			</datalist>
 		</div>
 	);
 }
