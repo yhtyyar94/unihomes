@@ -15,11 +15,12 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
      
     
       
-      const addToShortlist=()=>{     
+    const addToShortlist=()=>{     
             let idList = JSON.parse(localStorage.getItem('shortlist'))
-            idList.push(home.id)
+            idList.push(home._id)
             localStorage.setItem('shortlist',JSON.stringify(idList))
             setShortlist(idList)
+            console.log(home._id)
       } 
 
 
@@ -29,7 +30,7 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
 
         for( let i = 0; i < newShortlist.length; i++){ 
     
-            if ( newShortlist[i] === home.id) { 
+            if ( newShortlist[i] === home._id) { 
         
                 newShortlist.splice(i, 1); 
             }
@@ -38,12 +39,12 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
     setShortlist(newShortlist)
     changeShortlist()
 
-}
+    }
  console.log(shortlist)
     return ( 
         <div className="city">
                 <div className="home-img">
-                    <img src={home.images[0]} alt="home" style={{width:"100%",height:"auto",marginBottom:"-4px"}} />
+                    <img src={`http://localhost:5001/${home.images[0].filePath}`} alt="home" style={{width:"100%",height:"auto",marginBottom:"-4px"}} />
                 </div>    
                 <div className="rent-area">
                         <div style={{marginLeft:"-5%"}}>
@@ -62,17 +63,17 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
                 </div>
 
                 <div className="address-area">
-                    <p style={{padding:"7px",marginLeft:"8px"}}><MdLocationOn fill="#03c5f0" size={20}/>{home.address.street} Street, {home.address.district}, {home.address.postcode}</p>
+                    <p style={{padding:"7px",marginLeft:"8px"}}><MdLocationOn fill="#03c5f0" size={20}/>{home.address[0]} Street, {home.address[1]}, {home.address[3]}</p>
                 </div>
  
-                <div className="buttons">
-                    <div className="shortlist-btn">
+                <div className="buttons"> 
+                    <div className="shortlist-btn"> 
                    
-                    {shortlist && shortlist.includes(home.id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
+                    {shortlist && shortlist.includes(home._id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
                     : <p onClick={addToShortlist}> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>}
                     </div>
                   
-                    <Link className="view-btn" to={`/homedetails/${home.id}`}><FaHome style={{fill:"white"}}/> <IoHomeOutline/> &nbsp; View Home</Link>
+                    <Link className="view-btn" to={`/homedetails/${home._id}`}><FaHome style={{fill:"white"}}/> <IoHomeOutline/> &nbsp; View Home</Link>
                
                 </div>          
         </div>
