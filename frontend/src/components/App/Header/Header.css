@@ -103,7 +103,7 @@
   right: 0;
   z-index: 30;
   width: 25%;
-  height: 59%;
+  height: 72%;
   overflow: hidden;
   background: #00bfff;
   border-radius: 3px;
@@ -167,7 +167,7 @@
   right: 0;
   z-index: 30;
   width: 25%;
-  height: 70%;
+  height: 80%;
   overflow: hidden;
   background: #00bfff;
   border-radius: 3px;
@@ -176,6 +176,10 @@
 
 .regScroll {
   position: fixed;
+}
+
+.registerTxt {
+  overflow: hidden;
 }
 
 .logTitle {
@@ -290,7 +294,7 @@
 .registerPlc {
   position: absolute;
   width: 100%;
-  height: 120px;
+  height: 117px;
   left: 0px;
   top: 333px;
   background: #ffffff;
@@ -304,7 +308,6 @@
   background: #ffffff;
 }
 .registerTxt {
-  overflow: hidden;
   position: absolute;
   width: 218px;
   height: 30px;
