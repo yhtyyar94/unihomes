@@ -404,7 +404,7 @@ export default function HomeDetails({
 							<div>
 								<h4 className="book-viewing-form-address">
 									{home.length !== 0 && home.address[0]},{' '}
-									{home.length !== 0 && home.address[1]},
+									{home.length !== 0 && home.address[1]},{' '}
 									{home.length !== 0 && home.address[2]}
 									<br />
 									{home.length !== 0 && home.cityName},{' '}
