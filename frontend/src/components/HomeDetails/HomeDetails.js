@@ -258,9 +258,7 @@ export default function HomeDetails({
 									<span
 										style={{ marginLeft: '20px' }}
 									>{`Bedroom ${room}`}</span>
-									<span
-										style={{ marginLeft: '70%', marginRight: '20px' }}
-									>
+									<span style={{ marginRight: '20px' }}>
 										{home.rent} per week
 									</span>
 								</div>
@@ -325,7 +323,10 @@ export default function HomeDetails({
 											marginLeft: 8,
 										}}
 									/>
-									<span style={{ fontSize: 12 }}>
+									<span
+										className="homedetails-rooms-type-type"
+										style={{ fontSize: 12 }}
+									>
 										{home.length !== 0 && home.type}
 									</span>
 								</div>
@@ -334,6 +335,7 @@ export default function HomeDetails({
 						<br />
 						<hr />
 						<h4
+							className="homedetails-sidebar-pppw"
 							style={{
 								textAlign: 'center',
 								paddingTop: 8,
@@ -363,14 +365,17 @@ export default function HomeDetails({
 								) : (
 									<p onClick={addToShortlist}>
 										{' '}
-										<BsHeart className="heart-icon" /> &nbsp;{' '}
+										<BsHeart className="heart-icon" /> &nbsp;
 										<span className="short-btn">Shortlist</span>
 										<span className="add-btn">Add</span>
 									</p>
 								)}
 							</div>
 						</div>
-						<div style={{ textAlign: 'center' }}>
+						<div
+							className="homedetails-sidebar-bills"
+							style={{ textAlign: 'center' }}
+						>
 							<img
 								src={bill}
 								alt="bills"
