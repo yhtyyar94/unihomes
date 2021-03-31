@@ -520,5 +520,24 @@
     width: 50%;
     height: 80%;
   }
+
+  .header .header-items a {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .header .search-toggle input {
+    
+  }
+
+  .scroll .search-toggle input {
+ 
+  }
+
+  .header .header-items a {
+    font-size: 15px;
+  }
 }
 
