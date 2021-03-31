@@ -107,6 +107,7 @@ li {
 }
 
 .homedetails-main-availability-date {
+	flex-wrap: wrap;
 	border: solid 1px lightgray;
 	background-color: #f3f3f3;
 	font-weight: 800;
@@ -205,6 +206,10 @@ li {
 	border-radius: 10px;
 	border: none;
 	z-index: 5050000000;
+}
+
+.homedetails-sidebar-address {
+	padding: 5px;
 }
 
 .btn-book-viewing-page-close {

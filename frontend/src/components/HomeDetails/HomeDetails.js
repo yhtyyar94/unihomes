@@ -39,7 +39,7 @@ export default function HomeDetails({
 		axios
 			.get(`http://localhost:5001/api/getproperties/${id}`)
 			.then((res) => {
-				setFirstImg(res.data.images[0]);
+				// setFirstImg(`http://localhost:5001/${home.images[0].filePath}`);
 				setSecondImg(res.data.images[1]);
 				setThirdImg(res.data.images[2]);
 				setFourthImg(res.data.images[3]);
@@ -272,20 +272,21 @@ export default function HomeDetails({
 					<div className="homedetails-main-availability">
 						<h3 style={{ marginBottom: '20px' }}>Availability</h3>
 						<span className="homedetails-main-availability-date">
-							From {home.availability}
+							{/* From {home.availability[0]} {'     '}to{' '}
+							{home.availability[1]} */}
 						</span>
 					</div>
 				</div>
 				<div className="homedetails-sidebar-container">
 					<div className="btn-book-viewing-container">
-						<h3>
-							{home.length !== 0 && home.address.street},{' '}
-							{home.length !== 0 && home.address.district}
+						<h3 className="homedetails-sidebar-address">
+							{home.length !== 0 && home.address[0]},{' '}
+							{home.length !== 0 && home.address[1]}
 						</h3>
 						<br />
-						<h3>
-							{home.length !== 0 && home.address.city},{' '}
-							{home.length !== 0 && home.address.postcode}
+						<h3 className="homedetails-sidebar-address">
+							{home.length !== 0 && home.cityName},{' '}
+							{home.length !== 0 && home.address[3]}
 						</h3>
 						<div className="homedetails-rooms-count-type-container">
 							<div className="homedetails-rooms-count-bedroom">
@@ -395,11 +396,12 @@ export default function HomeDetails({
 							</div>
 							<div>
 								<h4 className="book-viewing-form-address">
-									{home.length !== 0 && home.address.street},{' '}
-									{home.length !== 0 && home.address.district}
+									{home.length !== 0 && home.address[0]},{' '}
+									{home.length !== 0 && home.address[1]},
+									{home.length !== 0 && home.address[2]}
 									<br />
-									{home.length !== 0 && home.address.city},{' '}
-									{home.length !== 0 && home.address.postcode}
+									{home.length !== 0 && home.cityName},{' '}
+									{home.length !== 0 && home.address[3]}
 								</h4>
 							</div>
 							<div>
