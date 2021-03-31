@@ -41,11 +41,6 @@ const Shortlist = ({shortlist, setShortlist, changeShortlist}) => {
             <div className="shortlist-body" style={{backgroundColor:"#e5e5e5"}}>
                 {homesShortlist && homesShortlist.map(item => <City home={item} shortlist={shortlist} setShortlist={setShortlist} changeShortlist={changeShortlist}/>)}
             </div>
-
-            <div className="book-viewings">
-                <button> <div className="icon"><BiEnvelope/></div>Book Viewings for All</button>
-            </div>
-     
         </div>
     )
 }

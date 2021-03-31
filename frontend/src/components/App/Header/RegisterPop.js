@@ -62,9 +62,11 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
             document.querySelector("#header").className = "scroll";
             setIsLoggedIn(true)
             setSignUp(false)
+            sessionStorage.setItem('userInfo', JSON.stringify(promise))
+        setUserInfo(res.data)
           }, 3000)
         }
-        setUserInfo(res.data)
+        
       }
     }).catch((err) => console.log(err))
     

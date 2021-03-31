@@ -87,6 +87,12 @@ exports.getAllProperties = async (req, res) => {
     res.json(properties)
 }
 
+exports.getAllPropertiesByUser = async (req, res) => {
+    const id = req.params.userId
+    const properties = await PropertiesModel.find({user: id})
+    res.json(properties)
+}
+
 exports.getSingleProperty = async (req, res) => {
     const propertyId = req.params.id
 

@@ -38,15 +38,30 @@ export default function App() {
 	const [shortlist ,setShortlist] = useState([])
 	const [jwt, setJwt] = useState()
 	const [userInfo, setUserInfo] = useState()
+	console.log(userInfo)
 
 	const changeShortlist = () => {
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
 	};
 
 	useEffect(() => {
-		if(window.location.pathname === '/agency/welcomepage' || window.location.pathname === '/agency/properties' || window.location.pathname === '/agency/addproperty' || window.location.pathname === '/agency/myprofile' || window.location.pathname.startsWith === '/agency') {
+		
+		if(window.location.pathname !== '/') {
+			document.querySelector("#header").className = "scroll";
+		}
+	},[])
+
+	useEffect(() => {
+		if(window.location.pathname.startsWith === '/agency') {
 			setIsLoggedIn(true)
 			document.querySelector("#header").className = "scroll";
+		}
+
+		if(window.location.pathname !== '/') {
+			document.querySelector("#header").className = "scroll";
+		}
+		if(JSON.parse(sessionStorage.getItem('userInfo'))) {
+			setIsLoggedIn(true)
 		}
 		setUserInfo(JSON.parse(sessionStorage.getItem('userInfo')))
 	
@@ -125,7 +140,7 @@ export default function App() {
 				<LoginPop  setSignUp={setSignUp} register={register} setLog={setLog} setIsLoggedIn={setIsLoggedIn} setUserInfo={setUserInfo}/>
 			) : null}
 			{signup === true ? (
-				<RegisterPop setUserInfo={setUserInfo} register={register} backtoLogin={backtoLogin} setSignUp={setSignUp} setIsLoggedIn={setIsLoggedIn}/>
+				<RegisterPop setUserInfo={setUserInfo} setLog={setLog} register={register} backtoLogin={backtoLogin} setSignUp={setSignUp} setIsLoggedIn={setIsLoggedIn}/>
 			) : null}
 			
 				<Switch>
