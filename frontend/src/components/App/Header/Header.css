@@ -32,6 +32,10 @@
   overflow-y: hidden;
 }
 
+.header .header-items a {
+  font-size: 18px;
+}
+
 .home-logo {
   margin-bottom: -5px;
   transition: all 0.3;
