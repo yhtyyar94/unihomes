@@ -60,7 +60,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
   }, [cityname]);
 
   return (
-    <div style={{ paddingTop: "100px" }}>
+    <div style={{ paddingTop: "80px" }}>
       <div className="filter">
       
 
@@ -70,7 +70,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
           ) : null
         )}
 
-        <form style={{ display: "flex" }}>
+        <form style={{ display: "flex"}}>
           <div className="form-select">
             <label>Bedroom</label>
             <select
@@ -106,7 +106,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
                 <option value={number}>£{number}</option>
               ))}
             </select>
-          </div>
+          </div> 
           <div className="form-select">
             <label>Home Type</label>
             <select
@@ -123,7 +123,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
       <div>
         <div style={{ backgroundColor: "#e5e5e5", padding: "20px" }}>
           {bedroom === "allbedrooms" || !bedroom ? (
-            <h3>
+            <h3 className="home-number">
               {
                 homesCity.filter((home) => home.cityName === cityname)
                   .length
