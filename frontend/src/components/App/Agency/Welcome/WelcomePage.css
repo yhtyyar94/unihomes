@@ -29,7 +29,7 @@
   .welpage {
     /* background: rgba( 3,197,240,0.3); */
     background: rgba(9, 0, 0, 0.4);
-    height: 600px;
+    height: 750px;
     width: 100%;
     text-align: center;
     font-size: 30px;
@@ -38,6 +38,7 @@
     font-size: 50px;
     margin-top: 30%;
     font-weight: bolder;
+   
   }
 }
 @media only screen and (max-width: 360px) {
