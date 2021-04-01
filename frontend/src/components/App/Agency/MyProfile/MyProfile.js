@@ -5,24 +5,36 @@ import { useForm } from "react-hook-form";
 
 const MyProfile = ({ userInfo }) => {
   const { register, handleSubmit } = useForm();
-  const [fullname, setFullName] = useState("");
-  const [lastname, setLastName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newpassword, setNewpassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
 
+
+ 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/getagents")
+      .then(result => {
+        console.log(result.data);
+      })
+      .catch(error => console.log(error));
+  }, [setFirstName]);
+
+
   useEffect(() => {
     setEmail(userInfo.data.email);
   }, []);
 
   useEffect(() => {
-    setFullName(userInfo.data.fullname);
+    setFirstName(userInfo.data.firstName);
   }, []);
 
   useEffect(() => {
-    setLastName(userInfo.data.lastname);
+    setLastName(userInfo.data.lastName);
   }, []);
   useEffect(() => {
     setCompany(userInfo.data.company);
@@ -57,12 +69,12 @@ const MyProfile = ({ userInfo }) => {
           <div className="profile-right">
             <p>
               <label for="firstName">First Name :</label>
-              <input ref={register}type="text" id="firstName" name="firstName"
+              <input value={firstName} type="text" id="firstName" name="firstName"
               />
             </p>
             <p>
               <label for="lastName">Last Name :</label>
-              <input ref={register} type="text" id="lastName" name="lastName" />
+              <input value={lastName}  type="text" id="lastName" name="lastName" />
             </p>
             <p>
               <label for="company">Company :</label>
@@ -84,7 +96,7 @@ const MyProfile = ({ userInfo }) => {
               <label for="confirmpassword">Confirm New Password :</label>
               <input   value={confirmpassword}   type="password"  id="confirmpassword"    name="confirmpassword" />
             </p>
-            <button>Update</button>
+            <button >Update</button>
           </div>
         </form>
         </div>
