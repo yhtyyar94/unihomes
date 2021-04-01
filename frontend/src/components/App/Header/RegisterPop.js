@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, {useEffect, useState} from 'react'
 import {RiCloseFill} from 'react-icons/ri'
-import "./Header.css"
+import "./LoginReg.css"
 import {useHistory} from 'react-router'
 import SuccessMessage from './SuccessMessage'
 
