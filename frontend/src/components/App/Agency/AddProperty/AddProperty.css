@@ -249,7 +249,7 @@ a {
     }
 }
 
-@media only screen and (max-width: 370) {
+@media only screen and (max-width: 370px) {
   .add-form{
       display: flex;
       flex-direction: column;
@@ -260,5 +260,24 @@ a {
       display: flex !important;
       flex-direction: column !important;
       justify-content: center !important;
+      margin-bottom: 0 !important;
+  }
+
+  .row div {
+      margin-top: 1%;
+  }
+
+  .row input, .row select {
+      border-radius: 5px;
+  }
+
+  .row9 {
+    margin-bottom: 2% !important;
+    display: block;
+    align-items: center !important; 
+  }
+
+  .row9 input {
+      border-radius: 5px;
   }
 }

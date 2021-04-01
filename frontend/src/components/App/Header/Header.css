@@ -226,18 +226,29 @@
 }
 
 @media only screen and (max-width: 769px) {
-  .header .search-toggle input {
-  }
-
-  .scroll .search-toggle input {
-  }
 
   .header .header-items a {
     font-size: 15px;
   }
 
   #agencypage {
-    margin-left: auto;
-    margin-bottom: auto;
+    position: fixed;
+    top: 5%;
+    right: 5%;
+  }
+}
+
+@media only screen and (max-width: 361px) {
+
+  #agencypage {
+    position: relative;
+    top: 0;
+  }
+}
+@media only screen and (max-width: 665px) {
+
+  #agencypage {
+    position: relative;
+    top: 0;
   }
 }
