@@ -20,7 +20,7 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
 
   const scrollFunctionLog = () => {
     if (window.pageYOffset > 0) {
-      document.querySelector('.regContainer').className = 'regContainer regScroll'
+      document.querySelector('#regContainer').className = 'regContainer regScroll'
     }
   }
 
@@ -34,6 +34,13 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
   const signup = (e) => {
     e.preventDefault()
     if(password !== confirm) {
+      alert('Password did not match')
+      document.querySelector('#reg-password').style.background = 'red'
+      document.querySelector('#con-repassword').style.background = 'red'
+      setTimeout(() => {
+        document.querySelector('#reg-password').style.background = '#ececfb'
+        document.querySelector('#con-repassword').style.background = '#ececfb'
+      }, 1000)
       return
     }
     axios.post('http://localhost:5001/signup', {
@@ -56,14 +63,14 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
         sessionStorage.setItem('token', JSON.stringify(promise.token))
         if(promise.status) {
           setSeccessMessage(true)
+            sessionStorage.setItem('userInfo', JSON.stringify(promise))
+            setUserInfo(res.data)
           setTimeout(() => {
             setSeccessMessage(false)
             history.push('/agency/welcomepage')
             document.querySelector("#header").className = "scroll";
             setIsLoggedIn(true)
             setSignUp(false)
-            sessionStorage.setItem('userInfo', JSON.stringify(promise))
-        setUserInfo(res.data)
           }, 3000)
         }
         
@@ -73,7 +80,7 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
   }
 
   return (
-    <div className="regContainer">
+    <div className="regContainer" id="regContainer">
 
     {seccessMessage && <SuccessMessage />}
     <form onSubmit={signup}>
@@ -92,8 +99,8 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
       <input value={password} onChange={e => setPassword(e.target.value)} type="password" id="reg-password" placeholder="Create a password" name="reg-password" required/>
       </div>
       <div className="reg-repassword">
-      <label for="reg-repassword" >Confirm password</label>
-      <input value={confirm} onChange={e => setConfirm(e.target.value)} type="password" id="reg-repassword" placeholder="Enter password again" name="reg-repassword" required/>
+      <label for="con-repassword" >Confirm password</label>
+      <input value={confirm} onChange={e => setConfirm(e.target.value)} type="password" id="con-repassword" placeholder="Enter password again" name="reg-repassword" required/>
       </div>
       <button className="signupBtn" >Sign Up</button>
       

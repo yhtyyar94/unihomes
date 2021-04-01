@@ -23,34 +23,35 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
       sessionStorage.setItem('token', JSON.stringify(promise.token))
       
       if(promise.status) {
-        // window.location.href = '/agency/welcomepage'
+        sessionStorage.setItem('userInfo', JSON.stringify(promise))
+        setUserInfo(promise)
         history.push('/agency/welcomepage')
         document.querySelector("#header").className = "scroll";
         setIsLoggedIn(true)
         setLog(false)
-        sessionStorage.setItem('userInfo', JSON.stringify(promise))
-      setUserInfo(promise)
       } else {
         alert('Wrong email or password')
         return
       }
       delete promise.data.password
       
-      sessionStorage.setItem('userInfo', JSON.stringify(promise))
-      setUserInfo(promise)
+      // sessionStorage.setItem('userInfo', JSON.stringify(promise))
+      // setUserInfo(promise)
   }
  
   const scrollFunctionLog = () => {
     if (window.pageYOffset > 0) {
-      document.querySelector('.logContainer').className = 'logContainer logScroll'
+      document.querySelector('#logContainer').className = 'logContainer logScroll'
     }
   }
+
 
   useEffect(() => {
     window.addEventListener('scroll', scrollFunctionLog)
     return () => {
       window.removeEventListener('scroll', scrollFunctionLog)
     }
+    
   },[])
 
   if(isLoggedIn) {
@@ -59,7 +60,7 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
 
 
   return (
-    <div className="logContainer">
+    <div className="logContainer" id="logContainer">
 
     <form onSubmit={Login}>
       <div className="logTitle">Agent Login <RiCloseFill className="close-logo" onClick={() => setLog(false)}/> </div>

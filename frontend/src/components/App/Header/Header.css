@@ -1,6 +1,13 @@
 * {
   overflow-x: hidden;
 }
+.App {
+  font-family: Roboto;
+}
+
+.App button:focus, .App button:active {
+  border: none !important;
+}
 
 .header {
   display: flex;
@@ -96,13 +103,13 @@
 }
 
 .logContainer {
-  position: absolute;
+  position: fixed;
   display: inline;
-  top: 90px;
+  margin-top: 7%;
   right: 0;
   z-index: 30;
   width: 25%;
-  height: 59%;
+  height: 72%;
   overflow: hidden;
   background: #00bfff;
   border-radius: 3px;
@@ -154,19 +161,20 @@
 
 .logScroll {
   position: fixed;
+  margin-top: 7%;
 }
 .regScroll {
   position: fixed;
 }
 
 .regContainer {
-  position: absolute;
+  position: fixed;
   display: inline;
-  top: 90px;
+  margin-top: 7%;
   right: 0;
   z-index: 30;
   width: 25%;
-  height: 68%;
+  height: 80%;
   overflow: hidden;
   background: #00bfff;
   border-radius: 3px;

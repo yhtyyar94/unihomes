@@ -17,6 +17,7 @@ const Properties = ({userInfo}) => {
           .get(`http://localhost:5001/api/getpropertiesbyuser/${userInfo.data._id}`)
           .then((res) => setProperties(res.data))
           .catch((err) => console.log(err));
+          window.scroll(0,0)
       }, []);
 
 const deleteProperty = (id) =>{

@@ -26,6 +26,7 @@ const Shortlist = ({shortlist, setShortlist, changeShortlist}) => {
           });
         }
         setHomesShortlist(array)
+        window.scroll(0,0)
       }, []);
 
     return ( 

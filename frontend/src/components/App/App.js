@@ -127,7 +127,7 @@ export default function App() {
 	};
 
 	return (
-		<div>
+		<div className="App">
 <Router>
 			<Header
 				toggleLogin={toggleLogin}

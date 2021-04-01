@@ -25,7 +25,7 @@ export default function Search({cities}) {
     
     return (   
      
-        <div className="container" id="search">
+        <div className="container">
                 <div className="banner">
                     <div className="banner-text">
                         <h1>Find student homes with bills included</h1>
@@ -34,7 +34,7 @@ export default function Search({cities}) {
                     </div>
                     <div className="overlay"></div> 
                     <div className='form-container'>
-                            <form className="form-search">
+                            <form className="form-search" id="search">
                                     <select required  className="select-search" onChange={(e)=>setCityName(e.target.value)}  >
                                     <option value="">Search by city</option>
                                         {cities.map(city=>
@@ -50,7 +50,7 @@ export default function Search({cities}) {
                                {/* <button type="submit" className="btn-search" onClick={handleSubmit}>Find Homes</button> */}
 
                                {cityName===''
-                                     ? <button type="submit" className="btn-search-disabled" >Find Homes</button>
+                                     ? <button id="search" type="submit" className="btn-search-disabled" >Find Homes</button>
                                      : <button type="submit" className="btn-search" onClick={handleSubmit}>Find Homes</button>
                                      }
                             </form>     

@@ -91,6 +91,7 @@
   height: 350px;
   width: 100%;
   overflow: hidden;
+  align-items: center;
 
 }
 
@@ -158,6 +159,12 @@
   font-family: Roboto;
   font-weight: 200;
   align-items: center;
+
+}
+
+.banner-text h1 {
+  overflow: hidden;
+margin-bottom: +15%;
 
 }
 
