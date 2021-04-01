@@ -15,6 +15,7 @@ const Footer = () => {
 					<form id="form-keepintouch">
 						<input
 							id="input-keepintouch"
+							type="email"
 							placeholder="Enter your email address..."
 						/>
 					</form>

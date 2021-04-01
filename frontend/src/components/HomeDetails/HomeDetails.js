@@ -25,24 +25,22 @@ export default function HomeDetails({
 
 	let history = useHistory();
 
+	const[imageIndex,setImageindex]=useState(0)
 	const [bookViewing, setBookViewing] = useState(false);
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
-	const [firstImg, setFirstImg] = useState(null);
+	const [firstImg, setFirstImg] = useState(home.length!==0 && `http://localhost:5001/${home.images[imageIndex].filePath}`);
 	const [secondImg, setSecondImg] = useState(null);
 	const [thirdImg, setThirdImg] = useState(null);
 	const [fourthImg, setFourthImg] = useState(null);
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [rowsOfBedroomPrices, setRowsOfBedroomPrices] = useState([]);
+	
 
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5001/api/getproperties/${id}`)
 			.then((res) => {
-				// setFirstImg(`http://localhost:5001/${home.images[0].filePath}`);
-				setSecondImg(res.data.images[1]);
-				setThirdImg(res.data.images[2]);
-				setFourthImg(res.data.images[3]);
 				setHome(res.data);
 			})
 			.catch((err) => console.log(err));
@@ -86,36 +84,24 @@ export default function HomeDetails({
 		setRowsOfBedroomPrices([...rooms]);
 	}, [home.bedroom]);
 
-	const handleSecondImg = () => {
-		setFirstImg(secondImg);
-		setFourthImg(firstImg);
-		setSecondImg(thirdImg);
-		setThirdImg(fourthImg);
-	};
-	const handleThirdImg = () => {
-		setFirstImg(thirdImg);
-		setFourthImg(firstImg);
-		setSecondImg(secondImg);
-		setThirdImg(fourthImg);
-	};
-	const handleFourthImg = () => {
-		setFirstImg(fourthImg);
-		setFourthImg(firstImg);
-		setSecondImg(secondImg);
-		setThirdImg(thirdImg);
-	};
+
 	const handleRightSwipe = () => {
-		setFirstImg(secondImg);
-		setFourthImg(firstImg);
-		setSecondImg(thirdImg);
-		setThirdImg(fourthImg);
+		imageIndex < home.images.length -1
+		? setImageindex(imageIndex+1)
+		: setImageindex(0)
+		
+
 	};
 	const handleLeftSwipe = () => {
-		setFirstImg(fourthImg);
-		setFourthImg(thirdImg);
-		setSecondImg(firstImg);
-		setThirdImg(secondImg);
+		imageIndex <= 0
+		? setImageindex(home.images.length -1)
+		: setImageindex(imageIndex-1)
 	};
+	
+	const changeImage=(index)=>{
+		setImageindex(index)
+		
+	}
 
 	return (
 		<div>
@@ -185,12 +171,11 @@ export default function HomeDetails({
 								onClick={handleLeftSwipe}
 								fill="white"
 							/>
+
 							<img
 								onDoubleClick={() => setModalIsOpen(true)}
-								src={
-									home.length !== 0 &&
-									`http://localhost:5001/${home.images[0].filePath}`
-								}
+								src={home.length !== 0 &&
+									`http://localhost:5001/${home.images[imageIndex].filePath}`}
 								style={{ borderRadius: '3px' }}
 								alt=""
 							/>
@@ -199,10 +184,14 @@ export default function HomeDetails({
 						<div
 							style={{ display: 'flex', justifyContent: 'space-around' }}
 						>
-							<img
-								onClick={handleSecondImg}
+
+							{home.length!==0 && home.images.map((image,index)=>
+
+                              index!==0 ? 
+								<img
+                                onClick={()=>changeImage(index)}
 								src={home.length !== 0 &&
-									`http://localhost:5001/${home.images[1].filePath}`}
+									`http://localhost:5001/${home.images[index].filePath}`}
 								alt=""
 								style={{
 									height: 'auto',
@@ -211,31 +200,11 @@ export default function HomeDetails({
 									flex: 4,
 									borderRadius: '3px',
 								}}
-							/>
-							<img
-								onClick={handleThirdImg}
-								src={thirdImg}
-								alt=""
-								style={{
-									height: 'auto',
-									width: '30%',
-									margin: '1%',
-									flex: 4,
-									borderRadius: '3px',
-								}}
-							/>
-							<img
-								onClick={handleFourthImg}
-								src={fourthImg}
-								alt=""
-								style={{
-									height: 'auto',
-									width: '30%',
-									margin: '1%',
-									flex: 4,
-									borderRadius: '3px',
-								}}
-							/>
+								/> : null
+						
+						)}
+						
+					
 						</div>
 					</div>
 
@@ -371,7 +340,7 @@ export default function HomeDetails({
 										<BsHeart className="heart-icon" /> &nbsp;
 										<span className="short-btn">Shortlist</span>
 										<span className="add-btn">Add</span>
-									</p>
+									</p> 
 								)}
 							</div>
 						</div>

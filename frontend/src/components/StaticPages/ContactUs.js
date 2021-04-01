@@ -40,7 +40,10 @@ const ContactUs = () => {
 							<label>Message</label>
 							<br />
 							<textarea placeholder="Text message..." required />
-							<button className="btn-contact-us-page-form-submit">
+							<button
+								className="btn-contact-us-page-form-submit"
+								onClick={() => window.scroll(0, 0)}
+							>
 								Submit
 							</button>
 						</form>
@@ -51,8 +54,12 @@ const ContactUs = () => {
 					<div className="contact-us-side-bar-email">
 						<BiEnvelope style={{ fill: 'white' }} />
 						<span className="contact-us-side-bar-contact-details">
-							<a href="mailto:hello@unihomes.co.uk" target="_blank">
-								hello@unihomes.co.uk
+							<a
+								href="mailto:hello@unilive.co.uk"
+								target="_blank"
+								rel="noreferrer"
+							>
+								contact@unilive.co.uk
 							</a>
 						</span>
 					</div>
