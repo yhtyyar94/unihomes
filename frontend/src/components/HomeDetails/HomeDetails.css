@@ -137,6 +137,7 @@ li {
 .homedetails-rooms-count-bedroom {
 	flex: 4;
 	font-family: Roboto;
+	height: auto;
 }
 .homedetails-rooms-count-bathroom {
 	flex: 4;
