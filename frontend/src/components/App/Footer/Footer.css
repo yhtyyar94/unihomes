@@ -90,6 +90,17 @@
 	color: black;
 }
 
+@media (max-width: 1024px) {
+	#nav-footer {
+		padding: 15px 0;
+	}
+
+	#nav-footer > nav > ul > li {
+		margin-right: 50px;
+		font-size: 18px;
+	}
+}
+
 @media (max-width: 768px) {
 	#input-keepintouch {
 		width: 350px;

@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #03c5f0;
+  background: rgb(0, 191, 255);
   height: 150px;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@
 .shortlist-counter {
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
+  margin: 2%;
 }
 
 .shortlist-counter h3 {
@@ -92,6 +92,8 @@
   width: 100%;
   overflow: hidden;
   align-items: center;
+  background: url("https://i.postimg.cc/tTD20Kn4/Group-65.png") top left/cover
+    no-repeat;
 }
 
 .container-text p {
@@ -165,6 +167,33 @@
   margin-bottom: +15%;
 }
 
+.overlay-top-cities {
+  width: 100%;
+  height: 280px ;
+  top: 70px;
+  background: rgba(0, 191, 255, 0.69);
+  position: absolute;
+}
+
+.banner-top-cities {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.banner-text-top-cities {
+  position: absolute;
+  z-index: 22;
+  color: #ffffff;
+  height: 280px !important;
+  top: 70px !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 768px) {
   .banner-text h1 {
     overflow: hidden;
@@ -185,3 +214,5 @@
     text-align: center;
   }
 }
+
+

@@ -219,9 +219,13 @@
     border: 2px solid #333;
     border-radius: 5px;
   }
+
+  #agencypage a{
+    font-size: 13px;
+  }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   .header .search-toggle input {
   }
 
@@ -230,5 +234,10 @@
 
   .header .header-items a {
     font-size: 15px;
+  }
+
+  #agencypage {
+    margin-left: auto;
+    margin-bottom: auto;
   }
 }

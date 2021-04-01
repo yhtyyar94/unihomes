@@ -14,7 +14,7 @@ const Shortlist = ({shortlist, setShortlist, changeShortlist}) => {
 
     useEffect(() => {
         setShortlistLocal(JSON.parse(localStorage.getItem('shortlist')))
-        console.log(JSON.parse(localStorage.getItem('shortlist')))
+       
         let array =[]
         for(let i = 0; i < JSON.parse(localStorage.getItem('shortlist')).length; i++) {
             axios.get(`http://localhost:5001/api/getproperties/${JSON.parse(localStorage.getItem('shortlist'))[i]}`)

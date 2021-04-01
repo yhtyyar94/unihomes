@@ -116,12 +116,13 @@ export default function HomeDetails({
 					content: {
 						padding: 2,
 						height: 700,
+				
 					},
 				}}
 			>
 				{/* <button onClick={()=>setModalIsOpen(false)}>X</button> */}
 				<img
-					src={firstImg && firstImg}
+					src={home.length!==0 && `http://localhost:5001/${home.images[imageIndex].filePath}`}
 					style={{
 						borderRadius: '3px',
 						height: '99%',

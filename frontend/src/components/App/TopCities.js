@@ -18,11 +18,11 @@ const TopCities = () => {
   
 	return (
 		<div className="container">
-			<div className="banner top-cities">
-				<div className="banner-text">
+			<div className="top-cities">
+				<div className="banner-text-top-cities">
 					<h1>Student Accommodation</h1>
 				</div>
-				<div className="overlay" />
+				<div className="overlay-top-cities" />
 			</div>
 			<div className="container-text">
 				<p>
