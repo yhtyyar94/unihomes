@@ -28,7 +28,9 @@ const deleteProperty = (id) =>{
 
 }
 
-
+useEffect(() => {
+    window.scroll(0, 0);
+}, []);
     return (
 
      <div id="properties">

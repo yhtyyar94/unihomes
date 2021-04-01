@@ -10,6 +10,11 @@ const WelcomePage = ({userInfo}) => {
       }, []);
       
     console.log(userInfo)
+	useEffect(() => {
+		window.scroll(0, 0);
+	}, []);
+
+
     return (
         <div className="welcomePage">
             <div className="welpage">

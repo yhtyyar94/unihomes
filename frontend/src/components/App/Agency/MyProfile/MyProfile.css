@@ -41,6 +41,7 @@
 }
 
 .profile-right {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 650px;
@@ -179,7 +180,7 @@ font-size: 1.4rem;
     display: grid;
     grid-template-columns: auto ;
     grid-gap: 1px;
-    height: 400px;
+    height: 500px;
   }
    
   .profile-img {
@@ -214,19 +215,23 @@ margin-top: -12px;;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 820px;
+    height: 750px;
     width: 80%;
     margin-left: 20px;
-    margin-top: 5px;
+    margin-top: 0px;
+   
  
   }
-  
+  .profile-right>p{
+    margin: 1px;
+  }
   #profile-right .profile-right label {
-   height: 30px;
+   height: 25px;
     width: 200px;
-    padding-top: 0px;
+    padding-top: 6px;
     font-size: 1rem;
     font-weight: bold;
+       margin-top: 1px;
    }
   
   #profile-right .profile-right input {
@@ -234,7 +239,7 @@ margin-top: -12px;;
     border: none;
     height: 35px;
     width: 400px;
-    margin-top: -5px;
+    margin-top: 0px;
     font-size: 1rem;
 
   }
