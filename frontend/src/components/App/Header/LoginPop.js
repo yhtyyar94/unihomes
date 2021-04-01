@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import {RiCloseFill} from 'react-icons/ri'
 import axios from 'axios'
-import "./Header.css"
+import "./LoginReg.css"
 import { Redirect, useHistory } from 'react-router'
 
 export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, setUserInfo, setSignUp}) {

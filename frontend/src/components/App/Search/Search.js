@@ -26,8 +26,8 @@ export default function Search({cities}) {
     return (   
      
         <div className="container">
-                <div className="banner">
-                    <div className="banner-text">
+                <div className="search-container">
+                    <div className="search-container-text">
                         <h1>Find student homes with bills included</h1>
                         <h5>A simple and faster way to search for student accommodation</h5>
                      
@@ -40,7 +40,7 @@ export default function Search({cities}) {
                                         {cities.map(city=>
                                             <option value={city.name}>{city.name}</option>
                                             )}
-                                        
+                                         
                                     </select>  
                                     <select className="select-search" onChange={(e)=>setRoomNum(e.target.value)}>
                                             <option value="">Any bedroom</option>
