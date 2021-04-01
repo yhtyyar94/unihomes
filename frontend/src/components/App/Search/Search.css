@@ -264,7 +264,7 @@
 /* Galaxy S5 Screen */
 
 @media (max-width: 360px) {
-  .search-container-text {
+  .search-container {
     height: 300px;
   }
   .search-container-text > h1 {
