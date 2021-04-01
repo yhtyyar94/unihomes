@@ -105,7 +105,10 @@ const Policies = () => {
 			<div className="btn-search-compate-container">
 				<div className="btn-search-compare-container">
 					<a href="/">
-						<button className="btn-search-compare">
+						<button
+							className="btn-search-compare"
+							onClick={() => window.scroll(0, 0)}
+						>
 							Search and Compare
 						</button>
 					</a>

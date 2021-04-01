@@ -61,6 +61,14 @@
 	align-items: center;
 }
 
+.btn-search-compare-container:focus {
+	outline: 0;
+}
+.btn-search-compare-container:active {
+	outline: none;
+	border: none;
+}
+
 .btn-search-compare {
 	width: 452px;
 	height: 75px;
