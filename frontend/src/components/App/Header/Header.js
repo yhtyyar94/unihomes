@@ -134,7 +134,7 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 				<a  className="navbar-item" onClick={toggleLogin}>
 					<MdPerson /> Login
 				</a>
-			</div> : <div className="header-items">
+			</div> : <div className="header-items agencypage" id="agencypage">
 				<a className="navbar-item btn" onClick={() => history.push('/agency/addproperty')}>
 					<BiLayerPlus className="search-logo"/> Add Property
 				</a>
