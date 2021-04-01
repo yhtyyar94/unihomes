@@ -10,34 +10,45 @@ const About = () => {
 			<div className="aboutus-content">
 				<div>
 					<h2 className="aboutus-content-title">
-						We make finding your perfect student home a whole lot simpler.
+						We help finding your dream student home.
 					</h2>
 				</div>
 				<div className="aboutus-content-text-container">
 					<p className="aboutus-content-text">
-						Founded in 2015, UniHomes is a trusted platform where students
-						can find university accommodation with one unique,
-						all-important twist: the price of every property on the
-						UniHomes website includes utility bills. Our transparent
-						approach to advertising accommodation means students can
-						budget effectively and are safe in the knowledge that there
-						are no additional or hidden costs within the rental price.
+						UniLive lorem ipsum dolor sit amet, consectetur adipiscing
+						elit. Fusce id odio quis sem euismod eleifend quis eu lacus.
+						Quisque quis lacinia magna. Vivamus ornare libero magna, eget
+						sodales sem sagittis at. Morbi justo orci, fermentum vitae
+						blandit ac, efficitur sit amet augue. Orci varius natoque
+						penatibus et magnis dis parturient montes, nascetur ridiculus
+						mus. Suspendisse ac nisi sem. Etiam congue massa a ipsum
+						iaculis vestibulum. Suspendisse sodales, elit quis imperdiet
+						ullamcorper, velit nisi suscipit augue, eget faucibus massa
+						lacus vitae mi. Vestibulum condimentum, justo nec tempus
+						viverra, neque metus laoreet elit, a consequat risus velit ut
+						erat.
 					</p>
 					<p className="aboutus-content-text">
-						Born in Sheffield, UniHomes was created by industry
-						professionals and ex-students as a platform to help students
-						easily identify their ideal accommodation, while Letting
-						Agents are also able to use the service to advertise their
-						properties effectively. Whether you’re a student in search of
-						your perfect university home or an agent looking for a simple
-						property marketing solution, UniHomes provides a practical and
-						straightforward system for all.
+						Nunc in auctor ligula. Sed eget suscipit arcu. Mauris nec
+						lorem est. Phasellus a dapibus mi. Suspendisse ultricies urna
+						vitae orci volutpat, eu consequat nibh condimentum. In hac
+						habitasse platea dictumst. Quisque ultricies nibh eu nulla
+						interdum finibus. Fusce euismod odio vitae eros dignissim, vel
+						bibendum ante lacinia. Duis imperdiet eget enim quis
+						vestibulum. Suspendisse rutrum, odio id dignissim semper, odio
+						risus varius augue, eu mollis quam libero nec purus. Integer
+						pellentesque id elit condimentum commodo. Orci varius natoque
+						penatibus et magnis dis parturient montes, nascetur ridiculus
+						mus. Quisque aliquam blandit elit a venenatis.
 					</p>
 				</div>
 			</div>
 			<div className="btn-search-compare-container">
 				<a href="/">
-					<button className="btn-search-compare">
+					<button
+						className="btn-search-compare"
+						onClick={() => window.scroll(0, 0)}
+					>
 						Search and Compare
 					</button>
 				</a>
