@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './MainContent.css'
 import axios from "axios";
 import { useHistory } from "react-router";
+import {Link} from 'react-router-dom'
 
 
   const MainContent = () => {
@@ -14,7 +15,7 @@ import { useHistory } from "react-router";
         .catch((err) => console.log(err));
     }, []);
   console.log(images);
-  
+
     return (
         <div className="mainContent">
     <div className="main-title">
@@ -22,15 +23,15 @@ import { useHistory } from "react-router";
     </div>
    
    
-    <div className="main-image">
+    <div  className="main-image">
     {images.length !== 0 && images.slice(0, 9).map((image) => (
-            <div className="main-image-all">
+            <Link to={`/cities/${image.name}`} className="main-image-all">
             <img src={image.url}></img>
            <div  className="top-text">
               <h3>{image.name}</h3>
               <p>{image.properties.length} properties</p>
               </div>
-              </div>
+              </Link>
             ))}
 
     </div>
