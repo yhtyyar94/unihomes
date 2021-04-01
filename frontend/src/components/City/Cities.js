@@ -49,7 +49,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/api/getproperties/name/${cityname}`)
+      .get(`https://unilive-backend.herokuapp.com/api/getproperties/name/${cityname}`)
       .then((res) => {
         setHomesCity(res.data);
         console.log(res.data)

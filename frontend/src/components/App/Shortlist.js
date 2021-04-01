@@ -17,7 +17,7 @@ const Shortlist = ({shortlist, setShortlist, changeShortlist}) => {
        
         let array =[]
         for(let i = 0; i < JSON.parse(localStorage.getItem('shortlist')).length; i++) {
-            axios.get(`http://localhost:5001/api/getproperties/${JSON.parse(localStorage.getItem('shortlist'))[i]}`)
+            axios.get(`https://unilive-backend.herokuapp.com/api/getproperties/${JSON.parse(localStorage.getItem('shortlist'))[i]}`)
           .then((res) => {
             array.push(res.data)
           })
