@@ -13,7 +13,7 @@ import { useHistory } from "react-router";
         .then((res) => setImages(res.data))
         .catch((err) => console.log(err));
     }, []);
-  
+  console.log(images);
   
     return (
         <div className="mainContent">
@@ -25,18 +25,10 @@ import { useHistory } from "react-router";
     <div className="main-image">
     {images.length !== 0 && images.slice(0, 9).map((image) => (
             <div className="main-image-all">
-              {/*} role="image" aria-label="image description"
-              style={{ 
-                backgroundImage: `url(${image.image})`,
-                backgroundRepeat: 'no-repeat',  
-                backgroundPosition: 'center',
-                backgroundSize: 'cover'
-              }} >  */}   
-
-           <img src={image.url}></img>
+            <img src={image.url}></img>
            <div  className="top-text">
               <h3>{image.name}</h3>
-              <p > 26 properties</p>
+              <p>{image.properties.length} properties</p>
               </div>
               </div>
             ))}
@@ -66,7 +58,7 @@ import { useHistory } from "react-router";
         <p>Bills are included in all rent prices. No hidden fees.</p>
         </div>
     </div>
-    <div><a href="#search"><button className="box-btn" >Search and Compare</button></a></div>
+    <div className="orange"><a href="#search"><button className="box-btn" >Search and Compare</button></a></div>
 
     </div>
    
