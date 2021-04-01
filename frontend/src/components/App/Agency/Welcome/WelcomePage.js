@@ -6,7 +6,7 @@ import './WelcomePage.css'
 const WelcomePage = ({userInfo}) => {
     const [company, setCompany] = useState("");
     useEffect(() => {
-        setCompany(userInfo.data.company);
+       userInfo && setCompany(userInfo.data.company);
       }, []);
       
     console.log(userInfo)

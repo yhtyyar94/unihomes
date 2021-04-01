@@ -201,7 +201,8 @@ export default function HomeDetails({
 						>
 							<img
 								onClick={handleSecondImg}
-								src={secondImg}
+								src={home.length !== 0 &&
+									`http://localhost:5001/${home.images[1].filePath}`}
 								alt=""
 								style={{
 									height: 'auto',
