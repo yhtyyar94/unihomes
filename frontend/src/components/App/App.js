@@ -76,7 +76,7 @@ export default function App() {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:5001/api/getproperties')
+			.get('https://unilive-backend.herokuapp.com/api/getproperties')
 			.then((res) => {
 				setHomes(res.data);
 			})
@@ -87,7 +87,7 @@ export default function App() {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:5001/api/getcities')
+			.get('https://unilive-backend.herokuapp.com/api/getcities')
 			.then((res) => {
 				setCities(res.data);
 			})

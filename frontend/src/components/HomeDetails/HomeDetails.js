@@ -29,7 +29,7 @@ export default function HomeDetails({
 	const [bookViewing, setBookViewing] = useState(false);
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
-	const [firstImg, setFirstImg] = useState(home.length!==0 && `http://localhost:5001/${home.images[imageIndex].filePath}`);
+	const [firstImg, setFirstImg] = useState(home.length!==0 && `https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`);
 	const [secondImg, setSecondImg] = useState(null);
 	const [thirdImg, setThirdImg] = useState(null);
 	const [fourthImg, setFourthImg] = useState(null);
@@ -39,7 +39,7 @@ export default function HomeDetails({
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:5001/api/getproperties/${id}`)
+			.get(`https://unilive-backend.herokuapp.com/api/getproperties/${id}`)
 			.then((res) => {
 				setHome(res.data);
 			})
@@ -122,7 +122,7 @@ export default function HomeDetails({
 			>
 				{/* <button onClick={()=>setModalIsOpen(false)}>X</button> */}
 				<img
-					src={home.length!==0 && `http://localhost:5001/${home.images[imageIndex].filePath}`}
+					src={home.length!==0 && `https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`}
 					style={{
 						borderRadius: '3px',
 						height: '99%',
@@ -176,7 +176,7 @@ export default function HomeDetails({
 							<img
 								onDoubleClick={() => setModalIsOpen(true)}
 								src={home.length !== 0 &&
-									`http://localhost:5001/${home.images[imageIndex].filePath}`}
+									`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`}
 								style={{ borderRadius: '3px' }}
 								alt=""
 							/>
@@ -192,7 +192,7 @@ export default function HomeDetails({
 								<img
                                 onClick={()=>changeImage(index)}
 								src={home.length !== 0 &&
-									`http://localhost:5001/${home.images[index].filePath}`}
+									`https://unilive-backend.herokuapp.com/${home.images[index].filePath}`}
 								alt=""
 								style={{
 									height: 'auto',
