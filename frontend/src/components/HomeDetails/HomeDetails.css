@@ -446,6 +446,7 @@ li {
 		width: 90%;
 		border-radius: 5px;
 		z-index: 5;
+		margin-left: -27px;
 	}
 
 	.btn-book-viewing-page-close {
@@ -492,6 +493,8 @@ li {
 		padding-left: 6px;
 		padding-bottom: 3px;
 		border-radius: 3px;
+		padding-top: 5px;
+		font-size: 8px;
 	}
 	.book-viewing-form input::placeholder {
 		height: 13px;
