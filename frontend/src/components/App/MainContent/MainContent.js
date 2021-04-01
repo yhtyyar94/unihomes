@@ -14,7 +14,11 @@ import {Link} from 'react-router-dom'
         .then((res) => setImages(res.data))
         .catch((err) => console.log(err));
     }, []);
-  console.log(images);
+  // console.log(images);
+	useEffect(() => {
+		window.scroll(0, 0);
+	}, []);
+
 
     return (
         <div className="mainContent">

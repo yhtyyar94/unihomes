@@ -4,7 +4,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 
 const MyProfile = ({ userInfo }) => {
-  const { register, handleSubmit } = useForm();
+ 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [company, setCompany] = useState("");
@@ -13,31 +13,36 @@ const MyProfile = ({ userInfo }) => {
   const [newpassword, setNewpassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
 
+console.log(userInfo)
+ 
 
  
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/getagents")
-      .then(result => {
-        console.log(result.data);
-      })
-      .catch(error => console.log(error));
-  }, [setFirstName]);
 
+  const onSubmit = e =>{
+    e.preventDefault()
+    axios
+    .put(`http://localhost:5001/api/agents/${userInfo.data._id}`,{
+      firstName:firstName,
+      lastName:lastName,
+      company:company
+    })
+    .then(res => {console.log(res.data);
+    })
+    .catch(error => console.log(error));
+  }
 
   useEffect(() => {
     setEmail(userInfo.data.email);
-  }, []);
-
-  useEffect(() => {
     setFirstName(userInfo.data.firstName);
+    setLastName(userInfo.data.lastName);
+    setCompany(userInfo.data.company);
   }, []);
 
+
+
+
   useEffect(() => {
-    setLastName(userInfo.data.lastName);
-  }, []);
-  useEffect(() => {
-    setCompany(userInfo.data.company);
+   
   }, []);
 
   useEffect(() => {
@@ -50,7 +55,7 @@ const MyProfile = ({ userInfo }) => {
   useEffect(() => {
     setConfirmpassword(userInfo.data.password);
   }, []);
-  const onSubmit = (data) => console.log(data);
+ 
 
   return (
     <div id="myprofile">
@@ -65,20 +70,20 @@ const MyProfile = ({ userInfo }) => {
           </p>
         </div>
         <div>
-        <form onSubmit={handleSubmit(onSubmit)} id="profile-right">
+        <form onSubmit={onSubmit} id="profile-right">
           <div className="profile-right">
             <p>
               <label for="firstName">First Name :</label>
-              <input value={firstName} type="text" id="firstName" name="firstName"
+              <input value={firstName} onChange={(e)=>setFirstName(e.target.value)} type="text" id="firstName" name="firstName"
               />
             </p>
             <p>
               <label for="lastName">Last Name :</label>
-              <input value={lastName}  type="text" id="lastName" name="lastName" />
+              <input value={lastName} onChange={(e)=>setLastName(e.target.value)} type="text" id="lastName" name="lastName" />
             </p>
             <p>
               <label for="company">Company :</label>
-              <input value={company} type="text" id="company" name="company" />
+              <input value={company} onChange={(e)=>setCompany(e.target.value)} type="text" id="company" name="company" />
             </p>
             <p>
               <label for="email">Email :</label>
