@@ -37,9 +37,6 @@ console.log(userInfo)
     setFirstName(userInfo.data.firstName);
     setLastName(userInfo.data.lastName);
     setCompany(userInfo.data.company);
-    setPassword(userInfo.data.password);
-    setNewpassword(userInfo.data.password);
-    setConfirmpassword(userInfo.data.password);
   }, []);
 
  
