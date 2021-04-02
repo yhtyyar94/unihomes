@@ -11,7 +11,9 @@
   border-radius: 3px;
   box-shadow: 0 -3px 3px rgb(0 0 0 / 10%), 0 3px 3px #ececfb;
 }
-
+.formLog {
+  height: fit-content;
+}
 .logContainer label,
 .logContainer input {
   display: block !important;
@@ -102,7 +104,7 @@
 
 .logLine {
   position: absolute;
-  width: 340.01px;
+  width: 90%;
   height: 1px;
   left: 8.99px;
   top: 49px;
@@ -227,7 +229,7 @@
 
 .regLine {
   position: absolute;
-  width: 340.01px;
+  width: 90%;
   height: 1px;
   left: 8.99px;
   top: 376px;
@@ -289,6 +291,7 @@
   }
   .loginBtn {
     left: 13px;
+    top: 250px;
   }
   .loginBtn2 {
     left: 13px;
@@ -303,27 +306,38 @@
 
 @media only screen and (max-width: 768px) {
   .logContainer {
-    height: 450px;
+    height: 370px;
   }
   .login-email {
-    margin-top: 45%;
+    margin-top: 35%;
   }
   .loginBtn {
     height: 35px;
     left: 10px;
     font-size: 18px;
+    top: 215px;
+  }
+  .registerPlc {
+    top: 270px;
+  }
+  .registerTxt {
+    top: 275px;
+  }
+  .regLine {
+    top: 310px;
   }
   .agentBtn {
     height: 30px;
     left: 10px;
     font-size: 15px;
+    top: 330px;
   }
   .registerTxt {
     font-size: 20px;
   }
   .close-logo {
     float: right;
-    margin-right: 20px;
+    margin-right: 25px;
     cursor: pointer;
     margin-top: 3px;
   }
@@ -331,10 +345,10 @@
     font-size: 20px;
   }
   .reg-company {
-    margin-top: +37%;
+    margin-top: +30%;
   }
   .regContainer {
-    height: 500px;
+    height: 430px;
   }
   .reg-company label,
   .reg-email label,
@@ -364,24 +378,61 @@
     height: 40px;
     left: 10px;
     font-size: 18px;
+    top: 320px;
   }
   .loginBtn2 {
     height: 30px;
     left: 10px;
     font-size: 15px;
+    top: 390px;
+  }
+  .loginPlc {
+    top: 370px;
   }
 }
 
 @media only screen and (max-width: 360px) {
+  .close-logo {
+    margin-right: 22px;
+  }
+  .logLine {
+    width: 90%;
+  }
   .logContainer {
     width: 50%;
-    height: 450px;
+    height: 380px;
+  }
+  .registerPlc {
+    top: 270px;
+  }
+  .loginBtn {
+    top: 210px;
+  }
+  .registerTxt {
+    top: 280px;
+    left: -20px;
+  }
+  .agentBtn {
+    top: 340px;
+  }
+  .regLine {
+    top: 315px;
+    width: 90%;
   }
   .login-email {
-    margin-top: 45%;
+    margin-top: 35%;
   }
   .regContainer {
     width: 50%;
-    height: 500px;
+    height: 430px;
+  }
+  .signupBtn {
+    top: 320px;
+  }
+  .loginPlc {
+    top: 375px;
+  }
+  .loginBtn2 {
+    top: 390px;
   }
 }
