@@ -1,12 +1,15 @@
 * {
   margin: 0;
 }
-input:focus{
+input:focus {
   outline: 0;
 }
 
-button:focus{
+button:focus {
   outline: 0;
+}
+button:active {
+  transform: translateY(2px);
 }
 .shortlist {
   display: flex;
@@ -175,7 +178,7 @@ button:focus{
 
 .overlay-top-cities {
   width: 100%;
-  height: 280px ;
+  height: 280px;
   top: 70px;
   background: rgba(0, 191, 255, 0.69);
   position: absolute;
@@ -223,7 +226,7 @@ button:focus{
 }
 
 @media only screen and (max-width: 768px) {
-  .banner-text-top-cities{
+  .banner-text-top-cities {
     font-size: medium;
   }
 
@@ -231,5 +234,3 @@ button:focus{
     text-align: center;
   }
 }
-
-
