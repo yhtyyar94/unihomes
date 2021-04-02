@@ -16,12 +16,15 @@
   transform: scale(1.03, 1.03);
   transition: all 0.2s ease-in-out;
 }
+.buttons p {
+  padding: 20px;
+}
 
 .home-img {
-  height: auto;
   width: 100%;
-  margin: 0;
+  margin: none;
   font-family: Roboto;
+  padding: none;
 }
 .rent-area {
   background-color: #03c5f0;

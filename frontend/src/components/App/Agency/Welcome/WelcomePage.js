@@ -3,14 +3,11 @@ import './WelcomePage.css'
 
 
 
-const WelcomePage = ({userInfo}) => {
-    const [company, setCompany] = useState("");
-    useEffect(() => {
-       userInfo && setCompany(userInfo.data.company);
-      }, []);
-      
-    console.log(userInfo)
+const WelcomePage = () => {
+    const [company, setCompany] = useState();
+   
 	useEffect(() => {
+        setCompany(JSON.parse(sessionStorage.getItem('userInfo')).data.company);
 		window.scroll(0, 0);
 	}, []);
 

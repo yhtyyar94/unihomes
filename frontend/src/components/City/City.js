@@ -44,7 +44,7 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
     return ( 
         <div className="city">
                 <div className="home-img">
-                    <img src={`http://localhost:5001/${home.images[0].filePath}`} alt="home" style={{width:"100%",height:"auto",marginBottom:"-4px"}} />
+                    <img  src={`https://unilive-backend.herokuapp.com/${home.images[0].filePath}`} alt="home" style={{width:"100%",height:"auto",marginBottom:"-4px"}} />
                 </div>    
                 <div className="rent-area">
                         <div style={{marginLeft:"-5%"}}>
@@ -55,7 +55,7 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
                        
                         <div style={{fontSize:"22px",marginRight:"8px"}}><FaBath size={17}  style={{fill:"white",paddingBottom:"1px"}}/>  &nbsp; {home.bathroom}</div> 
                       
-                </div>
+                </div> 
                
 
                 <div className="bedroom-area">
@@ -79,3 +79,4 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
         </div>
     ) 
 }
+ 

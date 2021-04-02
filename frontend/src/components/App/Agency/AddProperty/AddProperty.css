@@ -4,11 +4,12 @@ a {
 
 .AddProperty {
     margin-top: 70px;
-    margin-bottom: +5px;
     display:flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    border-top: 2px solid#F49131;
+    border-bottom: 2px solid#F49131;
 }
 
 .addproperty-succes-message {
@@ -238,6 +239,17 @@ a {
     display: block !important;
 }
 
+.row input, .row select, textarea {
+    border-radius: 5px;
+    width: 98%;
+}
+
+.row9 input {
+    border-radius: 5px;
+    width: 10% !important;
+}
+
+
 @media only screen and (max-width: 768px) {
     .row label {
         font-size: 12px;
@@ -247,4 +259,44 @@ a {
         font-size: 10px;
         padding-left: -5px;
     }
+
+    .row9 input {
+        border-radius: 5px;
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+  .add-form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  .row {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      margin-bottom: 0 !important;
+  }
+
+  .row div {
+      margin-top: 1%;
+  }
+
+  .row input, .row select, textarea {
+      border-radius: 5px;
+      width: 98%;
+  }
+
+  .row9 {
+    margin-bottom: 2% !important;
+    display: block;
+    align-items: center !important; 
+  }
+
+  .row9 input {
+      border-radius: 5px;
+      width: 98% !important;
+  }
 }

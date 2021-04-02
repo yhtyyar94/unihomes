@@ -38,7 +38,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
       setHomesCity(homes.filter((home) => home.bathroom === bathroom * 1));
     }
   };
-
+ 
   const filterRent = (rent) => {
     if (rent === "Any") {
       setHomesCity(homes);
@@ -49,7 +49,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/api/getproperties/name/${cityname}`)
+      .get(`https://unilive-backend.herokuapp.com/api/getproperties/name/${cityname}`)
       .then((res) => {
         setHomesCity(res.data);
         console.log(res.data)
@@ -165,7 +165,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
       </div>
 
       <div className="banner-bottom">
-        <div className="text">
+        <div className="banner-bottom-text">
           {cities.map((city) =>
             city.name === cityname ? (
               <h1>Being a student in {city.name} </h1>

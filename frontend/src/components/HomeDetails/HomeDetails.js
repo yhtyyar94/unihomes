@@ -25,21 +25,23 @@ export default function HomeDetails({
 
 	let history = useHistory();
 
-	const[imageIndex,setImageindex]=useState(0)
+	const [imageIndex, setImageindex] = useState(0);
 	const [bookViewing, setBookViewing] = useState(false);
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
-	const [firstImg, setFirstImg] = useState(home.length!==0 && `http://localhost:5001/${home.images[imageIndex].filePath}`);
+	const [firstImg, setFirstImg] = useState(
+		home.length !== 0 &&
+			`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`,
+	);
 	const [secondImg, setSecondImg] = useState(null);
 	const [thirdImg, setThirdImg] = useState(null);
 	const [fourthImg, setFourthImg] = useState(null);
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [rowsOfBedroomPrices, setRowsOfBedroomPrices] = useState([]);
-	
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:5001/api/getproperties/${id}`)
+			.get(`https://unilive-backend.herokuapp.com/api/getproperties/${id}`)
 			.then((res) => {
 				setHome(res.data);
 			})
@@ -84,24 +86,20 @@ export default function HomeDetails({
 		setRowsOfBedroomPrices([...rooms]);
 	}, [home.bedroom]);
 
-
 	const handleRightSwipe = () => {
-		imageIndex < home.images.length -1
-		? setImageindex(imageIndex+1)
-		: setImageindex(0)
-		
-
+		imageIndex < home.images.length - 1
+			? setImageindex(imageIndex + 1)
+			: setImageindex(0);
 	};
 	const handleLeftSwipe = () => {
 		imageIndex <= 0
-		? setImageindex(home.images.length -1)
-		: setImageindex(imageIndex-1)
+			? setImageindex(home.images.length - 1)
+			: setImageindex(imageIndex - 1);
 	};
-	
-	const changeImage=(index)=>{
-		setImageindex(index)
-		
-	}
+
+	const changeImage = (index) => {
+		setImageindex(index);
+	};
 
 	return (
 		<div>
@@ -116,13 +114,15 @@ export default function HomeDetails({
 					content: {
 						padding: 2,
 						height: 700,
-				
 					},
 				}}
 			>
 				{/* <button onClick={()=>setModalIsOpen(false)}>X</button> */}
 				<img
-					src={home.length!==0 && `http://localhost:5001/${home.images[imageIndex].filePath}`}
+					src={
+						home.length !== 0 &&
+						`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`
+					}
 					style={{
 						borderRadius: '3px',
 						height: '99%',
@@ -175,8 +175,10 @@ export default function HomeDetails({
 
 							<img
 								onDoubleClick={() => setModalIsOpen(true)}
-								src={home.length !== 0 &&
-									`http://localhost:5001/${home.images[imageIndex].filePath}`}
+								src={
+									home.length !== 0 &&
+									`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`
+								}
 								style={{ borderRadius: '3px' }}
 								alt=""
 							/>
@@ -185,27 +187,26 @@ export default function HomeDetails({
 						<div
 							style={{ display: 'flex', justifyContent: 'space-around' }}
 						>
-
-							{home.length!==0 && home.images.map((image,index)=>
-
-                              index!==0 ? 
-								<img
-                                onClick={()=>changeImage(index)}
-								src={home.length !== 0 &&
-									`http://localhost:5001/${home.images[index].filePath}`}
-								alt=""
-								style={{
-									height: 'auto',
-									width: '30%',
-									margin: '1%',
-									flex: 4,
-									borderRadius: '3px',
-								}}
-								/> : null
-						
-						)}
-						
-					
+							{home.length !== 0 &&
+								home.images.map((image, index) =>
+									index !== 0 ? (
+										<img
+											onClick={() => changeImage(index)}
+											src={
+												home.length !== 0 &&
+												`https://unilive-backend.herokuapp.com/${home.images[index].filePath}`
+											}
+											alt=""
+											style={{
+												height: 'auto',
+												width: '30%',
+												margin: '1%',
+												flex: 4,
+												borderRadius: '3px',
+											}}
+										/>
+									) : null,
+								)}
 						</div>
 					</div>
 
@@ -221,6 +222,12 @@ export default function HomeDetails({
 								</ul>
 							))}
 					</div>
+
+					<div className="homedetails-main-description">
+						<h3>Description</h3>
+						<p>{home.home_description}</p>
+					</div>
+
 					<div className="homedetails-main-bedroom-prices">
 						<h3 style={{ marginBottom: '20px' }}>Bedroom Prices</h3>
 						{rowsOfBedroomPrices.length !== 0 &&
@@ -233,12 +240,12 @@ export default function HomeDetails({
 										style={{ marginLeft: '20px' }}
 									>{`Bedroom ${room}`}</span>
 									<span style={{ marginRight: '20px' }}>
-										{home.rent} per week
+										£{home.rent} per week
 									</span>
 								</div>
 							))}
 						<div className="homedetails-main-bedroom-prices-deposit">
-							Deposit: {home.deposit}
+							Deposit: £{home.deposit}
 						</div>
 					</div>
 					<div className="homedetails-main-availability">
@@ -253,7 +260,7 @@ export default function HomeDetails({
 					<div className="btn-book-viewing-container">
 						<h3 className="homedetails-sidebar-address">
 							{home.length !== 0 && home.address[0]},{' '}
-							{home.length !== 0 && home.address[1]}
+							{home.length !== 0 && home.address[1]},{' '}
 						</h3>
 						<br />
 						<h3 className="homedetails-sidebar-address">
@@ -263,9 +270,7 @@ export default function HomeDetails({
 						<div className="homedetails-rooms-count-type-container">
 							<div className="homedetails-rooms-count-bedroom">
 								<p>Bedrooms</p>
-								<div
-									style={{ textAlign: 'center', padding: '2px 0px' }}
-								>
+								<div className="homedetails-rooms-count-bedroom-icon">
 									<FaBed
 										style={{
 											fill: '#03c5f0',
@@ -278,7 +283,7 @@ export default function HomeDetails({
 							</div>
 							<div className="homedetails-rooms-count-bathroom">
 								<p>Bathrooms</p>
-								<div style={{ textAlign: 'center' }}>
+								<div className="homedetails-rooms-count-bathroom-icon">
 									<FaBath
 										style={{
 											fill: '#03c5f0',
@@ -291,7 +296,7 @@ export default function HomeDetails({
 							</div>
 							<div className="homedetails-rooms-type">
 								<p>Type</p>
-								<div style={{ textAlign: 'center' }}>
+								<div className="homedetails-rooms-type-icon">
 									<FaRegBuilding
 										style={{
 											fill: '#03c5f0',
@@ -315,7 +320,7 @@ export default function HomeDetails({
 								paddingBottom: 8,
 							}}
 						>
-							{home.rent} pppw including bills
+							£{home.rent} pppw including bills
 						</h4>
 						<hr />
 						<br />
@@ -341,7 +346,7 @@ export default function HomeDetails({
 										<BsHeart className="heart-icon" /> &nbsp;
 										<span className="short-btn">Shortlist</span>
 										<span className="add-btn">Add</span>
-									</p> 
+									</p>
 								)}
 							</div>
 						</div>

@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
     const history=useHistory();
     useEffect(() => {
       axios 
-        .get(`http://localhost:5001/api/getcities/`)
+        .get(`https://unilive-backend.herokuapp.com/api/getcities/`)
         .then((res) => setImages(res.data))
         .catch((err) => console.log(err));
     }, []);
@@ -30,7 +30,7 @@ import {Link} from 'react-router-dom'
     <div  className="main-image">
     {images.length !== 0 && images.slice(0, 9).map((image) => (
             <Link to={`/cities/${image.name}`} className="main-image-all">
-            <img src={image.url}></img>
+            <img src={image.url} alt=""></img>
            <div  className="top-text">
               <h3>{image.name}</h3>
               <p>{image.properties.length} properties</p>
@@ -48,28 +48,28 @@ import {Link} from 'react-router-dom'
     <p className="p">Compare all inclusive student homes.</p>
     <div className="box-cont">
         <div className="box">
-        <img src={process.env.PUBLIC_URL + '/MainContent/img/img1.png'}/>
+        <img src={process.env.PUBLIC_URL + '/MainContent/img/img1.png'} alt=""/>
         <br/><h2>Search</h2>
         <p>Find your dream home in the perfect area near your university.</p>
         </div>
         <div className="box">
-        <img src={process.env.PUBLIC_URL + '/MainContent/img/img2.png'}/>  
+        <img src={process.env.PUBLIC_URL + '/MainContent/img/img2.png'} alt=""/>  
         <br/> <h2>Compare</h2>
         <p>Compare student accommodation to find the right home for you.</p>
         </div>
         <div className="box">
-        <img src={process.env.PUBLIC_URL + '/MainContent/img/img3.png'}/>
+        <img src={process.env.PUBLIC_URL + '/MainContent/img/img3.png'} alt=""/>
         <br/><h2>Bills Included</h2>
         <p>Bills are included in all rent prices. No hidden fees.</p>
         </div>
     </div>
-    <div className="orange"><a href="#search"><button className="box-btn" >Search and Compare</button></a></div>
+    <div className="orange"><a onClick={() => window.scroll(0, 100)} alt=""><button className="box-btn" >Search and Compare</button></a></div>
 
     </div>
    
     <div className="main-con">
         <div className="img-box">
-        <img src={process.env.PUBLIC_URL + '/MainContent/icon/vector.png'}  />
+        <img src={process.env.PUBLIC_URL + '/MainContent/icon/vector.png'} alt="" />
           <br />
           <h3>1000s of Homes</h3>
           <p>
@@ -78,11 +78,11 @@ import {Link} from 'react-router-dom'
           </p>
         </div>
         <div className="img-box1">
-        <img  src={process.env.PUBLIC_URL + '/MainContent/icon/malte.png'}  />
+        <img  src={process.env.PUBLIC_URL + '/MainContent/icon/malte.png'} alt="" />
 
         </div>
         <div className="img-box">
-        <img src={process.env.PUBLIC_URL + '/MainContent/icon/vector1.png'}  />
+        <img src={process.env.PUBLIC_URL + '/MainContent/icon/vector1.png'} alt="" />
         <h3>Save Shortlists</h3>
           <p>
             Shortlist your favourite properties and send enquiries in one click.

@@ -13,7 +13,7 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
   
   const Login = async (e) => {
     e.preventDefault()
-     const promise = await axios.post(`http://localhost:5001/login`, {
+     const promise = await axios.post(`https://unilive-backend.herokuapp.com/login`, {
         email:email,
         password:password
       }).then(res => {console.log(res.data) 
@@ -34,9 +34,6 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
         return
       }
       delete promise.data.password
-      
-      // sessionStorage.setItem('userInfo', JSON.stringify(promise))
-      // setUserInfo(promise)
   }
  
   const scrollFunctionLog = () => {
@@ -62,7 +59,7 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
   return (
     <div className="logContainer" id="logContainer">
 
-    <form onSubmit={Login}>
+    <form className="formLog" onSubmit={Login}>
       <div className="logTitle">Agent Login <RiCloseFill className="close-logo" onClick={() => setLog(false)}/> </div>
 
       <hr className="logLine"/> 
@@ -77,9 +74,11 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
       <button type="submit" className="loginBtn">Login</button>
     </form> 
     <div className="registerPlc"></div>
+    <div className="regContent">
       <div className="registerTxt">Register as a...</div>
       <hr className="regLine"/>
       <button className="agentBtn" onClick={register}>Letting Agent</button>
+      </div>
     </div>
   )
 }

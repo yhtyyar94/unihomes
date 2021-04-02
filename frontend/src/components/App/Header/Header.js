@@ -54,7 +54,7 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 		window.addEventListener("scroll", changeClass)
 		window.addEventListener("click", changeUrl)	
 		changeUrl()
-		axios.get('http://localhost:5001/api/getcities').then(res => setCities(res.data)).catch(err => console.log(err))
+		axios.get('https://unilive-backend.herokuapp.com/api/getcities').then(res => setCities(res.data)).catch(err => console.log(err))
 		cities && document.querySelector('input[list="browsers"]').addEventListener('input', onInput);
 	},[])
 
@@ -102,12 +102,21 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
     }
   }
 }
+
+const goHome = () => {
+	const token = []
+		localStorage.setItem('token', JSON.stringify(token))
+		setUserInfo()
+		setIsLoggedIn(false)
+		sessionStorage.removeItem('userInfo')
+		sessionStorage.removeItem('token')
+}
 	
 	return (
 		<div className={history1 === '/' || history1 === '' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
 
-				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
+				<a href="/" id="unihomes" style={{ fontSize: 35 }} onClick={goHome}>
 				<img src={logo} alt="" style={{height:"40px"}}></img> UniLive
 				</a>
 			</div>
@@ -116,7 +125,7 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 				<input type="search" placeholder="Search homes by cities..." value={search} onChange={e => setSearch(e.target.value)} onKeyPress={onSearch} list='browsers'/>
 			</div>
 			{!isLoggedIn ? <div className="header-items">
-				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
+				<a className="navbar-item btn" onClick={() => setVisibility(!visible)} alt="">
 					<ImSearch className="search-logo"/> Search
 				</a>
 			   {shortlist.length===0 
@@ -135,16 +144,16 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 					<MdPerson /> Login
 				</a>
 			</div> : <div className="header-items agencypage" id="agencypage">
-				<a className="navbar-item btn" onClick={() => history.push('/agency/addproperty')}>
+				<a className="navbar-item btn" onClick={() => history.push('/agency/addproperty')} alt="">
 					<BiLayerPlus className="search-logo"/> Add Property
 				</a>
-				<a className="navbar-item" onClick={() => history.push('/agency/properties')}>
+				<a className="navbar-item" onClick={() => history.push('/agency/properties')} alt="">
 					<FaHome /> Properties
 				</a>
-				<a className="navbar-item" onClick={() => history.push('/agency/myprofile')}>
+				<a className="navbar-item" onClick={() => history.push('/agency/myprofile')} alt="">
 					<CgProfile /> My Profile
 				</a>
-				<a className="navbar-item" onClick={logout}>
+				<a className="navbar-item" onClick={logout} alt="">
 					<RiLogoutBoxFill /> Log out
 				</a>
 			</div>}

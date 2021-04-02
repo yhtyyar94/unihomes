@@ -9,7 +9,7 @@ const TopCities = () => {
 	const history = useHistory()
 
     useEffect(() => {
-        axios.get('http://localhost:5001/api/getcities')
+        axios.get('https://unilive-backend.herokuapp.com/api/getcities')
         .then(res => setCities(res.data))
         .catch(err => console.log(err))
 		window.scroll(0,0)
