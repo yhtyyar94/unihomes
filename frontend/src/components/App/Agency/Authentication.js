@@ -7,7 +7,7 @@ const isAuthenticated = async () => {
   const token = JSON.parse(sessionStorage.getItem('token'))
 
  return new Promise((resolve, reject) => {
-  axios.post('http://localhost:5001/frontend', { 
+  axios.post('https://unilive-backend.herokuapp.com/frontend', { 
     "token": token
     }).then(res => {
       if(res.data.status === true) {

@@ -63,10 +63,9 @@ export default function App() {
 		}
 		setUserInfo(JSON.parse(sessionStorage.getItem('userInfo')))
 	
-	}, [])
+	}, [isLoggedIn])
 
 
-	console.log(userInfo)
 	useEffect(() => {
 		if (localStorage.getItem('shortlist') === null) {
 			localStorage.setItem('shortlist', '[]');

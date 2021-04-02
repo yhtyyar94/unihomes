@@ -43,12 +43,12 @@ const AddProperty = ({userInfo}) => {
 		setCityName('Select City')
 		}
 		axios
-			.get('http://localhost:5001/api/getcities')
+			.get('https://unilive-backend.herokuapp.com/api/getcities')
 			.then((res) => setCities(res.data))
 			.catch((err) => console.log(err));
 		
 		if(id) {
-			axios.get(`http://localhost:5001/api/getproperties/${id}`)
+			axios.get(`https://unilive-backend.herokuapp.com/api/getproperties/${id}`)
 			.then((res => {
 					const {data} = res
 					setRent(data.rent)
@@ -102,11 +102,11 @@ const AddProperty = ({userInfo}) => {
 		formData.append('rent', rent)
 		formData.append('user', userInfo.data._id)
 		if (id) {
-			axios.put(`http://localhost:5001/api/properties/update/${id}`, formData).then(res => {
+			axios.put(`https://unilive-backend.herokuapp.com/api/properties/update/${id}`, formData).then(res => {
 				res.data.message && setSuccessSubmit(true);
 			}).catch(err => console.log(err))
 		} else {
-			axios.post('http://localhost:5001/api/createproperty', formData).then(res => {
+			axios.post('https://unilive-backend.herokuapp.com/api/createproperty', formData).then(res => {
 				res.data.message && setSuccessSubmit(true);
 				console.log(res.data)
 			}).catch(err => console.log(err))

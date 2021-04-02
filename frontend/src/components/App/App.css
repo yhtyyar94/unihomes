@@ -192,6 +192,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: xx-large;
 }
 
 @media only screen and (max-width: 768px) {
@@ -211,6 +212,16 @@
 
   .container-cities div p {
     font-size: 12px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-text-top-cities{
+    font-size: medium;
+  }
+
+  .container-header {
     text-align: center;
   }
 }

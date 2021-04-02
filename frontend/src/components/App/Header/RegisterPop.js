@@ -43,7 +43,7 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
       }, 1000)
       return
     }
-    axios.post('http://localhost:5001/signup', {
+    axios.post('https://unilive-backend.herokuapp.com/signup', {
       email:email.toLowerCase(),
       password:password,
       companyName:companyName
@@ -55,16 +55,17 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
         setPassword('')
         setConfirm('')
       } else {
-        const promise = await axios.post(`http://localhost:5001/login`, {
+        const promise = await axios.post(`https://unilive-backend.herokuapp.com/login`, {
           email:email,
           password:password
         }).then(res => res.data).catch(err => console.log(err))
   
         sessionStorage.setItem('token', JSON.stringify(promise.token))
+        sessionStorage.setItem('userInfo', JSON.stringify(promise))
+        setUserInfo(res.data)
         if(promise.status) {
           setSeccessMessage(true)
-            sessionStorage.setItem('userInfo', JSON.stringify(promise))
-            setUserInfo(res.data)
+            
           setTimeout(() => {
             setSeccessMessage(false)
             history.push('/agency/welcomepage')

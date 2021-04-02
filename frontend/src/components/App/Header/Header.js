@@ -102,12 +102,21 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
     }
   }
 }
+
+const goHome = () => {
+	const token = []
+		localStorage.setItem('token', JSON.stringify(token))
+		setUserInfo()
+		setIsLoggedIn(false)
+		sessionStorage.removeItem('userInfo')
+		sessionStorage.removeItem('token')
+}
 	
 	return (
 		<div className={history1 === '/' || history1 === '' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
 
-				<a href="/" id="unihomes" style={{ fontSize: 35 }}>
+				<a href="/" id="unihomes" style={{ fontSize: 35 }} onClick={goHome}>
 				<img src={logo} alt="" style={{height:"40px"}}></img> UniLive
 				</a>
 			</div>

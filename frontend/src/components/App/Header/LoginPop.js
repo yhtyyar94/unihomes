@@ -13,7 +13,7 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
   
   const Login = async (e) => {
     e.preventDefault()
-     const promise = await axios.post(`http://localhost:5001/login`, {
+     const promise = await axios.post(`https://unilive-backend.herokuapp.com/login`, {
         email:email,
         password:password
       }).then(res => {console.log(res.data) 
@@ -34,9 +34,6 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
         return
       }
       delete promise.data.password
-      
-      // sessionStorage.setItem('userInfo', JSON.stringify(promise))
-      // setUserInfo(promise)
   }
  
   const scrollFunctionLog = () => {

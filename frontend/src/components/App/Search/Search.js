@@ -33,8 +33,8 @@ export default function Search({cities}) {
                      
                     </div>
                     <div className="overlay"></div> 
-                    <div className='form-container'>
-                            <form className="form-search" id="search">
+                    <div className='form-container' id="search">
+                            <form className="form-search" >
                                     <select required  className="select-search" onChange={(e)=>setCityName(e.target.value)}  >
                                     <option value="">Search by city</option>
                                         {cities.map(city=>
