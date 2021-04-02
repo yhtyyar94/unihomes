@@ -38,7 +38,7 @@ const TopCities = () => {
 			</div>
             <div className="container-header"><h1>Student Property Search By City</h1></div>
             <div className="container-cities">
-                {cities && cities.map(city => <div key={city._id} onClick={() => history.push(`/cities/${city.name}/`)}><p>{city.name}</p></div>)}
+                {cities && cities.map(city => <div key={city._id} onClick={() => history.push(`/cities/${city.name}/`)}><p style={{marginTop:"12px"}}>{city.name}</p></div>)}
             </div>
 		</div>
 	);
