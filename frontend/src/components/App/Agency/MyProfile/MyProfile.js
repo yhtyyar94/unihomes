@@ -21,7 +21,7 @@ console.log(userInfo)
   const onSubmit = e =>{
     e.preventDefault()
     axios
-    .put(`http://localhost:5001/api/agents/${userInfo.data._id}`,{
+    .put(`https://unilive-backend.herokuapp.com/api/agents/${userInfo.data._id}`,{
       firstName:firstName,
       lastName:lastName,
       company:company

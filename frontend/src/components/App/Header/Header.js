@@ -125,7 +125,7 @@ const goHome = () => {
 				<input type="search" placeholder="Search homes by cities..." value={search} onChange={e => setSearch(e.target.value)} onKeyPress={onSearch} list='browsers'/>
 			</div>
 			{!isLoggedIn ? <div className="header-items">
-				<a className="navbar-item btn" onClick={() => setVisibility(!visible)}>
+				<a className="navbar-item btn" onClick={() => setVisibility(!visible)} alt="">
 					<ImSearch className="search-logo"/> Search
 				</a>
 			   {shortlist.length===0 
@@ -144,16 +144,16 @@ const goHome = () => {
 					<MdPerson /> Login
 				</a>
 			</div> : <div className="header-items agencypage" id="agencypage">
-				<a className="navbar-item btn" onClick={() => history.push('/agency/addproperty')}>
+				<a className="navbar-item btn" onClick={() => history.push('/agency/addproperty')} alt="">
 					<BiLayerPlus className="search-logo"/> Add Property
 				</a>
-				<a className="navbar-item" onClick={() => history.push('/agency/properties')}>
+				<a className="navbar-item" onClick={() => history.push('/agency/properties')} alt="">
 					<FaHome /> Properties
 				</a>
-				<a className="navbar-item" onClick={() => history.push('/agency/myprofile')}>
+				<a className="navbar-item" onClick={() => history.push('/agency/myprofile')} alt="">
 					<CgProfile /> My Profile
 				</a>
-				<a className="navbar-item" onClick={logout}>
+				<a className="navbar-item" onClick={logout} alt="">
 					<RiLogoutBoxFill /> Log out
 				</a>
 			</div>}
