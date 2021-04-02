@@ -27,6 +27,7 @@ console.log(userInfo)
       company:company
     })
     .then(res => {console.log(res.data);
+      alert('Successfully updated!!!')
     })
     .catch(error => console.log(error));
   }
@@ -36,25 +37,11 @@ console.log(userInfo)
     setFirstName(userInfo.data.firstName);
     setLastName(userInfo.data.lastName);
     setCompany(userInfo.data.company);
-  }, []);
-
-
-
-
-  useEffect(() => {
-   
-  }, []);
-
-  useEffect(() => {
     setPassword(userInfo.data.password);
-  }, []);
-  useEffect(() => {
     setNewpassword(userInfo.data.password);
-  }, []);
-
-  useEffect(() => {
     setConfirmpassword(userInfo.data.password);
   }, []);
+
  
 
   return (
