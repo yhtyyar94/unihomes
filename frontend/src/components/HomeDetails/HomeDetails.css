@@ -76,6 +76,15 @@ li {
 	padding: 6px;
 }
 
+.homedetails-main-description {
+	margin-top: 50px;
+	line-height: 1.7;
+}
+
+.homedetails-main-description > p {
+	padding: 15px;
+}
+
 .homedetails-main-bedroom-prices {
 	font-family: Roboto;
 	margin-top: 50px;
@@ -341,7 +350,25 @@ li {
 	.homedetails-main-key-features ul,
 	li {
 		font-size: 11px;
+		padding: 2px;
 	}
+
+	.homedetails-main-description > h3 {
+		font-size: 14px;
+	}
+
+	.homedetails-main-description {
+		font-size: 10px;
+		margin-top: 25px;
+	}
+	.homedetails-main-description > p {
+		padding: 7px;
+	}
+
+	.homedetails-main-bedroom-prices {
+		margin-top: 25px;
+	}
+
 	.homedetails-main-bedroom-prices > h3 {
 		font-size: 14px;
 	}
@@ -408,6 +435,10 @@ li {
 		font-size: 8px;
 	}
 
+	.homedetails-sidebar-pppw {
+		font-size: 9px;
+	}
+
 	.homedetails-sidebar-bills {
 		width: 100px;
 	}
@@ -415,13 +446,11 @@ li {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
 		height: 24px;
-
 		font-size: 8px;
 		line-height: 16px;
-
 		margin-bottom: 10px;
+		border-radius: 3px;
 	}
 	.homedetails-rooms-count-type-container {
 		flex-direction: column;
