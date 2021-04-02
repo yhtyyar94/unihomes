@@ -35,7 +35,11 @@ const Shortlist = ({shortlist, setShortlist, changeShortlist}) => {
                 <h1>Shortlist</h1>
             </div>
             <div className="shortlist-counter">
-                <h3>{shortlistLocal ? shortlistLocal.length : 0} property shortlisted</h3>
+
+                {shortlistLocal && shortlistLocal.length<=1
+                ? <h3> {shortlistLocal.length} property shortlisted</h3>
+                : <h3> {shortlistLocal.length} properties shortlisted</h3>}
+                
          
             </div>
      

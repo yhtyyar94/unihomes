@@ -21,10 +21,10 @@
 }
 
 .home-img {
-  height: auto;
   width: 100%;
-  margin: 0;
+  margin: none;
   font-family: Roboto;
+  padding: none;
 }
 .rent-area {
   background-color: #03c5f0;
