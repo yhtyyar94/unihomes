@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css';
 import {
 	AiOutlineFacebook,
@@ -7,16 +7,35 @@ import {
 } from 'react-icons/ai';
 
 const Footer = () => {
+	const [placeHolder, setPlaceHolder] = useState(
+		'Enter your email address...',
+	);
+	const [email, setEmail] = useState('');
+
+	const handleEmail = (e) => {
+		setEmail(e.target.value);
+	};
+
+	const keepInTouch = (e) => {
+		e.preventDefault();
+		if (email !== '') {
+			setEmail('');
+			setPlaceHolder('Your email address is saved...');
+		}
+	};
+
 	return (
 		<div>
 			<div className="keepintouch-sm">
 				<div id="keepintouch">
 					<h1 className="footer-title">Keep In Touch</h1>
-					<form id="form-keepintouch">
+					<form id="form-keepintouch" onSubmit={keepInTouch}>
 						<input
 							id="input-keepintouch"
 							type="email"
-							placeholder="Enter your email address..."
+							placeholder={placeHolder}
+							onChange={handleEmail}
+							value={email}
 						/>
 					</form>
 				</div>
