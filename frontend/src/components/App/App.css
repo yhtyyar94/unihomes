@@ -1,7 +1,13 @@
 * {
   margin: 0;
 }
+input:focus{
+  outline: 0;
+}
 
+button:focus{
+  outline: 0;
+}
 .shortlist {
   display: flex;
   flex-direction: column;

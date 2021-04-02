@@ -78,15 +78,15 @@ console.log(userInfo)
             </p>
             <p>
               <label for="password">Existing Password :</label>
-              <input value={password} type="password"  id="password"  name="password" />
+              <input  type="password"  id="password"  name="password" />
             </p>
             <p>
               <label for="newpassword">New Password :</label>
-              <input  value={newpassword} type="password" id="newpassword"  name="newpassword" />
+              <input  type="password" id="newpassword"  name="newpassword" />
             </p>
             <p>
               <label for="confirmpassword">Confirm New Password :</label>
-              <input   value={confirmpassword}   type="password"  id="confirmpassword"    name="confirmpassword" />
+              <input   type="password"  id="confirmpassword"    name="confirmpassword" />
             </p>
             <button >Update</button>
           </div>

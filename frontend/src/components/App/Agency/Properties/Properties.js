@@ -35,7 +35,7 @@ useEffect(() => {
 
      <div id="properties">
 
-<div className="property-title"><h1>All Properties (Total: {properties.length}) </h1></div>
+<div className="property-title"><h1>All Properties <span style={{fontSize:"20px"}}>(Total: {properties.length})</span> </h1></div>
 {properties.length !==0 && properties.map((property,index)=>(
 
 
