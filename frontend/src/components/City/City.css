@@ -16,6 +16,9 @@
   transform: scale(1.03, 1.03);
   transition: all 0.2s ease-in-out;
 }
+.buttons p {
+  padding: 20px;
+}
 
 .home-img {
   height: auto;
