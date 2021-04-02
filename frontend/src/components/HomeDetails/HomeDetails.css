@@ -147,18 +147,48 @@ li {
 	flex: 4;
 	font-family: Roboto;
 	height: auto;
+	text-align: center;
 }
+.homedetails-rooms-count-bedroom > p {
+	padding: 2px;
+}
+
+.homedetails-rooms-count-bedroom-icon {
+	text-align: center;
+	padding: 10px 0px;
+}
+
 .homedetails-rooms-count-bathroom {
 	flex: 4;
 	font-family: Roboto;
 }
+
+.homedetails-rooms-count-bathroom > p {
+	padding: 2px;
+}
+
+.homedetails-rooms-count-bathroom-icon {
+	text-align: center;
+	padding: 10px 0px;
+}
+
 .homedetails-rooms-type {
 	flex: 4;
 	font-family: Roboto;
+	text-align: center;
+}
+
+.homedetails-rooms-type > p {
+	padding: 4px;
+}
+
+.homedetails-rooms-type-icon {
+	text-align: center;
+	padding: 10px 0px;
 }
 
 .homedetails-rooms-type-type {
-	font-size: 12px;
+	font-size: 10px;
 }
 
 .homedetails-sidebar-btn-shortlist {
@@ -226,6 +256,7 @@ li {
 
 .homedetails-sidebar-address {
 	padding: 5px;
+	margin-bottom: 15px;
 }
 
 .btn-book-viewing-page-close {
@@ -338,6 +369,12 @@ li {
 		width: 90%;
 		padding: 5px 0px;
 	}
+	.homedetails-rooms-count-type-container {
+		flex-direction: column;
+		justify-content: left;
+		align-items: left;
+		margin-top: 10px;
+	}
 }
 
 @media (max-width: 360px) {
@@ -408,17 +445,22 @@ li {
 
 	.homedetails-rooms-count-bedroom {
 		font-size: 9px;
+		padding: 0px;
 	}
 	.homedetails-rooms-count-bedroom > p {
 		font-size: 9px;
-		padding: 0;
+		padding: 0px;
 	}
+	.homedetails-rooms-count-bedroom-icon {
+		padding: 1px;
+	}
+
 	.homedetails-rooms-count-bathroom {
 		font-size: 9px;
 	}
 	.homedetails-rooms-count-bathroom > p {
 		font-size: 9px;
-		padding: 0;
+		padding: 0px;
 	}
 	.homedetails-rooms-type {
 		font-size: 9px;
@@ -558,5 +600,23 @@ li {
 		height: 25px;
 		font-size: 14px;
 		margin-bottom: 30px;
+	}
+	.homedetails-sidebar-address {
+		padding: 0px;
+		margin-bottom: 5px;
+	}
+	.homedetails-rooms-count-bedroom-icon {
+		text-align: center;
+		padding: 3px 0px;
+	}
+
+	.homedetails-rooms-count-bathroom-icon {
+		text-align: center;
+		padding: 5px 0px;
+	}
+
+	.homedetails-rooms-type-icon {
+		text-align: center;
+		padding: 3px 0px;
 	}
 }

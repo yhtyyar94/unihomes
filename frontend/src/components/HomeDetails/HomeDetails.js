@@ -270,9 +270,7 @@ export default function HomeDetails({
 						<div className="homedetails-rooms-count-type-container">
 							<div className="homedetails-rooms-count-bedroom">
 								<p>Bedrooms</p>
-								<div
-									style={{ textAlign: 'center', padding: '2px 0px' }}
-								>
+								<div className="homedetails-rooms-count-bedroom-icon">
 									<FaBed
 										style={{
 											fill: '#03c5f0',
@@ -285,7 +283,7 @@ export default function HomeDetails({
 							</div>
 							<div className="homedetails-rooms-count-bathroom">
 								<p>Bathrooms</p>
-								<div style={{ textAlign: 'center' }}>
+								<div className="homedetails-rooms-count-bathroom-icon">
 									<FaBath
 										style={{
 											fill: '#03c5f0',
@@ -298,7 +296,7 @@ export default function HomeDetails({
 							</div>
 							<div className="homedetails-rooms-type">
 								<p>Type</p>
-								<div style={{ textAlign: 'center' }}>
+								<div className="homedetails-rooms-type-icon">
 									<FaRegBuilding
 										style={{
 											fill: '#03c5f0',
