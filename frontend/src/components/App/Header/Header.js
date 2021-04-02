@@ -54,7 +54,7 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 		window.addEventListener("scroll", changeClass)
 		window.addEventListener("click", changeUrl)	
 		changeUrl()
-		axios.get('http://localhost:5001/api/getcities').then(res => setCities(res.data)).catch(err => console.log(err))
+		axios.get('https://unilive-backend.herokuapp.com/api/getcities').then(res => setCities(res.data)).catch(err => console.log(err))
 		cities && document.querySelector('input[list="browsers"]').addEventListener('input', onInput);
 	},[])
 
