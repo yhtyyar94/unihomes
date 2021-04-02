@@ -59,7 +59,7 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
   return (
     <div className="logContainer" id="logContainer">
 
-    <form onSubmit={Login}>
+    <form className="formLog" onSubmit={Login}>
       <div className="logTitle">Agent Login <RiCloseFill className="close-logo" onClick={() => setLog(false)}/> </div>
 
       <hr className="logLine"/> 
@@ -74,9 +74,11 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
       <button type="submit" className="loginBtn">Login</button>
     </form> 
     <div className="registerPlc"></div>
+    <div className="regContent">
       <div className="registerTxt">Register as a...</div>
       <hr className="regLine"/>
       <button className="agentBtn" onClick={register}>Letting Agent</button>
+      </div>
     </div>
   )
 }
