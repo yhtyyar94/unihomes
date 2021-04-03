@@ -29,15 +29,27 @@ const Footer = () => {
 			<div className="keepintouch-sm">
 				<div id="keepintouch">
 					<h1 className="footer-title">Keep In Touch</h1>
-					<form id="form-keepintouch" onSubmit={keepInTouch}>
-						<input
-							id="input-keepintouch"
-							type="email"
-							placeholder={placeHolder}
-							onChange={handleEmail}
-							value={email}
-						/>
-					</form>
+					{placeHolder === 'Enter your email address...' ? (
+						<form id="form-keepintouch" onSubmit={keepInTouch}>
+							<input
+								id="input-keepintouch"
+								type="email"
+								placeholder={placeHolder}
+								onChange={handleEmail}
+								value={email}
+							/>
+						</form>
+					) : (
+						<form id="form-keepintouch" onSubmit={keepInTouch}>
+							<input
+								id="input-keepintouch-saved"
+								type="email"
+								placeholder={placeHolder}
+								onChange={handleEmail}
+								value={email}
+							/>
+						</form>
+					)}
 				</div>
 				<div id="social-media">
 					<h1 className="footer-title">Let's Socialize</h1>

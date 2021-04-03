@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import {BiEnvelope} from 'react-icons/bi'
-import ShortListModal from '../ShortListBook'
 import City from '../City/City'
 import axios from 'axios'
 
