@@ -63,7 +63,7 @@ import {Link} from 'react-router-dom'
         <p>Bills are included in all rent prices. No hidden fees.</p>
         </div>
     </div>
-    <div className="orange"><a onClick={() => window.scroll(0, 100)} alt=""><button className="box-btn" >Search and Compare</button></a></div>
+    <div className="orange"><a onClick={() => window.scroll(0, 100)} href="/#" alt=""><button className="box-btn" >Search and Compare</button></a></div>
 
     </div>
    
