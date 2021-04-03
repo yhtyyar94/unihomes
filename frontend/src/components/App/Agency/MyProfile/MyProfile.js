@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./MyProfile.css";
 import axios from "axios";
-import { useForm } from "react-hook-form";
+
 
 const MyProfile = ({ userInfo }) => {
  
@@ -9,14 +9,7 @@ const MyProfile = ({ userInfo }) => {
   const [lastName, setLastName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [newpassword, setNewpassword] = useState("");
-  const [confirmpassword, setConfirmpassword] = useState("");
 
-console.log(userInfo)
- 
-
- 
 
   const onSubmit = e =>{
     e.preventDefault()
