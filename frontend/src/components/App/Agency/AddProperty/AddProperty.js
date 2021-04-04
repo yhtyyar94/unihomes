@@ -117,7 +117,7 @@ const AddProperty = ({userInfo}) => {
 				res.data.message && setSuccessSubmit(true);
 			}).catch(err => console.log(err))
 		} else {
-			axios.post('https://unilive-backend.herokuapp.com/api/createproperty', formData).then(res => {
+			axios.post('http://localhost:5001/api/createproperty', formData).then(res => {
 				res.data.message && setSuccessSubmit(true);
 				console.log(res.data)
 			}).catch(err => console.log(err))
@@ -149,7 +149,6 @@ const AddProperty = ({userInfo}) => {
 			{successSubmit && <div className="addproperty-succes-message">
 				Your property {id ? 'added' : 'updated'} successfully
 			</div>}
-			<Cloudinary />
 			<form className="add-form" onSubmit={onSubmit}>
 				<div className="row row1">
 					<div>
