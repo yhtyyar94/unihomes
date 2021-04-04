@@ -118,16 +118,16 @@ exports.getSingleCity = async (req, res) => {
 
 exports.createProperty = async (req, res) => {
 
-    let filesArray = []
-    await req.files.forEach(element => {
-        const file = {
-            fileName: element.originalname,
-            filePath: element.path,
-            fileType: element.mimetype,
-            fileSize: fileSizeFormatter(element.size, 2)
-        }
-    filesArray.push(file)
-    })
+    // let filesArray = []
+    // await req.files.forEach(element => {
+    //     const file = {
+    //         fileName: element.originalname,
+    //         filePath: element.path,
+    //         fileType: element.mimetype,
+    //         fileSize: fileSizeFormatter(element.size, 2)
+    //     }
+    // filesArray.push(file)
+    // })
 
 
     const newProperty = await new PropertiesModel({
@@ -141,7 +141,7 @@ exports.createProperty = async (req, res) => {
         availability:req.body.availability,
         bathroom:req.body.bathroom,
         type:req.body.type,
-        images:filesArray,
+        images:req.body.images,
         rent:req.body.rent,
         cityName:req.body.cityName
     })
