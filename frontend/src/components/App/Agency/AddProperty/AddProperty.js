@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 import './AddProperty.css';
-import Cloudinary from './Cloudinary';
 
 const AddProperty = ({userInfo}) => {
 	const [ cities, setCities ] = useState(null);
