@@ -10,7 +10,7 @@ const UserSchema = new Schema({
      lastName: {
         type: String,
         lowercase:true
-        
+         
     },
     company: {
         type: String,

@@ -13,7 +13,7 @@ module.exports = (req, res, next) => {
                 next()
             }
         })
-    } else {
+    } else { 
         res.end('Token not provided.')
     }
 }
