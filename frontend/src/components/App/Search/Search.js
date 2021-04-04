@@ -11,7 +11,7 @@ import './Search.css'
 
 export default function Search({cities}) {
 
-
+ 
     const [cityName,setCityName]=useState('')
     const [roomNum,setRoomNum]=useState([])
     const numbers = [1,2,3,4,5,6,7,8,9,10]
