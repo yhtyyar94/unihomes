@@ -20,7 +20,6 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
             idList.push(home._id)
             localStorage.setItem('shortlist',JSON.stringify(idList))
             setShortlist(idList)
-            console.log(home._id)
       } 
 
 
@@ -40,7 +39,7 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
     changeShortlist()
 
     }
- console.log(shortlist)
+
     return ( 
         <div className="city">
                 <div className="home-img">

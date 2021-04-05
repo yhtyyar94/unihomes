@@ -104,19 +104,18 @@ export default function Header({ toggleLogin, isLoggedIn, shortlist, setUserInfo
 }
 
 const goHome = () => {
-	const token = []
-		localStorage.setItem('token', JSON.stringify(token))
-		setUserInfo()
-		setIsLoggedIn(false)
-		sessionStorage.removeItem('userInfo')
-		sessionStorage.removeItem('token')
+	if(window.location.pathname === '/agency/welcomepage' || window.location.pathname === '/agency/addproperty' || window.location.pathname === '/agency/properties' || window.location.pathname === '/agency/myprofile') {
+		history.push('/agency/welcomepage')
+	} else {
+		history.push('/')
+	}
 }
 	
 	return (
 		<div className={history1 === '/' || history1 === '' ? 'header' : 'scroll'} id="header">
 			<div className="header-logo">
 
-				<a href="/" id="unihomes" style={{ fontSize: 35 }} onClick={goHome}>
+				<a id="unihomes" style={{ fontSize: 35, cursor: 'pointer' }} onClick={goHome}>
 				<img src={logo} alt="" style={{height:"40px"}}></img> UniLive
 				</a>
 			</div>
@@ -158,7 +157,7 @@ const goHome = () => {
 				</a>
 			</div>}
 			<datalist id="browsers">
-				{cities && cities.map((city, index) => <option key={index} id={city._id} value={city.name} >{city.name}</option>)}
+				{cities && cities.map((city, index) => <option className="datalist-option" key={index} id={city._id} value={city.name} >{city.name}</option>)}
 			</datalist>
 		</div>
 	);

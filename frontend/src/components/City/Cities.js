@@ -52,7 +52,6 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
       .get(`https://unilive-backend.herokuapp.com/api/getproperties/name/${cityname}`)
       .then((res) => {
         setHomesCity(res.data);
-        console.log(res.data)
       })
       .catch((err) => {
         console.log(err);

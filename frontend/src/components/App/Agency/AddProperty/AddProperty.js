@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 import './AddProperty.css';
+import SuccessMessageaAddProp from './SuccessMessageaAddProp';
 
 const AddProperty = ({userInfo}) => {
 	const [ cities, setCities ] = useState(null);
@@ -22,6 +23,7 @@ const AddProperty = ({userInfo}) => {
 	const [ description, setDescription ] = useState('');
 	const [multipleFiles, setMultipleFiles ] = useState([]);
 	const [successSubmit, setSuccessSubmit] = useState()
+	const [successSubmitSpinner, setSuccessSubmitSpinner] = useState()
 
 	const {id} = useParams()
 
@@ -77,22 +79,19 @@ const AddProperty = ({userInfo}) => {
 	const onSubmit = async (e) => {
 		e.preventDefault()
 		window.scroll(0, 0)
-		let imageURLs = []
+		setSuccessSubmitSpinner(true)
 		const formData = new FormData()
-		for (let i = 0; i < multipleFiles.length; i++) {
-			const formsData = new FormData()
-			formsData.append('file', multipleFiles[i])
-			formsData.append('upload_preset', 'aaesgzrz')
-			await axios.post('https://api.cloudinary.com/v1_1/blackeagle4894/image/upload', formsData).then(res => {
-				formData.append('images', res.data.url)
-				console.log(res.data.url)
-			}).catch(err => console.log(err))
+		if(multipleFiles.length !==0) {
+			for (let i = 0; i < multipleFiles.length; i++) {
+				const formsData = new FormData()
+				formsData.append('file', multipleFiles[i])
+				formsData.append('upload_preset', 'aaesgzrz')
+				await axios.post('https://api.cloudinary.com/v1_1/blackeagle4894/image/upload', formsData).then(res => {
+					formData.append('images', res.data.url)
+				}).catch(err => console.log(err))
+			}
 		}
 		const keyFeatures = keys.split(',')
-		console.log(imageURLs)
-		// for (let i = 0; i < imageURLs.length; i++) {
-		// 	formData.append('images', imageURLs[i])
-		// }
 		for (let i = 0; i < keyFeatures.length; i++) {
 			formData.append('keyFeatures', keyFeatures[i])
 		}
@@ -112,16 +111,16 @@ const AddProperty = ({userInfo}) => {
 		formData.append('rent', rent)
 		formData.append('user', userInfo.data._id)
 		if (id) {
-			axios.put(`http://localhost:5001/api/properties/update/${id}`, formData).then(res => {
+			await axios.put(`http://localhost:5001/api/properties/update/${id}`, formData).then(res => {
+				setSuccessSubmitSpinner(false)
 				res.data.message && setSuccessSubmit(true);
 			}).catch(err => console.log(err))
 		} else {
-			axios.post('http://localhost:5001/api/createproperty', formData).then(res => {
+			await axios.post('http://localhost:5001/api/createproperty', formData).then(res => {
+				setSuccessSubmitSpinner(false)
 				res.data.message && setSuccessSubmit(true);
-				console.log(res.data)
 			}).catch(err => console.log(err))
 		}
-
 	if(!id) {
 		setRent('')
 		setBedrooms('')
@@ -148,6 +147,9 @@ const AddProperty = ({userInfo}) => {
 			{successSubmit && <div className="addproperty-succes-message">
 				Your property {id ? 'added' : 'updated'} successfully
 			</div>}
+			{
+				successSubmitSpinner && <SuccessMessageaAddProp />
+			}
 			<form className="add-form" onSubmit={onSubmit}>
 				<div className="row row1">
 					<div>

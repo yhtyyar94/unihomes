@@ -16,7 +16,6 @@ const MainContent = () => {
       .then((res) => setImages(res.data))
       .catch((err) => console.log(err));
   }, []);
-  // console.log(images);
   useEffect(() => {
     window.scroll(0, 0);
   }, []);

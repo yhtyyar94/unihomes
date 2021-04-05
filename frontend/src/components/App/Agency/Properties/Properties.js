@@ -40,7 +40,7 @@ useEffect(() => {
 
 
   <div className="properties">
-  <div className="properties-img"><img src={`https://unilive-backend.herokuapp.com/${property.images[0].filePath}`} alt=""/></div>
+  <div className="properties-img"><img src={property.images[0]} alt=""/></div>
       <div className="property-content">
       <div  className="bill" style={{marginLeft:"-5%"}}><p style={{fontSize:"18px",padding:0,paddingLeft:20}}><span style={{fontSize:"20px"}}>£{property.rent} </span>pppw including bills</p></div>
        <div className="bed" style={{fontSize:"22px"}}><FaBed size={22}  style={{fill:"white",paddingTop:"2px",marginLeft:"20px"}}/>  &nbsp; {property.bedroom}</div>
