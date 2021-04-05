@@ -29,13 +29,10 @@ export default function HomeDetails({
 	const [bookViewing, setBookViewing] = useState(false);
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
-	const [firstImg, setFirstImg] = useState(
-		home.length !== 0 &&
-			`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`,
-	);
-	const [secondImg, setSecondImg] = useState(null);
-	const [thirdImg, setThirdImg] = useState(null);
-	const [fourthImg, setFourthImg] = useState(null);
+	// const [firstImg, setFirstImg] = useState(
+	// 	home.length !== 0 &&
+	// 		`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`,
+	// );
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [rowsOfBedroomPrices, setRowsOfBedroomPrices] = useState([]);
 
@@ -117,7 +114,7 @@ export default function HomeDetails({
 					},
 				}}
 			>
-				{/* <button onClick={()=>setModalIsOpen(false)}>X</button> */}
+			
 				<img
 					src={
 						home.length !== 0 &&

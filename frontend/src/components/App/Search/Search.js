@@ -1,11 +1,6 @@
-import React, { useState,useEffect } from 'react'
-import {Link} from 'react-router-dom'
+import React, { useState} from 'react'
 import MainContent from '../MainContent/MainContent'
 import { useHistory } from "react-router-dom";
-
-
-
-// import {Link} from 'react'
 import './Search.css'
  
 
@@ -37,18 +32,15 @@ export default function Search({cities}) {
                             <form className="form-search" >
                                     <select required  className="select-search" onChange={(e)=>setCityName(e.target.value)}  >
                                     <option value="">Search by city</option>
-                                        {cities.map(city=>
-                                            <option value={city.name}>{city.name}</option>
+                                        {cities.map((city,index)=>
+                                            <option value={city.name} key={index}>{city.name}</option>
                                             )}
                                          
                                     </select>  
                                     <select className="select-search" onChange={(e)=>setRoomNum(e.target.value)}>
                                             <option value="">Any bedroom</option>
-                                            {numbers.map(number=><option value={number}>{number}</option>)}
+                                            {numbers.map((number,index)=><option value={number} key={index}>{number}</option>)}
                                      </select>
-
-                               {/* <button type="submit" className="btn-search" onClick={handleSubmit}>Find Homes</button> */}
-
                                {cityName===''
                                      ? <button id="search" type="submit" className="btn-search-disabled" >Find Homes</button>
                                      : <button type="submit" className="btn-search" onClick={handleSubmit}>Find Homes</button>
