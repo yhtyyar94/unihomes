@@ -363,7 +363,10 @@ export default function HomeDetails({
 					</div>
 				</div>
 
-				{bookViewing ? (
+				<Modal
+					isOpen={bookViewing}
+					onRequestClose={() => setModalIsOpen(false)}
+				>
 					<div className="book-viewing-container">
 						<button
 							className="btn-book-viewing-page-close"
@@ -439,8 +442,8 @@ export default function HomeDetails({
 								</form>
 							</div>
 						</div>
-					</div>
-				) : null}
+					</div>{' '}
+				</Modal>
 			</div>
 		</div>
 	);
