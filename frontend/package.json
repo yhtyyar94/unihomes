@@ -40,7 +40,8 @@
     "json:server": "json-server -p 5000 --watch db.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "cd ../backend & npm run dev"
   },
   "eslintConfig": {
     "extends": [
