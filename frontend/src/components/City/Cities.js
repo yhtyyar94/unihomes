@@ -126,7 +126,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
                 homesCity.filter((home) => home.cityName === cityname)
                   .length
               }{" "}
-              homes in{" "}
+              home(s) in{" "}
               {cities.map((city) =>
                 city.name === cityname ? <span>{city.name}</span> : null
               )}

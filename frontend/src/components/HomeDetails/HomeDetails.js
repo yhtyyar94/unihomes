@@ -100,46 +100,44 @@ export default function HomeDetails({
 
 	return (
 		<div>
-			<Modal
-				isOpen={modalIsOpen}
-				onRequestClose={() => setModalIsOpen(false)}
-				style={{
-					overlay: {
-						top: 35,
-						backgroundColor: 'rgba(211, 211, 211, 0.60)',
-					},
-					content: {
-						padding: 2,
-						height: 700,
-					},
-				}}
-			>
-			
-				<img
-					src={
-						home.length !== 0 &&
-						home.images[imageIndex]
-					}
-					style={{
-						borderRadius: '3px',
-						height: '99%',
-						width: 'auto',
-						marginLeft: '17%',
-					}}
-					alt=""
-				/>
-				<BiRightArrow
-					className="arrow-right"
-					onClick={handleRightSwipe}
-					fill="#03c5f0"
-				/>
-				<BiLeftArrow
-					className="arrow-left"
-					onClick={handleLeftSwipe}
-					fill="#03c5f0"
-				/>
-			</Modal>
-
+					<Modal
+						isOpen={modalIsOpen}
+						onRequestClose={() => setModalIsOpen(false)}
+						style={{
+							overlay: {
+								top: 35,
+								backgroundColor: 'rgba(211, 211, 211, 0.60)',
+							},
+							content: {
+								padding: 2,
+								height: 700,
+								
+							},
+						}}
+					>
+						<img
+							src={
+								home.length !== 0 &&
+								home.images[imageIndex]
+							}
+							style={{
+								borderRadius: '3px',
+								height: '99%',
+								width: '100%',
+							}}
+							alt=""
+						/>
+						<BiRightArrow
+							className="arrow-right"
+							onClick={handleRightSwipe}
+							fill="#03c5f0"
+						/>
+						<BiLeftArrow
+							className="arrow-left"
+							onClick={handleLeftSwipe}
+							fill="#03c5f0"
+						/>
+					</Modal>
 			<div className="homedetails-back-to-search">
 				<form>
 					<button
