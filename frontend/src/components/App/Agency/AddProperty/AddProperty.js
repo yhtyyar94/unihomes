@@ -45,12 +45,12 @@ const AddProperty = ({userInfo}) => {
 		setCityName('Select City')
 		}
 		axios
-			.get('https://unilive-backend.herokuapp.com/api/getcities')
+			.get('http://localhost:5001/api/getcities')
 			.then((res) => setCities(res.data))
 			.catch((err) => console.log(err));
 		
 		if(id) {
-			axios.get(`https://unilive-backend.herokuapp.com/api/getproperties/${id}`)
+			axios.get(`http://localhost:5001/api/getproperties/${id}`)
 			.then((res => {
 					const {data} = res
 					setRent(data.rent)

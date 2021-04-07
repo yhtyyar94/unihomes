@@ -1,4 +1,4 @@
-import React,{useLayoutEffect,useEffect,useState} from 'react'
+import React,{useLayoutEffect} from 'react'
 import {Link} from 'react-router-dom'
 import './City.css'
 import {FaBed,FaBath,FaHome} from "react-icons/fa";
