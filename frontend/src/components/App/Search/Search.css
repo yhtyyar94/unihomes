@@ -301,6 +301,62 @@
     font-size: 15px;
     border-radius: 5px;
   }
+  .btn-search-disabled {
+    margin-left: 5px;
+    width: 94px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+}
+@media (max-width: 414px) {
+  .search-container-text > h1 {
+    font-size: 35px;
+    line-height: 40px;
+    margin-top: 20%;
+  }
+  .search-container {
+    height: 470px;
+  }
+  .overlay {
+    height: 470px;
+  }
+  .search-container-text {
+    margin-top: 10%;
+  }
+  .form-search {
+    width: 90%;
+  }
+}
+@media (max-width: 375px) {
+  .search-container-text > h1 {
+    font-size: 30px;
+    line-height: 50px;
+  }
+  .form-search {
+    width: 85%;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  .btn-search {
+    height: 40px;
+    padding: 3px;
+  }
+  .btn-search-disabled {
+    height: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 3px;
+  }
+  .search-container {
+    height: 470px;
+  }
+  .overlay {
+    height: 470px;
+  }
+  .search-container-text {
+    margin-top: 10%;
+  }
 }
 
 /* Galaxy S5 Screen */
@@ -333,6 +389,7 @@
     padding: 5px;
     flex-direction: column;
     width: 80%;
+    border-radius: 5px;
   }
   .select-search {
     margin: 2px;
@@ -351,7 +408,7 @@
   }
 }
 
-@media (max-width: 285px) {
+@media (max-width: 280px) {
   .search-container {
     height: 300px;
   }
@@ -359,6 +416,7 @@
     font-size: 20px;
     line-height: 23px;
     margin-top: 10%;
+    color: pink;
   }
   .search-container-text > h5 {
     margin-top: 7px;
@@ -376,14 +434,14 @@
     top: 65%;
   }
   .form-search {
-    padding: 5px;
     flex-direction: column;
     width: 100%;
+    border-radius: 5px;
   }
   .select-search {
     margin: 2px;
     padding: 5px;
-    width: 170px;
+    width: 160px;
     height: 20px;
     font-size: 9px;
     border-radius: 5px;

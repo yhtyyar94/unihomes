@@ -49,10 +49,10 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
                         <div style={{marginLeft:"-5%"}}>
                             <p className="rent-text"><span className="rent-span">£{home.rent} </span>pppw including bills</p>
                         </div>
-
-                        <div style={{fontSize:"22px",marginRight:"10px"}}><FaBed  className="bed-icon" size={22} />  &nbsp; {home.bedroom}</div>
+ 
+                        <div className="num-of-bed"><FaBed  className="bed-icon" size={22} />  &nbsp; {home.bedroom}</div>
                        
-                        <div style={{fontSize:"22px",marginRight:"8px"}}><FaBath size={17}  style={{fill:"white",paddingBottom:"1px"}}/>  &nbsp; {home.bathroom}</div> 
+                        <div className="num-of-bath"><FaBath size={17}  style={{fill:"white",paddingBottom:"1px"}}/>  &nbsp; {home.bathroom}</div> 
                       
                 </div> 
                
@@ -68,8 +68,8 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
                 <div className="buttons"> 
                     <div className="shortlist-btn"> 
                    
-                    {shortlist && shortlist.includes(home._id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="remove-btn">Remove</span></p> 
-                    : <p onClick={addToShortlist}> <BsHeart className="heart-icon" /> &nbsp; <span className="short-btn">Shortlist</span><span className="add-btn">Add</span></p>}
+                    {shortlist && shortlist.includes(home._id) ? <p onClick={removeFromShortlist}> <BsHeartFill fill="red" /> &nbsp; <span className="rem-btn">Remove</span></p> 
+                    : <p onClick={addToShortlist}> <BsHeart className="heart-icon" /> &nbsp; <span className="s-btn">Shortlist</span><span className="a-btn">Add</span></p>}
                     </div>
                    
                     <Link className="view-btn" to={`/homedetails/${home._id}`}><FaHome style={{fill:"white"}}/> <IoHomeOutline/> &nbsp; View Home</Link>
@@ -78,4 +78,4 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
         </div>
     ) 
 }
- 
+  
