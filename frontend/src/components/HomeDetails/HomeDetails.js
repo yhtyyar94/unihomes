@@ -110,8 +110,7 @@ export default function HomeDetails({
 							},
 							content: {
 								padding: 2,
-								height: 700,
-								
+								height: 700,	
 							},
 						}}
 					>
@@ -122,7 +121,7 @@ export default function HomeDetails({
 							}
 							style={{
 								borderRadius: '3px',
-								height: '99%',
+								height: '100%',
 								width: '100%',
 							}}
 							alt=""
