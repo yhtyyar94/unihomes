@@ -97,7 +97,7 @@ export default function RegisterPop({backtoLogin, setSignUp, setIsLoggedIn, setU
       </div>
       <div className="reg-password">
       <label for="reg-password" >Password</label>
-      <input value={password} onChange={e => setPassword(e.target.value)} type="password" id="reg-password" placeholder="Create a password" name="reg-password" required/>
+      <input value={password} onChange={e => setPassword(e.target.value)} type="password" id="reg-password" placeholder="Create a password" name="reg-password" minLength="6" required/>
       </div>
       <div className="reg-repassword">
       <label for="con-repassword" >Confirm password</label>
