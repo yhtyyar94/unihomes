@@ -265,10 +265,11 @@
     border-radius: 5px;
   }
 }
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .search-container-text > h1 {
     font-size: 40px;
     line-height: 50px;
+    margin-top: 15%;
   }
   .search-container-text > h5 {
     font-size: 22px;
@@ -303,6 +304,10 @@
     height: 25px;
     font-size: 15px;
     border-radius: 5px;
+  }
+  .search-container,
+  overlay {
+    height: 440px;
   }
 }
 @media (max-width: 414px) {
