@@ -118,7 +118,7 @@ export default function HomeDetails({
 				<img
 					src={
 						home.length !== 0 &&
-						`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`
+						home.images[imageIndex]
 					}
 					style={{
 						borderRadius: '3px',
@@ -174,7 +174,7 @@ export default function HomeDetails({
 								onDoubleClick={() => setModalIsOpen(true)}
 								src={
 									home.length !== 0 &&
-									`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`
+									home.images[imageIndex]
 								}
 								style={{ borderRadius: '3px' }}
 								alt=""
@@ -191,7 +191,7 @@ export default function HomeDetails({
 											onClick={() => changeImage(index)}
 											src={
 												home.length !== 0 &&
-												`https://unilive-backend.herokuapp.com/${home.images[index].filePath}`
+												home.images[index]
 											}
 											alt=""
 											style={{

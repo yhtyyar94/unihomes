@@ -43,7 +43,7 @@ export default function City({home, shortlist, setShortlist, changeShortlist}) {
     return ( 
         <div className="city">
                 <div className="home-img">
-                    <img  src={`https://unilive-backend.herokuapp.com/${home.images[0].filePath}`} alt="home" style={{width:"100%",height:"auto",marginBottom:"-4px"}} />
+                    <img  src={home.images[0]} alt="home" style={{width:"100%",height:"auto",marginBottom:"-4px"}} />
                 </div>    
                 <div className="rent-area">
                         <div style={{marginLeft:"-5%"}}>
