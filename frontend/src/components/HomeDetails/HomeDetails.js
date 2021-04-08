@@ -126,11 +126,13 @@ export default function HomeDetails({
 							}}
 							alt=""
 						/>
+						
 						<BiRightArrow
 							className="arrow-right"
 							onClick={handleRightSwipe}
 							fill="#03c5f0"
 						/>
+						
 						<BiLeftArrow
 							className="arrow-left"
 							onClick={handleLeftSwipe}
@@ -325,7 +327,7 @@ export default function HomeDetails({
 						>
 							<BsEnvelope style={{ fill: 'white', marginRight: 10 }} />
 							Book Viewing
-						</button>
+						</button> 
 						<div style={{ textAlign: 'center', marginBottom: 20 }}>
 							<div className="shortlist-btn">
 								{shortlist.includes(home._id) ? (

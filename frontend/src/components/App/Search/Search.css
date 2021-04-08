@@ -154,16 +154,6 @@
   }
 }
 
-/* @media (max-width: 900px) {
-  .btn-search-disabled {
-    font-size: 24px;
-    color: pink;
-  }
-  .btn-search {
-    font-size: 24px;
-  }
-} */
-
 /* IPAD SCREEN */
 @media (max-width: 768px) {
   .search-container {
@@ -196,6 +186,12 @@
   }
   .btn-search {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-search {
+    padding: 5px;
   }
 }
 
@@ -416,7 +412,6 @@
     font-size: 20px;
     line-height: 23px;
     margin-top: 10%;
-    color: pink;
   }
   .search-container-text > h5 {
     margin-top: 7px;
