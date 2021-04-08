@@ -154,16 +154,6 @@
   }
 }
 
-/* @media (max-width: 900px) {
-  .btn-search-disabled {
-    font-size: 24px;
-    color: pink;
-  }
-  .btn-search {
-    font-size: 24px;
-  }
-} */
-
 /* IPAD SCREEN */
 @media (max-width: 768px) {
   .search-container {
@@ -196,6 +186,12 @@
   }
   .btn-search {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-search {
+    padding: 5px;
   }
 }
 
@@ -269,10 +265,11 @@
     border-radius: 5px;
   }
 }
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .search-container-text > h1 {
     font-size: 40px;
     line-height: 50px;
+    margin-top: 15%;
   }
   .search-container-text > h5 {
     font-size: 22px;
@@ -300,6 +297,66 @@
     height: 25px;
     font-size: 15px;
     border-radius: 5px;
+  }
+  .btn-search-disabled {
+    margin-left: 5px;
+    width: 94px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+  .search-container,
+  overlay {
+    height: 440px;
+  }
+}
+@media (max-width: 414px) {
+  .search-container-text > h1 {
+    font-size: 35px;
+    line-height: 40px;
+    margin-top: 20%;
+  }
+  .search-container {
+    height: 470px;
+  }
+  .overlay {
+    height: 470px;
+  }
+  .search-container-text {
+    margin-top: 10%;
+  }
+  .form-search {
+    width: 90%;
+  }
+}
+@media (max-width: 375px) {
+  .search-container-text > h1 {
+    font-size: 30px;
+    line-height: 50px;
+  }
+  .form-search {
+    width: 85%;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  .btn-search {
+    height: 40px;
+    padding: 3px;
+  }
+  .btn-search-disabled {
+    height: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 3px;
+  }
+  .search-container {
+    height: 470px;
+  }
+  .overlay {
+    height: 470px;
+  }
+  .search-container-text {
+    margin-top: 10%;
   }
 }
 
@@ -333,6 +390,7 @@
     padding: 5px;
     flex-direction: column;
     width: 80%;
+    border-radius: 5px;
   }
   .select-search {
     margin: 2px;
@@ -351,7 +409,7 @@
   }
 }
 
-@media (max-width: 285px) {
+@media (max-width: 280px) {
   .search-container {
     height: 300px;
   }
@@ -376,14 +434,14 @@
     top: 65%;
   }
   .form-search {
-    padding: 5px;
     flex-direction: column;
     width: 100%;
+    border-radius: 5px;
   }
   .select-search {
     margin: 2px;
     padding: 5px;
-    width: 170px;
+    width: 160px;
     height: 20px;
     font-size: 9px;
     border-radius: 5px;

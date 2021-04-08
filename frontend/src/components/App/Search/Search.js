@@ -16,7 +16,7 @@ export default function Search({cities}) {
       history.push(`/cities/${cityName}/${roomNum}`)
    }
  
-
+ 
     
     return (   
      

@@ -98,7 +98,7 @@ const AddProperty = ({userInfo}) => {
 		formData.append('cityId', cityId)
 		formData.append('cityName', cityName)
 		formData.append('address', street)
-		formData.append('address', district)
+		formData.append('address', district) 
 		formData.append('address', town)
 		formData.append('address', postcode)
 		formData.append('home_description', description)
@@ -121,7 +121,7 @@ const AddProperty = ({userInfo}) => {
 				res.data.message && setSuccessSubmit(true);
 			}).catch(err => console.log(err))
 		}
-	if(!id) {
+	if(!id) { 
 		setRent('')
 		setBedrooms('')
 		setBathrooms('')

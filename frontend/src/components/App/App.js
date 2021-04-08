@@ -266,7 +266,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <Properties userInfo={userInfo} />;
+								return <Properties userInfo={userInfo} cities={cities} />;
 							} else {
 								return <NotAuth />;
 							}

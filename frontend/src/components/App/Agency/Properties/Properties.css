@@ -1,3 +1,22 @@
+.filter-by-city-name {
+  margin-top: 20%;
+}
+.filter-by-city-name-option {
+  margin: 10px;
+  padding: 7px;
+  width: 366px;
+  height: 60px;
+  background: #ffffff;
+  border: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  color: #ced3d8;
+  border-radius: 7px;
+  border: solid 1px #03c5f0;
+}
+
 #properties {
   margin-top: 70px;
   background-color: #e5e5e5;
@@ -73,7 +92,6 @@
   margin-right: 2px;
 }
 @media only screen and (max-width: 768px) {
-
   #properties .property-title {
     padding-top: 30px;
     /* margin-top: 10px; */
@@ -87,13 +105,13 @@
     width: 100%;
     height: 250px;
   }
-  
-.property-btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 50px;
-}
+
+  .property-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50px;
+  }
   .property-btn > button {
     font-size: 16px;
     height: 28px;
@@ -120,7 +138,7 @@
     font-size: 14px;
     font-weight: bold;
   }
-  
+
   #properties .properties {
     display: flex;
     flex-direction: column;
@@ -133,7 +151,6 @@
     width: 100%;
     height: 200px;
     overflow: hidden;
-
   }
   .properties .properties-img img {
     width: 100%;
@@ -142,7 +159,7 @@
     background-size: cover;
     background-position: center;
   }
-  
+
   .property-content {
     background-color: #03c5f0;
     height: 55px;
@@ -152,32 +169,27 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding:0px 0px;
-    
+    padding: 0px 0px;
   }
-  .bill{
+  .bill {
     font-size: 6px;
     width: 100%;
     text-align: left;
   }
-  .bed{
+  .bed {
     font-size: 2px;
     width: 50%;
-margin-left: -5px;
-
+    margin-left: -5px;
   }
-  .bath{
+  .bath {
     font-size: 2px;
     width: 50%;
-
-
   }
   .property-btn {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     height: 40px;
-
   }
   .property-btn > button {
     width: 300px;
@@ -200,5 +212,4 @@ margin-left: -5px;
   .property-btn-edit {
     margin-right: 2px;
   }
- 
 }
