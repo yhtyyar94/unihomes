@@ -319,7 +319,7 @@ export default function HomeDetails({
 						<hr />
 						<br />
 						<button
-							className="btn-book-viewing"
+							className="btn-book-viewing" 
 							type="submit"
 							onClick={showBookViewing}
 						>

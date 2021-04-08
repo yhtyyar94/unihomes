@@ -121,7 +121,7 @@ const AddProperty = ({userInfo}) => {
 				res.data.message && setSuccessSubmit(true);
 			}).catch(err => console.log(err))
 		}
-	if(!id) {
+	if(!id) { 
 		setRent('')
 		setBedrooms('')
 		setBathrooms('')
