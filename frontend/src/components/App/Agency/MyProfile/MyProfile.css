@@ -7,14 +7,21 @@
   grid-gap: 10px;
   height: 781px;
 }
+.profile-img>img{
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
 
+
+}
 .myprofile-left {
   background-color: #e5e5e5;
 }
 
 .profile-img {
   background-color: #fff;
-
+background-repeat: no-repeat;
+overflow: hidden;
   width: 150px;
   height: 150px;
   border-radius: 50%;
