@@ -249,7 +249,6 @@ export default function HomeDetails({
 							{home.length !== 0 && home.address[0]},{' '}
 							{home.length !== 0 && home.address[1]},{' '}
 						</h3>
-						<br />
 						<h3 className="homedetails-sidebar-address">
 							{home.length !== 0 && home.cityName},{' '}
 							{home.length !== 0 && home.address[3]}
@@ -319,20 +318,20 @@ export default function HomeDetails({
 							<BsEnvelope style={{ fill: 'white', marginRight: 10 }} />
 							Book Viewing
 						</button>
-						<div style={{ textAlign: 'center', marginBottom: 20 }}>
+						<div className="shortlist-btn-container">
 							<div className="shortlist-btn">
-								{shortlist.includes(home._id) ? (
+								{shortlist && shortlist.includes(home._id) ? (
 									<p onClick={removeFromShortlist}>
 										{' '}
 										<BsHeartFill fill="red" /> &nbsp;{' '}
-										<span className="remove-btn">Remove</span>
+										<span className="rem-btn">Remove</span>
 									</p>
 								) : (
 									<p onClick={addToShortlist}>
 										{' '}
-										<BsHeart className="heart-icon" /> &nbsp;
-										<span className="short-btn">Shortlist</span>
-										<span className="add-btn">Add</span>
+										<BsHeart className="heart-icon" /> &nbsp;{' '}
+										<span className="s-btn">Shortlist</span>
+										<span className="a-btn">Add</span>
 									</p>
 								)}
 							</div>

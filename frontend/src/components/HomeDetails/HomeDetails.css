@@ -190,37 +190,6 @@
 	font-size: 10px;
 }
 
-.homedetails-sidebar-btn-shortlist {
-	background-color: #fff;
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 22px;
-	line-height: 26px;
-	text-align: center;
-	border: none;
-	cursor: pointer;
-}
-
-.homedetails-sidebar-btn-shortlist:hover {
-	background-color: red;
-	font-size: 24px;
-	padding: 7px;
-	color: #fff;
-	border: '1px #fff';
-	border-radius: 5px;
-}
-
-.homedetails-sidebar-btn-shortlist::after {
-	content: 'Shortlist';
-	margin-left: 8px;
-}
-.homedetails-sidebar-btn-shortlist:hover::after {
-	content: 'Add';
-	padding: 7px 6px;
-	fill: #fff;
-}
-
 .btn-book-viewing {
 	display: flex;
 	justify-content: center;
@@ -240,6 +209,12 @@
 	margin-bottom: 20px;
 }
 
+.shortlist-btn-container {
+	padding: 10px;
+	margin: 15px 0px;
+	height: auto;
+}
+
 .book-viewing-container {
 	position: absolute;
 	width: 560px;
@@ -256,6 +231,7 @@
 .homedetails-sidebar-address {
 	padding: 5px;
 	margin-bottom: 15px;
+	line-height: 1.2;
 }
 
 .btn-book-viewing-page-close {
@@ -374,6 +350,20 @@
 		align-items: left;
 		margin-top: 10px;
 	}
+	.btn-book-viewing {
+		height: 38px;
+		border-radius: 5px;
+		font-size: 16px;
+		line-height: 20px;
+		margin-bottom: 15px;
+	}
+	.homedetails-sidebar-address {
+		padding: 5px;
+		margin-bottom: 8px;
+		line-height: 1.1;
+		font-size: 17px;
+		text-align: center;
+	}
 }
 
 @media (max-width: 360px) {
@@ -480,7 +470,7 @@
 	}
 
 	.homedetails-sidebar-bills {
-		width: 100px;
+		width: 120px;
 	}
 	.btn-book-viewing {
 		display: flex;
