@@ -211,7 +211,7 @@
 		display: block;
 		text-align: center;
 		margin: 9px 0px;
-		font-size: 12px;
+		font-size: 14px;
 	}
 }
 
@@ -248,6 +248,6 @@
 	}
 
 	#nav-footer > nav > ul > li {
-		font-size: 10px;
+		font-size: 12px;
 	}
 }
