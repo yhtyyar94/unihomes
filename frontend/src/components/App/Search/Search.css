@@ -5,7 +5,7 @@
   color: white;
   background: url("https://i.postimg.cc/tTD20Kn4/Group-65.png") top left/cover
     no-repeat;
-  height: 800px;
+  height: 630px;
   width: 100%;
   position: relative;
   display: flex;
@@ -20,18 +20,18 @@
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
-  font-size: 100px;
+  font-size: 80px;
   margin: 0;
 }
 .search-container-text > h5 {
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .search-container-text {
-  margin-top: 10%;
+  margin-top: 5%;
   padding-top: 20px;
   position: absolute;
   z-index: 10;
@@ -39,7 +39,7 @@
 
 .overlay {
   width: 100%;
-  height: 800px;
+  height: 630px;
   background: rgba(0, 191, 255, 0.69);
   position: absolute;
 }
@@ -57,7 +57,7 @@
   margin-top: 20px;
   display: flex;
   align-items: center;
-  padding: 40px;
+  padding: 30px;
   width: 100%;
   height: auto;
   background: rgb(58, 82, 149, 0.84);
@@ -93,7 +93,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bolder;
-  font-size: 30px;
+  font-size: 27px;
   color: #ffffff;
   background: #ff8c00;
   border: none;
@@ -154,23 +154,13 @@
   }
 }
 
-/* @media (max-width: 900px) {
-  .btn-search-disabled {
-    font-size: 24px;
-    color: pink;
-  }
-  .btn-search {
-    font-size: 24px;
-  }
-} */
-
 /* IPAD SCREEN */
 @media (max-width: 768px) {
   .search-container {
     height: 500px;
   }
   .search-container-text > h1 {
-    margin-top: 2%;
+    margin-top: 5%;
     font-size: 60px;
     line-height: 70px;
   }
@@ -192,10 +182,33 @@
     font-size: 20px;
   }
   .btn-search-disabled {
-    font-size: 13px;
+    font-size: 15px;
   }
   .btn-search {
-    font-size: 13px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-search {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 685px) {
+  .search-container-text > h1 {
+    font-size: 60px;
+    line-height: 70px;
+    margin-top: 10%;
+  }
+  .search-container-text > h5 {
+    margin-top: 10px;
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .btn-search {
+    width: 100px;
+    font-size: 16px;
   }
 }
 
@@ -217,7 +230,7 @@
 @media (max-width: 575px) {
   .search-container-text > h1 {
     font-size: 50px;
-    line-height: 60px;
+    line-height: 55px;
   }
   .search-container-text > h5 {
     font-size: 22px;
@@ -234,21 +247,29 @@
     padding: 5px;
     width: 240px;
     height: 26px;
-    font-size: 13px;
+    font-size: 12px;
     border-radius: 5px;
   }
   .btn-search {
     margin-left: 5px;
     width: 94px;
     height: 25px;
-    font-size: 15px;
+    font-size: 10px;
+    border-radius: 5px;
+  }
+  .btn-search-disabled {
+    margin-left: 5px;
+    width: 94px;
+    height: 25px;
+    font-size: 10px;
     border-radius: 5px;
   }
 }
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .search-container-text > h1 {
     font-size: 40px;
     line-height: 50px;
+    margin-top: 15%;
   }
   .search-container-text > h5 {
     font-size: 22px;
@@ -277,6 +298,66 @@
     font-size: 15px;
     border-radius: 5px;
   }
+  .btn-search-disabled {
+    margin-left: 5px;
+    width: 94px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+  .search-container,
+  overlay {
+    height: 440px;
+  }
+}
+@media (max-width: 414px) {
+  .search-container-text > h1 {
+    font-size: 35px;
+    line-height: 40px;
+    margin-top: 20%;
+  }
+  .search-container {
+    height: 470px;
+  }
+  .overlay {
+    height: 470px;
+  }
+  .search-container-text {
+    margin-top: 10%;
+  }
+  .form-search {
+    width: 90%;
+  }
+}
+@media (max-width: 375px) {
+  .search-container-text > h1 {
+    font-size: 30px;
+    line-height: 50px;
+  }
+  .form-search {
+    width: 85%;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  .btn-search {
+    height: 40px;
+    padding: 3px;
+  }
+  .btn-search-disabled {
+    height: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 3px;
+  }
+  .search-container {
+    height: 470px;
+  }
+  .overlay {
+    height: 470px;
+  }
+  .search-container-text {
+    margin-top: 10%;
+  }
 }
 
 /* Galaxy S5 Screen */
@@ -286,8 +367,9 @@
     height: 300px;
   }
   .search-container-text > h1 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 23px;
+    margin-top: 3%;
   }
   .search-container-text > h5 {
     margin-top: 7px;
@@ -296,7 +378,7 @@
   }
 
   .search-container-text {
-    margin-top: 24%;
+    margin-top: 20%;
   }
   .overlay {
     height: 300px;
@@ -308,11 +390,58 @@
     padding: 5px;
     flex-direction: column;
     width: 80%;
+    border-radius: 5px;
   }
   .select-search {
     margin: 2px;
     padding: 5px;
     width: 200px;
+    height: 20px;
+    font-size: 9px;
+    border-radius: 5px;
+  }
+  .btn-search {
+    margin-left: 5px;
+    width: 90px;
+    height: 20px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 280px) {
+  .search-container {
+    height: 300px;
+  }
+  .search-container-text > h1 {
+    font-size: 20px;
+    line-height: 23px;
+    margin-top: 10%;
+  }
+  .search-container-text > h5 {
+    margin-top: 7px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .search-container-text {
+    margin-top: 20%;
+  }
+  .overlay {
+    height: 300px;
+  }
+  .form-container {
+    top: 65%;
+  }
+  .form-search {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .select-search {
+    margin: 2px;
+    padding: 5px;
+    width: 160px;
     height: 20px;
     font-size: 9px;
     border-radius: 5px;

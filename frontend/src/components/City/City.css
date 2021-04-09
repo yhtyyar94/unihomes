@@ -91,13 +91,13 @@
   cursor: pointer;
 }
 
-.shortlist-btn .add-btn {
+.shortlist-btn .a-btn {
   display: none;
 }
-.shortlist-btn:hover .short-btn {
+.shortlist-btn:hover .s-btn {
   display: none;
 }
-.shortlist-btn:hover .add-btn {
+.shortlist-btn:hover .a-btn {
   display: inline;
   color: red;
 }
@@ -114,7 +114,7 @@
   cursor: pointer;
   color: inherit;
 }
-.remove-btn {
+.rem-btn {
   flex: 6;
   height: auto;
   font-size: 24px;
@@ -123,17 +123,40 @@
   color: red;
   cursor: pointer;
 }
+.s-btn {
+  font-size: 24px;
+}
+.num-of-bed {
+  font-size: 22px;
+  margin-right: 10px;
+}
+.num-of-bath {
+  font-size: 22px;
+  margin-right: 8px;
+}
 
-@media (max-width: 360px) {
+@media (max-width: 414px) {
+  .rent-text {
+    font-size: 17px;
+    padding: 0;
+    padding-left: 20px;
+  }
+  .rent-span {
+    font-size: 23px;
+  }
+  .view-btn {
+    font-size: 20px;
+  }
+  .s-btn {
+    font-size: 20px;
+  }
+  .rem-btn {
+    font-size: 20px;
+  }
+}
+@media (max-width: 375px) {
   .rent-area {
-    background-color: #03c5f0;
     height: 60px;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: Roboto;
-    /* flex-direction: column; */
   }
   .rent-text {
     font-size: 15px;
@@ -141,10 +164,94 @@
   .shortlist-btn {
     font-size: 18px;
   }
+  .s-btn {
+    font-size: 18px;
+  }
   .view-btn {
     font-size: 18px;
   }
   .rent-span {
     font-size: 18px;
+  }
+  .rem-btn {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .rent-area {
+    height: 60px;
+  }
+  .rent-text {
+    font-size: 15px;
+  }
+  .shortlist-btn {
+    font-size: 18px;
+  }
+  .s-btn {
+    font-size: 18px;
+  }
+  .view-btn {
+    font-size: 18px;
+  }
+  .rent-span {
+    font-size: 18px;
+  }
+  .rem-btn {
+    font-size: 18px;
+  }
+}
+@media (max-width: 320px) {
+  .rent-area {
+    height: 60px;
+  }
+  .rent-text {
+    font-size: 12px;
+  }
+  .shortlist-btn {
+    font-size: 15px;
+  }
+  .s-btn {
+    font-size: 15px;
+  }
+  .view-btn {
+    font-size: 15px;
+  }
+  .rent-span {
+    font-size: 12px;
+  }
+  .rem-btn {
+    font-size: 15px;
+  }
+}
+@media (max-width: 280px) {
+  .rent-area {
+    height: 60px;
+  }
+  .rent-text {
+    font-size: 10px;
+  }
+  .shortlist-btn {
+    font-size: 15px;
+  }
+  .s-btn {
+    font-size: 12px;
+  }
+  .view-btn {
+    font-size: 12px;
+  }
+  .rent-span {
+    font-size: 12px;
+  }
+  .rem-btn {
+    font-size: 15px;
+  }
+  .num-of-bed {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+  .num-of-bath {
+    font-size: 10px;
+    margin-right: 8px;
   }
 }

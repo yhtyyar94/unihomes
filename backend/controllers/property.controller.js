@@ -117,19 +117,6 @@ exports.getSingleCity = async (req, res) => {
 }
 
 exports.createProperty = async (req, res) => {
-
-    let filesArray = []
-    await req.files.forEach(element => {
-        const file = {
-            fileName: element.originalname,
-            filePath: element.path,
-            fileType: element.mimetype,
-            fileSize: fileSizeFormatter(element.size, 2)
-        }
-    filesArray.push(file)
-    })
-
-
     const newProperty = await new PropertiesModel({
         cityId: req.body.cityId,
         user:req.body.user,
@@ -141,7 +128,7 @@ exports.createProperty = async (req, res) => {
         availability:req.body.availability,
         bathroom:req.body.bathroom,
         type:req.body.type,
-        images:filesArray,
+        images:req.body.images,
         rent:req.body.rent,
         cityName:req.body.cityName
     })
@@ -158,52 +145,8 @@ exports.createProperty = async (req, res) => {
 
 exports.updateProperty = async (req, res) => {
     const propertyId = req.params.id
-    let filesArray = []
-   await req.files.forEach(element => {
-        const file = {
-            fileName: element.originalname,
-            filePath: element.path,
-            fileType: element.mimetype,
-            fileSize: fileSizeFormatter(element.size, 2)
-        }
-    filesArray.push(file)
-    })
 
-
-    const newProperty =  {
-        cityId: req.body.cityId,
-        user:req.body.user,
-        keyFeatures:req.body.keyFeatures,
-        address:req.body.address,
-        home_description:req.body.home_description,
-        bedroom:req.body.bedroom,
-        deposit:req.body.deposit,
-        availability:req.body.availability,
-        bathroom:req.body.bathroom,
-        type:req.body.type,
-        images:filesArray,
-        rent:req.body.rent,
-        cityName:req.body.cityName
-    }
-
-    const newProperty1 =  {
-        cityId: req.body.cityId,
-        user:req.body.user,
-        keyFeatures:req.body.keyFeatures,
-        address:req.body.address,
-        home_description:req.body.home_description,
-        bedroom:req.body.bedroom,
-        deposit:req.body.deposit,
-        availability:req.body.availability,
-        bathroom:req.body.bathroom,
-        type:req.body.type,
-        rent:req.body.rent,
-        cityName:req.body.cityName
-    }
-
-    const data = filesArray.length !== 0 ? newProperty : newProperty1
-
-    await PropertiesModel.findByIdAndUpdate({_id: propertyId}, data, (err, data) => {
+    await PropertiesModel.findByIdAndUpdate({_id: propertyId}, {$set: req.body}, (err, data) => {
         if(err) {
             res.status(500).json({message:err})
         } else {

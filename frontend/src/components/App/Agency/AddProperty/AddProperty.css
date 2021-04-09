@@ -1,302 +1,311 @@
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .AddProperty {
-    margin-top: 70px;
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    border-top: 2px solid#F49131;
-    border-bottom: 2px solid#F49131;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  border-top: 2px solid#F49131;
+  border-bottom: 2px solid#F49131;
 }
 
 .addproperty-succes-message {
-    text-align: center;
-    border: 1px solid green;
-    color: #ffffff;
-    background: green;
-    padding: 10px;
-    font-weight: 200;
-    margin-bottom: 5px;
+  text-align: center;
+  border: 1px solid green;
+  color: #ffffff;
+  background: green;
+  padding: 10px;
+  font-weight: 200;
+  margin-bottom: 5px;
 }
 
 .add-form {
-    display: inline;
-    justify-content: center;
-    background-color: #03C5F0;
-    width: 100% !important;
+  display: inline;
+  justify-content: center;
+  background-color: #d3d3d3;
+  width: 100% !important;
 }
 
-.add-form input, textarea, select {
-    margin-left: 5px;
-    margin-right: 5px;
-    border: none;
-    color: #656d6d;
+.add-form input,
+textarea,
+select {
+  margin-left: 5px;
+  margin-right: 5px;
+  border: none;
+  color: #656d6d;
 }
 
 .add-form select {
-    margin-left: 5px;
-    margin-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .add-form label {
-    margin-left: 5px;
-    margin-right: 5px;
-    color: #ffffff;
-    font-weight: 200;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: black;
+  font-weight: 200;
 }
 
 .add-form input::placeholder {
-    color: #656d6d;
-    font-size: 12px;
+  color: #656d6d;
+  font-size: 12px;
 }
 
-.add-form input, .add-form label {
-    display:block;
+.add-form input,
+.add-form label {
+  display: block;
 }
 
 .add-form select {
-    color: #656d6d;
-    font-size: 12px;
+  color: #656d6d;
+  font-size: 12px;
 }
 
-.row7 input, .row7 label {
-    display:block !important;
+.row7 input,
+.row7 label {
+  display: block !important;
 }
 
-.row8 input, .row8 label {
-    display:block !important;
+.row8 input,
+.row8 label {
+  display: block !important;
 }
 
 .row {
-    margin-top: 30px !important;
-    margin-bottom: 30px !important;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
 }
 
 .row1 {
-    display: flex;
-    margin-top:5px;
-    margin-bottom:5px;
-    justify-content: space-between;
-    width: 99.5%;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: space-between;
+  width: 99.5%;
 }
 .row1 div {
-    width: 100%;
+  width: 100%;
 }
 
-.row1 select, .row1 input {
-    width: 100%;
-    padding: 6px;
-    margin-top: +5px;
-    height: 33px;
-    color: #656d6d;
-    font-size: 12px;
+.row1 select,
+.row1 input {
+  width: 100%;
+  padding: 6px;
+  margin-top: +5px;
+  height: 33px;
+  color: #656d6d;
+  font-size: 12px;
 }
 
 .row2 {
-    display: flex;
+  display: flex;
 }
 
 .row2 input {
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 6px;
-    color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 6px;
+  color: #fff;
 }
 
 .row2 label {
-    padding: 6px;
-    color: #fff;
+  padding: 6px;
+  color: black;
 }
 
-
 .row3 {
-    display: flex;
-    margin-top:5px;
-    margin-bottom:5px;
-    justify-content: space-between;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: space-between;
 }
 
 .row3 input {
-    width: 300px;
-    padding: 10px;
+  width: 300px;
+  padding: 10px;
 }
 
 .row4 {
-    display: flex;
-    margin-top:5px;
-    margin-bottom:5px;
-    justify-content: space-between;
-    width: 99.5%;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: space-between;
+  width: 99.5%;
 }
 
 .row4 input {
-    border: 1px solid #fff;
-    text-align: center;
-    font-weight: 200;
-    width: 300px;
-    padding: 6px;
-    margin-top: +5px;
-    height: 33px;
-    color: #656d6d;
+  border: 1px solid #fff;
+  text-align: center;
+  font-weight: 200;
+  width: 300px;
+  padding: 6px;
+  margin-top: +5px;
+  height: 33px;
+  color: #656d6d;
 }
 
 .row4 div {
-    width: 100%;
+  width: 100%;
 }
 
 .row4 input {
-    width: 100%;
-    padding: 6px;
-    margin-top: +5px;
-    height: 33px;
-    color: #656d6d;
-    font-size: 12px;
-
+  width: 100%;
+  padding: 6px;
+  margin-top: +5px;
+  height: 33px;
+  color: #656d6d;
+  font-size: 12px;
 }
 
 .row5 {
-    display: flex;
-    margin-top:5px;
-    margin-bottom:5px;
-    justify-content: space-between;
-    width: 99.5%;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: space-between;
+  width: 99.5%;
 }
 
 .row5 div {
-    width: 100%;
+  width: 100%;
 }
 
-.row5 select, .row5 input {
-    width: 100%;
-    padding: 6px;
-    margin-top: +5px;
-    height: 33px;
-    color: #656d6d;
-    font-size: 12px;
-
+.row5 select,
+.row5 input {
+  width: 100%;
+  padding: 6px;
+  margin-top: +5px;
+  height: 33px;
+  color: #656d6d;
+  font-size: 12px;
 }
 
 .row6 {
-    display: flex;
-    margin-top:5px;
-    margin-bottom:5px;
-    justify-content: space-between;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: space-between;
 }
 
 .row6 input {
-    width: 300px;
-    padding: 10px;
+  width: 300px;
+  padding: 10px;
 }
 
 .row7 {
-    /* display: flex; */
-    margin-top:5px;
-    margin-bottom:5px;
-    /* justify-content: center; */
+  /* display: flex; */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* justify-content: center; */
 }
 
 .row7 input {
-    padding: 10px;
-    width: 99%;
+  padding: 10px;
+  width: 99%;
 }
 
 .row8 {
-    /* display: flex; */
-    margin-top:5px;
-    margin-bottom:5px;
-    /* justify-content: center; */
+  /* display: flex; */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* justify-content: center; */
 }
 
 .row8 textarea {
-    padding: 10px;
-    width: 99%;
+  padding: 10px;
+  width: 99%;
 }
 
 .row9 {
-    display: flex;
-    margin-top:5px;
-    margin-bottom:5px;
-    justify-content: center;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: center;
 }
 
 .row9 input {
-    background: #F49131;
-    color: #ffffff;
-    font-weight: 200;
-    padding: 10px;
-    border: none;
-    width: 15%;
+  background: #f49131;
+  color: #ffffff;
+  font-weight: 200;
+  padding: 10px;
+  border: none;
+  width: 15%;
 }
 
-.row7 label, .row7 input {
-    display: block !important;
+.row7 label,
+.row7 input {
+  display: block !important;
 }
 
-.row8 label, .row8 textarea {
-    display: block !important;
+.row8 label,
+.row8 textarea {
+  display: block !important;
 }
 
-.row input, .row select, textarea {
-    border-radius: 5px;
-    width: 98%;
+.row input,
+.row select,
+textarea {
+  border-radius: 5px;
+  width: 98%;
 }
 
 .row9 input {
-    border-radius: 5px;
-    width: 10% !important;
+  border-radius: 5px;
+  width: 10% !important;
 }
-
 
 @media only screen and (max-width: 768px) {
-    .row label {
-        font-size: 12px;
-    }
+  .row label {
+    font-size: 12px;
+  }
 
-    .row input::placeholder {
-        font-size: 10px;
-        padding-left: -5px;
-    }
+  .row input::placeholder {
+    font-size: 10px;
+    padding-left: -5px;
+  }
 
-    .row9 input {
-        border-radius: 5px;
-        width: 20%;
-    }
+  .row9 input {
+    border-radius: 5px;
+    width: 20%;
+  }
 }
 
 @media only screen and (max-width: 370px) {
-  .add-form{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+  .add-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .row {
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-      margin-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    margin-bottom: 0 !important;
   }
 
   .row div {
-      margin-top: 1%;
+    margin-top: 1%;
   }
 
-  .row input, .row select, textarea {
-      border-radius: 5px;
-      width: 98%;
+  .row input,
+  .row select,
+  textarea {
+    border-radius: 5px;
+    width: 98%;
   }
 
   .row9 {
     margin-bottom: 2% !important;
     display: block;
-    align-items: center !important; 
+    align-items: center !important;
   }
 
   .row9 input {
-      border-radius: 5px;
-      width: 98% !important;
+    border-radius: 5px;
+    width: 98% !important;
   }
 }

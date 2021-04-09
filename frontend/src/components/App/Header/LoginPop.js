@@ -3,21 +3,23 @@ import {RiCloseFill} from 'react-icons/ri'
 import axios from 'axios'
 import "./LoginReg.css"
 import { Redirect, useHistory } from 'react-router'
+import SuccessMessageaAddProp from '../Agency/AddProperty/SuccessMessageaAddProp'
 
 export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, setUserInfo, setSignUp}) {
 
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const [successLogin, setSuccessLogin] = useState()
   const history = useHistory()
 
   
   const Login = async (e) => {
     e.preventDefault()
+    setSuccessLogin(true)
      const promise = await axios.post(`https://unilive-backend.herokuapp.com/login`, {
         email:email,
         password:password
-      }).then(res => {console.log(res.data) 
-      return res.data}).catch(err => console.log(err))
+      }).then(res => res.data).catch(err => console.log(err))
       
 
       sessionStorage.setItem('token', JSON.stringify(promise.token))
@@ -29,6 +31,7 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
         document.querySelector("#header").className = "scroll";
         setIsLoggedIn(true)
         setLog(false)
+        setSuccessLogin(false)
       } else {
         alert('Wrong email or password')
         return
@@ -58,7 +61,7 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
 
   return (
     <div className="logContainer" id="logContainer">
-
+    {successLogin && <SuccessMessageaAddProp login={'login'}/>}
     <form className="formLog" onSubmit={Login}>
       <div className="logTitle">Agent Login <RiCloseFill className="close-logo" onClick={() => setLog(false)}/> </div>
 

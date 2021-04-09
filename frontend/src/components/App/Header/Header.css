@@ -1,254 +1,255 @@
 * {
-  overflow-x: hidden;
+	overflow-x: hidden;
 }
 .App {
-  font-family: Roboto;
+	font-family: Roboto;
 }
 
 .App button:focus,
 .App button:active {
-  border: none !important;
+	border: none !important;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  background: rgb(0, 191, 255, 0.05);
-  position: fixed;
-  z-index: 11;
-  height: 100px;
-  width: 100%;
-  transition: all 0.5s;
-  overflow-y: hidden;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	background: rgb(0, 191, 255, 0.05);
+	position: fixed;
+	z-index: 11;
+	height: 100px;
+	width: 100%;
+	transition: all 0.5s;
+	overflow-y: hidden;
 }
 
 .scroll {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  background: rgb(0, 191, 255);
-  position: fixed;
-  z-index: 11;
-  height: 70px;
-  width: 100%;
-  transition: all 0.5s;
-  overflow-y: hidden;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	background: rgb(0, 191, 255);
+	position: fixed;
+	z-index: 11;
+	height: 70px;
+	width: 100%;
+	transition: all 0.5s;
+	overflow-y: hidden;
 }
 
 .header .header-items a {
-  font-size: 18px;
+	font-size: 18px;
 }
 
 .home-logo {
-  margin-bottom: -5px;
-  transition: all 0.3;
+	margin-bottom: -5px;
+	transition: all 0.3;
 }
 
 .header .search-toggle input {
-  border: none;
-  margin-bottom: 2px;
-  cursor: pointer;
+	border: none;
+	margin-bottom: 2px;
+	cursor: pointer;
 }
 
 .header .search-toggle input {
-  border: none;
-  margin-bottom: 2px;
-  cursor: pointer;
+	border: none;
+	margin-bottom: 2px;
+	cursor: pointer;
 }
 
 .scroll .search-toggle input {
-  border: none;
-  margin-bottom: 2px;
-  cursor: pointer;
+	border: none;
+	margin-bottom: 2px;
+	cursor: pointer;
 }
 
 .header .search-toggle input::placeholder {
-  color: rgba(51, 51, 51, 0.63);
-  font-size: 14px;
+	color: rgba(51, 51, 51, 0.63);
+	font-size: 14px;
 }
 
 .header-items {
-  right: 0;
+	right: 0;
 }
 
 .header-items a {
-  color: #ffffff;
-  cursor: pointer;
-  margin-right: 10px;
+	color: #ffffff;
+	cursor: pointer;
+	margin-right: 10px;
 }
 
 #unihomes {
-  font-size: 35px;
-  color: #ffffff;
+	font-size: 35px;
+	color: #ffffff;
 }
 
 .search-toggle {
-  margin-bottom: -10px;
+	margin-bottom: -10px;
 }
 
 .search-toggle input {
-  width: 100%;
-  border: 2px solid #333;
-  border-radius: 5px;
+	width: 100%;
+	border: 2px solid #333;
+	border-radius: 5px;
 }
 
 .heart-number {
-  position: absolute;
-  margin-left: +0.2%;
-  font-size: 12px;
+	position: absolute;
+	margin-left: +0.2%;
+	font-size: 12px;
 }
 
 .btn {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .agency a {
-  cursor: pointer;
+	cursor: pointer;
+}
+
+.datalist-option {
+	background: rgb(0, 191, 255) !important;
 }
 
 @media only screen and (min-width: 772px) {
-  .header .search-toggle input {
-    width: 350px;
-    height: 30px;
-    border: 2px solid #333;
-    border-radius: 5px;
-  }
+	.header .search-toggle input {
+		width: 350px;
+		height: 30px;
+		border: 2px solid #333;
+		border-radius: 5px;
+	}
 
-  .scroll .search-toggle input {
-    width: 350px;
-    height: 30px;
-    border: 2px solid #333;
-    border-radius: 5px;
-  }
+	.scroll .search-toggle input {
+		width: 350px;
+		height: 30px;
+		border: 2px solid #333;
+		border-radius: 5px;
+	}
 }
 
 @media only screen and (max-width: 771px) {
-  .header .search-toggle input::placeholder {
-    font-size: 10px;
-    padding-left: -5px;
-  }
+	.header .search-toggle input::placeholder {
+		font-size: 10px;
+		padding-left: -5px;
+	}
 
-  .heart-number {
-    position: absolute;
-    margin-left: +0.5%;
-    font-size: 12px;
-  }
+	.heart-number {
+		position: absolute;
+		margin-left: +0.5%;
+		font-size: 12px;
+	}
 
-  .header .search-toggle {
-    margin-bottom: +0.5%;
-  }
+	.header .search-toggle {
+		margin-bottom: +0.5%;
+	}
 
-  .header .search-toggle input {
-    border: 2px solid #333;
-    border-radius: 5px;
-  }
+	.header .search-toggle input {
+		border: 2px solid #333;
+		border-radius: 5px;
+	}
 
-  .scroll .search-toggle {
-    margin-bottom: +0.5%;
-  }
+	.scroll .search-toggle {
+		margin-bottom: +0.5%;
+	}
 
-  .scroll .search-toggle input {
-    border: 2px solid #333;
-    border-radius: 5px;
-  }
+	.scroll .search-toggle input {
+		border: 2px solid #333;
+		border-radius: 5px;
+	}
 }
 
 @media only screen and (max-width: 370px) {
-  .header {
-    display: block;
-  }
+	.header {
+		display: block;
+	}
 
-  .scroll {
-    display: flex;
-  }
+	.scroll {
+		display: flex;
+	}
 
-  .header-items {
-    margin-left: auto;
-    margin-top: -40px;
-    margin-bottom: -7%;
-  }
+	.header-items {
+		margin-left: auto;
+		margin-top: -40px;
+		margin-bottom: -7%;
+	}
 
-  .scroll .header-items {
-    margin-left: auto;
-    margin-top: -10px;
-    margin-top: -8%;
-  }
+	.scroll .header-items {
+		margin-left: auto;
+		margin-top: -10px;
+		margin-top: -8%;
+	}
 
-  .scroll .search-toggle {
-   width: 40%;
-   margin-right: 1%;
-   margin-top: +1%;
-  }
+	.scroll .search-toggle {
+		width: 40%;
+		margin-right: 1%;
+		margin-top: +1%;
+	}
 
-  .header-logo {
-    margin-bottom: -5px;
-  }
+	.header-logo {
+		margin-bottom: -5px;
+	}
 
-  #unihomes {
-    font-size: 30px;
-  }
+	#unihomes {
+		font-size: 30px;
+	}
 
-  .header .search-toggle input::placeholder {
-    font-size: 11px;
-  }
-  .scroll .search-toggle input::placeholder {
-    font-size: 9px;
-  }
+	.header .search-toggle input::placeholder {
+		font-size: 11px;
+	}
+	.scroll .search-toggle input::placeholder {
+		font-size: 9px;
+	}
 
-  .heart-number {
-    position: absolute;
-    margin-left: +0.9%;
-    font-size: 12px;
-  }
+	.heart-number {
+		position: absolute;
+		margin-left: +0.9%;
+		font-size: 12px;
+	}
 
-  .header .search-toggle {
-    margin-top: 5%;
-  }
+	.header .search-toggle {
+		margin-top: 5%;
+	}
 
-  .header .search-toggle input {
-    border: 2px solid #333;
-    border-radius: 5px;
-  }
+	.header .search-toggle input {
+		border: 2px solid #333;
+		border-radius: 5px;
+	}
 
-  .scroll .search-toggle input {
-    border: 2px solid #333;
-    border-radius: 5px;
-  }
+	.scroll .search-toggle input {
+		border: 2px solid #333;
+		border-radius: 5px;
+	}
 
-  #agencypage a{
-    font-size: 13px;
-  }
+	#agencypage a {
+		font-size: 13px;
+	}
 }
 
 @media only screen and (max-width: 769px) {
+	.header .header-items a {
+		font-size: 15px;
+	}
 
-  .header .header-items a {
-    font-size: 15px;
-  }
-
-  #agencypage {
-    position: fixed;
-    top: 5%;
-    right: 5%;
-  }
+	#agencypage {
+		position: fixed;
+		top: 5%;
+		right: 5%;
+	}
 }
 
 @media only screen and (max-width: 361px) {
-
-  #agencypage {
-    position: relative;
-    top: 0;
-  }
+	#agencypage {
+		position: relative;
+		top: 0;
+	}
 }
 @media only screen and (max-width: 665px) {
-
-  #agencypage {
-    position: relative;
-    top: 0;
-  }
+	#agencypage {
+		position: relative;
+		top: 0;
+	}
 }

@@ -29,13 +29,10 @@ export default function HomeDetails({
 	const [bookViewing, setBookViewing] = useState(false);
 	const { id } = useParams();
 	const [home, setHome] = useState([]);
-	const [firstImg, setFirstImg] = useState(
-		home.length !== 0 &&
-			`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`,
-	);
-	const [secondImg, setSecondImg] = useState(null);
-	const [thirdImg, setThirdImg] = useState(null);
-	const [fourthImg, setFourthImg] = useState(null);
+	// const [firstImg, setFirstImg] = useState(
+	// 	home.length !== 0 &&
+	// 		`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`,
+	// );
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [rowsOfBedroomPrices, setRowsOfBedroomPrices] = useState([]);
 
@@ -65,7 +62,7 @@ export default function HomeDetails({
 		setShortlist(idList);
 	};
 
-	const removeFromShortlist = () => {
+    const removeFromShortlist = () => {
 		let newShortlist = shortlist;
 
 		for (let i = 0; i < newShortlist.length; i++) {
@@ -103,46 +100,45 @@ export default function HomeDetails({
 
 	return (
 		<div>
-			<Modal
-				isOpen={modalIsOpen}
-				onRequestClose={() => setModalIsOpen(false)}
-				style={{
-					overlay: {
-						top: 35,
-						backgroundColor: 'rgba(211, 211, 211, 0.60)',
-					},
-					content: {
-						padding: 2,
-						height: 700,
-					},
-				}}
-			>
-				{/* <button onClick={()=>setModalIsOpen(false)}>X</button> */}
-				<img
-					src={
-						home.length !== 0 &&
-						`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`
-					}
-					style={{
-						borderRadius: '3px',
-						height: '99%',
-						width: 'auto',
-						marginLeft: '17%',
-					}}
-					alt=""
-				/>
-				<BiRightArrow
-					className="arrow-right"
-					onClick={handleRightSwipe}
-					fill="#03c5f0"
-				/>
-				<BiLeftArrow
-					className="arrow-left"
-					onClick={handleLeftSwipe}
-					fill="#03c5f0"
-				/>
-			</Modal>
-
+					<Modal
+						isOpen={modalIsOpen}
+						onRequestClose={() => setModalIsOpen(false)}
+						style={{
+							overlay: {
+								top: 35,
+								backgroundColor: 'rgba(211, 211, 211, 0.60)',
+							},
+							content: {
+								padding: 2,
+								height: 700,	
+							},
+						}}
+					>
+						<img
+							src={
+								home.length !== 0 &&
+								home.images[imageIndex]
+							}
+							style={{
+								borderRadius: '3px',
+								height: '100%',
+								width: '100%',
+							}}
+							alt=""
+						/>
+						
+						<BiRightArrow
+							className="arrow-right"
+							onClick={handleRightSwipe}
+							fill="#03c5f0"
+						/>
+						
+						<BiLeftArrow
+							className="arrow-left"
+							onClick={handleLeftSwipe}
+							fill="#03c5f0"
+						/>
+					</Modal>
 			<div className="homedetails-back-to-search">
 				<form>
 					<button
@@ -177,7 +173,7 @@ export default function HomeDetails({
 								onDoubleClick={() => setModalIsOpen(true)}
 								src={
 									home.length !== 0 &&
-									`https://unilive-backend.herokuapp.com/${home.images[imageIndex].filePath}`
+									home.images[imageIndex]
 								}
 								style={{ borderRadius: '3px' }}
 								alt=""
@@ -194,7 +190,7 @@ export default function HomeDetails({
 											onClick={() => changeImage(index)}
 											src={
 												home.length !== 0 &&
-												`https://unilive-backend.herokuapp.com/${home.images[index].filePath}`
+												image
 											}
 											alt=""
 											style={{
@@ -325,13 +321,13 @@ export default function HomeDetails({
 						<hr />
 						<br />
 						<button
-							className="btn-book-viewing"
+							className="btn-book-viewing" 
 							type="submit"
 							onClick={showBookViewing}
 						>
 							<BsEnvelope style={{ fill: 'white', marginRight: 10 }} />
 							Book Viewing
-						</button>
+						</button> 
 						<div style={{ textAlign: 'center', marginBottom: 20 }}>
 							<div className="shortlist-btn">
 								{shortlist.includes(home._id) ? (
@@ -363,7 +359,10 @@ export default function HomeDetails({
 					</div>
 				</div>
 
-				{bookViewing ? (
+				<Modal
+					isOpen={bookViewing}
+					onRequestClose={() => setModalIsOpen(false)}
+				>
 					<div className="book-viewing-container">
 						<button
 							className="btn-book-viewing-page-close"
@@ -439,8 +438,8 @@ export default function HomeDetails({
 								</form>
 							</div>
 						</div>
-					</div>
-				) : null}
+					</div>{' '}
+				</Modal>
 			</div>
 		</div>
 	);

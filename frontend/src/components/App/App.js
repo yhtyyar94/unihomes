@@ -30,8 +30,6 @@ import NotAuth from './Agency/NotAuth';
 export default function App() {
 	const [cities, setCities] = useState([]);
 	const [homes, setHomes] = useState([]);
-	const [currentCity, setCurrentCity] = useState('');
-	const [roomCount, setRoomCount] = useState([]);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
 	const [isLoggedIn, setIsLoggedIn] = useState(false);	
@@ -116,14 +114,7 @@ export default function App() {
 		setLog(true);
 	};
 
-	const handleSubmit = (cityName, roomNum) => {
-		setCurrentCity(cityName);
-		setRoomCount(roomNum);
-	};
-	const filterBedrooms = (bedroom) => {
-		let filteredHomes = homes.filter((home) => home.bedroom === bedroom);
-		setHomes(filteredHomes);
-	};
+
 
 	return (
 		<div className="App">
@@ -275,7 +266,7 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <Properties userInfo={userInfo} />;
+								return <Properties userInfo={userInfo} cities={cities} />;
 							} else {
 								return <NotAuth />;
 							}

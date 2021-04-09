@@ -3,7 +3,6 @@ import City from "./City";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import "./Cities.css";
-import { FaBed } from "react-icons/fa";
 
 export default function Cities({ homes, cities, shortlist, setShortlist, changeShortlist }) {
   useLayoutEffect(() => {
@@ -51,8 +50,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
     axios
       .get(`https://unilive-backend.herokuapp.com/api/getproperties/name/${cityname}`)
       .then((res) => {
-        setHomesCity(res.data);
-        console.log(res.data)
+        setHomesCity(res.data); 
       })
       .catch((err) => {
         console.log(err);
@@ -128,7 +126,7 @@ export default function Cities({ homes, cities, shortlist, setShortlist, changeS
                 homesCity.filter((home) => home.cityName === cityname)
                   .length
               }{" "}
-              homes in{" "}
+              home(s) in{" "}
               {cities.map((city) =>
                 city.name === cityname ? <span>{city.name}</span> : null
               )}

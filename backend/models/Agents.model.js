@@ -10,7 +10,7 @@ const UserSchema = new Schema({
      lastName: {
         type: String,
         lowercase:true
-        
+         
     },
     company: {
         type: String,
@@ -34,7 +34,8 @@ const UserSchema = new Schema({
 
    city:{
     type: String
-   }
+   },
+   image:[Object],
 
 }, {timestamps:true})
 

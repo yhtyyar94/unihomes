@@ -8,12 +8,11 @@ module.exports = (req, res, next) => {
             if (err) {
                 res.end('Token authentication failed.')
             } else {
-                console.log(decoded)
                 req.decode = decoded
                 next()
             }
         })
-    } else {
+    } else { 
         res.end('Token not provided.')
     }
 }

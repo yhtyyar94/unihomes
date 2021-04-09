@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 import './AddProperty.css';
+import SuccessMessageaAddProp from './SuccessMessageaAddProp';
 
 const AddProperty = ({userInfo}) => {
 	const [ cities, setCities ] = useState(null);
@@ -22,6 +23,9 @@ const AddProperty = ({userInfo}) => {
 	const [ description, setDescription ] = useState('');
 	const [multipleFiles, setMultipleFiles ] = useState([]);
 	const [successSubmit, setSuccessSubmit] = useState()
+	const [successSubmitSpinner, setSuccessSubmitSpinner] = useState()
+	const random = Math.floor(Math.random() * 2)
+	const accounts = [['aaesgzrz', 'blackeagle4894'], ['jkcpsjeg', 'dlx4axtyg']]
 
 	const {id} = useParams()
 
@@ -43,12 +47,12 @@ const AddProperty = ({userInfo}) => {
 		setCityName('Select City')
 		}
 		axios
-			.get('https://unilive-backend.herokuapp.com/api/getcities')
+			.get('http://localhost:5001/api/getcities')
 			.then((res) => setCities(res.data))
 			.catch((err) => console.log(err));
 		
 		if(id) {
-			axios.get(`https://unilive-backend.herokuapp.com/api/getproperties/${id}`)
+			axios.get(`http://localhost:5001/api/getproperties/${id}`)
 			.then((res => {
 					const {data} = res
 					setRent(data.rent)
@@ -76,20 +80,27 @@ const AddProperty = ({userInfo}) => {
 
 	const onSubmit = async (e) => {
 		e.preventDefault()
-		setSuccessSubmit(true)
 		window.scroll(0, 0)
-		const keyFeatures = keys.split(',')
+		setSuccessSubmitSpinner(true)
 		const formData = new FormData()
-		for (let i = 0; i < multipleFiles.length; i++) {
-			formData.append('images', multipleFiles[i])
+		if(multipleFiles.length !==0) {
+			for (let i = 0; i < multipleFiles.length; i++) {
+				const formsData = new FormData()
+				formsData.append('file', multipleFiles[i])
+				formsData.append('upload_preset', accounts[random][0])
+				await axios.post(`https://api.cloudinary.com/v1_1/${accounts[random][1]}/image/upload`, formsData).then(res => {
+					formData.append('images', res.data.url)
+				}).catch(err => console.log(err))
+			}
 		}
+		const keyFeatures = keys.split(',')
 		for (let i = 0; i < keyFeatures.length; i++) {
 			formData.append('keyFeatures', keyFeatures[i])
 		}
 		formData.append('cityId', cityId)
 		formData.append('cityName', cityName)
 		formData.append('address', street)
-		formData.append('address', district)
+		formData.append('address', district) 
 		formData.append('address', town)
 		formData.append('address', postcode)
 		formData.append('home_description', description)
@@ -102,17 +113,17 @@ const AddProperty = ({userInfo}) => {
 		formData.append('rent', rent)
 		formData.append('user', userInfo.data._id)
 		if (id) {
-			axios.put(`https://unilive-backend.herokuapp.com/api/properties/update/${id}`, formData).then(res => {
+			await axios.put(`http://localhost:5001/api/properties/update/${id}`, formData).then(res => {
+				setSuccessSubmitSpinner(false)
 				res.data.message && setSuccessSubmit(true);
 			}).catch(err => console.log(err))
 		} else {
-			axios.post('https://unilive-backend.herokuapp.com/api/createproperty', formData).then(res => {
+			await axios.post('http://localhost:5001/api/createproperty', formData).then(res => {
+				setSuccessSubmitSpinner(false)
 				res.data.message && setSuccessSubmit(true);
-				console.log(res.data)
 			}).catch(err => console.log(err))
 		}
-
-	if(!id) {
+	if(!id) { 
 		setRent('')
 		setBedrooms('')
 		setBathrooms('')
@@ -138,6 +149,9 @@ const AddProperty = ({userInfo}) => {
 			{successSubmit && <div className="addproperty-succes-message">
 				Your property {id ? 'added' : 'updated'} successfully
 			</div>}
+			{
+				successSubmitSpinner && <SuccessMessageaAddProp />
+			}
 			<form className="add-form" onSubmit={onSubmit}>
 				<div className="row row1">
 					<div>
@@ -199,7 +213,7 @@ const AddProperty = ({userInfo}) => {
 							<option value="" disabled selected required>
 								Select Property Type
 							</option>
-							<option value="Home">Home</option>
+							<option value="Home">House</option>
 							<option value="Apartment">Apartment</option>
 						</select>
 					</div>

@@ -18,7 +18,7 @@
     "@testing-library/user-event": "^12.8.1",
     "axios": "^0.21.1",
     "chokidar": "^3.5.1",
-    "firebase": "^8.3.2",
+    "http-proxy-middleware": "^0.19.1",
     "json-server": "^0.16.3",
     "pascal-case": "^3.1.2",
     "react": "^17.0.1",
@@ -28,6 +28,7 @@
     "react-icons": "^4.2.0",
     "react-modal": "^3.12.1",
     "react-model": "^4.0.0",
+    "react-responsive-modal": "^6.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-select": "^4.3.0",
@@ -40,7 +41,8 @@
     "json:server": "json-server -p 5000 --watch db.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "cd ../backend & npm run dev"
   },
   "eslintConfig": {
     "extends": [

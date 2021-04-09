@@ -329,7 +329,136 @@
     height: 80px;
   }
 }
+/*********************************************/
+@media only screen and (max-width: 414px) {
+  .main-title {
+    height: 90px;
+    font-size: 24px;
+    line-height: 32px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 
+  .main-image {
+    height: 1590px;
+  }
+
+  .main-image-all {
+    width: 310px;
+    height: 170px;
+  }
+  .main-image-all img {
+    width: 310px;
+    height: 170px;
+  }
+
+  .main-image-all .top-text h3 {
+    width: 280px;
+    top: 50px;
+    font-size: 22px;
+    line-height: 34px;
+  }
+
+  .main-image-all .top-text p {
+    top: 80px;
+    width: 280px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .main-image-all:hover .top-text h3 {
+    font-size: 26px;
+    line-height: 42px;
+    transform: scale(1.15, 1.15);
+  }
+  .main-image-all:hover .top-text p {
+    font-size: 16px;
+}
+ .main-allCities {
+    height: 80px;
+   }
+.main-allCities .btn {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 20px;
+ }
+
+.main-search .box-cont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+.main-search {
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    height: 1000px;
+  }
+.main-search .p {
+    padding-top: 30px;
+    padding-bottom: 18px;
+    font-size: 30px;
+    line-height: 40px;
+}
+.main-search .box {
+    width: 350px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 7px;
+    font-size: 16px;
+    line-height: 30px;
+  }
+.orange{
+    margin-top: -35px;
+   
+  }
+.main-search .box-btn {
+    font-size: 14px;
+    line-height: 15px;
+    padding: 10px 10px;
+    margin-left: 1.5%;
+}
+
+  .img-box h3,
+  .img-box p {
+    font-size: 20px;
+    line-height: 30px;
+
+  }
+
+.main-con {
+   flex-wrap: wrap;
+    height: 800px;
+    padding-top: 30px;
+  }
+
+.main-con .img-box {
+   font-size: 20px;
+    line-height: 20px;
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 86%;
+    height: 230px;
+ 
+   }
+.main-con .img-box1 {
+    margin-top: -10px;
+    margin-left: 0%;
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+  }
+.img-box1 > img {
+  margin-left: 0%;
+    width: 330px;
+    height: 250px;
+    padding-top: 0px 0px;
+  }
+.main-empty {
+  height: 50px;
+   }
+}
 /*********************************************/
 
 @media only screen and (max-width: 360px) {
@@ -461,3 +590,4 @@
   height: 50px;
    }
 }
+/**********************************************/

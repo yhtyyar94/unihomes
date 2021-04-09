@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
 router.post('/login', async (req, res) => {
   const {email, password} = req.body
   AgentModel.findOne({email:email}, (err, result) => {
-    console.log(result)
     if(err) {
       res.json(err)
     } else if(!result) {
@@ -21,12 +20,10 @@ router.post('/login', async (req, res) => {
     } else {
       bcryptjs.compare(password, result.password)
       .then((bcryptCompare) => {
-        console.log(bcryptCompare)
         if(bcryptCompare !== true) {
           res.end('Authentication failed.')
         } else {
           const payload = email
-          console.log(payload)
           //JWT
           jwt.sign(payload, req.app.get('api_secret_key'), (err, token) => {
             if (err) {
