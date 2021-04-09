@@ -24,6 +24,8 @@ const AddProperty = ({userInfo}) => {
 	const [multipleFiles, setMultipleFiles ] = useState([]);
 	const [successSubmit, setSuccessSubmit] = useState()
 	const [successSubmitSpinner, setSuccessSubmitSpinner] = useState()
+	const random = Math.floor(Math.random() * 2)
+	const accounts = [['aaesgzrz', 'blackeagle4894'], ['jkcpsjeg', 'dlx4axtyg']]
 
 	const {id} = useParams()
 
@@ -85,8 +87,8 @@ const AddProperty = ({userInfo}) => {
 			for (let i = 0; i < multipleFiles.length; i++) {
 				const formsData = new FormData()
 				formsData.append('file', multipleFiles[i])
-				formsData.append('upload_preset', 'aaesgzrz')
-				await axios.post('https://api.cloudinary.com/v1_1/blackeagle4894/image/upload', formsData).then(res => {
+				formsData.append('upload_preset', accounts[random][0])
+				await axios.post(`https://api.cloudinary.com/v1_1/${accounts[random][1]}/image/upload`, formsData).then(res => {
 					formData.append('images', res.data.url)
 				}).catch(err => console.log(err))
 			}
