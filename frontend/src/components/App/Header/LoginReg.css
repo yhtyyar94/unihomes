@@ -277,6 +277,12 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1024px) {
+  .logContainer {
+    margin-top: 9%;
+  }
+  .regContainer {
+    margin-top: 9%;
+  }
   .close-logo {
     float: right;
     margin-right: 30px;
@@ -306,7 +312,11 @@
 
 @media only screen and (max-width: 768px) {
   .logContainer {
+    margin-top: 10%;
     height: 370px;
+  }
+  .regContainer {
+    margin-top: 10%;
   }
   .login-email {
     margin-top: 35%;
@@ -392,6 +402,12 @@
 }
 
 @media only screen and (max-width: 415px) {
+  .logContainer {
+    margin-top: 26%;
+  }
+  .regContainer {
+    margin-top: 26%;
+  }
   .close-logo {
     margin-right: 22px;
   }
