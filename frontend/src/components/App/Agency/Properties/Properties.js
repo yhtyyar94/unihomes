@@ -55,10 +55,10 @@ const selectCityName=(name)=>{
     return (
 
      <div id="properties">
-         
+          
    <div>
        <form className="filter-by-city-name">
-           <select onChange={(e)=>selectCityName(e.target.value)} >
+           <select className="filter-by-city-name-option" onChange={(e)=>selectCityName(e.target.value)} >
                <option  className="filter-by-city-name-option" value="search">Filter by city name</option>
                {cities.map((city,index)=>
                  <option className="filter-by-city-name-option" value={city.name} key={index}>{city.name}</option>

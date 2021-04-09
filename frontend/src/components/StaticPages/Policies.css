@@ -66,6 +66,13 @@
 }
 
 @media (max-width: 768px) {
+	.policies-header {
+		height: 120px;
+	}
+	.policies-title {
+		font-size: 30px;
+		line-height: 1.5;
+	}
 }
 
 @media (max-width: 360px) {
@@ -73,7 +80,7 @@
 		height: 100px;
 	}
 	.policies-title {
-		font-size: 28px;
+		font-size: 22px;
 	}
 
 	.policies-content-title {

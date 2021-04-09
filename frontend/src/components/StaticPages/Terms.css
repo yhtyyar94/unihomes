@@ -49,10 +49,29 @@
 	font-size: 20px;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1024px) {
+	.terms-header {
+		height: 120px;
+		margin-bottom: 48px;
+	}
+	.terms-title {
+		font-size: 42px;
+		line-height: 20px;
+	}
 }
 
 @media (max-width: 768px) {
+	.terms-header {
+		height: 120px;
+		margin-bottom: 38px;
+	}
+	.terms-title {
+		font-size: 36px;
+		line-height: 20px;
+	}
+	.terms-content-subtitle {
+		font-size: 21px;
+	}
 }
 
 @media (max-width: 360px) {
@@ -62,11 +81,11 @@
 	}
 
 	.terms-title {
-		font-size: 28px;
+		font-size: 26px;
 	}
 	.terms-content-subtitle {
 		margin-top: 0px;
-		font-size: 18px;
+		font-size: 15px;
 		line-height: 30px;
 		line-height: 1.5;
 	}
