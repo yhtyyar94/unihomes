@@ -41,6 +41,37 @@
    
   }
 }
+
+@media only screen and (max-width: 414px) {
+  .welcomePage {
+    margin-top: 60px;
+    margin-bottom: 0px;
+    color: white;
+    background: url("https://i.postimg.cc/7Lwx6b4Y/hom.jpg") center/cover
+      no-repeat;
+    height: 400px;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .welpage {
+    /* background: rgba( 3,197,240,0.3); */
+    background: rgba(9, 0, 0, 0.4);
+    height: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  .welpage > h1 {
+    font-size: 40px;
+    margin-top: 40%;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    line-height: 35px;
+  }
+}
+
 @media only screen and (max-width: 360px) {
   .welcomePage {
     margin-top: 60px;
