@@ -24,8 +24,6 @@ const AddProperty = ({userInfo}) => {
 	const [multipleFiles, setMultipleFiles ] = useState([]);
 	const [successSubmit, setSuccessSubmit] = useState()
 	const [successSubmitSpinner, setSuccessSubmitSpinner] = useState()
-	const random = Math.floor(Math.random() * 2)
-	const accounts = [['aaesgzrz', 'blackeagle4894'], ['jkcpsjeg', 'dlx4axtyg']]
 
 	const {id} = useParams()
 
@@ -47,12 +45,12 @@ const AddProperty = ({userInfo}) => {
 		setCityName('Select City')
 		}
 		axios
-			.get('http://localhost:5001/api/getcities')
+			.get('https://unilive-backend.herokuapp.com/api/getcities')
 			.then((res) => setCities(res.data))
 			.catch((err) => console.log(err));
 		
 		if(id) {
-			axios.get(`http://localhost:5001/api/getproperties/${id}`)
+			axios.get(`https://unilive-backend.herokuapp.com/api/getproperties/${id}`)
 			.then((res => {
 					const {data} = res
 					setRent(data.rent)
@@ -76,7 +74,7 @@ const AddProperty = ({userInfo}) => {
 	}, [id]);
 	const multipleFileChange = e => {
 		setMultipleFiles(e.target.files)
-	}
+	} 
 
 	const onSubmit = async (e) => {
 		e.preventDefault()
@@ -87,8 +85,8 @@ const AddProperty = ({userInfo}) => {
 			for (let i = 0; i < multipleFiles.length; i++) {
 				const formsData = new FormData()
 				formsData.append('file', multipleFiles[i])
-				formsData.append('upload_preset', accounts[random][0])
-				await axios.post(`https://api.cloudinary.com/v1_1/${accounts[random][1]}/image/upload`, formsData).then(res => {
+				formsData.append('upload_preset', 'aaesgzrz')
+				await axios.post('https://api.cloudinary.com/v1_1/blackeagle4894/image/upload', formsData).then(res => {
 					formData.append('images', res.data.url)
 				}).catch(err => console.log(err))
 			}
@@ -113,12 +111,12 @@ const AddProperty = ({userInfo}) => {
 		formData.append('rent', rent)
 		formData.append('user', userInfo.data._id)
 		if (id) {
-			await axios.put(`http://localhost:5001/api/properties/update/${id}`, formData).then(res => {
+			await axios.put(`https://unilive-backend.herokuapp.com/api/properties/update/${id}`, formData).then(res => {
 				setSuccessSubmitSpinner(false)
 				res.data.message && setSuccessSubmit(true);
 			}).catch(err => console.log(err))
 		} else {
-			await axios.post('http://localhost:5001/api/createproperty', formData).then(res => {
+			await axios.post('https://unilive-backend.herokuapp.com/api/createproperty', formData).then(res => {
 				setSuccessSubmitSpinner(false)
 				res.data.message && setSuccessSubmit(true);
 			}).catch(err => console.log(err))
@@ -213,7 +211,7 @@ const AddProperty = ({userInfo}) => {
 							<option value="" disabled selected required>
 								Select Property Type
 							</option>
-							<option value="Home">House</option>
+							<option value="Home">Home</option>
 							<option value="Apartment">Apartment</option>
 						</select>
 					</div>

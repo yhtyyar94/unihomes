@@ -179,7 +179,128 @@
 @media (max-width: 1366px) {
 }
 
+@media (max-width: 879px) {
+	.contact-us-form {
+		margin-top: 40px;
+		margin-bottom: 50px;
+		margin-left: 30px;
+		width: 90%;
+	}
+	.contact-us-side-bar {
+		margin-top: 40px;
+		margin-right: 30px;
+		width: 93%;
+	}
+	.contact-us-side-bar-email {
+		font-size: 16px;
+	}
+
+	.contact-us-side-bar-phone {
+		font-size: 16px;
+	}
+}
+
 @media (max-width: 768px) {
+	.contact-us-header {
+		height: 120px;
+	}
+	.contact-us-title {
+		font-size: 30px;
+		line-height: 1.2;
+	}
+}
+
+@media (max-width: 660px) {
+	.contact-us-header {
+		height: 100px;
+	}
+	.contact-us-title {
+		font-size: 28px;
+	}
+	.contact-us-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.contact-us-main-side {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: none;
+		width: 90%;
+	}
+
+	.contact-us-form-container {
+		display: flex;
+		justify-content: center;
+		width: 90%;
+	}
+	.contact-us-form {
+		margin-bottom: 30px;
+		margin-left: 0px;
+		width: 95%;
+		padding: 30px;
+		font-size: 14px;
+		line-height: 15px;
+	}
+	.contact-us-form > input {
+		height: 33px;
+	}
+
+	.contact-us-form > input::placeholder {
+		font-size: 12px;
+	}
+
+	.contact-us-form > textarea {
+		height: 130px;
+		margin-bottom: 25px;
+	}
+
+	.contact-us-form > textarea::placeholder {
+		font-size: 12px;
+	}
+
+	.contact-us-form > select {
+		height: 33px;
+		padding-left: 5px;
+		font-size: 12px;
+	}
+
+	.btn-contact-us-page-form-submit {
+		height: 38px;
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+
+	.contact-us-side-bar {
+		flex: none;
+		margin-top: 20px;
+		margin-bottom: 50px;
+		margin-right: 0px;
+		width: 60%;
+		padding-bottom: 20px;
+	}
+
+	.contact-us-side-bar-title {
+		padding: 15px;
+		font-size: 18px;
+	}
+
+	.contact-us-side-bar-email {
+		margin-bottom: 10px;
+		padding: 5px;
+		font-size: 13px;
+	}
+
+	.contact-us-side-bar-phone {
+		padding: 5px;
+		font-size: 13px;
+	}
+
+	.contact-us-side-bar-contact-details {
+		margin-left: 5px;
+	}
 }
 
 @media (max-width: 360px) {
@@ -202,12 +323,18 @@
 		margin-bottom: 30px;
 		margin-left: 0px;
 		width: 300px;
-		padding: 30px;
+		padding: 18px;
 		font-size: 14px;
 		line-height: 15px;
 	}
+
+	.contact-us-form > label {
+		padding: 2px 0px;
+	}
+
 	.contact-us-form > input {
 		height: 26px;
+		margin-top: 0px;
 	}
 
 	.contact-us-form > input::placeholder {
@@ -240,7 +367,7 @@
 		margin-top: 20px;
 		margin-bottom: 50px;
 		margin-right: 0px;
-		width: 300px;
+		width: 80%;
 		padding-bottom: 20px;
 	}
 

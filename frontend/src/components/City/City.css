@@ -5,253 +5,255 @@
 } */
 
 .city {
-  height: auto;
-  width: 500px;
-  margin: 20px;
-  background-color: white;
-  font-family: Roboto;
-  border-radius: 3px;
+	height: auto;
+	width: 500px;
+	margin: 20px;
+	background-color: white;
+	font-family: Roboto;
+	border-radius: 3px;
 }
 .city:hover {
-  transform: scale(1.03, 1.03);
-  transition: all 0.2s ease-in-out;
+	transform: scale(1.03, 1.03);
+	transition: all 0.2s ease-in-out;
 }
 .buttons p {
-  padding: 20px;
+	padding: 20px;
 }
 
 .home-img {
-  width: 100%;
-  margin: none;
-  font-family: Roboto;
-  padding: none;
+	width: 100%;
+	margin: none;
+	font-family: Roboto;
+	padding: none;
 }
 .rent-area {
-  background-color: #03c5f0;
-  height: 40px;
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-family: Roboto;
-  /* flex-direction: column; */
+	background-color: #03c5f0;
+	height: 40px;
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-family: Roboto;
+	/* flex-direction: column; */
 }
 .bedroom-area {
-  background-color: white;
-  height: auto;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  font-size: 17px;
-  font-family: Roboto;
+	background-color: white;
+	height: auto;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	font-size: 17px;
+	font-family: Roboto;
 }
 
 .address-area {
-  background-color: white;
-  height: auto;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  font-size: 15px;
-  font-family: Roboto;
+	background-color: white;
+	height: auto;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	font-size: 15px;
+	font-family: Roboto;
 }
 .bed-icon {
-  fill: white;
-  padding-top: 6px;
-  margin-left: 20px;
+	fill: white;
+	padding-top: 6px;
+	margin-left: 20px;
 }
 .rent-text {
-  font-size: 20px;
-  padding: 0;
-  padding-left: 20px;
+	font-size: 20px;
+	padding: 0;
+	padding-left: 20px;
 }
 .rent-span {
-  font-size: 27px;
+	font-size: 27px;
 }
 
 .buttons {
-  height: 50;
-  display: flex;
-  border-top: solid 1px #e5e5e5;
-  align-items: center;
-  justify-content: center;
-  font-family: Roboto;
+	height: 50;
+	display: flex;
+	border-top: solid 1px #e5e5e5;
+	align-items: center;
+	justify-content: center;
+	font-family: Roboto;
 }
 .shortlist-btn {
-  flex: 6;
-  height: auto;
-  border-right: solid 1px #e5e5e5;
-  font-size: 24px;
-  text-align: center;
-  font-family: Roboto;
-  cursor: pointer;
+	flex: 6;
+	height: auto;
+	border-right: solid 1px #e5e5e5;
+	font-size: 24px;
+	text-align: center;
+	font-family: Roboto;
+	cursor: pointer;
 }
 
 .shortlist-btn .a-btn {
-  display: none;
+	display: none;
+	padding: 10px;
 }
 .shortlist-btn:hover .s-btn {
-  display: none;
+	display: none;
 }
 .shortlist-btn:hover .a-btn {
-  display: inline;
-  color: red;
+	display: inline;
+	color: red;
 }
 .shortlist-btn:hover .heart-icon {
-  fill: red;
+	fill: red;
 }
 
 .view-btn {
-  flex: 6;
-  height: auto;
-  font-size: 24px;
-  text-align: center;
-  font-family: Roboto;
-  cursor: pointer;
-  color: inherit;
+	flex: 6;
+	height: auto;
+	font-size: 24px;
+	text-align: center;
+	font-family: Roboto;
+	cursor: pointer;
+	color: inherit;
 }
 .rem-btn {
-  flex: 6;
-  height: auto;
-  font-size: 24px;
-  text-align: center;
-  font-family: Roboto;
-  color: red;
-  cursor: pointer;
+	flex: 6;
+	height: auto;
+	font-size: 24px;
+	text-align: center;
+	font-family: Roboto;
+	color: red;
+	cursor: pointer;
 }
 .s-btn {
-  font-size: 24px;
+	font-size: 24px;
+	padding: 3px;
 }
 .num-of-bed {
-  font-size: 22px;
-  margin-right: 10px;
+	font-size: 22px;
+	margin-right: 10px;
 }
 .num-of-bath {
-  font-size: 22px;
-  margin-right: 8px;
+	font-size: 22px;
+	margin-right: 8px;
 }
 
 @media (max-width: 414px) {
-  .rent-text {
-    font-size: 17px;
-    padding: 0;
-    padding-left: 20px;
-  }
-  .rent-span {
-    font-size: 23px;
-  }
-  .view-btn {
-    font-size: 20px;
-  }
-  .s-btn {
-    font-size: 20px;
-  }
-  .rem-btn {
-    font-size: 20px;
-  }
+	.rent-text {
+		font-size: 17px;
+		padding: 0;
+		padding-left: 20px;
+	}
+	.rent-span {
+		font-size: 23px;
+	}
+	.view-btn {
+		font-size: 20px;
+	}
+	.s-btn {
+		font-size: 20px;
+	}
+	.rem-btn {
+		font-size: 20px;
+	}
 }
 @media (max-width: 375px) {
-  .rent-area {
-    height: 60px;
-  }
-  .rent-text {
-    font-size: 15px;
-  }
-  .shortlist-btn {
-    font-size: 18px;
-  }
-  .s-btn {
-    font-size: 18px;
-  }
-  .view-btn {
-    font-size: 18px;
-  }
-  .rent-span {
-    font-size: 18px;
-  }
-  .rem-btn {
-    font-size: 18px;
-  }
+	.rent-area {
+		height: 60px;
+	}
+	.rent-text {
+		font-size: 15px;
+	}
+	.shortlist-btn {
+		font-size: 18px;
+	}
+	.s-btn {
+		font-size: 18px;
+	}
+	.view-btn {
+		font-size: 18px;
+	}
+	.rent-span {
+		font-size: 18px;
+	}
+	.rem-btn {
+		font-size: 18px;
+	}
 }
 
 @media (max-width: 360px) {
-  .rent-area {
-    height: 60px;
-  }
-  .rent-text {
-    font-size: 15px;
-  }
-  .shortlist-btn {
-    font-size: 18px;
-  }
-  .s-btn {
-    font-size: 18px;
-  }
-  .view-btn {
-    font-size: 18px;
-  }
-  .rent-span {
-    font-size: 18px;
-  }
-  .rem-btn {
-    font-size: 18px;
-  }
+	.rent-area {
+		height: 60px;
+	}
+	.rent-text {
+		font-size: 15px;
+	}
+	.shortlist-btn {
+		font-size: 18px;
+	}
+	.s-btn {
+		font-size: 18px;
+	}
+	.view-btn {
+		font-size: 18px;
+	}
+	.rent-span {
+		font-size: 18px;
+	}
+	.rem-btn {
+		font-size: 18px;
+	}
 }
 @media (max-width: 320px) {
-  .rent-area {
-    height: 60px;
-  }
-  .rent-text {
-    font-size: 12px;
-  }
-  .shortlist-btn {
-    font-size: 15px;
-  }
-  .s-btn {
-    font-size: 15px;
-  }
-  .view-btn {
-    font-size: 15px;
-  }
-  .rent-span {
-    font-size: 12px;
-  }
-  .rem-btn {
-    font-size: 15px;
-  }
+	.rent-area {
+		height: 60px;
+	}
+	.rent-text {
+		font-size: 12px;
+	}
+	.shortlist-btn {
+		font-size: 15px;
+	}
+	.s-btn {
+		font-size: 15px;
+	}
+	.view-btn {
+		font-size: 15px;
+	}
+	.rent-span {
+		font-size: 12px;
+	}
+	.rem-btn {
+		font-size: 15px;
+	}
 }
 @media (max-width: 280px) {
-  .rent-area {
-    height: 60px;
-  }
-  .rent-text {
-    font-size: 10px;
-  }
-  .shortlist-btn {
-    font-size: 15px;
-  }
-  .s-btn {
-    font-size: 12px;
-  }
-  .view-btn {
-    font-size: 12px;
-  }
-  .rent-span {
-    font-size: 12px;
-  }
-  .rem-btn {
-    font-size: 15px;
-  }
-  .num-of-bed {
-    font-size: 10px;
-    margin-right: 10px;
-  }
-  .num-of-bath {
-    font-size: 10px;
-    margin-right: 8px;
-  }
+	.rent-area {
+		height: 60px;
+	}
+	.rent-text {
+		font-size: 10px;
+	}
+	.shortlist-btn {
+		font-size: 15px;
+	}
+	.s-btn {
+		font-size: 12px;
+	}
+	.view-btn {
+		font-size: 12px;
+	}
+	.rent-span {
+		font-size: 12px;
+	}
+	.rem-btn {
+		font-size: 15px;
+	}
+	.num-of-bed {
+		font-size: 10px;
+		margin-right: 10px;
+	}
+	.num-of-bath {
+		font-size: 10px;
+		margin-right: 8px;
+	}
 }
