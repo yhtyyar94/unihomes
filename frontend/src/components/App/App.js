@@ -32,37 +32,35 @@ export default function App() {
 	const [homes, setHomes] = useState([]);
 	const [login, setLog] = useState(false);
 	const [signup, setSignUp] = useState();
-	const [isLoggedIn, setIsLoggedIn] = useState(false);	
-	const [shortlist ,setShortlist] = useState([])
-	const [jwt, setJwt] = useState()
-	const [userInfo, setUserInfo] = useState()
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [shortlist, setShortlist] = useState([]);
+	const [jwt, setJwt] = useState();
+	const [userInfo, setUserInfo] = useState();
 
 	const changeShortlist = () => {
 		setShortlist(JSON.parse(localStorage.getItem('shortlist')));
 	};
 
 	useEffect(() => {
-		if(window.location.pathname !== '/') {
-			document.querySelector("#header").className = "scroll";
+		if (window.location.pathname !== '/') {
+			document.querySelector('#header').className = 'scroll';
 		}
-	},[])
+	}, []);
 
 	useEffect(() => {
-		if(window.location.pathname.startsWith === '/agency') {
-			setIsLoggedIn(true)
-			document.querySelector("#header").className = "scroll";
+		if (window.location.pathname.startsWith === '/agency') {
+			setIsLoggedIn(true);
+			document.querySelector('#header').className = 'scroll';
 		}
 
-		if(window.location.pathname !== '/') {
-			document.querySelector("#header").className = "scroll";
+		if (window.location.pathname !== '/') {
+			document.querySelector('#header').className = 'scroll';
 		}
-		if(JSON.parse(sessionStorage.getItem('userInfo'))) {
-			setIsLoggedIn(true)
+		if (JSON.parse(sessionStorage.getItem('userInfo'))) {
+			setIsLoggedIn(true);
 		}
-		setUserInfo(JSON.parse(sessionStorage.getItem('userInfo')))
-	
-	}, [isLoggedIn])
-
+		setUserInfo(JSON.parse(sessionStorage.getItem('userInfo')));
+	}, [isLoggedIn]);
 
 	useEffect(() => {
 		if (localStorage.getItem('shortlist') === null) {
@@ -114,24 +112,35 @@ export default function App() {
 		setLog(true);
 	};
 
-
-
 	return (
 		<div className="App">
-<Router>
-			<Header
-				toggleLogin={toggleLogin}
-				isLoggedIn={isLoggedIn}
-				shortlist={shortlist}
-				setUserInfo={setUserInfo}
-				setIsLoggedIn={setIsLoggedIn}
-			/>
-			{login === true ? (
-				<LoginPop  setSignUp={setSignUp} register={register} setLog={setLog} setIsLoggedIn={setIsLoggedIn} setUserInfo={setUserInfo}/>
-			) : null}
-			{signup === true ? (
-				<RegisterPop setUserInfo={setUserInfo} setLog={setLog} register={register} backtoLogin={backtoLogin} setSignUp={setSignUp} setIsLoggedIn={setIsLoggedIn}/>
-			) : null}
+			<Router>
+				<Header
+					toggleLogin={toggleLogin}
+					isLoggedIn={isLoggedIn}
+					shortlist={shortlist}
+					setUserInfo={setUserInfo}
+					setIsLoggedIn={setIsLoggedIn}
+				/>
+				{login === true ? (
+					<LoginPop
+						setSignUp={setSignUp}
+						register={register}
+						setLog={setLog}
+						setIsLoggedIn={setIsLoggedIn}
+						setUserInfo={setUserInfo}
+					/>
+				) : null}
+				{signup === true ? (
+					<RegisterPop
+						setUserInfo={setUserInfo}
+						setLog={setLog}
+						register={register}
+						backtoLogin={backtoLogin}
+						setSignUp={setSignUp}
+						setIsLoggedIn={setIsLoggedIn}
+					/>
+				) : null}
 				<Switch>
 					<Route
 						exact
@@ -161,6 +170,7 @@ export default function App() {
 							/>
 						)}
 					/>
+
 					<Route
 						exact
 						path="/shortlists"
@@ -266,7 +276,9 @@ export default function App() {
 								})
 								.catch((err) => err);
 							if (jwt) {
-								return <Properties userInfo={userInfo} cities={cities} />;
+								return (
+									<Properties userInfo={userInfo} cities={cities} />
+								);
 							} else {
 								return <NotAuth />;
 							}

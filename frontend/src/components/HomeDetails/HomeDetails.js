@@ -458,12 +458,14 @@ export default function HomeDetails({
 					onRequestClose={() => setModalIsOpen(false)}
 				>
 					<div className="book-viewing-container">
-						<button
-							className="btn-book-viewing-page-close"
-							onClick={closeBookViewing}
-						>
-							X
-						</button>
+						<div className="btn-book-viewing-page-close-container">
+							<button
+								className="btn-book-viewing-page-close"
+								onClick={closeBookViewing}
+							>
+								X
+							</button>
+						</div>
 						<div className="book-viewing-form-container">
 							<div>
 								<h2 className="book-viewing-form-title">

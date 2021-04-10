@@ -238,16 +238,18 @@
 }
 
 .book-viewing-container {
-	position: absolute;
-	width: 560px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 50%;
 	height: auto;
 	background: rgb(0, 191, 255);
 	border: 1px solid #000000;
 	box-sizing: border-box;
-	top: 20px;
 	border-radius: 10px;
 	border: none;
-	z-index: 5050000000;
+	padding-right: 20px;
+	margin: 20px auto 10px auto;
 }
 
 .homedetails-sidebar-address {
@@ -256,9 +258,14 @@
 	line-height: 1.2;
 }
 
+.btn-book-viewing-page-close-container {
+	height: fit-content;
+	justify-content: end;
+}
+
 .btn-book-viewing-page-close {
 	float: right;
-	justify-content: right;
+	justify-content: end;
 	align-items: flex-start;
 	border: solid 1px white;
 	background-color: rgb(0, 191, 255);
@@ -266,8 +273,7 @@
 	color: white;
 	border-radius: 50%;
 	padding: 5px 9px;
-	margin-top: 8px;
-	margin-right: 8px;
+	margin-top: 12px;
 }
 
 .book-viewing-form-container {
@@ -297,7 +303,6 @@
 	line-height: 26px;
 	text-align: center;
 	color: #ffffff;
-	padding-top: 40px;
 	padding-bottom: 5px;
 	height: auto;
 	margin-bottom: 20px;
@@ -515,7 +520,6 @@
 	}
 
 	.book-viewing-container {
-		position: fixed;
 		top: 70px;
 		width: 90%;
 		border-radius: 5px;
