@@ -246,9 +246,9 @@
 	background: rgb(0, 191, 255);
 	border: 1px solid #000000;
 	box-sizing: border-box;
-	border-radius: 10px;
+	border-radius: 7px;
 	border: none;
-	padding-right: 20px;
+	padding-right: 25px;
 	margin: 20px auto 10px auto;
 }
 
@@ -256,6 +256,11 @@
 	padding: 5px;
 	margin-bottom: 15px;
 	line-height: 1.2;
+}
+
+.book-viewing-modal {
+	margin: 68px auto 20px auto;
+	width: 100%;
 }
 
 .btn-book-viewing-page-close-container {
@@ -331,6 +336,12 @@
 	font-size: 14px;
 }
 
+.book-viewing-form > textarea {
+	height: 72px;
+	border: none;
+	border-radius: 5px;
+}
+
 .book-viewing-form textarea::placeholder {
 	height: 18px;
 	font-family: Roboto;
@@ -343,7 +354,7 @@
 .book-viewing-check-box {
 	font-size: 12px;
 	border: 1px solid white;
-	border-radius: 20px;
+	border-radius: 10px;
 	margin-top: 30px;
 	padding-left: 15px;
 	padding-bottom: 10px;
@@ -403,6 +414,10 @@
 	.shortlist-btn > p {
 		padding: 10px;
 	}
+
+	.book-viewing-container {
+		width: 70%;
+	}
 }
 
 @media (max-width: 600px) {
@@ -442,6 +457,65 @@
 		height: fit-content;
 		margin-left: auto;
 		margin-right: auto;
+	}
+	.book-viewing-container {
+		width: 70%;
+		border-radius: 5px;
+		padding-right: 15px;
+	}
+
+	.btn-book-viewing-page-close {
+		font-size: 10px;
+		padding: 4px 7px;
+		margin-top: 12px;
+	}
+
+	.book-viewing-form {
+		padding-left: 15px;
+		font-size: 14px;
+	}
+
+	.book-viewing-form-title {
+		font-size: 24px;
+	}
+	.book-viewing-form-address {
+		font-size: 18px;
+		line-height: 30px;
+		margin-bottom: 20px;
+	}
+
+	.book-viewing-form > input {
+		height: 28px;
+		border-radius: 3px;
+	}
+	.book-viewing-form input::placeholder {
+		font-size: 13px;
+	}
+
+	.book-viewing-form > textarea {
+		height: 72px;
+		border-radius: 3px;
+	}
+
+	.book-viewing-form textarea::placeholder {
+		font-size: 13px;
+	}
+
+	.book-viewing-check-box {
+		font-size: 11px;
+		border: 1px solid white;
+		border-radius: 10px;
+		margin-top: 30px;
+		padding-left: 15px;
+		padding-bottom: 10px;
+		margin-bottom: 30px;
+		padding-top: 10px;
+	}
+
+	.btn-book-viewing-page-form-submit {
+		border-radius: 6px;
+		height: 40px;
+		font-size: 19px;
 	}
 }
 
@@ -521,10 +595,9 @@
 
 	.book-viewing-container {
 		top: 70px;
-		width: 90%;
+		width: 70%;
 		border-radius: 5px;
-		z-index: 5;
-		margin-left: -27px;
+		padding-right: 20px;
 	}
 
 	.btn-book-viewing-page-close {
@@ -540,10 +613,16 @@
 		justify-content: center;
 		align-items: center;
 	}
+	.btn-book-viewing-page-close {
+		border-radius: 50%;
+		padding: 3px 5px;
+		margin-top: 12px;
+		font-size: 8px;
+	}
 
 	.book-viewing-form {
 		margin: 0 auto;
-
+		padding-left: 15px;
 		font-size: 10px;
 		line-height: 10px;
 	}
@@ -551,10 +630,10 @@
 	.book-viewing-form-title {
 		font-size: 15px;
 		line-height: 12px;
-		padding-top: 20px;
+		padding-top: 10px;
 		padding-bottom: 5px;
 		height: auto;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		margin-left: auto;
 		margin-right: auto;
 	}
