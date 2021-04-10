@@ -62,6 +62,7 @@
   text-align: left;
   padding-top: 19px;
   margin-top: 20px;
+  font-weight: bold;
 }
 
 #profile-right .profile-right input {
@@ -87,7 +88,7 @@
 /*******************************************************/
 @media only screen and (max-width: 1366px) {
   #profile-right .profile-right label {
-    width: 120px;
+    width: 180px;
     padding-top: 19px;
     margin-top: 20px;
   }
@@ -114,19 +115,28 @@
   .profile-img {
     width: 130px;
     height: 130px;
+    margin-bottom: 20px;
   }
   .profile-right {
     height: 650px;
     width: 70%;
   }
 
-  #profile-right .profile-right label {
-    width: 140px;
+  #profile-right .profile-right p>label {
+    width: 220px;
     margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    height: 50px;
   }
-  #profile-right .profile-right input {
-    width: 250px;
-    margin-top: 10px;
+  #profile-right .profile-right p>input {
+    width: 255px;
+    margin-top: 5px;
+    padding-top: 20px;
+    font-weight: normal;
+    font-size: 18px;
+    height: 50px;
+    margin-left: 20px;
   }
   #profile-right .profile-right button {
     margin-left: 0px;
@@ -137,10 +147,8 @@
   #myprofile {
     margin-top: 70px;
   }
-  .myprofile {
-    display: grid;
-    grid-template-columns: 200px auto;
-    grid-gap: 10px;
+  .myprofile {   
+    grid-template-columns: 220px auto;   
     height: 900px;
   }
   .profile-img {
@@ -153,8 +161,10 @@
   .myprofile-left h1 {
     margin-top: 12rem;
   }
-  .myprofile-left p {
+  .myprofile-left>p {
     text-align: center;
+    margin-top: 20px; 
+    font-size: 20px;  
   }
   .myprofile-left p > button {
     width: 90px;
@@ -163,22 +173,29 @@
   }
 
   .profile-right {
-    height: 820px;
+    height: 750px;
     width: 60%;
     margin-left: 20px;
-    margin-top: 100px;
+    margin-top: 80px;
   }
 
-  #profile-right .profile-right label {
-    width: 250px;
-    padding-top: 1px;
-    font-size: 1.4rem;
+  #profile-right .profile-right p>label {
+    width: 300px;
+    padding-top: 0px;
+    font-size: 24px !important;
+    height: 35px;
+    font-weight: bold;
+    margin-top: 5px;
+ 
+
   }
-  #profile-right .profile-right input {
-    height: 30px;
+  #profile-right .profile-right p>input {
+    height: 35px;
     width: 400px;
-    margin-top: 0.01px;
-    font-size: 1.1rem;
+    margin-top: 3px;
+    margin-left: 0px;
+    font-size: 22px;
+    font-weight: normal;
   }
 
   #profile-right .profile-right button {
@@ -188,17 +205,81 @@
     margin-top: 30px;
   }
 }
+
+
+
+@media only screen and (max-width: 736px) {
+ 
+  .myprofile {   
+    grid-template-columns: 180px auto;
+    height: 300px;
+  }
+  .profile-img > img {
+    width: 70px;
+    height: 70px; 
+  }
+  .myprofile-left {
+    background-color: #e5e5e5;
+    height: 300px;
+  }
+   .profile-img { 
+    height: 70px; 
+    width: 70px;
+    margin-top: 1rem;
+  
+  }
+  .myprofile-left h1 {
+    margin-top: 1.5rem;    
+    font-size: 22px;   
+  }
+  .myprofile-left p {  
+    font-size: 12px;
+  }
+  .myprofile-left p > button {  
+    width: 79px;
+    height: 25px;
+  }
+  
+  .profile-right {   
+    line-height: normal;
+    height: 290px;
+    width: 95%;
+    margin-left: 10px;
+    margin-top: 5px;   
+  } 
+  #profile-right .profile-right p>label {  
+    font-size: 12px !important;   
+    height: 25px;
+    width: 155px;
+    text-align: left; 
+    font-weight: bold;  
+  }  
+  #profile-right .profile-right p>input {
+    font-size: 12px !important;    
+    height: 25px;
+    width: 250px;
+    margin-top: 0px; 
+    padding-top: 12px;   
+  }  
+  #profile-right .profile-right button {
+    width: 90px;
+    height: 30px;   
+    margin-left: 0px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
 /***************************************************/
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 414px) {
   #myprofile {
     margin-top: 70px;
   }
   .myprofile {
     grid-template-columns: auto;
     grid-gap: 1px;
-    height: 500px;
+    height: 900px;    
   }
-
   .profile-img {
     width: 80px;
     height: 80px;
@@ -208,53 +289,124 @@
     width: 80px;
     height: 80px;
   }
+  .myprofile-left  {
+    height: 200px;
+  }
   .myprofile-left h1 {
-    margin-top: 0.6rem;
+    margin-top: 20px;
   }
   .myprofile-left p {
     margin-left: 100px;
-    margin-right: 100px;
-    margin-top: -12px;
+    margin-right: 100px;    
   }
   .myprofile-left p > button {
     width: 50px;
     height: 25px;
     margin-top: 7px;
-    font-size: 11px;
+    margin-bottom: 0px;
+    font-size: 12px;
   }
   .profile-right {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 750px;
+    height: 650px;
     width: 80%;
     margin-left: 20px;
-    margin-top: 0px;
+    margin-top: 5px;    
   }
-  .profile-right > p {
-    margin: 1px;
-  }
-  #profile-right .profile-right label {
-    height: 25px;
+ 
+  #profile-right .profile-right p>label {
+    height: 20px;
     width: 200px;
-    padding-top: 6px;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 1px;
+    padding-top: 2px;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin-top: 5px; 
+    overflow: hidden;
   }
-
-  #profile-right .profile-right input {
-    height: 35px;
+ .profile-right p>input {
+    height: 25px;
     width: 400px;
     margin-top: 0px;
-    font-size: 1rem;
+    font-size: 16px !important;
+    font-weight: normal !important;
   }
   #profile-right .profile-right button {
     width: 100px;
-    height: 30px;
-    border-radius: 10px;
+    height: 30px; 
+    margin-left: 30%;    
+    margin-top: 0.3px;
+  }
+}
+
+
+
+@media only screen and (max-width: 360px) {
+  #myprofile {
+    margin-top: 70px;
+  }
+  .myprofile {
+    grid-template-columns: auto;
+    grid-gap: 1px;
+    height: 900px;    
+  }
+  .profile-img {
+    width: 80px;
+    height: 80px;
+    margin-top: 0.3rem;
+  }
+  .profile-img > img {
+    width: 80px;
+    height: 80px;
+  }
+  .myprofile-left  {
+    height: 200px;
+  }
+  .myprofile-left h1 {
+    margin-top: 20px;
+  }
+  .myprofile-left p {
+    margin-left: 100px;
+    margin-right: 100px;    
+  }
+  .myprofile-left p > button {
+    width: 50px;
+    height: 25px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+    font-size: 12px;
+  }
+  .profile-right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 650px;
+    width: 80%;
     margin-left: 20px;
-    font-size: 14px;
+    margin-top: 5px;    
+  }
+ 
+  #profile-right .profile-right p>label {
+    height: 20px;
+    width: 200px;
+    padding-top: 2px;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin-top: 5px; 
+    overflow: hidden;
+  }
+ .profile-right p>input {
+    height: 25px;
+    width: 400px;
+    margin-top: 0px;
+    font-size: 12px;
+    font-weight: normal !important;
+  }
+  #profile-right .profile-right button {
+    width: 100px;
+    height: 30px; 
+    margin-left: 30%;    
     margin-top: 0.3px;
   }
 }

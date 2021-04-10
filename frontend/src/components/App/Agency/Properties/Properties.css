@@ -1,5 +1,5 @@
 .filter-by-city-name {
-  margin-top: 20%;
+  margin-top: 15%;
 }
 .filter-by-city-name-option {
   padding: 7px;
@@ -41,9 +41,6 @@
   width: 100%;
   height: 300px;
   overflow: hidden;
-
-  /* background-color: rgb(56, 165, 42); */
-  /* margin: 0px; */
 }
 .properties .properties-img img {
   width: 100%;
@@ -52,7 +49,14 @@
   background-size: cover;
   background-position: center;
 }
-
+.property-city {      
+  background-color: #03c5f0;
+  height: 40px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+ }
 .property-content {
   background-color: #03c5f0;
   height: 40px;
@@ -66,6 +70,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  overflow: hidden;
 }
 .property-btn > button {
   width: 300px;
@@ -88,85 +93,272 @@
 .property-btn-edit {
   margin-right: 2px;
 }
+
+@media only screen and (max-width:1366px) {
+  .filter-by-city-name {
+    margin-top: 15%;
+  }    
+  #properties .properties {  
+    width: 25%;
+    }  
+    .property-content{      
+     
+      padding-right: 5px;
+     }  
+}
+@media only screen and (max-width:1024px) {
+  .filter-by-city-name {
+    margin-top: 10%;
+  }
+  .filter-by-city-name-option {   
+    font-size: 20px;    
+  } 
+  #properties .property-title {    
+    padding-top: 20px;    
+  }  
+  #properties .properties { 
+    width: 40%;  
+  }
+}
 @media only screen and (max-width: 768px) {
   #properties .property-title {
-    padding-top: 30px;
-    /* margin-top: 10px; */
+    padding-top: 20px;  
   }
-
   #properties .properties {
     width: 45%;
     height: 250px;
   }
-  .properties .properties-img {
-    width: 100%;
+  .properties .properties-img {  
     height: 250px;
   }
-
   .property-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     height: 50px;
   }
   .property-btn > button {
     font-size: 16px;
     height: 28px;
   }
-  .property-btn-del:hover {
-    background: red;
-    border: 1px solid #fff;
-  }
 }
-@media only screen and (max-width: 360px) {
-  #properties {
-    margin-top: 40px;
-    background-color: #e5e5e5;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+@media only screen and (max-width: 736px) {
   #properties .property-title {
-    color: #03c5f0;
-    width: 100%;
-    padding-top: 30px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
+    padding-top: 20px;  
   }
+  #properties .properties {
+    width: 45%;
+    height: 250px;
+  }
+  .properties .properties-img {  
+    height: 250px;
+  }
+  .property-city {  
+      height: 35px;  
+   }
+  .property-content {   
+    height: 35px;
+    padding-right: 5px;
+    }
+    .property-content>div {   
+      font-size: 16px !important;
+      }
+    .bill p,span {   
+      font-size: 16px !important;
+      }
+  .bed{      
+    display: flex;
+    align-items: flex-end;
+    padding-right: 3px;
+   }
+}
 
+
+@media only screen and (max-width: 667px){
+  .filter-by-city-name {
+    margin-top: 15%;
+  }
+  .filter-by-city-name-option {
+    padding: 7px;  
+    font-size: 14px;  
+  }  
+  #properties {
+    margin-top: 60px;
+   }
+  #properties .property-title {    
+    padding-top: 10px;  
+    font-size: 14px;  
+  }
+  
+  #properties .properties {  
+    width: 40%;
+    margin: 3px 10px;
+    height: 300px;
+  }
+  .properties .properties-img {   
+    height: 150px;  
+  }
+  .properties .properties-img img {    
+    height: 150px;   
+  }
+  .property-city {    
+    height: 25px;
+    font-size: 14px;
+   
+   }
+  .property-content {   
+    height: 35px;
+    padding-right: 5px;
+    }
+    .property-content>div {   
+      font-size: 14px !important;
+      }
+    .bill p,span {   
+      font-size: 14px !important;
+      }
+  .bed{      
+    display: flex;
+    align-items: flex-end;
+    padding-right: 3px;
+   }
+
+  .property-btn > button {    
+    font-size: 14px;
+  }
+  
+}
+@media only screen and (max-width: 640px){
+  .filter-by-city-name {
+    margin-top: 15%;
+  }
+  .filter-by-city-name-option {
+    padding: 7px;  
+    font-size: 14px;  
+  }  
+  #properties {
+    margin-top: 60px;
+   }
+  #properties .property-title {    
+    padding-top: 10px;  
+    font-size: 14px;  
+  }
+  
+  #properties .properties {  
+    width: 42%;
+    margin: 3px 10px;
+    height: 300px;
+  }
+  .properties .properties-img {   
+    height: 150px;  
+  }
+  .properties .properties-img img {    
+    height: 150px;   
+  }
+  .property-city {    
+    height: 25px;
+    font-size: 14px;   
+   }
+  
+  .property-content {   
+    height: 35px;
+    padding-right: 5px;
+    }
+    .property-content>div {   
+      font-size: 14px !important;
+      }
+    .bill p,span {   
+      font-size: 14px !important;
+      }
+  .bed{      
+    display: flex;
+    align-items: flex-end;
+    padding-right: 3px;
+   }
+
+  .property-btn > button {    
+    font-size: 14px;
+  }
+  
+}
+
+@media only screen and (max-width: 414px) {
+  .filter-by-city-name {
+    margin-top: 10%;
+  }
+  .filter-by-city-name-option {    
+    font-size: 16px;    
+  }
+  #properties .property-title {   
+    padding-top: 15px;   
+    font-size: 14px;    
+  }
   #properties .properties {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 80%;
     justify-content: center;
-    margin: 20px 10px;
-    height: 250px;
+    margin: 15px 10px;
+    height: 260px;
   }
-  .properties .properties-img {
-    width: 100%;
+  .properties .properties-img {    
     height: 200px;
     overflow: hidden;
   }
   .properties .properties-img img {
-    width: 100%;
-    height: 175px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    height: 165px; 
   }
-
-  .property-content {
-    background-color: #03c5f0;
-    height: 55px;
-    color: white;
+  .property-city {    
+    height: 25px;
+    font-size: 14px;
+   
+   }
+  .property-content {   
+    height: 35px;
+    padding-right: 5px;
+    }
+    .property-content>div {   
+      font-size: 14px !important;
+      }
+    .bill p,span {   
+      font-size: 14px !important;
+      }
+  .bed{      
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 0px;
+    align-items: flex-end;
+    padding-right: 3px;
+   }
+
+  .property-btn > button {    
+    font-size: 14px;
+  }
+  
+}
+
+
+
+@media only screen and (max-width: 360px) {
+  .filter-by-city-name {
+    margin-top: 20%;
+  }
+  #properties {
+    margin-top: 40px;
+    }
+  #properties .property-title {   
+    padding-top: 15px;   
+    font-size: 14px;    
+  }
+  #properties .properties {   
+    width: 85%;   
+    margin: 10px 10px;
+    height: 250px;
+  }
+  .properties .properties-img {
+    width: 100%;
+    height: 200px;    
+  }
+  .properties .properties-img img {
+    width: 100%;
+    height: 175px;  
+  }
+  .property-content {  
+    height: 55px;     
   }
   .bill {
     font-size: 6px;
@@ -181,31 +373,11 @@
   .bath {
     font-size: 2px;
     width: 50%;
-  }
-  .property-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 40px;
-  }
+  } 
   .property-btn > button {
     width: 300px;
-    height: 30px;
-    background: #f49131;
-    color: #fff;
-    font-size: 14px;
-    border: 1px solid #fff;
-    margin-top: 0.5px;
-    font-weight: 400;
-  }
-  .property-btn-del:hover {
-    background: red;
-    border: 1px solid #fff;
-  }
-  .property-btn-edit:hover {
-    background: rgb(56, 206, 56);
-    border: 1px solid #fff;
-  }
+    height: 30px;  
+  } 
   .property-btn-edit {
     margin-right: 2px;
   }

@@ -5,14 +5,11 @@
   background: url("https://i.postimg.cc/7Lwx6b4Y/hom.jpg") center/cover
     no-repeat;
   height: 750px;
-  width: 100%;
-  font-size: 20px;
+  width: 100%; 
   text-align: center;
   text-transform: capitalize;
 }
-
-.welpage {
-  /* background: rgba( 3,197,240,0.3); */
+.welpage { 
   background: rgba(9, 0, 0, 0.4);
   height: 750px;
   width: 100%;
@@ -24,80 +21,85 @@
   font-weight: bolder;
   letter-spacing: 1px;
 }
-
-@media only screen and (max-width: 768px) {
-  .welpage {
-    /* background: rgba( 3,197,240,0.3); */
-    background: rgba(9, 0, 0, 0.4);
-    height: 750px;
-    width: 100%;
-    text-align: center;
+@media only screen and (max-width: 1366px) {
+  .welpage { 
+    height: 750px; 
+    font-size: 30px;     
+    
+  }
+  .welpage>h1 {
+    margin-top: 20%;        
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .welpage { 
+    height: 750px;     
     font-size: 30px;
   }
   .welpage > h1 {
-    font-size: 50px;
-    margin-top: 30%;
-    font-weight: bolder;
-   
+    margin-top: 26%;     
   }
+}
+@media only screen and (max-width: 768px) {
+  .welcomePage {  
+    height: 720px;  
+    font-size: 20px;  
+  }
+  .welpage {
+      height: 720px;     
+  }
+  .welpage > h1 {
+    font-size: 50px;
+    margin-top: 37%;   
+  }
+}
+@media only screen and (max-width: 736px) {
+  .welcomePage {  
+    height: 340px;  
+  }
+  .welpage {    
+    height: 340px;  
+  }
+  .welpage > h1 {
+    font-size: 30px;
+    margin-top: 15%;   
+  }
+  .welpage > h2 {
+    font-size: 30px;
+  }  
 }
 
 @media only screen and (max-width: 414px) {
-  .welcomePage {
-    margin-top: 60px;
-    margin-bottom: 0px;
-    color: white;
-    background: url("https://i.postimg.cc/7Lwx6b4Y/hom.jpg") center/cover
-      no-repeat;
-    height: 400px;
-    width: 100%;
-    font-size: 14px;
-    text-align: center;
-    text-transform: capitalize;
+  .welcomePage {  
+    height: 400px;  
+    font-size: 12px;   
   }
-
-  .welpage {
-    /* background: rgba( 3,197,240,0.3); */
-    background: rgba(9, 0, 0, 0.4);
-    height: 400px;
-    width: 100%;
-    text-align: center;
+  .welpage {   
+    height: 400px;   
   }
   .welpage > h1 {
-    font-size: 40px;
+    font-size: 34px;
     margin-top: 40%;
-    font-weight: bolder;
-    letter-spacing: 1px;
-    line-height: 35px;
+    line-height: 38px;
+  }
+  .welpage>h2 {
+    font-size: 32px;
   }
 }
 
 @media only screen and (max-width: 360px) {
   .welcomePage {
-    margin-top: 60px;
-    margin-bottom: 0px;
-    color: white;
-    background: url("https://i.postimg.cc/7Lwx6b4Y/hom.jpg") center/cover
-      no-repeat;
-    height: 400px;
-    width: 100%;
-    font-size: 14px;
-    text-align: center;
-    text-transform: capitalize;
+    height: 360px; 
   }
-
   .welpage {
-    /* background: rgba( 3,197,240,0.3); */
-    background: rgba(9, 0, 0, 0.4);
-    height: 400px;
-    width: 100%;
-    text-align: center;
+    height: 360px; 
   }
-  .welpage > h1 {
-    font-size: 40px;
-    margin-top: 40%;
-    font-weight: bolder;
-    letter-spacing: 1px;
-    line-height: 35px;
+  .welpage > h1{
+    font-size: 30px;
+    margin-top: 40%;    
+    line-height: 30px;
+  }
+  .welpage > h2{
+    font-size: 30px;
   }
 }

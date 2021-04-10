@@ -244,30 +244,132 @@
    }
 
 }
-/**************************************************/
+
 
 @media only screen and (max-width: 768px) {
+  .main-title {
+    height: 60px;   
+    font-size: 26px;
+    line-height: 22px;    
+    padding-top: 10px;
+   
+  }
   .main-image {
-    height: 1450px;
+    height: 1250px;
   }
 
   .main-image-all {
     width: 350px;
-    height: 240px;
+    height: 200px;
   }
   .main-image-all img {
     width: 350px;
-    height: 240px;
+    height: 200px;
   }
 
   .main-image-all .top-text h3 {
     width: 350px;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 44px;
   }
 
   .main-image-all .top-text p {
     width: 350px;
+  }
+  .main-image-all:hover .top-text h3 {
+  
+    font-size: 26px;
+    
+  }
+  .main-image-all:hover .top-text p {
+    
+    font-size: 22px;
+    line-height: 28px;
+    
+  }
+  .main-allCities .btn {
+    width: 200px;
+    height: 50px;
+    font-size: 28px;
+  }
+  .main-search .p {
+    font-size: 32px;
+  }
+
+  .main-search .box-cont {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .main-search .box {
+    width: 350px;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .main-search .box-btn {
+    font-size: 28px;
+    padding: 10px 10px;
+    margin-left: 31%;
+    margin-top: 15px;
+  }
+  .img-box h3,
+  .img-box p {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .main-con {
+    height: 400px;
+  }
+
+  .main-con .img-box {
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 30%;
+  }
+
+  .main-con .img-box1 {
+    margin-top: -10px;
+    margin-left: -23%;
+    overflow: hidden;
+    width: 50%;
+  }
+
+  .img-box1 > img {
+    margin-left: 5%;
+    width: 350px;
+    height: 410px;
+  }
+  .main-empty {
+    height: 80px;
+  }
+}
+
+/**************************************************/
+
+
+
+@media only screen and (max-width: 736px) {
+  .main-image {
+    height: 1450px;
+  }
+
+  .main-image-all {
+    width: 300px;
+    height: 240px;
+  }
+  .main-image-all img {
+    width: 300px;
+    height: 240px;
+  }
+
+  .main-image-all .top-text h3 {
+    width: 300px;
+    font-size: 30px;
+    line-height: 44px;
+  }
+
+  .main-image-all .top-text p {
+    width: 300px;
   }
 
   .main-allCities {
@@ -329,6 +431,206 @@
     height: 80px;
   }
 }
+
+
+@media only screen and (max-width: 667px) {
+  .main-title {
+    height: 60px;   
+    font-size: 26px;
+    line-height: 22px;    
+    padding-top: 10px;
+   
+  }
+  .main-image {
+    height: 1250px;
+  }
+
+  .main-image-all {
+    width: 250px;
+    height: 200px;
+  }
+  .main-image-all img {
+    width: 250px;
+    height: 200px;
+  }
+
+  .main-image-all .top-text h3 {
+    width: 250px;
+    font-size: 24px;
+    line-height: 44px;
+  }
+
+  .main-image-all .top-text p {
+    width: 250px;
+  }
+  .main-image-all:hover .top-text h3 {
+  
+    font-size: 26px;
+    
+  }
+  .main-image-all:hover .top-text p {
+    
+    font-size: 22px;
+    line-height: 28px;
+    
+  }
+  .main-allCities .btn {
+    width: 200px;
+    height: 50px;
+    font-size: 28px;
+  }
+  .main-search .p {
+    font-size: 32px;
+  }
+
+  .main-search .box-cont {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .main-search .box {
+    width: 350px;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .main-search .box-btn {
+    font-size: 28px;
+    padding: 10px 10px;
+    margin-left: 31%;
+    margin-top: 15px;
+  }
+  .img-box h3,
+  .img-box p {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .main-con {
+    height: 400px;
+  }
+
+  .main-con .img-box {
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 30%;
+  }
+
+  .main-con .img-box1 {
+    margin-top: -10px;
+    margin-left: -23%;
+    overflow: hidden;
+    width: 50%;
+  }
+
+  .img-box1 > img {
+    margin-left: 5%;
+    width: 350px;
+    height: 410px;
+  }
+  .main-empty {
+    height: 80px;
+  }
+}
+
+
+@media only screen and (max-width: 640px) {
+  .main-title {
+    height: 60px;   
+    font-size: 26px;
+    line-height: 22px;    
+    padding-top: 10px;
+   
+  }
+  .main-image {
+    height: 1250px;
+  }
+
+  .main-image-all {
+    width: 250px;
+    height: 200px;
+  }
+  .main-image-all img {
+    width: 250px;
+    height: 200px;
+  }
+
+  .main-image-all .top-text h3 {
+    width: 250px;
+    font-size: 24px;
+    line-height: 44px;
+  }
+
+  .main-image-all .top-text p {
+    width: 250px;
+  }
+  .main-image-all:hover .top-text h3 {
+  
+    font-size: 26px;
+    
+  }
+  .main-image-all:hover .top-text p {
+    
+    font-size: 22px;
+    line-height: 28px;
+    
+  }
+  .main-allCities .btn {
+    width: 200px;
+    height: 50px;
+    font-size: 28px;
+  }
+  .main-search .p {
+    font-size: 32px;
+  }
+
+  .main-search .box-cont {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .main-search .box {
+    width: 350px;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .main-search .box-btn {
+    font-size: 28px;
+    padding: 10px 10px;
+    margin-left: 31%;
+    margin-top: 15px;
+  }
+  .img-box h3,
+  .img-box p {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .main-con {
+    height: 400px;
+  }
+
+  .main-con .img-box {
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 30%;
+  }
+
+  .main-con .img-box1 {
+    margin-top: -10px;
+    margin-left: -23%;
+    overflow: hidden;
+    width: 50%;
+  }
+
+  .img-box1 > img {
+    margin-left: 5%;
+    width: 350px;
+    height: 410px;
+  }
+  .main-empty {
+    height: 80px;
+  }
+}
+
+
 /*********************************************/
 @media only screen and (max-width: 414px) {
   .main-title {
@@ -340,7 +642,7 @@
   }
 
   .main-image {
-    height: 1590px;
+    height: 1990px;
   }
 
   .main-image-all {
@@ -461,7 +763,7 @@
 }
 /*********************************************/
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 375px) {
   .main-title {
     height: 90px;
     font-size: 24px;

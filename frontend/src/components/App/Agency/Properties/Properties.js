@@ -72,7 +72,7 @@ const selectCityName=(name)=>{
 {filteredProperties.length !==0 && filteredProperties.map((property,index)=>(
   <div className="properties">
   <div className="properties-img"><img src={property.images[0]} alt=""/></div>
-  <div className="property-content"><p>{property.cityName}</p></div>
+  <div className="property-city"><p>{property.cityName}</p></div>
   <hr/>
 
   <div className="property-content">
