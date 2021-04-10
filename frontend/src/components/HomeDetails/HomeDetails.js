@@ -197,13 +197,119 @@ export default function HomeDetails({
 						</div>
 					</div>
 
+					<div className="homedetails-sidebar-container-small-size">
+						<div className="btn-book-viewing-container">
+							<h3 className="homedetails-sidebar-address">
+								{home.length !== 0 && home.address[0]},{' '}
+								{home.length !== 0 && home.address[1]},{' '}
+								{home.length !== 0 && home.cityName},{' '}
+								{home.length !== 0 && home.address[3]}
+							</h3>
+							<div className="homedetails-rooms-count-type-container">
+								<div className="homedetails-rooms-count-bedroom">
+									<p>Bedrooms</p>
+									<div className="homedetails-rooms-count-bedroom-icon">
+										<FaBed
+											style={{
+												fill: '#03c5f0',
+												marginRight: 8,
+												marginLeft: 8,
+											}}
+										/>
+										{home.length !== 0 && home.bedroom}
+									</div>
+								</div>
+								<div className="homedetails-rooms-count-bathroom">
+									<p>Bathrooms</p>
+									<div className="homedetails-rooms-count-bathroom-icon">
+										<FaBath
+											style={{
+												fill: '#03c5f0',
+												marginRight: 8,
+												marginLeft: 8,
+											}}
+										/>
+										{home.length !== 0 && home.bathroom}
+									</div>
+								</div>
+								<div className="homedetails-rooms-type">
+									<p>Type</p>
+									<div className="homedetails-rooms-type-icon">
+										<FaRegBuilding
+											style={{
+												fill: '#03c5f0',
+												marginRight: 5,
+												marginLeft: 8,
+											}}
+										/>
+										<span className="homedetails-rooms-type-type">
+											{home.length !== 0 && home.type}
+										</span>
+									</div>
+								</div>
+							</div>
+							<br />
+							<hr />
+							<h4
+								className="homedetails-sidebar-pppw"
+								style={{
+									textAlign: 'center',
+									paddingTop: 8,
+									paddingBottom: 8,
+								}}
+							>
+								£{home.rent} pppw including bills
+							</h4>
+							<hr />
+							<br />
+							<button
+								className="btn-book-viewing"
+								type="submit"
+								onClick={showBookViewing}
+							>
+								<BsEnvelope
+									style={{ fill: 'white', marginRight: 10 }}
+								/>
+								Book Viewing
+							</button>
+							<div className="shortlist-btn-container">
+								<div className="shortlist-btn">
+									{shortlist && shortlist.includes(home._id) ? (
+										<p onClick={removeFromShortlist}>
+											{' '}
+											<BsHeartFill fill="red" /> &nbsp;{' '}
+											<span className="rem-btn">Remove</span>
+										</p>
+									) : (
+										<p onClick={addToShortlist}>
+											{' '}
+											<BsHeart className="heart-icon" /> &nbsp;{' '}
+											<span className="s-btn">Shortlist</span>
+											<span className="a-btn">Add</span>
+										</p>
+									)}
+								</div>
+							</div>
+							<div
+								className="homedetails-sidebar-bills"
+								style={{ textAlign: 'center' }}
+							>
+								<img
+									src={bill}
+									alt="bills"
+									style={{ width: '75%', height: 'auto' }}
+								/>
+							</div>
+						</div>
+					</div>
+
 					<div className="homedetails-main-key-features">
 						<h3>Key Features</h3>
 						{home.length !== 0 &&
 							home.keyFeatures.map((keyFeature) => (
-								<ul>
+								<ul className="homedetails-main-key-features-links">
 									<li>
-										<TiTickOutline fill="#03c5f0" size={22} />
+										<TiTickOutline className="homedetails-main-key-features-links-icon" />
 										{keyFeature}
 									</li>
 								</ul>
@@ -223,10 +329,8 @@ export default function HomeDetails({
 									className="homedetails-main-bedroom-prices-table"
 									key={index}
 								>
-									<span
-										style={{ marginLeft: '20px' }}
-									>{`Bedroom ${room}`}</span>
-									<span style={{ marginRight: '20px' }}>
+									<span className="homedetails-main-bedroom-prices-table-text">{`Bedroom ${room}`}</span>
+									<span className="homedetails-main-bedroom-prices-table-text">
 										£{home.rent} per week
 									</span>
 								</div>

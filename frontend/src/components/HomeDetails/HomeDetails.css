@@ -61,6 +61,10 @@
 	fill: #03c5f0;
 }
 
+.homedetails-sidebar-container-small-size {
+	display: none;
+}
+
 .homedetails-main-key-features {
 	font-family: Roboto;
 	margin-top: 50px;
@@ -69,10 +73,19 @@
 .homedetails-main-key-features > h3 {
 	padding: 5px 0;
 }
+.homedetails-main-key-features-links {
+	padding-left: 5px;
+}
+
 .homedetails-main-key-features ul > li {
 	font-family: Roboto;
 	font-size: 16px;
 	padding: 6px;
+}
+
+.homedetails-main-key-features-links-icon {
+	font-size: 22px;
+	fill: #03c5f0;
 }
 
 .homedetails-main-description {
@@ -96,6 +109,10 @@
 	padding: 10px 0px;
 	border: solid 1px lightgray;
 	width: 90%;
+}
+
+.homedetails-main-bedroom-prices-table-text {
+	margin: 5px 10px;
 }
 
 .homedetails-main-bedroom-prices-deposit {
@@ -158,6 +175,7 @@
 }
 
 .homedetails-rooms-count-bathroom {
+	text-align: center;
 	flex: 4;
 	font-family: Roboto;
 }
@@ -212,7 +230,11 @@
 .shortlist-btn-container {
 	padding: 10px;
 	margin: 15px 0px;
-	height: auto;
+	height: fit-content;
+}
+
+.shortlist-btn > p {
+	padding: 20px;
 }
 
 .book-viewing-container {
@@ -340,9 +362,11 @@
 
 @media (max-width: 768px) {
 	.homedetails-main-bedroom-prices-table {
-		font-size: 12px;
 		width: 90%;
 		padding: 5px 0px;
+	}
+	.homedetails-main-bedroom-prices-table-text {
+		font-size: 14px;
 	}
 	.homedetails-rooms-count-type-container {
 		flex-direction: column;
@@ -364,11 +388,61 @@
 		font-size: 17px;
 		text-align: center;
 	}
+	.homedetails-main-key-features-links-icon {
+		font-size: 19px;
+	}
+	.homedetails-sidebar-bills {
+		width: 100%;
+		height: fit-content;
+	}
+	.shortlist-btn > p {
+		padding: 10px;
+	}
+}
+
+@media (max-width: 600px) {
+	.homedetails-main-bedroom-prices-table-text {
+		font-size: 16px;
+	}
+	.homedetails-sidebar-container-small-size {
+		display: block;
+	}
+	.homedetails-sidebar-container {
+		display: none;
+	}
+	.homedetails-rooms-count-type-container {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-top: 10px;
+	}
+	.btn-book-viewing {
+		width: 60%;
+		height: 42px;
+		border-radius: 3px;
+		font-size: 18px;
+		line-height: 18px;
+		margin-top: 15px;
+		margin-bottom: 30px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.homedetails-sidebar-address {
+		margin-top: 25px;
+		margin-bottom: 15px;
+		line-height: 1.2;
+	}
+	.homedetails-sidebar-bills {
+		width: 80%;
+		height: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 @media (max-width: 360px) {
 	.homedetails-back-to-search-btn {
-		font-size: 14px;
+		font-size: 12px;
 	}
 	.homedetails-main-key-features > h3 {
 		font-size: 14px;
@@ -376,6 +450,9 @@
 	.homedetails-main-key-features ul > li {
 		font-size: 11px;
 		padding: 2px;
+	}
+	.homedetails-main-key-features-links-icon {
+		font-size: 14px;
 	}
 
 	.homedetails-main-description > h3 {
@@ -398,11 +475,11 @@
 		font-size: 14px;
 	}
 	.homedetails-main-bedroom-prices-table {
-		font-size: 10px;
 		width: 90%;
 	}
-	.homedetails-main-bedroom-prices-table > span {
-		margin: 0px 5px;
+
+	.homedetails-main-bedroom-prices-table-text {
+		font-size: 11px;
 	}
 
 	.homedetails-main-bedroom-prices-deposit {
@@ -423,71 +500,7 @@
 	.homedetails-main-availability > h3 {
 		font-size: 14px;
 	}
-	.homedetails-sidebar-address {
-		font-size: 11px;
-	}
 
-	.homedetails-sidebar-pppw {
-		font-size: 11px;
-	}
-
-	.homedetails-rooms-count-bedroom {
-		font-size: 9px;
-		padding: 0px;
-	}
-	.homedetails-rooms-count-bedroom > p {
-		font-size: 9px;
-		padding: 0px;
-	}
-	.homedetails-rooms-count-bedroom-icon {
-		padding: 1px;
-	}
-
-	.homedetails-rooms-count-bathroom {
-		font-size: 9px;
-	}
-	.homedetails-rooms-count-bathroom > p {
-		font-size: 9px;
-		padding: 0px;
-	}
-	.homedetails-rooms-type {
-		font-size: 9px;
-	}
-	.homedetails-rooms-type ~ span {
-		font-size: 9px;
-	}
-	.homedetails-rooms-type > p {
-		font-size: 9px;
-		padding: 0;
-	}
-
-	.homedetails-rooms-type-type {
-		font-size: 8px;
-	}
-
-	.homedetails-sidebar-pppw {
-		font-size: 9px;
-	}
-
-	.homedetails-sidebar-bills {
-		width: 120px;
-	}
-	.btn-book-viewing {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 24px;
-		font-size: 8px;
-		line-height: 16px;
-		margin-bottom: 10px;
-		border-radius: 3px;
-	}
-	.homedetails-rooms-count-type-container {
-		flex-direction: column;
-		justify-content: left;
-		align-items: left;
-		margin-top: 10px;
-	}
 	.short-btn {
 		font-size: 11px;
 	}
@@ -588,25 +601,39 @@
 		background: #f49131;
 		border-radius: 5px;
 		height: 25px;
-		font-size: 14px;
+		font-size: 13px;
 		margin-bottom: 30px;
 	}
 	.homedetails-sidebar-address {
 		padding: 0px;
-		margin-bottom: 5px;
+		margin-bottom: 15px;
+		font-size: 16px;
+	}
+
+	.homedetails-rooms-count-bedroom {
+		font-size: 14px;
 	}
 	.homedetails-rooms-count-bedroom-icon {
 		text-align: center;
 		padding: 3px 0px;
+	}
+	.homedetails-rooms-count-bathroom {
+		font-size: 14px;
 	}
 
 	.homedetails-rooms-count-bathroom-icon {
 		text-align: center;
 		padding: 5px 0px;
 	}
-
+	.homedetails-rooms-type {
+		font-size: 14px;
+	}
 	.homedetails-rooms-type-icon {
 		text-align: center;
 		padding: 3px 0px;
+	}
+
+	.homedetails-main-availability-date {
+		font-size: 11px;
 	}
 }
