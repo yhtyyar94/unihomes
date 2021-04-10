@@ -160,9 +160,13 @@
 		border: 2px solid #333;
 		border-radius: 5px;
 	}
+
+	.header-items {
+		font-size: 17px;
+	}
 }
 
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 415px) {
 	.header {
 		display: block;
 	}
@@ -194,7 +198,11 @@
 	}
 
 	#unihomes {
-		font-size: 30px;
+		font-size: 25px !important	;
+	}
+
+	#unihomes img {
+		height: 30px !important;
 	}
 
 	.header .search-toggle input::placeholder {
@@ -226,6 +234,7 @@
 
 	#agencypage a {
 		font-size: 13px;
+		margin-top: +2%;
 	}
 }
 
@@ -236,8 +245,9 @@
 
 	#agencypage {
 		position: fixed;
-		top: 5%;
+		top: 3%;
 		right: 5%;
+		font-size: large;
 	}
 }
 

@@ -273,7 +273,7 @@ textarea {
   }
 }
 
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 415px) {
   .add-form {
     display: flex;
     flex-direction: column;

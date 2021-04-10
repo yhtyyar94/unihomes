@@ -23,6 +23,7 @@ button:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background: rgb(0, 191, 255);
   height: 150px;
   display: flex;
@@ -223,14 +224,24 @@ button:active {
     font-size: 12px;
     text-align: center;
   }
-}
 
-@media only screen and (max-width: 768px) {
   .banner-text-top-cities {
     font-size: medium;
   }
 
   .container-header {
     text-align: center;
+  }
+}
+
+
+@media only screen and (max-width: 415px) {
+  .shortlist-header {
+    height: 125px;
+  }
+
+  .shortlist-header h1 {
+    font-size: xx-large;
+    margin-top: +3%;
   }
 }
