@@ -55,7 +55,7 @@
 .banner-bottom-text h1 {
   font-family: Poppins;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bolder;
   font-size: 90px;
 }
 .banner-bottom-text h5 {
@@ -63,7 +63,7 @@
   margin-right: 5%;
   font-family: Poppins;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bolder;
   font-size: 40px;
   line-height: 50px;
 }

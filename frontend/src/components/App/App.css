@@ -116,11 +116,13 @@ button:active {
   margin-right: 20px;
   text-align: center;
   color: rgb(66, 64, 64);
+  padding: 2.5%;
 }
 
 .container-header {
   display: flex;
   justify-content: center;
+  padding-bottom: 1%;
 }
 
 .container-header h1 {

@@ -76,9 +76,9 @@ const selectCityName=(name)=>{
   <hr/>
 
   <div className="property-content">
-      <div  className="bill" style={{marginLeft:"-5%"}}><p style={{fontSize:"18px",padding:0,paddingLeft:20}}><span style={{fontSize:"20px"}}>£{property.rent} </span>pppw including bills</p></div>
-      <div className="bed" style={{fontSize:"22px"}}><FaBed size={22}  style={{fill:"white",paddingTop:"2px",marginLeft:"20px"}}/>  &nbsp; {property.bedroom}</div>
-      <div className="bath" style={{fontSize:"22px"}}><FaBath size={17}  style={{fill:"white",paddingBottom:"1px"}}/>  &nbsp; {property.bathroom}</div> 
+      <div  className="bill" style={{marginLeft:"-5%"}}><p style={{fontSize:"16px",padding:0,paddingLeft:20}}><span style={{fontSize:"20px"}}>£{property.rent} </span>pppw including bills</p></div>
+      <div className="bed" style={{fontSize:"20px"}}><FaBed size={22}  style={{fill:"white",paddingTop:"2px",marginLeft:"20px"}}/>  &nbsp; {property.bedroom}</div>
+      <div className="bath" style={{fontSize:"20px"}}><FaBath size={17}  style={{fill:"white",paddingBottom:"1px"}}/>  &nbsp; {property.bathroom}</div> 
   </div>
   <div className="property-btn">
       <button className="property-btn-edit" onClick={()=>history.push(`/agency/addproperty/${property._id}`)} ><AiFillEdit/>&nbsp; Edit</button>

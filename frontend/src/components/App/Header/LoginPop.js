@@ -33,6 +33,7 @@ export default function LoginPop({register, setLog, setIsLoggedIn, isLoggedIn, s
         setLog(false)
         setSuccessLogin(false)
       } else {
+        setSuccessLogin(false)
         alert('Wrong email or password')
         return
       }
