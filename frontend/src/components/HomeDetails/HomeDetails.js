@@ -456,6 +456,7 @@ export default function HomeDetails({
 				<Modal
 					isOpen={bookViewing}
 					onRequestClose={() => setModalIsOpen(false)}
+					className="book-viewing-modal"
 				>
 					<div className="book-viewing-container">
 						<div className="btn-book-viewing-page-close-container">
@@ -502,15 +503,7 @@ export default function HomeDetails({
 									<br />
 									<label>Message</label>
 									<br />
-									<textarea
-										style={{
-											height: '72px',
-											border: 'none',
-											borderRadius: '3px',
-										}}
-										placeholder="Text message..."
-										required
-									/>
+									<textarea placeholder="Text message..." required />
 									<div className="book-viewing-check-box">
 										<input type="checkbox" />
 										<label>
