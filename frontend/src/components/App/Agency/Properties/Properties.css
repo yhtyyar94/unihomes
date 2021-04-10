@@ -329,7 +329,7 @@
 }
 @media only screen and (max-width: 375px) {
   .property-content > div {
-    font-size: 12px !important;
+    font-size: 8px !important;
   }
 }
 
